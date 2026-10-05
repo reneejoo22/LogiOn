@@ -1,0 +1,22 @@
+# torch는 반드시 CUDA 빌드로 따로 설치해야 합니다 (RTX 50 시리즈는 cu128 이상 필요)
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# 이 파일에는 버전만 적어두고, 설치는 위 명령으로 하세요.
+torch>=2.7
+
+# transformers 5.x는 TrainingArguments에서 warmup_ratio를 제거해 이 노트북과 호환되지 않습니다.
+transformers>=4.46,<5
+peft>=0.13
+accelerate>=1.0
+datasets>=3.0
+scikit-learn>=1.5
+pandas>=2.2
+numpy>=1.26
+
+# 노트북 실행용
+jupyter>=1.1
+nbconvert>=7.16
+ipykernel>=6.29
+
+# 6단계 STT (선택)
+sherpa-onnx>=1.10
+soundfile>=0.12
