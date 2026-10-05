@@ -1,0 +1,2755 @@
+﻿id,text,label,split,source,ambiguity
+u00000,지금 다음 남은 데가 어디지,next_stop,test,gemini,clear
+u00001,아 검수 할게요,scan,train,template,clear
+u00002,개포점에 캔커피 보냈는데 잘못 왔어요,report_issue,train,template,clear
+u00003,아 두 봉지 모자람 얼른,report_issue,train,template,ask
+u00004,어 에어컨 켜주세요,other,train,template,clear
+u00005,저기 참치삼각김밥 박스 하나 수량이 안 맞아,report_issue,test,template,clear
+u00006,스캔 좀 해볼게,scan,train,template,clear
+u00007,바나나우유 박스 하나 새고 있어 빨리,report_issue,test,template,clear
+u00008,잠실점 마감,complete,train,template,clear
+u00009,이제 커피 좀 부족해 얼른,report_issue,val,template,clear
+u00010,아 2개 미지근해요,report_issue,train,template,ask
+u00011,스캐너 켜라고,scan,test,gemini,clear
+u00012,카메라로 확인할래,scan,train,template,clear
+u00013,저기 송파점에서 샌드위치 수량이 안 맞아,report_issue,train,template,clear
+u00014,자 삼성점 납품 다 했어요,complete,train,template,clear
+u00015,이상 있어 아이스크림 녹았음 빨리,report_issue,train,template,clear
+u00016,이제 불량 기록 감자칩 잘못 왔어 지금,report_issue,train,template,clear
+u00017,아 상품 찍어볼게요,scan,train,template,clear
+u00018,송장 스캔 켜라,scan,test,gemini,clear
+u00019,자 남은 점포 알려주세요,next_stop,train,template,clear
+u00020,가락점 지나갈 때마다 맛있는 냄새 나네,other,train,gemini,clear
+u00021,이제 반포점 새우깡 1박스 하나 빠졌어 좀,report_issue,train,template,clear
+u00022,아 도시락 있어,stop_items,train,template,hard
+u00023,그 오늘 여기 물건 뭐야,stop_items,train,template,clear
+u00024,이번 점포 품목 알려줘,stop_items,train,template,clear
+u00025,그 도시락 얼마나 내려야 해,stop_items,train,template,ask
+u00026,이온 음료 한 박스 샜네,report_issue,test,gemini,clear
+u00027,가락점 삼각김밥 두 개 안 왔다,report_issue,train,gemini,ask
+u00028,자 오늘 힘들다,other,train,template,clear
+u00029,이제 잠원점 물건 뭐 내려,stop_items,train,template,clear
+u00030,근처 화장실 어디야 좀,other,test,template,clear
+u00031,저기 오늘 몇 월 며칠이야,other,train,template,clear
+u00032,오늘 퇴근하고 뭐 하지,other,train,gemini,clear
+u00033,음 딸기우유 덜 왔어,report_issue,train,template,clear
+u00034,아 바나나 우유 쪽에 문제가 좀 있어,report_issue,val,template,ask
+u00035,그 내릴 물건 알려줘 빨리,stop_items,test,template,clear
+u00036,그 다음 어디야 좀,next_stop,train,template,clear
+u00037,아 이거 바코드 읽게 스캔 열어,scan,test,gemini,clear
+u00038,아 여기 사이다 몇 개 가져가,stop_items,train,template,clear
+u00039,스캔 작동시켜줘,scan,test,gemini,clear
+u00040,물건 온도가 높아 기록해주세요,report_issue,train,template,ask
+u00041,바코드 켜 지금,scan,test,template,clear
+u00042,잠깐 오늘 힘들다 지금,other,train,template,clear
+u00043,잠깐 여기 들어갈 거 뭐뭐야 좀,stop_items,test,template,clear
+u00044,송장 스캔 열어라,scan,test,gemini,clear
+u00045,바코드 인식 켜주세요,scan,train,template,clear
+u00046,이제 점장님한테 줬어요,complete,train,template,hard
+u00047,청담점 알바생 새로 바뀌었네,other,train,gemini,clear
+u00048,자 어디로 갈지 알려줘,next_stop,test,template,hard
+u00049,신사점 사장님한테 납품 마무리함,complete,train,gemini,clear
+u00050,이제 신림점 납품 완료 처리해주세요,complete,train,template,clear
+u00051,서초점 라면 한 박스 모자라요,report_issue,test,gemini,clear
+u00052,그 여기 뭐 내려야 돼요,stop_items,train,template,clear
+u00053,카메라 켜줘 스캔 좀 하자,scan,train,gemini,clear
+u00054,이제 어 잠깐만,other,test,template,clear
+u00055,아 인수인계 끝났어 좀,complete,train,template,clear
+u00056,아 근처 화장실 어디예요,other,test,template,clear
+u00057,바코드 좀 확인할게요,scan,train,template,clear
+u00058,잠깐 찍어,scan,train,template,hard
+u00059,한 개 모자라 얼른,report_issue,train,template,ask
+u00060,저기 바코드 찍을게요,scan,test,template,clear
+u00061,이제 다음 가야 할 곳 알려줘 얼른,next_stop,train,template,clear
+u00062,여기 납품 다 끝났어,complete,train,gemini,clear
+u00063,매니저님 받았어 얼른,complete,train,template,clear
+u00064,자 몇 개 남았지,next_stop,test,template,clear
+u00065,오늘 여기 물건 뭐야 얼른,stop_items,train,template,clear
+u00066,음 다음은 어디로 가 얼른,next_stop,train,template,clear
+u00067,직원분한테 전달했어요,complete,train,template,clear
+u00068,이제 근처 화장실 어디예요,other,test,template,clear
+u00069,이제 커피 1봉지 모자람,report_issue,train,template,clear
+u00070,대치점에서 참치삼각김밥 깨졌어,report_issue,train,template,clear
+u00071,스팸마요삼각김밥 오배송인 듯,report_issue,train,gemini,clear
+u00072,여기 젤리 몇 개 가져가,stop_items,train,template,clear
+u00073,어 하차 끝났어 좀,complete,train,template,clear
+u00074,볼륨 좀 키워줘 좀,other,train,template,clear
+u00075,어 2개 다 찢어졌어요,report_issue,train,template,ask
+u00076,이번 점포 끝 좀,complete,train,template,clear
+u00077,잠깐 바코드 좀 확인할게,scan,train,template,clear
+u00078,아 아 바나나우유 터졌어 어떡해 지금,report_issue,train,template,clear
+u00079,저기 차 막히네,other,train,template,clear
+u00080,음 농담 하나 해줘 지금,other,train,template,clear
+u00081,저기 점심 뭐 먹지 얼른,other,train,template,clear
+u00082,기록해줘 컵라면 한개 터졌어 지금,report_issue,train,template,clear
+u00083,음 퇴근하고 싶다,other,train,template,clear
+u00084,오늘 납품 많네 좀,other,val,template,hard
+u00085,음 송파점 다 내렸어 알바생 받았어 지금,complete,train,template,clear
+u00086,이제 바코드 스캔 시작 좀,scan,train,template,clear
+u00087,3박스 녹았음 빨리,report_issue,train,template,ask
+u00088,어 구로점 마감,complete,train,template,clear
+u00089,이제 어디로 가면 돼요,next_stop,val,template,clear
+u00090,점장님 사인 받았어요,complete,train,template,clear
+u00091,잠깐 상품 찍어볼게요,scan,train,template,clear
+u00092,잠원점 내릴 거 알려주세요,stop_items,train,template,clear
+u00093,아 카메라,scan,test,template,hard
+u00094,그 이거 다른 게 왔어요,report_issue,test,template,ask
+u00095,젤리 여기 들어가는 거 맞아,stop_items,test,template,hard
+u00096,검수 할게 좀,scan,train,template,clear
+u00097,잠깐 이제 뭐 하면 돼 빨리,next_stop,train,template,hard
+u00098,그 이제 어디로 가면 돼 지금,next_stop,val,template,clear
+u00099,다음 어디야,next_stop,train,template,clear
+u00100,이제 카메라 좀 열어,scan,train,template,clear
+u00101,음 직원분 오늘 안 계시네,other,train,template,hard
+u00102,그 여기 정리됐어 빨리,complete,train,template,hard
+u00103,남은 코스 몇 개야 지금,next_stop,train,template,clear
+u00104,참치삼각김밥 몇 개였지,stop_items,train,template,clear
+u00105,농담 하나 해줘 좀,other,train,template,clear
+u00106,어 고마워,other,val,template,clear
+u00107,어 매니저님 받았어,complete,train,template,clear
+u00108,아 물품 스캔 켜주세요,scan,test,template,clear
+u00109,카메라 켜서 송장 스캔하자,scan,train,gemini,clear
+u00110,바나나 우유 문제 있어 개수가 안 맞아,report_issue,train,template,clear
+u00111,그 검수 할게요,scan,train,template,clear
+u00112,새우깡 수량 얼마야,stop_items,train,template,clear
+u00113,젤리 있어 지금,stop_items,train,template,hard
+u00114,잠깐 오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u00115,아 끝났어 다음 빨리,complete,train,template,hard
+u00116,자 다음 거 좀,next_stop,train,template,hard
+u00117,어 바코드 켜 얼른,scan,test,template,clear
+u00118,잠깐 바코드 찍을게 지금,scan,test,template,clear
+u00119,이제 다음 점포 알려주세요,next_stop,train,template,clear
+u00120,바나나우유 상태 좀 봐야겠다 좀,report_issue,test,template,hard
+u00121,자 노래 틀어주세요,other,train,template,clear
+u00122,그 이 집 뭐 내리더라,stop_items,train,template,clear
+u00123,이제 여기 참치삼각김밥 몇 개예요,stop_items,train,template,clear
+u00124,여기 뭐 내려야 돼,stop_items,train,template,clear
+u00125,도곡점 초코파이 8판 새고 있어,report_issue,train,template,clear
+u00126,아 가락점 배송 완료,complete,train,template,clear
+u00127,우유 여기 몇 개 들어가,stop_items,train,template,ask
+u00128,잠깐 점심 뭐 먹죠,other,train,template,clear
+u00129,이제 검수 시작,scan,train,template,clear
+u00130,잠깐 물건 이거 우리 거 아니래 기록해주세요,report_issue,train,template,ask
+u00131,아 차 막히네,other,train,template,clear
+u00132,한 개 정도 다른 게 왔어 감자칩 지금,report_issue,train,template,clear
+u00133,이제 에어컨 켜줘 빨리,other,train,template,clear
+u00134,몇 개 남았지,next_stop,test,template,clear
+u00135,직원분 사인 받았어 얼른,complete,train,template,clear
+u00136,에어컨 켜줘,other,train,template,clear
+u00137,이제 어디야,next_stop,train,template,clear
+u00138,자 이 점포 납품 품목 뭐였지,stop_items,train,template,clear
+u00139,오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u00140,개포점 딸기우유 네 개 개수가 안 맞아 등록해줘,report_issue,test,template,clear
+u00141,음 딸기우유 다 찢어졌어 같기도 하고,report_issue,train,template,hard
+u00142,이제 주유소 어디 있어요,other,val,template,clear
+u00143,이제 완료 찍어주세요,complete,train,template,clear
+u00144,아 사이다 이거 맞나,report_issue,train,template,hard
+u00145,어 어디 가야 되더라,next_stop,train,template,clear
+u00146,12개 개수가 안 맞아,report_issue,train,template,ask
+u00147,이제 라벨 찍을게,scan,train,template,clear
+u00148,아 상품 찍어볼게 빨리,scan,train,template,clear
+u00149,저기 논현점 하차 완료,complete,val,template,clear
+u00150,가락점 다 내렸어 매니저님 받았어 얼른,complete,train,template,clear
+u00151,아 구로점 우유 몇 박스야 지금,stop_items,val,template,ask
+u00152,아 바코드 인식 켜줘 빨리,scan,train,template,clear
+u00153,아 청담점 아이스크림 4개 온도가 높아 등록해주세요,report_issue,test,template,clear
+u00154,저기 바코드 읽을게 빨리,scan,train,template,clear
+u00155,새우깡 맛있겠다 지금,other,train,template,hard
+u00156,음 신림점 내릴 거 알려주세요,stop_items,train,template,clear
+u00157,아 남은 배송지 몇 개예요,next_stop,val,template,clear
+u00158,아 이번 점포 끝,complete,train,template,clear
+u00159,저기 가락점 배송 완료 빨리,complete,train,template,clear
+u00160,잠깐 오늘 힘들다,other,train,template,clear
+u00161,스캔할게 얼른,scan,train,template,clear
+u00162,음 점심 뭐 먹지,other,train,template,clear
+u00163,잠깐 석촌점에 뭐 가져가야 하지,stop_items,train,template,clear
+u00164,참치삼각김밥 열 판쯤 미지근해 지금,report_issue,train,template,clear
+u00165,이제 가락점에서 제육 도시락 이거 우리 거 아니래,report_issue,train,template,clear
+u00166,저기 카메라,scan,test,template,hard
+u00167,음 아 감자칩 상했어 어떡해,report_issue,train,template,clear
+u00168,자 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear
+u00169,그 이번 점포 품목 알려줘 좀,stop_items,train,template,clear
+u00170,오늘 남은 일정 알려줘 좀,next_stop,train,template,clear
+u00171,자 직원분 오늘 안 계시네,other,train,template,hard
+u00172,어 캔커피 문제 있어 엉뚱한 게 실렸어요,report_issue,train,template,clear
+u00173,어 지금까지 몇 군데 했어 좀,next_stop,train,template,clear
+u00174,물건 오배송이야 기록해줘 좀,report_issue,train,template,ask
+u00175,아니야 됐어,other,train,template,clear
+u00176,바코드 찍을게 얼른,scan,test,template,clear
+u00177,이제 그 다음은,next_stop,val,template,hard
+u00178,잠깐 지금까지 몇 군데 했어,next_stop,train,template,clear
+u00179,이제 여덟개 다른 게 왔어,report_issue,train,template,ask
+u00180,음 방배점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00181,이제 여기 납품 물량 얼마야,stop_items,val,template,clear
+u00182,다음 행선지 알려주세요,next_stop,val,template,clear
+u00183,여기 컵라면 몇 개야,stop_items,train,template,clear
+u00184,어 확인 좀 해볼게,scan,train,template,hard
+u00185,아 여기 다 됐어,complete,val,template,clear
+u00186,여기 아이스크림 10개 박스 눌렸어,report_issue,train,template,clear
+u00187,음악 틀어줘 얼른,other,train,template,clear
+u00188,신림점 치킨마요 하나 모자람,report_issue,test,gemini,clear
+u00189,어 농담 하나 해줘 좀,other,train,template,clear
+u00190,아 이온음료 3개 상했어,report_issue,train,template,clear
+u00191,이제 어디야 얼른,next_stop,train,template,clear
+u00192,자 확인 좀 해볼게 지금,scan,train,template,hard
+u00193,방배점 점장님 친절하시더라,other,test,template,hard
+u00194,저기 남은 코스 몇 개야 지금,next_stop,train,template,clear
+u00195,그 뉴스 틀어줘,other,train,template,clear
+u00196,그 퇴근하고 싶다 좀,other,train,template,clear
+u00197,음 검품 시작할게,scan,train,template,clear
+u00198,저기 도시락 얼마나 내려야 해요,stop_items,train,template,ask
+u00199,이제 근처 화장실 어디야,other,test,template,clear
+u00200,이제 에어컨 켜주세요,other,train,template,clear
+u00201,자 바코드 켜,scan,test,template,clear
+u00202,어 물품 스캔 켜줘 좀,scan,test,template,clear
+u00203,찍어요,scan,train,template,hard
+u00204,일원점 삼각김밥 몇 개 내려,stop_items,test,gemini,ask
+u00205,저기 점심 뭐 먹죠,other,train,template,clear
+u00206,매니저님가 확인했대 빨리,complete,train,template,hard
+u00207,카메라 켜줘,scan,train,template,clear
+u00208,자 개포점 마요 도시락 3개 하나 빠졌어 빨리,report_issue,train,template,clear
+u00209,잠깐 카메라 켜주세요,scan,train,template,clear
+u00210,이제 초코파이 쪽에 문제가 좀 있어,report_issue,val,template,ask
+u00211,자 서초점 마감,complete,train,template,clear
+u00212,음 인수인계 끝났어요,complete,train,template,clear
+u00213,잠깐 젤리 문제 있어 이거 우리 거 아니래 지금,report_issue,train,template,clear
+u00214,그 다음 납품처 어디죠,next_stop,test,template,clear
+u00215,신림점 다 내렸다 찍어라,complete,train,gemini,clear
+u00216,음 납품 완료예요,complete,train,template,clear
+u00217,이제 에어컨 켜줘 얼른,other,train,template,clear
+u00218,이번 점포 품목 알려주세요,stop_items,train,template,clear
+u00219,여기 감자칩 몇 개야 얼른,stop_items,train,template,clear
+u00220,다음 목적지 뭐예요,next_stop,train,template,clear
+u00221,이상 있어 딸기우유 다른 게 왔어요,report_issue,train,template,clear
+u00222,이제 감자칩 다른 게 왔어 여덟개,report_issue,val,template,clear
+u00223,저기 새우깡 12판쯤 모자람 얼른,report_issue,train,template,clear
+u00224,가락점 납품 다 했어 빨리,complete,train,template,clear
+u00225,아 물건 다른 게 왔어 기록해줘,report_issue,train,template,ask
+u00226,여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear
+u00227,잠깐 다음 점포 어디였죠,next_stop,train,template,clear
+u00228,이제 여기 끝나면 어디 가 얼른,next_stop,train,template,hard
+u00229,잠깐 바코드 읽을게 얼른,scan,train,template,clear
+u00230,어 송파점에 스팸마요 보냈는데 개수가 안 맞아 지금,report_issue,train,template,clear
+u00231,자 카메라로 확인할래,scan,train,template,clear
+u00232,아 여기 들어갈 거 뭐뭐야 지금,stop_items,test,template,clear
+u00233,배고프다,other,train,template,clear
+u00234,이번 점포 품목 알려줘 좀,stop_items,train,template,clear
+u00235,저기 농담 하나 해주세요,other,train,template,clear
+u00236,자 물건 다른 게 왔어 기록해주세요,report_issue,train,template,ask
+u00237,아 끝났어 다음,complete,train,template,hard
+u00238,잠깐 신사점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00239,이제 알바생한테 인계했어,complete,test,template,clear
+u00240,이온음료 터짐 같기도 하고,report_issue,train,template,hard
+u00241,요거트 내리는 거야,stop_items,train,template,hard
+u00242,그 전달 완료했어,complete,test,template,clear
+u00243,지금 몇 시야,other,test,template,clear
+u00244,삼성점에 캔커피 보냈는데 깨졌어 지금,report_issue,train,template,clear
+u00245,콜라 얼마나 내려야 해 좀,stop_items,train,template,clear
+u00246,아 눈 침침하네 야간 운전 힘들어,other,train,gemini,clear
+u00247,아 납품할 곳 몇 개 남았어,next_stop,train,gemini,clear
+u00248,아니야 됐어 좀,other,train,template,clear
+u00249,음 오늘 얼마나 했죠,next_stop,train,template,clear
+u00250,대치점 짐 뭐뭐 내리냐,stop_items,train,gemini,clear
+u00251,그 카메라 좀 열어,scan,train,template,clear
+u00252,그 물건 확인할게 빨리,scan,test,template,clear
+u00253,석촌점 납품 완료 처리해라,complete,test,gemini,clear
+u00254,음 오늘 여기 물건 뭐야 좀,stop_items,train,template,clear
+u00255,개포점 납품할 거 몇 가지야,stop_items,val,template,clear
+u00256,자 가락점 납품 다 했어요,complete,train,template,clear
+u00257,다음 목적지 뭐야 좀,next_stop,train,template,clear
+u00258,어 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u00259,다음 점포 알려줘,next_stop,train,template,clear
+u00260,음 남은 코스 몇 개예요,next_stop,train,template,clear
+u00261,어 제육 도시락 몇 개 내리면 돼,stop_items,train,template,clear
+u00262,음 여기 치킨마요 여덟개 다른 게 왔어요,report_issue,train,template,clear
+u00263,그 삼각김밥 수량 얼마야 지금,stop_items,train,template,ask
+u00264,어 역삼점에 스팸마요삼각김밥 보냈는데 비어있어요,report_issue,train,template,clear
+u00265,다음 도착지 어디야,next_stop,test,gemini,clear
+u00266,아 압구정점 배송 완료,complete,train,template,clear
+u00267,잠깐 농담 하나 해줘,other,train,template,clear
+u00268,아 몇 군데 남았어,next_stop,train,template,clear
+u00269,청담점 납품 목록 뭐야,stop_items,val,template,clear
+u00270,이제 어디로 가면 돼 빨리,next_stop,val,template,clear
+u00271,음 스캔 모드로 바꿔줘 얼른,scan,train,template,clear
+u00272,농담 하나 해줘,other,train,template,clear
+u00273,자 검수 모드 켜줘 좀,scan,train,template,clear
+u00274,여기 납품 끝났어요,complete,train,template,clear
+u00275,음 다음 점포 어디였죠,next_stop,train,template,clear
+u00276,자 서울우유 얼마나 내려야 해,stop_items,train,template,clear
+u00277,송파점에 딸기 우유 네 개 샜어,report_issue,train,gemini,clear
+u00278,저기 다 넣어놨어요,complete,test,template,hard
+u00279,아 젤리 요즘 잘 팔리나,other,train,template,hard
+u00280,카메라로 확인할래 얼른,scan,train,template,clear
+u00281,아 바코드 읽을게,scan,train,template,clear
+u00282,일원점 다 내렸어 사장님 받았어요,complete,train,template,clear
+u00283,그 감자칩 맛있겠다 빨리,other,train,template,hard
+u00284,저기 스캔 켜줘라,scan,train,gemini,clear
+u00285,그 남은 점포 알려줘,next_stop,train,template,clear
+u00286,자 커피 마시고 싶다,other,train,template,clear
+u00287,자 배송 완료 눌러주세요,complete,train,template,clear
+u00288,어 커피 마시고 싶다,other,train,template,clear
+u00289,이제 오늘 얼마나 했죠,next_stop,train,template,clear
+u00290,근처 화장실 어디야 얼른,other,test,template,clear
+u00291,저기 논현점 물건 뭐 내려 좀,stop_items,train,template,clear
+u00292,아 다음 어디 가야 하죠,next_stop,test,template,clear
+u00293,어 여기 다 됐어,complete,val,template,clear
+u00294,저기 바코드 읽을게요,scan,train,template,clear
+u00295,제육 도시락 여기 들어가는 거 맞아,stop_items,test,template,hard
+u00296,잠깐 다음 들를 데 어디예요,next_stop,train,template,clear
+u00297,그 청담점 거 다 실렸나 빨리,stop_items,val,template,hard
+u00298,음 수서점 물량 확인해줘 빨리,stop_items,train,template,clear
+u00299,아 다음 꺼 어디 있는 데야,next_stop,train,template,hard
+u00300,아이스크림 맛있겠다,other,train,template,hard
+u00301,이제 차 막히네 지금,other,train,template,clear
+u00302,그 젤리 이상한데,report_issue,train,template,hard
+u00303,잠실점 납품 목록 뭐예요,stop_items,val,template,clear
+u00304,아 초코파이 4개 이상 생겼어 하나 빠졌어,report_issue,val,template,clear
+u00305,음 배송 완료 눌러줘 지금,complete,train,template,clear
+u00306,그 검수 할게,scan,train,template,clear
+u00307,이번 집 배송 완료,complete,train,gemini,clear
+u00308,다음 꺼 어디 있는 데야,next_stop,train,template,hard
+u00309,저기 상품 찍어볼게,scan,train,template,clear
+u00310,저기 다음 어디 가야 하지 얼른,next_stop,test,template,clear
+u00311,저기 여기 들어갈 거 뭐뭐야 빨리,stop_items,test,template,clear
+u00312,직원분 확인받고 철수합니다,complete,train,gemini,clear
+u00313,저기 남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u00314,여기 바나나우유 몇 개야,stop_items,train,template,clear
+u00315,자 청담점 리스트 불러주세요,stop_items,test,template,clear
+u00316,저기 검품 시작할게 얼른,scan,train,template,clear
+u00317,자 다음 점포 어디였지,next_stop,train,template,clear
+u00318,어 석촌점 배송 완료,complete,train,template,clear
+u00319,자 이거 찍어볼게요,scan,train,template,clear
+u00320,그 다음 꺼 어디 있는 데야 지금,next_stop,train,template,hard
+u00321,어 젤리 요즘 잘 팔리나,other,train,template,hard
+u00322,자 근처 화장실 어디야,other,test,template,clear
+u00323,어 다음 점포 알려줘 좀,next_stop,train,template,clear
+u00324,저기 바코드 인식 켜주세요,scan,train,template,clear
+u00325,아 아니야 됐어,other,train,template,clear
+u00326,그 QR 찍을게,scan,val,template,clear
+u00327,음 다 넣어놨어,complete,test,template,hard
+u00328,그 어디로 갈지 알려줘 지금,next_stop,test,template,hard
+u00329,그 어제 신사점 가는 길 막혔어 얼른,other,train,template,hard
+u00330,자 이거 맞는지 봐주세요,scan,train,template,hard
+u00331,배고프다 얼른,other,train,template,clear
+u00332,퇴근하고 싶다,other,train,template,clear
+u00333,아 다 내렸어,complete,val,template,clear
+u00334,잠깐 신림점 납품 다 했어 지금,complete,train,template,clear
+u00335,다음 가야 할 곳 알려줘 지금,next_stop,train,template,clear
+u00336,잠깐 카메라 좀 열어,scan,train,template,clear
+u00337,송장 찍을게 좀,scan,train,template,clear
+u00338,음 다음 납품처 어디죠,next_stop,test,template,clear
+u00339,아 여기 커피 한개 다른 게 왔어,report_issue,train,template,clear
+u00340,다음 배송지 말해줘,next_stop,test,template,clear
+u00341,그 수고했어,other,val,template,clear
+u00342,이제 사장님한테 인계했어 얼른,complete,test,template,clear
+u00343,압구정점 하차 완료 지금,complete,val,template,clear
+u00344,저기 사이다 문제 있어,report_issue,train,template,ask
+u00345,음 스캐너 켜,scan,val,template,clear
+u00346,자 신사점 물량 확인해줘,stop_items,train,template,clear
+u00347,주유소 어디 있어,other,val,template,clear
+u00348,이제 딸기우유 상했어 다섯 봉지,report_issue,val,template,clear
+u00349,어 오늘 진행상황 어때 좀,next_stop,val,template,clear
+u00350,이제 수고했어 지금,other,val,template,clear
+u00351,저기 전달 완료했어요,complete,test,template,clear
+u00352,자 개포점 배송 완료,complete,train,template,clear
+u00353,내릴 물건 알려줘 빨리,stop_items,test,template,clear
+u00354,자 샌드위치 몇 개 내리면 돼,stop_items,train,template,clear
+u00355,신림점 도시락 몇 박스야 얼른,stop_items,val,template,ask
+u00356,잠깐 초코파이 모자람 기록 좀,report_issue,train,template,clear
+u00357,카메라 좀 열어,scan,train,template,clear
+u00358,오늘 얼마나 했지 좀,next_stop,train,template,clear
+u00359,저기 여기 정리됐어요,complete,train,template,hard
+u00360,자 찍어 지금,scan,train,template,hard
+u00361,이제 뭐 하면 돼요,next_stop,train,template,hard
+u00362,자 지금까지 몇 군데 했어 지금,next_stop,train,template,clear
+u00363,음 에어컨 켜주세요,other,train,template,clear
+u00364,라면 요즘 잘 팔리나 지금,other,train,template,hard
+u00365,음 오늘 몇 월 며칠이예요,other,train,template,clear
+u00366,아 다음 배송지 말해줘,next_stop,test,template,clear
+u00367,이제 음 저기,other,train,template,clear
+u00368,다음 배송지 말해주세요,next_stop,test,template,clear
+u00369,음 도시락 몇 개였지 지금,stop_items,train,template,ask
+u00370,잠원점 납품 목록 뭐예요,stop_items,val,template,clear
+u00371,아 졸려 죽겠네 라디오나 틀어봐,other,val,gemini,clear
+u00372,어 바코드 찍을게,scan,test,template,clear
+u00373,이제 다 내렸어요,complete,val,template,clear
+u00374,자 뉴스 틀어줘,other,train,template,clear
+u00375,잠깐 초코파이 여기 들어가는 거 맞아 빨리,stop_items,test,template,hard
+u00376,아 사장님 오늘 안 계시네 빨리,other,train,template,hard
+u00377,알바생 확인했어 완료 얼른,complete,test,template,clear
+u00378,아 반포점 점장님 친절하시더라,other,test,template,hard
+u00379,잠깐 몇 군데 남았어 얼른,next_stop,train,template,clear
+u00380,저기 스캔 켜줘,scan,val,template,clear
+u00381,잠깐 여기 인수인계 마쳤어 지금,complete,train,template,clear
+u00382,서초점 마감 얼른,complete,train,template,clear
+u00383,스캔 켜라 얼른,scan,train,gemini,clear
+u00384,저기 초코파이 깨졌어 같기도 하고,report_issue,train,template,hard
+u00385,이제 QR 찍을게 좀,scan,val,template,clear
+u00386,그 다음 목적지 뭐예요,next_stop,train,template,clear
+u00387,아 다음 어디야 얼른,next_stop,train,template,clear
+u00388,음 전달 완료했어 지금,complete,test,template,clear
+u00389,잠깐 여기 뭐였더라,stop_items,train,template,hard
+u00390,다음 어디야 좀,next_stop,train,template,clear
+u00391,다음 들를 데 어디야 얼른,next_stop,train,template,clear
+u00392,어 지금 몇 시예요,other,test,template,clear
+u00393,자 오늘 여기 물건 뭐야 좀,stop_items,train,template,clear
+u00394,잠깐 물건 확인할게 지금,scan,test,template,clear
+u00395,음악 틀어줘,other,train,template,clear
+u00396,그 네개 정도 온도가 높아 생수,report_issue,train,template,clear
+u00397,아 여기 요구르트 몇 개 가져가,stop_items,train,template,clear
+u00398,저기 딸기우유 두개 이상 생겼어 수량이 안 맞아 빨리,report_issue,val,template,clear
+u00399,그 이거 읽어봐,scan,train,template,hard
+u00400,그 여기 마무리했어 얼른,complete,train,template,clear
+u00401,오늘 힘들다,other,train,template,clear
+u00402,수서점 끝,complete,train,template,clear
+u00403,자 바코드 스캔 시작 빨리,scan,train,template,clear
+u00404,어 음악 틀어주세요,other,train,template,clear
+u00405,송장 읽게 스캔 켜봐,scan,test,gemini,clear
+u00406,아 고마워 얼른,other,val,template,clear
+u00407,어 바코드 좀 확인할게,scan,train,template,clear
+u00408,노래 틀어주세요,other,train,template,clear
+u00409,자 다음은 어디로 가 지금,next_stop,train,template,clear
+u00410,자 엄마한테 전화해줘,other,test,template,clear
+u00411,사이다 박스 하나 수량이 안 맞아,report_issue,test,template,clear
+u00412,어 12개 정도 온도가 높아 마요 도시락 빨리,report_issue,train,template,clear
+u00413,저기 압구정점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00414,음 이제 어디로 가면 돼요,next_stop,val,template,clear
+u00415,역삼점 점장님 오늘 기분 좋으시네,other,train,gemini,clear
+u00416,자 찍어요,scan,train,template,hard
+u00417,물 여기 몇 개 들어가,stop_items,train,template,clear
+u00418,잠깐 퇴근하고 싶다 빨리,other,train,template,clear
+u00419,이제 수고했어 얼른,other,val,template,clear
+u00420,저기 여기 완료 처리,complete,val,template,clear
+u00421,다음 코스 알려줘 지금,next_stop,train,template,clear
+u00422,아이스크림 얼마나 내려야 해요,stop_items,train,template,clear
+u00423,여기 정리됐어요,complete,train,template,hard
+u00424,그 젤리 파손됐어,report_issue,train,template,clear
+u00425,아 여기 새우깡 12판 하나 빠졌어 좀,report_issue,train,template,clear
+u00426,그 아이스크림 문제 있어 수량이 안 맞아 좀,report_issue,train,template,clear
+u00427,음 이번 점포 끝,complete,train,template,clear
+u00428,잠깐 여기 납품 끝났어요,complete,train,template,clear
+u00429,자 콜라 수량 얼마예요,stop_items,train,template,clear
+u00430,잠깐 고마워 빨리,other,val,template,clear
+u00431,저기 문정점 물량 확인해주세요,stop_items,train,template,clear
+u00432,아 스캔 준비 좀 해봐,scan,train,gemini,clear
+u00433,아 바코드 찍을게 빨리,scan,test,template,clear
+u00434,젤리 문제 있어 오배송이예요,report_issue,train,template,clear
+u00435,잠깐 음악 틀어줘,other,train,template,clear
+u00436,송장 찍게 스캔 준비해줘,scan,val,gemini,clear
+u00437,그 반포점에 뭐 가져가야 하죠,stop_items,train,template,clear
+u00438,다음 배송지 좀 알려주라,next_stop,train,gemini,clear
+u00439,잠깐 전달 완료했어요,complete,test,template,clear
+u00440,자 검수 시작 빨리,scan,train,template,clear
+u00441,저기 청담점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00442,여기 서울우유 두 개 비어있어,report_issue,train,template,clear
+u00443,이온 음료 3봉지쯤 깨졌어,report_issue,train,template,clear
+u00444,아 수서점 다 내렸어 사장님 받았어요,complete,train,template,clear
+u00445,역삼점에 내릴 물건목록 불러라,stop_items,val,gemini,clear
+u00446,아 그 다음은,next_stop,val,template,hard
+u00447,농담 하나 해줘 지금,other,train,template,clear
+u00448,다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u00449,아 점장님한테 넘겼어 좀,complete,test,template,clear
+u00450,오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u00451,그 이번 점포 끝,complete,train,template,clear
+u00452,여기 끝나면 어디 가,next_stop,train,template,hard
+u00453,이제 남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u00454,남은 점포 알려주세요,next_stop,train,template,clear
+u00455,도곡점 도시락 세 개 찌그러짐,report_issue,train,gemini,ask
+u00456,잠깐 퇴근하고 싶다 얼른,other,train,template,clear
+u00457,어 오늘 납품 많네 좀,other,val,template,hard
+u00458,아 바코드 찍을게,scan,test,template,clear
+u00459,잠깐 뉴스 틀어줘,other,train,template,clear
+u00460,아 직원분한테 넘겼어 빨리,complete,test,template,clear
+u00461,이제 일원점에서 물 다 찢어졌어 얼른,report_issue,train,template,clear
+u00462,알바생한테 인계했어 얼른,complete,test,template,clear
+u00463,자 어 잠깐만,other,test,template,clear
+u00464,문정점에 생수 얼마나 내리죠,stop_items,train,gemini,clear
+u00465,어 아니야 됐어,other,train,template,clear
+u00466,아 이온음료 몇 개였지 얼른,stop_items,train,template,clear
+u00467,잠깐 바나나우유 몇 개 내리면 돼,stop_items,train,template,clear
+u00468,물품 스캔 켜주세요,scan,test,template,clear
+u00469,저기 어디로 갈지 알려줘,next_stop,test,template,hard
+u00470,아 수고했어 좀,other,val,template,clear
+u00471,저기 이거 찍어볼게요,scan,train,template,clear
+u00472,어 잠실졈에 사이다 보냈는데 다 찢어졌어요,report_issue,train,template,clear
+u00473,저기 송장 찍을게 빨리,scan,train,template,clear
+u00474,이제 여기 인수인계 마쳤어,complete,train,template,clear
+u00475,그 이거 뭔지 확인해봐,scan,val,template,hard
+u00476,그 이 점포 납품 품목 뭐였죠,stop_items,train,template,clear
+u00477,아 서초점 끝,complete,train,template,clear
+u00478,저기 송파점 거 뭐 있었지,stop_items,train,template,clear
+u00479,음 바코드 인식 켜주세요,scan,train,template,clear
+u00480,바나나우유 박스 하나 엉뚱한 게 실렸어,report_issue,test,template,clear
+u00481,그 문정점 오케이,complete,val,template,hard
+u00482,송파점 배송 완료 빨리,complete,train,template,clear
+u00483,자 커피 마시고 싶다 얼른,other,train,template,clear
+u00484,아 문정점 오늘 뭐 내려,stop_items,train,template,clear
+u00485,음악 틀어줘 좀,other,train,template,clear
+u00486,이제 라면 좀 부족해,report_issue,val,template,clear
+u00487,그 제육도시락 요즘 잘 팔리나,other,train,template,hard
+u00488,이제 내릴 물건 알려줘 빨리,stop_items,test,template,clear
+u00489,저기 볼륨 좀 키워주세요,other,train,template,clear
+u00490,잠깐 카메라,scan,test,template,hard
+u00491,저기 오늘 납품 많네,other,val,template,hard
+u00492,음 끝났어 다음,complete,train,template,hard
+u00493,근처 화장실 어디예요,other,test,template,clear
+u00494,아 박스 진짜 무게 나가네,other,test,gemini,clear
+u00495,어 오늘 몇 월 며칠이예요,other,train,template,clear
+u00496,이제 지금까지 몇 군데 했어,next_stop,train,template,clear
+u00497,여기 뭐였더라,stop_items,train,template,hard
+u00498,음 뉴스 틀어주세요,other,train,template,clear
+u00499,자 새우깡 박스 눌렸어 12봉지 얼른,report_issue,val,template,clear
+u00500,아 두판 미지근해 빨리,report_issue,train,template,ask
+u00501,이제 사장님 사인 받았어요,complete,train,template,clear
+u00502,자 음악 틀어줘 빨리,other,train,template,clear
+u00503,물 얼마나 내려야 해 얼른,stop_items,train,template,clear
+u00504,검수 할게 빨리,scan,train,template,clear
+u00505,음 다음 목적지 뭐예요,next_stop,train,template,clear
+u00506,자 엄마한테 전화해줘 지금,other,test,template,clear
+u00507,샌드위치 몇 개였지 좀,stop_items,train,template,clear
+u00508,오늘 비 온다더니 하늘 찌푸둥하네,other,train,gemini,clear
+u00509,음 여기 납품 끝났어,complete,train,template,clear
+u00510,자 스캔 켜주세요,scan,val,template,clear
+u00511,바코드 찍어야 되니까 스캐너 켜,scan,train,gemini,clear
+u00512,아 컵라면 엉뚱한 게 실렸어 3개 빨리,report_issue,val,template,clear
+u00513,그 석촌점 우유 몇 박스야,stop_items,val,template,ask
+u00514,바코드 좀 확인할게 얼른,scan,train,template,clear
+u00515,잠깐 우유 얼마나 내려야 해 얼른,stop_items,train,template,ask
+u00516,그 요거트 몇 개 내리면 돼 빨리,stop_items,train,template,clear
+u00517,그 찍어요,scan,train,template,hard
+u00518,다음 가야 할 곳 알려줘,next_stop,train,template,clear
+u00519,그 직원분가 확인했대 얼른,complete,train,template,hard
+u00520,이제 다음 들를 데 어디예요,next_stop,train,template,clear
+u00521,저기 찍어요,scan,train,template,hard
+u00522,아 오늘 얼마나 했죠,next_stop,train,template,clear
+u00523,저기 카메라 켜주세요,scan,train,template,clear
+u00524,자 다음은 어디로 가,next_stop,train,template,clear
+u00525,아 아 젤리 엉뚱한 게 실렸어 어떡해,report_issue,train,template,clear
+u00526,이번 매장 하차 품목좀 알려줘,stop_items,train,gemini,clear
+u00527,자 여기 납품 끝났어 얼른,complete,train,template,clear
+u00528,저기 잠실점 삼각김밥 몇 박스예요,stop_items,val,template,ask
+u00529,잠깐 퇴근하고 싶다,other,train,template,clear
+u00530,요구르트 박스 하나 온도가 높아,report_issue,test,template,clear
+u00531,아 우유 수량 얼마야 얼른,stop_items,train,template,ask
+u00532,이제 도곡점 배송 완료,complete,train,template,clear
+u00533,다음에 갈 데가 어디더라,next_stop,train,gemini,clear
+u00534,이제 참치김밥 몇 개 내리면 돼 얼른,stop_items,train,template,clear
+u00535,오늘 힘들다 좀,other,train,template,clear
+u00536,자 일원점 거 뭐 있었죠,stop_items,train,template,clear
+u00537,그 석촌점 배송 완료,complete,train,template,clear
+u00538,다음 점포 알려줘 얼른,next_stop,train,template,clear
+u00539,오늘 몇 월 며칠이야 빨리,other,train,template,clear
+u00540,이제 젤리 6개쯤 모자라 빨리,report_issue,train,template,clear
+u00541,이제 다음 점포 어디였죠,next_stop,train,template,clear
+u00542,아 바코드 찍을게요,scan,test,template,clear
+u00543,여기 마무리했어요,complete,train,template,clear
+u00544,어 주유소 어디 있어요,other,val,template,clear
+u00545,남은 곳 몇 개 더 있어 빨리,next_stop,train,template,clear
+u00546,음 다음 행선지 알려줘 빨리,next_stop,val,template,clear
+u00547,이제 여기 내릴 거 읽어줘,stop_items,test,template,clear
+u00548,저기 대치점 삼각김밥 몇 박스야 빨리,stop_items,val,template,ask
+u00549,그 역삼점 거 뭐 있었지 지금,stop_items,train,template,clear
+u00550,도시락 여기 몇 개 들어가 좀,stop_items,train,template,ask
+u00551,잠깐 이제 뭐 하면 돼,next_stop,train,template,hard
+u00552,그 역삼점 리스트 불러줘 빨리,stop_items,test,template,clear
+u00553,이상 있어 마요 도시락 미지근해 좀,report_issue,train,template,clear
+u00554,어 바코드 읽을게,scan,train,template,clear
+u00555,여기 납품 물량 얼마야,stop_items,val,template,clear
+u00556,몇 군데 남았어,next_stop,train,template,clear
+u00557,아 서울우유 쪽에 문제가 좀 있어 지금,report_issue,val,template,ask
+u00558,서울우유 터짐 2개 빨리,report_issue,val,template,clear
+u00559,그 서울우유 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u00560,매니저님한테 인계했어 지금,complete,test,template,clear
+u00561,어 이 점포 납품 품목 뭐였지,stop_items,train,template,clear
+u00562,음 물건 확인할게,scan,test,template,clear
+u00563,아 잠실점에 제육 도시락 몇 개지,stop_items,val,gemini,clear
+u00564,저기 카메라로 확인할래,scan,train,template,clear
+u00565,그 바코드 인식 켜줘 지금,scan,train,template,clear
+u00566,다음 출발할 점포 알려줘,next_stop,val,gemini,clear
+u00567,음 저기 지금,other,train,template,clear
+u00568,저기 네 개 정도 잘못 왔어 아이스크림,report_issue,train,template,clear
+u00569,바코드 카메라 좀 켜줘,scan,train,gemini,clear
+u00570,다음 갈 곳 좀 다시 말해줘,next_stop,train,gemini,clear
+u00571,저기 검품 시작할게,scan,train,template,clear
+u00572,그 카메라 켜줘 얼른,scan,train,template,clear
+u00573,자 기록해줘 감자칩 세 박스 다 찢어졌어 얼른,report_issue,train,template,clear
+u00574,저기 어디 가야 되더라 빨리,next_stop,train,template,clear
+u00575,스캔 켜줘,scan,val,template,clear
+u00576,음 검수 시작,scan,train,template,clear
+u00577,자 다음 행선지 알려줘 지금,next_stop,val,template,clear
+u00578,아 어 잠깐만,other,test,template,clear
+u00579,음 커피 마시고 싶다,other,train,template,clear
+u00580,어 카메라,scan,test,template,hard
+u00581,저기 삼성점 끝,complete,train,template,clear
+u00582,음 수고했어 빨리,other,val,template,clear
+u00583,아 배고픈데 뭐 먹지,other,train,gemini,clear
+u00584,어 볼륨 좀 키워줘,other,train,template,clear
+u00585,자 이 집 뭐 내리더라,stop_items,train,template,clear
+u00586,저기 어 잠깐만,other,test,template,clear
+u00587,점장님한테 전부 잘 전달했습니다,complete,train,gemini,clear
+u00588,음 스캐너 열어줘,scan,val,template,clear
+u00589,잠깐 도곡점 끝,complete,train,template,clear
+u00590,아 아이스크림 상태 안 좋아 찌그러졌어 빨리,report_issue,train,template,clear
+u00591,스캔 좀 틀어줄래,scan,val,gemini,clear
+u00592,저기 찍어,scan,train,template,hard
+u00593,다섯봉지 엉뚱한 게 실렸어,report_issue,train,template,ask
+u00594,이제 뭐 하면 돼 빨리,next_stop,train,template,hard
+u00595,이제 청담점 바나나우유 모자람 빨리,report_issue,test,template,clear
+u00596,이온음료 이상한데 좀,report_issue,train,template,hard
+u00597,이제 그 다음은 지금,next_stop,val,template,hard
+u00598,어 다음 코스 알려줘 빨리,next_stop,train,template,clear
+u00599,바코드 찍을게 좀,scan,test,template,clear
+u00600,어 하차 끝났어요,complete,train,template,clear
+u00601,물건 박스 눌렸어 기록해줘,report_issue,train,template,ask
+u00602,개포점에 바나나우유 보냈는데 부족해요,report_issue,train,template,clear
+u00603,오늘 얼마나 했지,next_stop,train,template,clear
+u00604,여기 들어갈 거 뭐뭐야,stop_items,test,template,clear
+u00605,자 스캐너 켜,scan,val,template,clear
+u00606,송장 찍을게요,scan,train,template,clear
+u00607,그 오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u00608,자 다섯 개 비어있어요,report_issue,train,template,ask
+u00609,역삼점 파손 접수해줘,report_issue,train,gemini,ask
+u00610,그 네 개 정도 박살났어 스팸마요삼각김밥,report_issue,train,template,clear
+u00611,아 하차 끝났어,complete,train,template,clear
+u00612,저기 12봉지 냉장이 안 됐어요,report_issue,train,template,ask
+u00613,음 도시락 수량 얼마야,stop_items,train,template,ask
+u00614,이거 읽어봐,scan,train,template,hard
+u00615,남은 코스 몇 개야,next_stop,train,template,clear
+u00616,사이다 세 개 이상 생겼어 오배송이야,report_issue,val,template,clear
+u00617,도곡점 물건 다 내렸다,complete,train,gemini,clear
+u00618,저기 납품 완료예요,complete,train,template,clear
+u00619,납품 완료야 좀,complete,train,template,clear
+u00620,아 차 너무 막히네 오늘,other,test,gemini,clear
+u00621,그 수서점 납품 다 했어,complete,train,template,clear
+u00622,카메라 좀 열어 좀,scan,train,template,clear
+u00623,새우깡 박스 눌렸어 좀,report_issue,train,template,clear
+u00624,아 여기 점포 하차 끝났음,complete,test,gemini,clear
+u00625,서초점 딸기우유 몇 봉지냐,stop_items,val,gemini,clear
+u00626,아 서초점 점장님한테 다 전해드렸습니다,complete,train,gemini,clear
+u00627,어 라벨 찍을게,scan,train,template,clear
+u00628,그 다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u00629,젤리 녹았음 빨리,report_issue,train,template,clear
+u00630,자 샌드위치 맛있겠다,other,train,template,hard
+u00631,아 바코드 스캔 시작 빨리,scan,train,template,clear
+u00632,자 스캔 좀 해볼게요,scan,train,template,clear
+u00633,그 샌드위치 몇 개였죠,stop_items,train,template,clear
+u00634,자 서초점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00635,그 이거 찍어볼게요,scan,train,template,clear
+u00636,지금 몇 시야 좀,other,test,template,clear
+u00637,오늘 여기 물건 뭐야 빨리,stop_items,train,template,clear
+u00638,수서점 오늘 뭐 내려,stop_items,train,template,clear
+u00639,그 다음 가야 할 곳 알려주세요,next_stop,train,template,clear
+u00640,저기 사이다 박스 하나 하나 빠졌어 빨리,report_issue,test,template,clear
+u00641,이제 아이스크림 얼마나 내려야 해,stop_items,train,template,clear
+u00642,음 라디오 켜주세요,other,train,template,clear
+u00643,잠실점 사장님 친절하셔서 좋다,other,test,gemini,clear
+u00644,구로점에 라면 보냈는데 터짐,report_issue,train,template,clear
+u00645,상품 찍어볼게,scan,train,template,clear
+u00646,어 우유 몇 개였지,stop_items,train,template,ask
+u00647,음 이온 음료 하나 빠졌어 기록 좀 좀,report_issue,train,template,clear
+u00648,저기 신사점 꺼 좀 봐줘,stop_items,train,template,hard
+u00649,저기 여기 서울우유 몇 개야,stop_items,train,template,clear
+u00650,논현점 제육도시락 12봉지 엉뚱한 게 실렸어 등록해줘 얼른,report_issue,test,template,clear
+u00651,저기 오늘 힘들다,other,train,template,clear
+u00652,배송 완료 눌러줘 얼른,complete,train,template,clear
+u00653,저기 이 점포 납품 품목 뭐였지 지금,stop_items,train,template,clear
+u00654,아 송장 찍을게요,scan,train,template,clear
+u00655,이제 찍어요,scan,train,template,hard
+u00656,이제 다음 점포 어디였지 얼른,next_stop,train,template,clear
+u00657,저기 남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u00658,이제 바나나우유 몇 개 내리면 돼,stop_items,train,template,clear
+u00659,아 이 점포 납품 품목 뭐였죠,stop_items,train,template,clear
+u00660,저기 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u00661,이제 샌드위치 한 박스쯤 차갑지가 않아,report_issue,train,template,clear
+u00662,일원점 납품 다 했어 지금,complete,train,template,clear
+u00663,음 논현점 납품 목록 뭐야 얼른,stop_items,val,template,clear
+u00664,아 오늘 얼마나 했지 얼른,next_stop,train,template,clear
+u00665,어 물건 확인할게,scan,test,template,clear
+u00666,음 치킨마요도시락 파손됐어 1판,report_issue,val,template,clear
+u00667,샌드위치 상했어,report_issue,train,template,clear
+u00668,아 여기 도시락 몇 개예요,stop_items,train,template,ask
+u00669,이제 점장님가 확인했대,complete,train,template,hard
+u00670,저기 매니저님가 확인했대,complete,train,template,hard
+u00671,저기 일원점에서 삼각김밥 박살났어요,report_issue,train,template,ask
+u00672,음 어디 가야 되더라,next_stop,train,template,clear
+u00673,어 스캔할게요,scan,train,template,clear
+u00674,어 확인 좀 해볼게 얼른,scan,train,template,hard
+u00675,사장님한테 서명 받았어요,complete,train,gemini,clear
+u00676,아 차 막히네 좀,other,train,template,clear
+u00677,음 바코드 읽을게 빨리,scan,train,template,clear
+u00678,다음 어디 가야 하죠,next_stop,test,template,clear
+u00679,여기 딸기 우유 네 박스 이거 우리 거 아니래,report_issue,train,template,clear
+u00680,어 석촌점 이온 음료 두 봉지 미지근해 지금,report_issue,train,template,clear
+u00681,다음은 어디로 갑니까,next_stop,test,gemini,clear
+u00682,바나나 우유 이거 우리 거 아니래 두 봉죠,report_issue,val,template,clear
+u00683,서울우유 상태 안 좋아 온도가 높아,report_issue,train,template,clear
+u00684,저기 고마워,other,val,template,clear
+u00685,자 제육도시락 상태 안 좋아 엉뚱한 게 실렸어,report_issue,train,template,clear
+u00686,샌드위치 수량이 안 맞아 세 개,report_issue,val,template,clear
+u00687,어 다음 들를 데 어디예요,next_stop,train,template,clear
+u00688,자 카메라로 확인할래 빨리,scan,train,template,clear
+u00689,여기 마요 도시락 몇 개 가져가,stop_items,train,template,clear
+u00690,음 내릴 물건 알려줘 얼른,stop_items,test,template,clear
+u00691,잠깐 압구정점에 샌드위치 보냈는데 엉뚱한 게 실렸어,report_issue,train,template,clear
+u00692,음 사장님한테 인계했어 좀,complete,test,template,clear
+u00693,불량 기록 컵라면 박살났어,report_issue,train,template,clear
+u00694,저기 다음 행선지 알려줘,next_stop,val,template,clear
+u00695,스캔 준비해줘 바로 찍게,scan,train,gemini,clear
+u00696,바코드 폰으로 찍게 스캔 틀어,scan,val,gemini,clear
+u00697,저기 이거 읽어봐,scan,train,template,hard
+u00698,이제 카메라 켜주세요,scan,train,template,clear
+u00699,잠깐 인수인계 끝났어 지금,complete,train,template,clear
+u00700,음 여기 납품 끝났어요,complete,train,template,clear
+u00701,수서점 리스트 불러주세요,stop_items,test,template,clear
+u00702,어 검품 시작할게요,scan,train,template,clear
+u00703,이제 도시락 수량 얼마예요,stop_items,train,template,ask
+u00704,하차 마쳤습니다,complete,train,gemini,clear
+u00705,저기 대치점에 이온 음료 보냈는데 다 녹았어,report_issue,train,template,clear
+u00706,논현점 납품 다 했어 얼른,complete,train,template,clear
+u00707,이제 오늘 몇 월 며칠이야 좀,other,train,template,clear
+u00708,음 캔커피 여기 들어가는 거 맞아,stop_items,test,template,hard
+u00709,잠깐 샌드위치 문제 있어 찌그러졌어 좀,report_issue,train,template,clear
+u00710,잠깐 검수 할게,scan,train,template,clear
+u00711,내릴 물건 알려줘,stop_items,test,template,clear
+u00712,음 삼성점 물건 뭐 내려,stop_items,train,template,clear
+u00713,어이 기름 얼마나 남았지,other,train,gemini,clear
+u00714,1판 냉장이 안 됐어,report_issue,train,template,ask
+u00715,그 뉴스 틀어주세요,other,train,template,clear
+u00716,이제 이거 찍어볼게 지금,scan,train,template,clear
+u00717,그 어 잠깐만,other,test,template,clear
+u00718,그 카메라 켜주세요,scan,train,template,clear
+u00719,그 잠원점 리스트 불러주세요,stop_items,test,template,clear
+u00720,저기 송장 찍을게요,scan,train,template,clear
+u00721,이제 바코드 인식 켜줘 얼른,scan,train,template,clear
+u00722,어 졸리다,other,train,template,clear
+u00723,그 오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u00724,저기 음악 틀어줘,other,train,template,clear
+u00725,그 가락점 배송 완료,complete,train,template,clear
+u00726,삼각김밥 얼마나 내려야 해 좀,stop_items,train,template,ask
+u00727,저기 다음 배송지 말해주세요,next_stop,test,template,clear
+u00728,잠깐 잠원점 납품 완료 처리해주세요,complete,train,template,clear
+u00729,이제 반포점 리스트 불러줘 지금,stop_items,test,template,clear
+u00730,다음 어디 가면 되지,next_stop,train,gemini,clear
+u00731,그 대치점 물량 확인해줘 좀,stop_items,train,template,clear
+u00732,잠깐 카메라로 확인할래,scan,train,template,clear
+u00733,음 다음 행선지 알려줘,next_stop,val,template,clear
+u00734,아 음 저기,other,train,template,clear
+u00735,자 이제 뭐 하면 돼,next_stop,train,template,hard
+u00736,그 지금 몇 시야,other,test,template,clear
+u00737,그 뉴스 틀어줘 좀,other,train,template,clear
+u00738,뉴스 틀어줘 빨리,other,train,template,clear
+u00739,사장님 받았어 좀,complete,train,template,clear
+u00740,어 음악 틀어줘 빨리,other,train,template,clear
+u00741,도곡점에 콜라 몇 박스 들어가지,stop_items,train,gemini,clear
+u00742,이제 오늘 몇 곳 더 가야 돼 빨리,next_stop,train,template,clear
+u00743,볼륨 좀 키워줘 빨리,other,train,template,clear
+u00744,어 이거 좀 문제인데,report_issue,val,template,hard
+u00745,감자칩 얼마나 내려야 해,stop_items,train,template,clear
+u00746,스캐너 켜,scan,val,template,clear
+u00747,음 남은 코스 몇 개야 좀,next_stop,train,template,clear
+u00748,어 검수 모드 켜줘,scan,train,template,clear
+u00749,삼각김밥 몇 개였지 지금,stop_items,train,template,ask
+u00750,아 다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u00751,자 여기 들어갈 거 뭐뭐야,stop_items,test,template,clear
+u00752,이제 다음 꺼 어디 있는 데야,next_stop,train,template,hard
+u00753,잠깐 인수인계 끝났어 얼른,complete,train,template,clear
+u00754,음 바나나우유 개수가 안 맞아 같기도 하고,report_issue,train,template,hard
+u00755,저기 일원점 다 내렸어 사장님 받았어,complete,train,template,clear
+u00756,음 어디로 갈지 알려줘,next_stop,test,template,hard
+u00757,그 여기 캔커피 몇 개예요,stop_items,train,template,clear
+u00758,저기 대치점 사이다 엉뚱한 게 실렸어,report_issue,test,template,clear
+u00759,음 볼륨 좀 키워줘,other,train,template,clear
+u00760,딸기 우유 문제 있어 차갑지가 않아,report_issue,train,template,clear
+u00761,그 오늘 몇 월 며칠이예요,other,train,template,clear
+u00762,핸드폰 충전 잘 되고 있나,other,val,gemini,clear
+u00763,여기 우유 몇 개 가져가,stop_items,train,template,ask
+u00764,저 다음 목적지 확인 좀,next_stop,test,gemini,clear
+u00765,저기 점심 뭐 먹지,other,train,template,clear
+u00766,어 알바생한테 줬어,complete,train,template,hard
+u00767,어 남은 배송지 몇 개야 빨리,next_stop,val,template,clear
+u00768,개포점 참치김밥 잘못 내렸네 오배송,report_issue,train,gemini,clear
+u00769,스캔 실행해라,scan,test,gemini,clear
+u00770,음 생수 박스 하나 터졌어요,report_issue,test,template,clear
+u00771,이제 뭐 하면 돼 얼른,next_stop,train,template,hard
+u00772,다 내렸어요,complete,val,template,clear
+u00773,수서점 젤리 한 개 덜 왔어 등록해주세요,report_issue,test,template,clear
+u00774,저기 아이스크림 차갑지가 않아 8개 좀,report_issue,val,template,clear
+u00775,자 다 넣어놨어,complete,test,template,hard
+u00776,그 다음 목적지 뭐야,next_stop,train,template,clear
+u00777,이제 논현점 내릴 거 알려줘,stop_items,train,template,clear
+u00778,우유 수량 얼마야,stop_items,train,template,ask
+u00779,이제 1개 상했어 얼른,report_issue,train,template,ask
+u00780,그 완료 찍어줘 지금,complete,train,template,clear
+u00781,점장님 받았어요,complete,train,template,clear
+u00782,자 배고프다 얼른,other,train,template,clear
+u00783,어 잠원점 이온 음료 다섯 판 부족해요,report_issue,train,template,clear
+u00784,배송 다 마쳤어요,complete,train,gemini,clear
+u00785,이번 점포 끝 지금,complete,train,template,clear
+u00786,신사점 납품 다 했어,complete,train,template,clear
+u00787,음 이거 잘못 왔어 빨리,report_issue,test,template,ask
+u00788,여기 내릴 거 읽어줘,stop_items,test,template,clear
+u00789,사장님 확인했어 완료 빨리,complete,test,template,clear
+u00790,라면 이상한데,report_issue,train,template,hard
+u00791,검수 모드 켜줘,scan,train,template,clear
+u00792,자 역삼점 꺼 좀 봐주세요,stop_items,train,template,hard
+u00793,점장님가 확인했대,complete,train,template,hard
+u00794,아 이거 맞는지 봐줘 지금,scan,train,template,hard
+u00795,이제 확인 좀 해볼게,scan,train,template,hard
+u00796,아 뉴스 틀어주세요,other,train,template,clear
+u00797,자 다음은 어디로 가 빨리,next_stop,train,template,clear
+u00798,음 요구르트 여기 몇 개 들어가,stop_items,train,template,clear
+u00799,잠깐 다 내렸어,complete,val,template,clear
+u00800,아이스크림 깨졌어 지금,report_issue,train,template,clear
+u00801,오늘 진행상황 어때 지금,next_stop,val,template,clear
+u00802,다음 점포 알려줘 좀,next_stop,train,template,clear
+u00803,아 아니야 됐어요,other,train,template,clear
+u00804,삼성점 납품 완료 처리해줘 빨리,complete,train,template,clear
+u00805,컵라면 오배송이야 네개,report_issue,val,template,clear
+u00806,감자칩 박스 하나 부족해 좀,report_issue,test,template,clear
+u00807,이제 딸기우유 12개 이상 생겼어 다른 게 왔어,report_issue,val,template,clear
+u00808,어 다음 행선지 알려줘 좀,next_stop,val,template,clear
+u00809,자 콜라 좀 애매한데 박살났어,report_issue,train,template,hard
+u00810,음 검수 모드 켜줘 지금,scan,train,template,clear
+u00811,이거 맞는지 봐줘 얼른,scan,train,template,hard
+u00812,아 도시락 여기 몇 게 들어가,stop_items,train,template,ask
+u00813,어 오늘 날씨 어때,other,val,template,clear
+u00814,저기 잠실점 납품 완료 처리해줘 빨리,complete,train,template,clear
+u00815,잠깐 이거 좀 문제인데,report_issue,val,template,hard
+u00816,방배점에 잘못 들어왔네 제육 도시락 하나 오배송,report_issue,val,gemini,clear
+u00817,음 매니저님 사인 받았어,complete,train,template,clear
+u00818,다음 하차할 곳 어디야,next_stop,test,gemini,clear
+u00819,자 여기 인수인계 마쳤어 얼른,complete,train,template,clear
+u00820,잠깐 불량 기록 커피 개수가 안 맞아,report_issue,train,template,clear
+u00821,남은 점포 알려줘 빨리,next_stop,train,template,clear
+u00822,어 구로점 리스트 불러줘,stop_items,test,template,clear
+u00823,그 다음 어디야,next_stop,train,template,clear
+u00824,저기 스캐너 켜 빨리,scan,val,template,clear
+u00825,송장 찍을게 지금,scan,train,template,clear
+u00826,음 송장 찍을게요,scan,train,template,clear
+u00827,그 내일 비 와,other,train,template,clear
+u00828,저기 그 다음은,next_stop,val,template,hard
+u00829,삼각김밥 여기 몇 개 들어가,stop_items,train,template,ask
+u00830,이제 완료 찍어줘 좀,complete,train,template,clear
+u00831,어디 가야 되더라 얼른,next_stop,train,template,clear
+u00832,저기 남은 배송지 몇 개야 얼른,next_stop,val,template,clear
+u00833,이제 다음 코스 알려줘,next_stop,train,template,clear
+u00834,어 일원점 끝,complete,train,template,clear
+u00835,어 도시락 이상한데,report_issue,train,template,hard
+u00836,어 직원분한테 넘겼어 얼른,complete,test,template,clear
+u00837,오늘 진행상황 어때,next_stop,val,template,clear
+u00838,신사점 리스트 불러줘,stop_items,test,template,clear
+u00839,여기 삼각김밥 몇 개예요,stop_items,train,template,ask
+u00840,자 몇 개 남았지 지금,next_stop,test,template,clear
+u00841,자 아이스크림 상했어 6개,report_issue,val,template,clear
+u00842,도곡점에 참치김밥 몇 개 들어가,stop_items,train,gemini,clear
+u00843,아 카메라 켜주세요,scan,train,template,clear
+u00844,음 남은 곳 몇 개 더 있어 지금,next_stop,train,template,clear
+u00845,여기 뭐 내려야 돼 좀,stop_items,train,template,clear
+u00846,이제 아이스크림 얼마나 내려야 해요,stop_items,train,template,clear
+u00847,어 다음 점포 어디였지,next_stop,train,template,clear
+u00848,어 여기 인수인계 마쳤어요,complete,train,template,clear
+u00849,딸기우유 요즘 잘 팔리나 빨리,other,train,template,hard
+u00850,오늘 남은 일정 알려줘,next_stop,train,template,clear
+u00851,자 여기 인수인계 마쳤어요,complete,train,template,clear
+u00852,라디오 켜줘 얼른,other,train,template,clear
+u00853,아 오늘 몇 월 며칠이야,other,train,template,clear
+u00854,이제 스캔 켜줘,scan,val,template,clear
+u00855,이제 잠원점 리스트 불러줘,stop_items,test,template,clear
+u00856,음 잠원점 납품 완료 처리해줘,complete,train,template,clear
+u00857,자 전달 완료했어,complete,test,template,clear
+u00858,치킨마요 여덟 개 이상 생겼어 잘못 왔어 좀,report_issue,val,template,clear
+u00859,이제 여기 정리됐어요,complete,train,template,hard
+u00860,어 여기 납품 끝났어 좀,complete,train,template,clear
+u00861,이제 청담점 거 뭐 있었지 좀,stop_items,train,template,clear
+u00862,어 스캔할게 지금,scan,train,template,clear
+u00863,어 점심 뭐 먹지,other,train,template,clear
+u00864,참치삼각김밥 있어,stop_items,train,template,hard
+u00865,야 야 차 빼달라고 해야겠네,other,train,gemini,clear
+u00866,그 농담 하나 해주세요,other,train,template,clear
+u00867,이제 딸기 우유 이거 맞나,report_issue,train,template,hard
+u00868,음 여기 납품 물량 얼마야,stop_items,val,template,clear
+u00869,음 스캔 켜주세요,scan,val,template,clear
+u00870,어 검수 모드 켜주세요,scan,train,template,clear
+u00871,어 납품 완료예요,complete,train,template,clear
+u00872,이제 오늘 남은 일정 알려줘,next_stop,train,template,clear
+u00873,이제 음 저기 좀,other,train,template,clear
+u00874,잠깐 주유소 어디 있어 좀,other,val,template,clear
+u00875,그 다음 거,next_stop,train,template,hard
+u00876,저기 오늘 날씨 어때 얼른,other,val,template,clear
+u00877,그 잠원점 새우깡 다섯개 잘못 왔어 얼른,report_issue,train,template,clear
+u00878,이제 배고프다 지금,other,train,template,clear
+u00879,다음 배송할 데 가르쳐줘,next_stop,train,gemini,clear
+u00880,잠깐 치킨마요 문제 있어 개수가 안 맞아 얼른,report_issue,train,template,clear
+u00881,잠깐 여기 인수인계 마쳤어,complete,train,template,clear
+u00882,아 컵라면 좀 이거 우리 거 아니래,report_issue,val,template,clear
+u00883,바코드 찍을게 지금,scan,test,template,clear
+u00884,다음 어디 가야 하지,next_stop,test,template,clear
+u00885,저기 잠원점 감자칩 10개 모자람 등록해주세요,report_issue,test,template,clear
+u00886,잠깐 오늘 납품 많네,other,val,template,hard
+u00887,저기 잠원점 거 뭐 있었지 빨리,stop_items,train,template,clear
+u00888,아 다음에 어디 가야 되더라,next_stop,test,gemini,clear
+u00889,자 여기 감자칩 한 박스 깨졌어 좀,report_issue,train,template,clear
+u00890,남은 배송지 몇 개야 지금,next_stop,val,template,clear
+u00891,음 스캔 좀 해볼게,scan,train,template,clear
+u00892,어 다음 가야 할 곳 알려주세요,next_stop,train,template,clear
+u00893,QR 찍을게,scan,val,template,clear
+u00894,음 바코드 켜 지금,scan,test,template,clear
+u00895,오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u00896,이제 이제 뭐 하면 돼,next_stop,train,template,hard
+u00897,아 금천점 하차 완료,complete,val,template,clear
+u00898,어 반포점 내릴 거 알려주세요,stop_items,train,template,clear
+u00899,이제 상품 찍어볼게요,scan,train,template,clear
+u00900,스캔 모드로 바꿔줘 지금,scan,train,template,clear
+u00901,어 바코드 인식 켜줘 빨리,scan,train,template,clear
+u00902,뉴스 틀어줘 좀,other,train,template,clear
+u00903,다음 꺼 어디 있는 데야 얼른,next_stop,train,template,hard
+u00904,어제 가산점 가는 길 막혔어요,other,train,template,hard
+u00905,이제 이제 뭐 하면 돼요,next_stop,train,template,hard
+u00906,몇 개 남았지 얼른,next_stop,test,template,clear
+u00907,금천점 오케이 얼른,complete,val,template,hard
+u00908,어 바코드 인식 켜주세요,scan,train,template,clear
+u00909,음 아이스크림 온도가 높아 얼른,report_issue,train,template,clear
+u00910,아 치킨마요 여기 몇 개 들어가,stop_items,train,template,clear
+u00911,아 이거 찍어야 돼 스캔 올려줘,scan,test,gemini,clear
+u00912,그 스캔할게요,scan,train,template,clear
+u00913,아 삼각김밥 얼마나 내려야 해요,stop_items,train,template,ask
+u00914,청담점에 우유 몇 개 들어가요,stop_items,train,gemini,ask
+u00915,잠깐 검수 모드 켜줘 지금,scan,train,template,clear
+u00916,잠깐 알바생가 확인했대 좀,complete,train,template,hard
+u00917,잠깐 다음 거,next_stop,train,template,hard
+u00918,음 이거 좀 문제인데,report_issue,val,template,hard
+u00919,그 QR 찍을게 빨리,scan,val,template,clear
+u00920,음 남은 배송지 몇 개예요,next_stop,val,template,clear
+u00921,잠깐 물건 다 녹았어 기록해줘 빨리,report_issue,train,template,ask
+u00922,기록해줘 새우깡 여덟개 오배송이야 지금,report_issue,train,template,clear
+u00923,저기 초코파이 수량 얼마예요,stop_items,train,template,clear
+u00924,커피 마시고 싶다,other,train,template,clear
+u00925,딸기 우유 이상한데,report_issue,train,template,hard
+u00926,이거 읽어봐 빨리,scan,train,template,hard
+u00927,음 지금까지 몇 군데 했어요,next_stop,train,template,clear
+u00928,어디 가야 되더라,next_stop,train,template,clear
+u00929,스캐너 열어주세요,scan,val,template,clear
+u00930,자 알바생 사인 받았어,complete,train,template,clear
+u00931,그 송파점 배송 완료,complete,train,template,clear
+u00932,음 검품 시작할게 지금,scan,train,template,clear
+u00933,저기 물건 오배송이야 기록해주세요,report_issue,train,template,ask
+u00934,신사점 바나나우유 몇 박스야,stop_items,val,template,clear
+u00935,그 6개 개수가 안 맞아,report_issue,train,template,ask
+u00936,끝났어 다음 얼른,complete,train,template,hard
+u00937,자 오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u00938,저기 스캔 좀 해볼게 빨리,scan,train,template,clear
+u00939,저기 알바생 사인 받았어 빨리,complete,train,template,clear
+u00940,이제 이상 있어 딸기 우유 비어있어,report_issue,train,template,clear
+u00941,어 라벨 찍을게요,scan,train,template,clear
+u00942,음 카메라 켜주세요,scan,train,template,clear
+u00943,잠깐 이거 좀 문제인데 빨리,report_issue,val,template,hard
+u00944,매니저님한테 인계했어,complete,test,template,clear
+u00945,어제 삼성점 가는 길 막혔어 얼른,other,train,template,hard
+u00946,어 점장님한테 줬어,complete,train,template,hard
+u00947,이제 새우깡 여기 들어가는 거 맞아,stop_items,test,template,hard
+u00948,수서점 아이스크림 다 녹았어,report_issue,train,gemini,clear
+u00949,그 다음 어디 가야 하지 빨리,next_stop,test,template,clear
+u00950,이제 우유 이거 맞나,report_issue,train,template,hard
+u00951,이거 찍어볼게 얼른,scan,train,template,clear
+u00952,샌드위치 이상한데 얼른,report_issue,train,template,hard
+u00953,새우깡 이상한데,report_issue,train,template,hard
+u00954,그 이제 뭐 하면 돼요,next_stop,train,template,hard
+u00955,음 삼성점 내릴 거 알려줘 빨리,stop_items,train,template,clear
+u00956,바코드 인식 켜줘 빨리,scan,train,template,clear
+u00957,송파점 납품할 거 몇 가지예요,stop_items,val,template,clear
+u00958,아 오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u00959,자 매니저님가 확인했대,complete,train,template,hard
+u00960,서울우유 문제 있어 얼른,report_issue,train,template,ask
+u00961,자 금천점 배송 완료,complete,train,template,clear
+u00962,아 대치점 납품 목록 뭐야,stop_items,val,template,clear
+u00963,바코드 스캔 시작 지금,scan,train,template,clear
+u00964,어 바나나우유 좀 애매한데 깨졌어요,report_issue,train,template,hard
+u00965,저기 에어컨 켜줘,other,train,template,clear
+u00966,딸기 우유 수량 얼마야 지금,stop_items,train,template,clear
+u00967,자 생수 이상한데,report_issue,train,template,hard
+u00968,잠원점 하차 다 끝남,complete,test,gemini,clear
+u00969,자 검수 모드 켜줘,scan,train,template,clear
+u00970,아 여기 삼각김밥 몇 개 가져가,stop_items,train,template,ask
+u00971,그 오늘 날씨 어때,other,val,template,clear
+u00972,아 다음 목적지 뭐야,next_stop,train,template,clear
+u00973,뉴스 틀어주세요,other,train,template,clear
+u00974,청담점 마감,complete,train,template,clear
+u00975,자 알바생한테 전달했어요,complete,train,template,clear
+u00976,저기 사장님한테 넘겼어 좀,complete,test,template,clear
+u00977,이제 문정점 배송 완료,complete,train,template,clear
+u00978,그 가락점 납품 다 했어,complete,train,template,clear
+u00979,그 볼륨 좀 키워줘,other,train,template,clear
+u00980,잠깐 다 내렸어 얼른,complete,val,template,clear
+u00981,자 음 저기,other,train,template,clear
+u00982,여기 내릴 물건이 뭐야,stop_items,test,gemini,clear
+u00983,수서점 거 뭐 있었지,stop_items,train,template,clear
+u00984,바코드 읽을게 지금,scan,train,template,clear
+u00985,그 여기 정리됐어,complete,train,template,hard
+u00986,그 신사점 딸기우유 다섯봉지 수량이 안 맞아,report_issue,train,template,clear
+u00987,자 오늘 날씨 어때,other,val,template,clear
+u00988,잠깐 배고프다,other,train,template,clear
+u00989,이 집 뭐 내리더라 빨리,stop_items,train,template,clear
+u00990,스캔 모드로 바꿔주세요,scan,train,template,clear
+u00991,잠깐 사이다 문제 있어 다른 게 왔어 지금,report_issue,train,template,clear
+u00992,잠깐 이 집 뭐 내리더라,stop_items,train,template,clear
+u00993,아 몇 군데 남았어요,next_stop,train,template,clear
+u00994,다 내렸어 지금,complete,val,template,clear
+u00995,어 검품 시작할게 얼른,scan,train,template,clear
+u00996,자 다음 납품처 어디죠,next_stop,test,template,clear
+u00997,자 여기 초코파이 2개 다른 게 왔어 얼른,report_issue,train,template,clear
+u00998,저기 잠실점 납품할 거 몇 가지야 지금,stop_items,val,template,clear
+u00999,신사점 콜라 다섯 캔 안 들어옴,report_issue,train,gemini,clear
+u01000,저기 불량 기록 물 주문이랑 달라,report_issue,train,template,clear
+u01001,이제 엄마한테 전화해줘,other,test,template,clear
+u01002,그 다음 점포 알려주세요,next_stop,train,template,clear
+u01003,음 기록해줘 물 다섯 개 냉장이 안 됐어 지금,report_issue,train,template,clear
+u01004,이제 퇴근하고 싶다 지금,other,train,template,clear
+u01005,이제 다음 가야 할 곳 알려줘,next_stop,train,template,clear
+u01006,라벨 찍을게,scan,train,template,clear
+u01007,저기 석촌점 끝,complete,train,template,clear
+u01008,저기 여기 요거트 1박스 엉뚱한 게 실렸어요,report_issue,train,template,clear
+u01009,아 오늘 진행상황 어때,next_stop,val,template,clear
+u01010,알바생한테 전달했어요,complete,train,template,clear
+u01011,알바생한테 넘겼어요,complete,test,template,clear
+u01012,신사점 물량 얼마냐,stop_items,train,gemini,clear
+u01013,그 여기 마무리했어요,complete,train,template,clear
+u01014,문정점 배송 완료 지금,complete,train,template,clear
+u01015,이제 물건 확인할게 빨리,scan,test,template,clear
+u01016,잠깐 잠원점에 뭐 가져가야 하지,stop_items,train,template,clear
+u01017,이제 남아있는 배송지가 어디야,next_stop,test,gemini,clear
+u01018,그 다음 찍을 곳 어디냐,next_stop,train,gemini,clear
+u01019,서초점 점장님 친절하시더라 좀,other,test,template,hard
+u01020,음 가산점 마감,complete,train,template,clear
+u01021,저기 도시락 몇 개 내리면 돼 얼른,stop_items,train,template,ask
+u01022,어 지금 몇 시야 좀,other,test,template,clear
+u01023,신나는 노래 좀 틀어봐라,other,train,gemini,clear
+u01024,자 오늘 진행상황 어때 좀,next_stop,val,template,clear
+u01025,개포점 오늘 뭐 내려 빨리,stop_items,train,template,clear
+u01026,자 이거 터졌어 좀,report_issue,test,template,ask
+u01027,이제 여기 아이스크림 한 판 오배송이야,report_issue,train,template,clear
+u01028,음 이제 어디로 가면 돼,next_stop,val,template,clear
+u01029,여기 끝나면 어디 가 빨리,next_stop,train,template,hard
+u01030,그 요구르트 내리는 거예요,stop_items,train,template,hard
+u01031,어 오늘 진행상황 어때,next_stop,val,template,clear
+u01032,잠깐 커피 마시고 싶다,other,train,template,clear
+u01033,잠깐 스캐너 켜,scan,val,template,clear
+u01034,잠깐 딸기 우유 개수가 안 맞아,report_issue,train,template,clear
+u01035,잠깐 금천점 납품 완료 처리해주세요,complete,train,template,clear
+u01036,아 QR 찍을게요,scan,val,template,clear
+u01037,일원점 스팸마요 두 개 부족해,report_issue,train,gemini,clear
+u01038,어 끝났어 다음,complete,train,template,hard
+u01039,그 퇴근하고 싶다,other,train,template,clear
+u01040,자 매니저님 사인 받았어 좀,complete,train,template,clear
+u01041,다음 목적지 뭐야,next_stop,train,template,clear
+u01042,음 완료 찍어주세요,complete,train,template,clear
+u01043,음 여기 내릴 거 읽어줘 빨리,stop_items,test,template,clear
+u01044,저기 아이스크림 몇 개였죠,stop_items,train,template,clear
+u01045,자 음악 틀어줘,other,train,template,clear
+u01046,몇 개 남았지 좀,next_stop,test,template,clear
+u01047,서울우유 10개 차갑지가 않아,report_issue,train,template,clear
+u01048,그 물건 확인할게요,scan,test,template,clear
+u01049,잠깐 직원분가 확인했대,complete,train,template,hard
+u01050,아 바코드 좀 확인할게요,scan,train,template,clear
+u01051,음 직원분한테 넘겼어 좀,complete,test,template,clear
+u01052,저기 다음 배송지 말해줘,next_stop,test,template,clear
+u01053,다음 가게 네비 찍어줘,next_stop,test,gemini,clear
+u01054,이제 QR 찍을게 빨리,scan,val,template,clear
+u01055,확인 좀 해볼게요,scan,train,template,hard
+u01056,요구르트 몇 개 내리면 돼요,stop_items,train,template,clear
+u01057,자 남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u01058,어제 압구정점 가는 길 막혔어,other,train,template,hard
+u01059,남은 곳 몇 개 더 있어 좀,next_stop,train,template,clear
+u01060,캔커피 문제 있어 부족해요,report_issue,train,template,clear
+u01061,음 오늘 진행상황 어때,next_stop,val,template,clear
+u01062,잠깐 서초점 물건 뭐 내려 빨리,stop_items,train,template,clear
+u01063,아 여기 완료 처리,complete,val,template,clear
+u01064,다음 가야 할 곳 알려주세요,next_stop,train,template,clear
+u01065,아 일원점 오케이,complete,val,template,hard
+u01066,어 라디오 켜줘 얼른,other,train,template,clear
+u01067,음 오늘 남은 일정 알려줘 빨리,next_stop,train,template,clear
+u01068,어 이거 찍어볼게 지금,scan,train,template,clear
+u01069,서초점 물건 수량 모자람,report_issue,train,gemini,ask
+u01070,그 뉴스 틀어줘 얼른,other,train,template,clear
+u01071,그 오늘 납품 많네 좀,other,val,template,hard
+u01072,잠깐 남은 점포 알려줘,next_stop,train,template,clear
+u01073,음 전달 완료했어 얼른,complete,test,template,clear
+u01074,아 여기 마무리했어,complete,train,template,clear
+u01075,저기 검수 할게 지금,scan,train,template,clear
+u01076,에어컨 좀 세게 틀어라,other,train,gemini,clear
+u01077,청담점 배송 끝,complete,test,gemini,clear
+u01078,잠깐 불량 기록 치킨마요도시락 다른 게 왔어,report_issue,train,template,clear
+u01079,그 스팸마요삼각김밥 수량이 안 맞아 같기도 하고,report_issue,train,template,hard
+u01080,어 우유 몇 개였지 좀,stop_items,train,template,ask
+u01081,수서점 끝났습니다,complete,val,gemini,clear
+u01082,어 서초점에 뭐 가져가야 하죠,stop_items,train,template,clear
+u01083,어 전달 완료했어요,complete,test,template,clear
+u01084,하차 끝났어,complete,train,template,clear
+u01085,저기 개포점에서 삼각김밥 이거 우리 거 아니래,report_issue,train,template,ask
+u01086,저기 다 내렸어요,complete,val,template,clear
+u01087,저기 다음 코스 알려줘 좀,next_stop,train,template,clear
+u01088,아 스캔할게요,scan,train,template,clear
+u01089,음악 좀 꺼봐,other,train,gemini,clear
+u01090,자 여기 내릴 거 읽어줘,stop_items,test,template,clear
+u01091,잠원점 도착하려면 멀었나,other,train,gemini,clear
+u01092,그 찍어,scan,train,template,hard
+u01093,어 아니야 됐어요,other,train,template,clear
+u01094,그 주유소 어디 있어 빨리,other,val,template,clear
+u01095,엄마한테 전화해줘 지금,other,test,template,clear
+u01096,어 다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u01097,자 이제 어디예요,next_stop,train,template,clear
+u01098,검품 시작할게 좀,scan,train,template,clear
+u01099,그 여기 인수인계 마쳤어요,complete,train,template,clear
+u01100,잠깐 다음 납품처 어디죠,next_stop,test,template,clear
+u01101,아 삼성점 내릴 거 알려주세요,stop_items,train,template,clear
+u01102,이제 커피 마시고 싶다 얼른,other,train,template,clear
+u01103,잠깐 바코드 읽을게,scan,train,template,clear
+u01104,음 사이다 여기 몇 개 들어가,stop_items,train,template,clear
+u01105,검품 시작할게 지금,scan,train,template,clear
+u01106,물건 확인할게,scan,test,template,clear
+u01107,다음 배송 점포 말해줘,next_stop,test,gemini,clear
+u01108,송장 좀 찍게 스캐너 작동해,scan,train,gemini,clear
+u01109,이제 이거 찍어볼게,scan,train,template,clear
+u01110,어 콜라 쪽에 문제가 좀 있어 얼른,report_issue,val,template,ask
+u01111,그 몇 군데 남았어요,next_stop,train,template,clear
+u01112,어 방배점 납품할 거 몇 가지야 얼른,stop_items,val,template,clear
+u01113,저기 방배점 거 뭐 있었지,stop_items,train,template,clear
+u01114,아 압구정점 하차 완료 좀,complete,val,template,clear
+u01115,잠깐 내일 비 와,other,train,template,clear
+u01116,그 몇 개 남았죠,next_stop,test,template,clear
+u01117,어 요거트 맛있겠다 지금,other,train,template,hard
+u01118,근처 화장실 어디야,other,test,template,clear
+u01119,아 알바생 확인했어 완료,complete,test,template,clear
+u01120,아 몇 개 남았죠,next_stop,test,template,clear
+u01121,저기 남은 코스 몇 개야 좀,next_stop,train,template,clear
+u01122,인수인계 끝났어요,complete,train,template,clear
+u01123,오늘 여기 물건 뭐예요,stop_items,train,template,clear
+u01124,아 오늘 여기 물건 뭐야 좀,stop_items,train,template,clear
+u01125,저기 라벨 찍을게 얼른,scan,train,template,clear
+u01126,잠실점 오늘 뭐 내려,stop_items,train,template,clear
+u01127,역삼점 납품 다 했어요,complete,train,template,clear
+u01128,이제 몇 군데 남았어 좀,next_stop,train,template,clear
+u01129,신림점 거 뭐 있었지 얼른,stop_items,train,template,clear
+u01130,반포점에 수량이 어떻게 되더라,stop_items,val,gemini,clear
+u01131,내릴 물건 알려주세요,stop_items,test,template,clear
+u01132,스캔할게,scan,train,template,clear
+u01133,아 QR 찍을게,scan,val,template,clear
+u01134,아 농담 하나 해줘 좀,other,train,template,clear
+u01135,자 남은 코스 몇 개야,next_stop,train,template,clear
+u01136,자 볼륨 좀 키워줘,other,train,template,clear
+u01137,잠깐 물품 스캔 켜줘,scan,test,template,clear
+u01138,아 오늘 남은 일정 알려줘,next_stop,train,template,clear
+u01139,이거 찍어볼게 좀,scan,train,template,clear
+u01140,저기 생수 문제 있어 온도가 높아,report_issue,train,template,clear
+u01141,새우깡 박스 하나 새고 있어 지금,report_issue,test,template,clear
+u01142,엄마한테 전화해줘 얼른,other,test,template,clear
+u01143,음 문정점 콜라 덜 왔어 지금,report_issue,test,template,clear
+u01144,음 역삼점 배송 완료 빨리,complete,train,template,clear
+u01145,점장님 받았어 얼른,complete,train,template,clear
+u01146,끝났어 다음,complete,train,template,hard
+u01147,저 다음 어디 가요,next_stop,train,gemini,clear
+u01148,바코드 찍을게,scan,test,template,clear
+u01149,여기 인수인계 마쳤어,complete,train,template,clear
+u01150,자 4개 정도 냉장이 안 됐어 커피,report_issue,train,template,clear
+u01151,저기 배고프다,other,train,template,clear
+u01152,어 이상 있어 제육도시락 부족해요,report_issue,train,template,clear
+u01153,아 찍어요,scan,train,template,hard
+u01154,어 제육도시락 열박스쯤 차갑지가 않아 얼른,report_issue,train,template,clear
+u01155,아 오늘 날씨 어때 얼른,other,val,template,clear
+u01156,이제 서울우유 수량 얼마야,stop_items,train,template,clear
+u01157,그 이거 좀 문제인데,report_issue,val,template,hard
+u01158,아 다음 어디야,next_stop,train,template,clear
+u01159,아 역삼점 샌드위치 두 개 터졌어,report_issue,val,gemini,clear
+u01160,음 사장님 사인 받았어 지금,complete,train,template,clear
+u01161,이제 삼성점 다 내렸어 매니저님 받았어,complete,train,template,clear
+u01162,문정점 이온음료 두개 모자라,report_issue,train,template,clear
+u01163,이제 스캐너 열어줘 빨리,scan,val,template,clear
+u01164,지금 몇 시예요,other,test,template,clear
+u01165,잠깐 다음 어디 가야 하지,next_stop,test,template,clear
+u01166,잠깐 스캐너 열어줘,scan,val,template,clear
+u01167,이제 마요 도시락 상태 좀 봐야겠다,report_issue,test,template,hard
+u01168,삼성점 꺼 좀 봐주세요,stop_items,train,template,hard
+u01169,이제 내일 비 와 얼른,other,train,template,clear
+u01170,여기 뭐였더라 좀,stop_items,train,template,hard
+u01171,자 이온 음료 맛있겠다 얼른,other,train,template,hard
+u01172,잠깐 다음 행선지 알려주세요,next_stop,val,template,clear
+u01173,저기 남은 점포 알려줘,next_stop,train,template,clear
+u01174,이제 이온 음료 상태 안 좋아 개수가 안 맞아,report_issue,train,template,clear
+u01175,바코드 켜,scan,test,template,clear
+u01176,아 바코드 스캔 좀 켜라,scan,test,gemini,clear
+u01177,음 불량 기록 샌드위치 주문이랑 달라,report_issue,train,template,clear
+u01178,어 사장님한테 전달했어요,complete,train,template,clear
+u01179,자 아니야 됐어요,other,train,template,clear
+u01180,방배점 앞에 주차할 데가 없네,other,train,gemini,clear
+u01181,음 마요 도시락 부족해 얼른,report_issue,train,template,clear
+u01182,물품 스캔 켜줘 지금,scan,test,template,clear
+u01183,자 지금까지 몇 군데 했어,next_stop,train,template,clear
+u01184,마요 도시락 문제 있어 좀,report_issue,train,template,ask
+u01185,음 구로점에 뭐 가져가야 하지,stop_items,train,template,clear
+u01186,아 압구정점 납품 다 했어,complete,train,template,clear
+u01187,어 이제 뭐 하면 돼 지금,next_stop,train,template,hard
+u01188,점장님 사인 받았어,complete,train,template,clear
+u01189,샌드위치 문제 있어 빨리,report_issue,train,template,ask
+u01190,이제 압구정점 아이스크림 세 판 엉뚱한 게 실렸어,report_issue,train,template,clear
+u01191,자 이온음료 얼마나 내려야 해,stop_items,train,template,clear
+u01192,이제 반포점 납품 다 했어,complete,train,template,clear
+u01193,음 여기 뭐 내려야 돼요,stop_items,train,template,clear
+u01194,자 라벨 찍을게요,scan,train,template,clear
+u01195,잠원점 하차 품목 확인해줘,stop_items,test,gemini,clear
+u01196,그 라벨 찍을게,scan,train,template,clear
+u01197,우유 몇 개 내리면 돼요,stop_items,train,template,ask
+u01198,음 바코드 스캔 시작 지금,scan,train,template,clear
+u01199,그 하차 끝났어 얼른,complete,train,template,clear
+u01200,음 대치점 물량 확인해줘 지금,stop_items,train,template,clear
+u01201,이제 사장님한테 넘겼어 좀,complete,test,template,clear
+u01202,불량 기록 제육 도시락 이거 우리 거 아니래,report_issue,train,template,clear
+u01203,잠깐 오늘 몇 월 며칠이예요,other,train,template,clear
+u01204,어 오늘 납품 많네,other,val,template,hard
+u01205,저기 두 박스 깨졌어 빨리,report_issue,train,template,ask
+u01206,남은 점포 몇 개냐고,next_stop,train,gemini,clear
+u01207,저기 다음 거,next_stop,train,template,hard
+u01208,감자칩 수량 얼마예요,stop_items,train,template,clear
+u01209,매니저님한테 물건 다 넘김,complete,test,gemini,clear
+u01210,그 이온 음료 이상한데,report_issue,train,template,hard
+u01211,잠깐 음악 틀어줘 지금,other,train,template,clear
+u01212,어 라디오 켜주세요,other,train,template,clear
+u01213,아 참치김밥 몇 개였지,stop_items,train,template,clear
+u01214,그 여기 뭐 내려야 돼 빨리,stop_items,train,template,clear
+u01215,저기 이번 점포 끝,complete,train,template,clear
+u01216,사이다 오배송이야 네봉죠,report_issue,val,template,clear
+u01217,음 반포점 점장님 친절하시더라,other,test,template,hard
+u01218,아 점장님한테 넘겼어,complete,test,template,clear
+u01219,그 다음 들를 데 어디야 좀,next_stop,train,template,clear
+u01220,아이스크림 좀 덜 왔어,report_issue,val,template,clear
+u01221,아 치킨마요도시락 이거 맞나 좀,report_issue,train,template,hard
+u01222,그 카메라 좀 열어요,scan,train,template,clear
+u01223,그 수고했어요,other,val,template,clear
+u01224,카메라 좀 열어 빨리,scan,train,template,clear
+u01225,잠깐 불량 기록 새우깡 부족해,report_issue,train,template,clear
+u01226,잠실점 물량 확인해줘,stop_items,train,template,clear
+u01227,음 바코드 스캔 시작 빨리,scan,train,template,clear
+u01228,뉴스 좀 틀어봐라,other,val,gemini,clear
+u01229,아 근처 화장실 어디야,other,test,template,clear
+u01230,신림점 물량 확인해줘 빨리,stop_items,train,template,clear
+u01231,그 다음은,next_stop,val,template,hard
+u01232,다음은 어디로 가 지금,next_stop,train,template,clear
+u01233,그 상품 찍어볼게,scan,train,template,clear
+u01234,그 음 저기,other,train,template,clear
+u01235,구로점 하차 완료,complete,val,template,clear
+u01236,이제 기록해줘 이온 음료 다섯 개 박살났어요,report_issue,train,template,clear
+u01237,기록해줘 제육 도시락 두 개 냉장이 안 됐어요,report_issue,train,template,clear
+u01238,음 사장님한테 인계했어,complete,test,template,clear
+u01239,그 딸기우유 있어,stop_items,train,template,hard
+u01240,음 아니야 됐어요,other,train,template,clear
+u01241,이제 오늘 진행상황 어때,next_stop,val,template,clear
+u01242,반포점 치킨마요 다섯 개 파손됐어 얼른,report_issue,train,template,clear
+u01243,자 오늘 몇 월 며칠이예요,other,train,template,clear
+u01244,음 이거 읽어봐 빨리,scan,train,template,hard
+u01245,잠깐 여기 정리됐어 빨리,complete,train,template,hard
+u01246,저기 QR 찍을게,scan,val,template,clear
+u01247,어 다 넣어놨어요,complete,test,template,hard
+u01248,도곡점 골목길 왜 이렇게 좁냐,other,test,gemini,clear
+u01249,지금 몇 시냐,other,train,gemini,clear
+u01250,음 농담 하나 해주세요,other,train,template,clear
+u01251,그 이번 점포 품목 알려줘,stop_items,train,template,clear
+u01252,어 이번 점포 끝,complete,train,template,clear
+u01253,자 잠원점 오케이 지금,complete,val,template,hard
+u01254,초코파이 12개 이상 생겼어 오배송이예요,report_issue,val,template,clear
+u01255,다음 점포 알려주세요,next_stop,train,template,clear
+u01256,잠깐 사장님 사인 받았어요,complete,train,template,clear
+u01257,이번 점포 물량 확인좀 하자,stop_items,train,gemini,clear
+u01258,완료 찍어주세요,complete,train,template,clear
+u01259,감자칩 좀 애매한데 온도가 높아 빨리,report_issue,train,template,hard
+u01260,어 사이다 상태 좀 봐야겠다,report_issue,test,template,hard
+u01261,다음 코스 알려주세요,next_stop,train,template,clear
+u01262,가락점 점장님 서인 받았음,complete,train,gemini,clear
+u01263,아 다음은 어디로 가,next_stop,train,template,clear
+u01264,압구정점 아이스크림 몇 박스예요,stop_items,val,template,clear
+u01265,압구정점 이온 음료 미지근해,report_issue,test,template,clear
+u01266,음 지금 몇 시야,other,test,template,clear
+u01267,저기 농담 하나 해줘,other,train,template,clear
+u01268,음 여기 우유 몇 개 가져가,stop_items,train,template,ask
+u01269,방배점 수량 좀 체크해줘,stop_items,test,gemini,clear
+u01270,잠깐 이 점포 납품 품목 뭐였죠,stop_items,train,template,clear
+u01271,잠깐 카메라 켜줘,scan,train,template,clear
+u01272,그 바나나 우유 12판 이상 생겼어 상했어요,report_issue,val,template,clear
+u01273,여기 납품 끝났어 빨리,complete,train,template,clear
+u01274,그 사이다 터졌어 네 개,report_issue,val,template,clear
+u01275,그 여기 내릴 거 읽어줘,stop_items,test,template,clear
+u01276,다음 점포 어디였지 지금,next_stop,train,template,clear
+u01277,아 아니야 됐어 좀,other,train,template,clear
+u01278,자 두 봉지 정도 박스 눌렸어 사이다,report_issue,train,template,clear
+u01279,졸리다,other,train,template,clear
+u01280,남은 코스 몇 개야 얼른,next_stop,train,template,clear
+u01281,저기 여기 마무리했어 지금,complete,train,template,clear
+u01282,아 압구정점 점장님 친절하시더라,other,test,template,hard
+u01283,반포점 직원분한테 내리고 가요,complete,train,gemini,clear
+u01284,납품 완료야 지금,complete,train,template,clear
+u01285,자 오늘 몇 월 며칠이야 지금,other,train,template,clear
+u01286,그 도곡점 감자칩 세 개 하나 빠졌어 등록해줘,report_issue,test,template,clear
+u01287,아 젤리 개수가 안 맞아 어떡해,report_issue,train,template,clear
+u01288,그 배송 완료 눌러줘,complete,train,template,clear
+u01289,몇 군데 남았어요,next_stop,train,template,clear
+u01290,차 막히네 빨리,other,train,template,clear
+u01291,그 일원점 오늘 뭐 내려,stop_items,train,template,clear
+u01292,아 구로점 납품 목록 뭐야,stop_items,val,template,clear
+u01293,저기 바코드 읽을게 얼른,scan,train,template,clear
+u01294,잠깐 바코드 읽을게요,scan,train,template,clear
+u01295,잠깐 스캔 모드로 바꿔줘,scan,train,template,clear
+u01296,잠깐 사이다 이상한데,report_issue,train,template,hard
+u01297,다음 목적지 불러봐,next_stop,test,gemini,clear
+u01298,음 제육도시락 녹았음,report_issue,train,template,clear
+u01299,배고프다 지금,other,train,template,clear
+u01300,이제 방배점 거 다 실렸나 얼른,stop_items,val,template,hard
+u01301,스캐너 좀 틀어볼래,scan,train,gemini,clear
+u01302,잠깐 딸기우유 문제 있어,report_issue,train,template,ask
+u01303,저기 지금 몇 시야,other,test,template,clear
+u01304,아 점장님한테 전달했어요,complete,train,template,clear
+u01305,이제 여기 우유 다섯 박스 박살났어 지금,report_issue,train,template,ask
+u01306,음 바코드 스캔 시작,scan,train,template,clear
+u01307,이제 마요 도시락 녹았음 기록 좀,report_issue,train,template,clear
+u01308,이제 감자칩 깨졌어 기록 좀,report_issue,train,template,clear
+u01309,잠깐 수고했어,other,val,template,clear
+u01310,이거 맞는지 봐줘,scan,train,template,hard
+u01311,저기 여기 완료 처리 좀,complete,val,template,clear
+u01312,어 매니저님한테 전달했어요,complete,train,template,clear
+u01313,그 치킨마요도시락 박스 눌렸어 기록 좀,report_issue,train,template,clear
+u01314,자 몇 개 남았지 빨리,next_stop,test,template,clear
+u01315,대치점 물건 뭐 내려,stop_items,train,template,clear
+u01316,그 논현점 납품 다 했어,complete,train,template,clear
+u01317,스팸마요삼각김밥 내리는 거야 좀,stop_items,train,template,hard
+u01318,잠깐 가산점 물건 뭐 내려,stop_items,train,template,clear
+u01319,자 여기 끝나면 어디 가 얼른,next_stop,train,template,hard
+u01320,아 다음 점포 어디였지 빨리,next_stop,train,template,clear
+u01321,스캔 모드로 바꿔줘 얼른,scan,train,template,clear
+u01322,그 바코드 스캔 시작,scan,train,template,clear
+u01323,자 여기 다 됐어요,complete,val,template,clear
+u01324,다음 들를 데 어디예요,next_stop,train,template,clear
+u01325,저기 이번 점포 품목 알려줘,stop_items,train,template,clear
+u01326,잠깐 볼륨 좀 키워주세요,other,train,template,clear
+u01327,그 이제 어디로 가면 돼요,next_stop,val,template,clear
+u01328,잠깐 카메라 좀,scan,test,template,hard
+u01329,아 신사점 마감,complete,train,template,clear
+u01330,아 다음 꺼 어디 있는 데야 얼른,next_stop,train,template,hard
+u01331,아 다음 배송지 말해주세요,next_stop,test,template,clear
+u01332,신사점 내릴 박스 목록 전부,stop_items,train,gemini,clear
+u01333,잠깐 다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u01334,이제 새우깡 내리는 거예요,stop_items,train,template,hard
+u01335,그 스캔 켜줘 얼른,scan,val,template,clear
+u01336,음 몇 군데 남았어요,next_stop,train,template,clear
+u01337,이제 송장 찍을게,scan,train,template,clear
+u01338,저기 이 집 뭐 내리더라 얼른,stop_items,train,template,clear
+u01339,음 지금 몇 시예요,other,test,template,clear
+u01340,음 찍어 지금,scan,train,template,hard
+u01341,그 이거 맞는지 봐줘 빨리,scan,train,template,hard
+u01342,이제 아 사이다 부족해 어떡해요,report_issue,train,template,clear
+u01343,스캐너 켜 지금,scan,val,template,clear
+u01344,아 역삼점 콜라 두개 주문이랑 달라 등록해주세요,report_issue,test,template,clear
+u01345,스팸마요삼각김밥 이거 우리 거 아니래 두개,report_issue,val,template,clear
+u01346,자 다음 들를 데 어디야,next_stop,train,template,clear
+u01347,그 어디로 갈지 알려주세요,next_stop,test,template,hard
+u01348,그 삼성점 내릴 거 알려주세요,stop_items,train,template,clear
+u01349,저기 청담점 오케이,complete,val,template,hard
+u01350,음 카메라,scan,test,template,hard
+u01351,이제 남은 배송지 몇 개예요,next_stop,val,template,clear
+u01352,어 여기 납품 끝났어 빨리,complete,train,template,clear
+u01353,음 직원분한테 줬어 좀,complete,train,template,hard
+u01354,다음 찍힌 데 어디냐,next_stop,val,gemini,clear
+u01355,그 이제 어디야,next_stop,train,template,clear
+u01356,아 어제 잠원점 가는 길 막혔어요,other,train,template,hard
+u01357,어 잠원점 납품 목록 뭐야,stop_items,val,template,clear
+u01358,그 오늘 날씨 어때 얼른,other,val,template,clear
+u01359,저기 여기 인수인계 마쳤어 얼른,complete,train,template,clear
+u01360,자 퇴근하고 싶다 지금,other,train,template,clear
+u01361,농담 하나 해줘 얼른,other,train,template,clear
+u01362,어 몇 개 남았죠,next_stop,test,template,clear
+u01363,아 스캔 좀 해볼게,scan,train,template,clear
+u01364,다음 점포 어디였지,next_stop,train,template,clear
+u01365,음 이번 점포 끝 얼른,complete,train,template,clear
+u01366,오늘 이상하게 차가 없네 다행이다,other,train,gemini,clear
+u01367,신사점 오케이 빨리,complete,val,template,hard
+u01368,그 이온음료 문제 있어,report_issue,train,template,ask
+u01369,이거 맞는지 봐줘 지금,scan,train,template,hard
+u01370,끝났어 다음 빨리,complete,train,template,hard
+u01371,잠깐 다음 점포 알려줘,next_stop,train,template,clear
+u01372,여기 삼각김밥 몇 개 가져가,stop_items,train,template,ask
+u01373,잠깐 새우깡 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u01374,이제 가락점 하차 완료,complete,val,template,clear
+u01375,이거 찍어볼게요,scan,train,template,clear
+u01376,구로점 완료했음,complete,train,gemini,clear
+u01377,아 오늘 여기 물건 뭐예요,stop_items,train,template,clear
+u01378,어 스캔 모드로 바꿔줘 좀,scan,train,template,clear
+u01379,자 완료 찍어줘,complete,train,template,clear
+u01380,아 알바생한테 전달했어요,complete,train,template,clear
+u01381,아 다음 납품처 어디죠,next_stop,test,template,clear
+u01382,논현점 이온음료 다섯박스 하나 빠졌어 등록해줘,report_issue,test,template,clear
+u01383,저기 이거 읽어봐 좀,scan,train,template,hard
+u01384,어 새우깡 몇 개였죠,stop_items,train,template,clear
+u01385,그 금천점 제육 도시락 몇 박스야,stop_items,val,template,clear
+u01386,잠깐 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear
+u01387,감자칩 있어요,stop_items,train,template,hard
+u01388,저기 스캔 켜줘 빨리,scan,val,template,clear
+u01389,오늘 얼마나 했지 빨리,next_stop,train,template,clear
+u01390,저기 여기 도시락 몇 개야 얼른,stop_items,train,template,ask
+u01391,저기 오늘 진행상황 어때 좀,next_stop,val,template,clear
+u01392,음 라벨 찍을게,scan,train,template,clear
+u01393,그 오늘 힘들다,other,train,template,clear
+u01394,자 여기 정리됐어,complete,train,template,hard
+u01395,어 2박스 냉장이 안 됐어요,report_issue,train,template,ask
+u01396,잠깐 어 잠깐만,other,test,template,clear
+u01397,잠깐 감자칩 내리는 거야 얼른,stop_items,train,template,hard
+u01398,어 배송 완료 눌러줘 좀,complete,train,template,clear
+u01399,어 바나나우유 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u01400,아 잠실점 직원분 확인 완료,complete,test,gemini,clear
+u01401,바코드 인식 켜줘,scan,train,template,clear
+u01402,반포점 작업 마침,complete,train,gemini,clear
+u01403,어 음악 틀어줘 지금,other,train,template,clear
+u01404,어 점장님한테 줬어요,complete,train,template,hard
+u01405,자 구로점 거 뭐 있었지,stop_items,train,template,clear
+u01406,그 점장님한테 인계했어 좀,complete,test,template,clear
+u01407,이제 이거 비어있어,report_issue,test,template,ask
+u01408,야 오늘 금요일이라 길 엄청 밀리겠어,other,test,gemini,clear
+u01409,잠깐 아니야 됐어 좀,other,train,template,clear
+u01410,직원분가 확인했대,complete,train,template,hard
+u01411,바코드 읽을게,scan,train,template,clear
+u01412,남은 배송지 몇 개예요,next_stop,val,template,clear
+u01413,아 카메라 켜줘,scan,train,template,clear
+u01414,바코드 좀 확인할게,scan,train,template,clear
+u01415,이제 어제 도곡점 가는 길 막혔어요,other,train,template,hard
+u01416,이제 요거트 모자람 다섯 개,report_issue,val,template,clear
+u01417,불량 기록 치킨마요도시락 하나 빠졌어 지금,report_issue,train,template,clear
+u01418,볼륨 좀 키워줘,other,train,template,clear
+u01419,아 송파점 리스트 불러주세요,stop_items,test,template,clear
+u01420,음 석촌점 마감 지금,complete,train,template,clear
+u01421,음 여기 끝나면 어디 가,next_stop,train,template,hard
+u01422,가산점 초코파이 두 봉지 찢어짐,report_issue,val,gemini,clear
+u01423,음 이번 점포 끝 빨리,complete,train,template,clear
+u01424,다음 어디야 빨리,next_stop,train,template,clear
+u01425,저기 검수 시작,scan,train,template,clear
+u01426,아 다음 코스 알려주세요,next_stop,train,template,clear
+u01427,제육 도시락 좀 터짐,report_issue,val,template,clear
+u01428,송파점 길가에 경찰 있더라 조심해라,other,test,gemini,clear
+u01429,검수 시작 빨리,scan,train,template,clear
+u01430,어 상품 찍어볼게,scan,train,template,clear
+u01431,어 이거 맞는지 봐줘,scan,train,template,hard
+u01432,자 생수 상태 좀 봐야겠다,report_issue,test,template,hard
+u01433,방배점 내릴 거 좀 불러봐,stop_items,test,gemini,clear
+u01434,자 오늘 몇 월 며칠이야,other,train,template,clear
+u01435,역삼점 납품 끝났어,complete,train,gemini,clear
+u01436,저기 이거 찍어볼게 빨리,scan,train,template,clear
+u01437,물 내리는 거야,stop_items,train,template,hard
+u01438,음 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u01439,마요 도시락 요즘 잘 팔리나,other,train,template,hard
+u01440,석촌점 요구르트 한 판 터짐,report_issue,train,gemini,clear
+u01441,어 오늘 여기 물건 뭐예요,stop_items,train,template,clear
+u01442,이거 뭔지 확인해봐,scan,val,template,hard
+u01443,검수 할게요,scan,train,template,clear
+u01444,반포점 커피 얼마나 하차하지,stop_items,test,gemini,clear
+u01445,여기 완료 처리 얼른,complete,val,template,clear
+u01446,볼륨 좀 키워주세요,other,train,template,clear
+u01447,아 스캔할게 빨리,scan,train,template,clear
+u01448,아 스캐너 열어주세요,scan,val,template,clear
+u01449,잠깐 바코드 켜,scan,test,template,clear
+u01450,어 다음 배송지 말해주세요,next_stop,test,template,clear
+u01451,송파점 납품할 거 몇 가지야,stop_items,val,template,clear
+u01452,그 카메라 좀 열어 얼른,scan,train,template,clear
+u01453,아 배고프다,other,train,template,clear
+u01454,아 초코파이 쪽에 문제가 좀 있어,report_issue,val,template,ask
+u01455,저기 지금까지 몇 군데 했어,next_stop,train,template,clear
+u01456,젤리 문제 있어 이거 우리 거 아니래,report_issue,train,template,clear
+u01457,카메라 스캔 켜줘,scan,train,gemini,clear
+u01458,아 여기 납품 물량 얼마예요,stop_items,val,template,clear
+u01459,잠깐 내릴 물건 알려줘,stop_items,test,template,clear
+u01460,오늘 날씨 되게 춥다,other,train,gemini,clear
+u01461,자 이거 좀 문제인데,report_issue,val,template,hard
+u01462,뉴스 틀어줘 지금,other,train,template,clear
+u01463,음 바코드 켜,scan,test,template,clear
+u01464,스캔할게 빨리,scan,train,template,clear
+u01465,그 지금까지 몇 군데 했어요,next_stop,train,template,clear
+u01466,그 여섯판 찌그러졌어 지금,report_issue,train,template,ask
+u01467,이제 오늘 몇 월 며칠이야,other,train,template,clear
+u01468,어 일원점 물 오배송이예요,report_issue,test,template,clear
+u01469,삼성점 다 내렸어요,complete,test,gemini,clear
+u01470,자 여기 뭐였더라 빨리,stop_items,train,template,hard
+u01471,여기 내릴 거 읽어줘 얼른,stop_items,test,template,clear
+u01472,음 불량 기록 새우깡 터짐,report_issue,train,template,clear
+u01473,카메라,scan,test,template,hard
+u01474,자 바코드 좀 확인할게요,scan,train,template,clear
+u01475,커피 마시고 싶다 빨리,other,train,template,clear
+u01476,잠깐 사이다 내리는 거야,stop_items,train,template,hard
+u01477,자 주유소 어디 있어,other,val,template,clear
+u01478,자 배송 완료 눌러줘 얼른,complete,train,template,clear
+u01479,아 도곡점에서 딸기 우유 터짐,report_issue,train,template,clear
+u01480,여기 인수인계 마쳤어요,complete,train,template,clear
+u01481,이제 제육 도시락 여기 몇 개 들어가,stop_items,train,template,clear
+u01482,음 주유소 어디 있어 좀,other,val,template,clear
+u01483,라디오 켜주세요,other,train,template,clear
+u01484,이제 캔커피 문제 있어,report_issue,train,template,ask
+u01485,잠깐 오늘 얼마나 했지 지금,next_stop,train,template,clear
+u01486,도곡점 납품 목록 뭐야 지금,stop_items,val,template,clear
+u01487,음 차 막히네 얼른,other,train,template,clear
+u01488,자 요거트 상했어 기록 좀,report_issue,train,template,clear
+u01489,오늘 얼마나 했죠,next_stop,train,template,clear
+u01490,그 지금 몇 시야 좀,other,test,template,clear
+u01491,잠깐 이거 찍어볼게,scan,train,template,clear
+u01492,아 내일 비 와,other,train,template,clear
+u01493,하차 끝났어 빨리,complete,train,template,clear
+u01494,저기 다 내렸어 좀,complete,val,template,clear
+u01495,반포점 납품 다 했어,complete,train,template,clear
+u01496,QR 찍을게 좀,scan,val,template,clear
+u01497,음악 틀어줘 빨리,other,train,template,clear
+u01498,졸리다 좀,other,train,template,clear
+u01499,대치점에서 바나나우유 모자람,report_issue,train,template,clear
+u01500,음 남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u01501,아 오늘 날씨 어때,other,val,template,clear
+u01502,아 스캐너 켜,scan,val,template,clear
+u01503,이제 점장님 오늘 안 계시네 좀,other,train,template,hard
+u01504,이거 찍어볼게 지금,scan,train,template,clear
+u01505,이제 초코파이 좀 애매한데 잘못 왔어요,report_issue,train,template,hard
+u01506,저기 오늘 여기 물건 뭐야,stop_items,train,template,clear
+u01507,이제 여기 정리됐어 얼른,complete,train,template,hard
+u01508,자 다음 어디예요,next_stop,train,template,clear
+u01509,아 이 집 뭐 내리더라 지금,stop_items,train,template,clear
+u01510,신림점에 바나나 우유 몇 개 내립니까,stop_items,train,gemini,clear
+u01511,그 카메라 켜줘,scan,train,template,clear
+u01512,구로점 오늘 뭐 내려,stop_items,train,template,clear
+u01513,그 다 넣어놨어요,complete,test,template,hard
+u01514,아 초코파이 다 찢어졌어 어떡해 얼른,report_issue,train,template,clear
+u01515,잠깐 차 막히네,other,train,template,clear
+u01516,일원점에서 젤리 하나 빠졌어요,report_issue,train,template,clear
+u01517,불량 기록 샌드위치 새고 있어요,report_issue,train,template,clear
+u01518,그 다음 어디예요,next_stop,train,template,clear
+u01519,저기 석촌점 오늘 뭐 내려 빨리,stop_items,train,template,clear
+u01520,음 가산점 물건 뭐 내려,stop_items,train,template,clear
+u01521,자 이거 뭔지 확인해봐,scan,val,template,hard
+u01522,저기 사장님 확인했어 완료,complete,test,template,clear
+u01523,저기 알바생가 확인했대,complete,train,template,hard
+u01524,자 수서점 스팸마요 몇 박스야,stop_items,val,template,clear
+u01525,저기 수서점 컵라면 몇 박스야,stop_items,val,template,clear
+u01526,저기 수고했어 좀,other,val,template,clear
+u01527,어디 가야 되더라 빨리,next_stop,train,template,clear
+u01528,우유 여기 몇 개 들어가 좀,stop_items,train,template,ask
+u01529,잠깐 여기 다 됐어 좀,complete,val,template,clear
+u01530,저기 스캐너 열어줘,scan,val,template,clear
+u01531,잠깐 감자칩 여기 몇 개 들어가 얼른,stop_items,train,template,clear
+u01532,자 가산점에서 콜라 녹았음,report_issue,train,template,clear
+u01533,캔커피 네 개 녹았음,report_issue,train,template,clear
+u01534,고마워 지금,other,val,template,clear
+u01535,어 스캐너 켜 지금,scan,val,template,clear
+u01536,아 오늘 몇 월 며칠이야 빨리,other,train,template,clear
+u01537,신사점 배송 완료 좀,complete,train,template,clear
+u01538,다음 코스 좀 알려줘,next_stop,train,gemini,clear
+u01539,그 점장님한테 인계했어 빨리,complete,test,template,clear
+u01540,그 완료 찍어줘,complete,train,template,clear
+u01541,아 감자칩 3개 냉장이 안 됐어,report_issue,train,template,clear
+u01542,음 내일 비 와,other,train,template,clear
+u01543,스캔 화면 틀어봐,scan,train,gemini,clear
+u01544,그 스캔할게 얼른,scan,train,template,clear
+u01545,송장 찍을게,scan,train,template,clear
+u01546,잠깐 여기 다 됐어요,complete,val,template,clear
+u01547,이제 퇴근하고 싶다,other,train,template,clear
+u01548,콜라 내리는 거야 빨리,stop_items,train,template,hard
+u01549,잠깐 이거 뭔지 확인해봐,scan,val,template,hard
+u01550,대치점 납품 완료 처리해줘,complete,train,template,clear
+u01551,이제 대치점 새우깡 몇 박스예요,stop_items,val,template,clear
+u01552,캔커피 터짐 같기도 하고 얼른,report_issue,train,template,hard
+u01553,어 배고프다,other,train,template,clear
+u01554,자 스캔할게요,scan,train,template,clear
+u01555,음 일원점 물건 뭐 내려,stop_items,train,template,clear
+u01556,저기 다음 점포 알려줘,next_stop,train,template,clear
+u01557,저기 수고했어요,other,val,template,clear
+u01558,자 기록해줘 초코파이 10개 터짐,report_issue,train,template,clear
+u01559,잠깐 도곡점 납품 다 했어,complete,train,template,clear
+u01560,사이다 깨졌어 기록 좀 빨리,report_issue,train,template,clear
+u01561,알바생한테 짐 넘겨줬어,complete,train,gemini,clear
+u01562,그 여기 정리됐어요,complete,train,template,hard
+u01563,저기 다음 어디야,next_stop,train,template,clear
+u01564,그 청담점 거 다 실렸나,stop_items,val,template,hard
+u01565,저기 이제 어디로 가면 돼,next_stop,val,template,clear
+u01566,잠깐 다음 코스 알려줘,next_stop,train,template,clear
+u01567,개포점 납품 다 했어요,complete,train,template,clear
+u01568,어 찍어 빨리,scan,train,template,hard
+u01569,금천점 사이다 몇 박스야,stop_items,val,template,clear
+u01570,자 대치점 다 내렸어 매니저님 받았어,complete,train,template,clear
+u01571,저기 치킨마요도시락 여기 몇 개 들어가,stop_items,train,template,clear
+u01572,어 오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u01573,몇 군데 남았어 빨리,next_stop,train,template,clear
+u01574,스캔 좀 해볼게 빨리,scan,train,template,clear
+u01575,캔커피 여기 몇 개 들어가,stop_items,train,template,clear
+u01576,잠깐 여기 치킨마요도시락 몇 개 가져가 좀,stop_items,train,template,clear
+u01577,검품 시작할게,scan,train,template,clear
+u01578,그 여기 다 됐어,complete,val,template,clear
+u01579,석촌점 치킨마요도시락 두개 하나 빠졌어,report_issue,train,template,clear
+u01580,이제 바코드 켜,scan,test,template,clear
+u01581,알바생한테 줬어 얼른,complete,train,template,hard
+u01582,아 허리 아파라,other,train,gemini,clear
+u01583,그 여기 제육 도시락 5개 다른 게 왔어,report_issue,train,template,clear
+u01584,이거 좀 문제인데,report_issue,val,template,hard
+u01585,자 검수 할게,scan,train,template,clear
+u01586,하차 끝났어 지금,complete,train,template,clear
+u01587,아 상품 찍어볼게 지금,scan,train,template,clear
+u01588,그 바코드 읽을게 빨리,scan,train,template,clear
+u01589,잠깐 졸리다,other,train,template,clear
+u01590,그 바코드 찍을게요,scan,test,template,clear
+u01591,자 농담 하나 해주세요,other,train,template,clear
+u01592,잠깐 이제 어디로 가면 돼,next_stop,val,template,clear
+u01593,이 집 뭐 내리더라,stop_items,train,template,clear
+u01594,찍어,scan,train,template,hard
+u01595,라벨 찍을게요,scan,train,template,clear
+u01596,그 치킨마요도시락 여기 들어가는 거 맞아,stop_items,test,template,hard
+u01597,점심 뭐 먹지,other,train,template,clear
+u01598,이제 검수 모드 켜줘 지금,scan,train,template,clear
+u01599,그 가락점에서 초코파이 파손됐어요,report_issue,train,template,clear
+u01600,사장님 확인했어 완료,complete,test,template,clear
+u01601,도시락 문제 있어요,report_issue,train,template,ask
+u01602,스팸마요삼각김밥 쪽에 문제가 좀 있어,report_issue,val,template,ask
+u01603,다음 어디예요,next_stop,train,template,clear
+u01604,잠깐 이상 있어 감자칩 박스 눌렸어,report_issue,train,template,clear
+u01605,마요 도시락 세 개 찌그러짐,report_issue,test,gemini,clear
+u01606,아 물건 터짐 기록해주세요,report_issue,train,template,ask
+u01607,가산점 거 다 실렸나 얼른,stop_items,val,template,hard
+u01608,바코드 읽을게요,scan,train,template,clear
+u01609,잠깐 몇 군데 남았어 지금,next_stop,train,template,clear
+u01610,차 막히네,other,train,template,clear
+u01611,이제 샌드위치 2개 이거 우리 거 아니래,report_issue,train,template,clear
+u01612,어제 석촌점 가는 길 막혔어 지금,other,train,template,hard
+u01613,잠깐 라벨 찍을게요,scan,train,template,clear
+u01614,아 매니저님 확인했어 완료,complete,test,template,clear
+u01615,음 지금까지 몇 군데 했어,next_stop,train,template,clear
+u01616,바코드 좀 읽자 스캔 올려,scan,train,gemini,clear
+u01617,일원점 납품 완료 처리해줘,complete,train,template,clear
+u01618,사이다 몇 개 내리면 돼요,stop_items,train,template,clear
+u01619,아 우유 터졌다,report_issue,train,gemini,ask
+u01620,송파점 끝,complete,train,template,clear
+u01621,삼성점 오케이,complete,val,template,hard
+u01622,자 기록해줘 아이스크림 세개 차갑지가 않아,report_issue,train,template,clear
+u01623,이 점포 납품 품목 뭐였지 지금,stop_items,train,template,clear
+u01624,그 가락점 우유 몇 박스야,stop_items,val,template,ask
+u01625,다음 코스 알려줘,next_stop,train,template,clear
+u01626,잠실점 배송 완료,complete,train,template,clear
+u01627,자 신사점에서 물 엉뚱한 게 실렸어,report_issue,train,template,clear
+u01628,어 점심 뭐 먹지 좀,other,train,template,clear
+u01629,이제 다음 꺼 어디 있는 데야 지금,next_stop,train,template,hard
+u01630,이제 오늘 날씨 어때,other,val,template,clear
+u01631,자 이번 점포 품목 알려주세요,stop_items,train,template,clear
+u01632,음 서초점 생수 다섯 판 냉장이 안 됐어,report_issue,train,template,clear
+u01633,저기 이거 잘못 왔어요,report_issue,test,template,ask
+u01634,그 여기 삼각김밥 몇 개야,stop_items,train,template,ask
+u01635,지금까지 몇 군데 했어요,next_stop,train,template,clear
+u01636,저기 감자칩 상태 안 좋아 부족해,report_issue,train,template,clear
+u01637,그 청담점 납품 목록 뭐야,stop_items,val,template,clear
+u01638,저기 도곡점 납품 완료 처리해줘,complete,train,template,clear
+u01639,자 차 막히네,other,train,template,clear
+u01640,어 지금까지 몇 군데 했어요,next_stop,train,template,clear
+u01641,어 가락점 납품 완료 처리해줘,complete,train,template,clear
+u01642,자 다 내렸어,complete,val,template,clear
+u01643,잠깐 이제 어디로 가면 돼 빨리,next_stop,val,template,clear
+u01644,아 이 집 뭐 내리더라 좀,stop_items,train,template,clear
+u01645,참치삼각김밥 여덟 판쯤 깨졌어 좀,report_issue,train,template,clear
+u01646,그 반포점 납품 다 했어요,complete,train,template,clear
+u01647,어 차 막히네,other,train,template,clear
+u01648,아 남은 배송지 몇 개야 얼른,next_stop,val,template,clear
+u01649,저기 몇 군데 남았어,next_stop,train,template,clear
+u01650,자 배고프다,other,train,template,clear
+u01651,그 에어컨 켜주세요,other,train,template,clear
+u01652,여기 정리됐어 지금,complete,train,template,hard
+u01653,인수인계 끝났어,complete,train,template,clear
+u01654,수서점 납품 완료 처리해주세요,complete,train,template,clear
+u01655,음 여기 마무리했어,complete,train,template,clear
+u01656,이제 음악 틀어줘,other,train,template,clear
+u01657,잠깐 남은 코스 몇 개야 얼른,next_stop,train,template,clear
+u01658,아 이거 뭔지 확인해봐,scan,val,template,hard
+u01659,음 확인 좀 해볼게요,scan,train,template,hard
+u01660,저기 알바생 받았어 빨리,complete,train,template,clear
+u01661,그 음악 틀어줘,other,train,template,clear
+u01662,오늘 몇 월 며칠이예요,other,train,template,clear
+u01663,다음 가야 할 곳 알려줘 좀,next_stop,train,template,clear
+u01664,아 주유소 어디 있어요,other,val,template,clear
+u01665,어 샌드위치 이상한데,report_issue,train,template,hard
+u01666,아 삼각김밥 몇 개 내리는 거였지,stop_items,train,gemini,ask
+u01667,음 매니저님한테 인계했어,complete,test,template,clear
+u01668,자 노래 틀어줘,other,train,template,clear
+u01669,짐 다 뺐다 완료처리 해,complete,train,gemini,clear
+u01670,그 근처 화장실 어디야 빨리,other,test,template,clear
+u01671,이제 카메라로 확인할래,scan,train,template,clear
+u01672,어 퇴근하고 싶다,other,train,template,clear
+u01673,어 여기 납품 끝났어,complete,train,template,clear
+u01674,잠깐 엄마한테 전화해주세요,other,test,template,clear
+u01675,여기 납품 끝났어,complete,train,template,clear
+u01676,자 어 잠깐만 얼른,other,test,template,clear
+u01677,잠깐 삼각김밥 이거 맞나 좀,report_issue,train,template,hard
+u01678,잠깐 오늘 진행상황 어때,next_stop,val,template,clear
+u01679,어 커피 마시고 싶다 얼른,other,train,template,clear
+u01680,가락점 들어갈 거 알려줘,stop_items,test,gemini,clear
+u01681,어 검수 시작,scan,train,template,clear
+u01682,이제 몇 개 남았지,next_stop,test,template,clear
+u01683,음 이거 찍어볼게 얼른,scan,train,template,clear
+u01684,음 볼륨 좀 키워줘 얼른,other,train,template,clear
+u01685,스캔 켜봐라 바로 찍게,scan,test,gemini,clear
+u01686,그 남은 코스 몇 개야,next_stop,train,template,clear
+u01687,퇴근하고 싶다 좀,other,train,template,clear
+u01688,그 납품 완료야,complete,train,template,clear
+u01689,어제 삼성점 가는 길 막혔어 빨리,other,train,template,hard
+u01690,음 오늘 진행상황 어때 좀,next_stop,val,template,clear
+u01691,8개 차갑지가 않아 빨리,report_issue,train,template,ask
+u01692,석촌점에 컵라면 몇 개 내려야 돼,stop_items,test,gemini,clear
+u01693,저기 카메라 켜줘,scan,train,template,clear
+u01694,여기 딸기 우유 4개 엉뚱한 게 실렸어요,report_issue,train,template,clear
+u01695,아 인수인계 끝났어,complete,train,template,clear
+u01696,어 치킨마요 두 개쯤 모자람 좀,report_issue,train,template,clear
+u01697,삼각김밥 얼마나 내려야 해요,stop_items,train,template,ask
+u01698,삼성점 끝,complete,train,template,clear
+u01699,아 다음 어디 가야 하지,next_stop,test,template,clear
+u01700,잠실점 내릴 거 알려줘 지금,stop_items,train,template,clear
+u01701,논현점 다 내렸어 알바생 받았어요,complete,train,template,clear
+u01702,어 여기 내릴 거 읽어주세요,stop_items,test,template,clear
+u01703,자 여기 납품 끝났어요,complete,train,template,clear
+u01704,저기 오늘 몇 월 며칠이야 빨리,other,train,template,clear
+u01705,이거 찍어볼게,scan,train,template,clear
+u01706,역삼점 콜라 엉뚱한 게 실렸어,report_issue,test,template,clear
+u01707,잠깐 어제 문정점 가는 길 막혔어,other,train,template,hard
+u01708,아 물품 스캔 켜줘 좀,scan,test,template,clear
+u01709,음 상품 찍어볼게,scan,train,template,clear
+u01710,여기 내릴 거 읽어주세요,stop_items,test,template,clear
+u01711,음 새우깡 상태 안 좋아 수량이 안 맞아,report_issue,train,template,clear
+u01712,일원점 거 다 실렸나,stop_items,val,template,hard
+u01713,음 이상 있어 딸기우유 박스 눌렸어,report_issue,train,template,clear
+u01714,저기 바코드 좀 확인할게 지금,scan,train,template,clear
+u01715,논현점에 참치삼각김밥 두 개 박살났네,report_issue,train,gemini,clear
+u01716,잠깐 잠실점 납품 다 했어요,complete,train,template,clear
+u01717,농담 하나 해주세요,other,train,template,clear
+u01718,이제 삼성점 납품 다 했어,complete,train,template,clear
+u01719,여기 콜라 8개 찌그러졌어요,report_issue,train,template,clear
+u01720,어 오늘 날씨 어때 좀,other,val,template,clear
+u01721,음 졸리다,other,train,template,clear
+u01722,음 콜라 맛있겠다,other,train,template,hard
+u01723,잠깐 다음 가야 할 곳 알려줘,next_stop,train,template,clear
+u01724,이제 신사점 끝 얼른,complete,train,template,clear
+u01725,아 논현점 알바생한테 짐 다 건넸어,complete,train,gemini,clear
+u01726,기록해줘 딸기 우유 10게 엉뚱한 게 실렸어,report_issue,train,template,clear
+u01727,음 청담점 끝,complete,train,template,clear
+u01728,그 그 다음은 지금,next_stop,val,template,hard
+u01729,자 여기 마무리했어요,complete,train,template,clear
+u01730,네판 녹았음 얼른,report_issue,train,template,ask
+u01731,그 삼성점 꺼 좀 봐주세요,stop_items,train,template,hard
+u01732,여기 들어갈 거 뭐뭐야 좀,stop_items,test,template,clear
+u01733,잠깐 검품 시작할게,scan,train,template,clear
+u01734,아 바코드 읽을게 좀,scan,train,template,clear
+u01735,자 바코드 스캔 시작,scan,train,template,clear
+u01736,개포점 다 내렸어 알바생 받았어 좀,complete,train,template,clear
+u01737,전달 완료했어요,complete,test,template,clear
+u01738,어 내일 비 와,other,train,template,clear
+u01739,이제 스캔 좀 해볼게요,scan,train,template,clear
+u01740,음 오늘 남은 일정 알려줘,next_stop,train,template,clear
+u01741,저기 다음 점포 어디였지 빨리,next_stop,train,template,clear
+u01742,차 막히네 좀,other,train,template,clear
+u01743,자 스캔 켜줘 지금,scan,val,template,clear
+u01744,아 바코드 찍어야 돼 리더기 켜,scan,test,gemini,clear
+u01745,음 남은 배송지 몇 개야,next_stop,val,template,clear
+u01746,카메라 좀 열어 얼른,scan,train,template,clear
+u01747,그 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u01748,자 여기 뭐였더라 지금,stop_items,train,template,hard
+u01749,자 여기 다 됐어 얼른,complete,val,template,clear
+u01750,그 검수 시작 빨리,scan,train,template,clear
+u01751,완료 찍어줘,complete,train,template,clear
+u01752,송파점은 내릴 게 뭐지,stop_items,train,gemini,clear
+u01753,남은 코스 몇 개야 빨리,next_stop,train,template,clear
+u01754,어 오늘 몇 월 며칠이야,other,train,template,clear
+u01755,그 엄마한테 전화해줘 빨리,other,test,template,clear
+u01756,바나나우유 한 판 박살남,report_issue,train,gemini,clear
+u01757,음 반포점 리스트 불러줘 좀,stop_items,test,template,clear
+u01758,이제 새우깡 문제 있어 찌그러졌어,report_issue,train,template,clear
+u01759,저기 석촌점 감자칩 몇 박스야,stop_items,val,template,clear
+u01760,아 도시락 여기 몇 개 들어가 좀,stop_items,train,template,ask
+u01761,잠깐 다음은 어디로 가,next_stop,train,template,clear
+u01762,바코드 스캔 시작,scan,train,template,clear
+u01763,음 오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u01764,그 스캔 좀 해볼게,scan,train,template,clear
+u01765,납품 완료예요,complete,train,template,clear
+u01766,다음 행선지 알려줘 좀,next_stop,val,template,clear
+u01767,요구르트 요즘 잘 팔리나 빨리,other,train,template,hard
+u01768,어 바코드 스캔 시작,scan,train,template,clear
+u01769,그 바나나우유 엉뚱한 게 실렸어 좀,report_issue,train,template,clear
+u01770,이제 참치삼각김밥 상태 좀 봐야겠다 지금,report_issue,test,template,hard
+u01771,대치점 내릴 품목 보여줘,stop_items,val,gemini,clear
+u01772,그 오늘 몇 곳 더 가야 돼 빨리,next_stop,train,template,clear
+u01773,자 바코드 켜 얼른,scan,test,template,clear
+u01774,잠깐 여기 마무리했어,complete,train,template,clear
+u01775,음 다음 점포 어디였지 좀,next_stop,train,template,clear
+u01776,스캐너 열어줘 지금,scan,val,template,clear
+u01777,주유소 어디 있어요,other,val,template,clear
+u01778,청담점 하차 완료 지금,complete,val,template,clear
+u01779,잠깐 스캔 켜주세요,scan,val,template,clear
+u01780,저기 스캔 좀 해볼게 얼른,scan,train,template,clear
+u01781,저기 배송 완료 눌러주세요,complete,train,template,clear
+u01782,이제 가락점 새우깡 녹았음,report_issue,test,template,clear
+u01783,여기 물 몇 개 가져가,stop_items,train,template,clear
+u01784,감자칩 좀 애매한데 하나 빠졌어 얼른,report_issue,train,template,hard
+u01785,일원점 내릴 거 알려줘,stop_items,train,template,clear
+u01786,잠깐 다음 어디야 얼른,next_stop,train,template,clear
+u01787,수서점에 커피 보냈는데 박스 눌렸어,report_issue,train,template,clear
+u01788,잠깐 이제 뭐 하면 돼요,next_stop,train,template,hard
+u01789,아 청담점 배송 완료,complete,train,template,clear
+u01790,아 아 마이크 테스트,other,train,gemini,clear
+u01791,어 농담 하나 해주세요,other,train,template,clear
+u01792,바코드 리더기 켜줘,scan,train,gemini,clear
+u01793,자 끝났어 다음,complete,train,template,hard
+u01794,저기 바코드 스캔 시작,scan,train,template,clear
+u01795,신사점 물건 뭐 내려 얼른,stop_items,train,template,clear
+u01796,자 다음 점포 알려줘,next_stop,train,template,clear
+u01797,어 어디로 갈지 알려주세요,next_stop,test,template,hard
+u01798,이제 이번 점포 끝 지금,complete,train,template,clear
+u01799,자 스캔 켜줘,scan,val,template,clear
+u01800,석촌점 물량 확인해줘,stop_items,train,template,clear
+u01801,확인 좀 해볼게,scan,train,template,hard
+u01802,자 검수 시작,scan,train,template,clear
+u01803,그 스캔 켜줘,scan,val,template,clear
+u01804,자 스캔 켜줘 좀,scan,val,template,clear
+u01805,잠깐 젤리 이거 맞나,report_issue,train,template,hard
+u01806,음 참치삼각김밥 문제 있어 지금,report_issue,train,template,ask
+u01807,그 송파점 물량 확인해줘 좀,stop_items,train,template,clear
+u01808,어 점장님한테 인계했어 얼른,complete,test,template,clear
+u01809,아 다음 어디 가야 하지 지금,next_stop,test,template,clear
+u01810,아 대치점 오늘 뭐 내려 좀,stop_items,train,template,clear
+u01811,그 우유 박스 하나 모자람,report_issue,test,template,ask
+u01812,다음 들릴 점포 어디냐고,next_stop,train,gemini,clear
+u01813,자 QR 찍을게요,scan,val,template,clear
+u01814,자 근처 화장실 어디야 지금,other,test,template,clear
+u01815,아 이온음료 박스 하나 수량이 안 맞아,report_issue,test,template,clear
+u01816,내릴 물건 알려줘 지금,stop_items,test,template,clear
+u01817,잠실점 컵라면 한 박스 구멍 남,report_issue,train,gemini,clear
+u01818,어 여기 인수인계 마쳤어,complete,train,template,clear
+u01819,직원분한테 넘겼어,complete,test,template,clear
+u01820,QR 찍을게요,scan,val,template,clear
+u01821,어 우유 얼마나 내려야 해 지금,stop_items,train,template,ask
+u01822,음 고마워 빨리,other,val,template,clear
+u01823,이제 남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u01824,이제 수고했어,other,val,template,clear
+u01825,이제 석촌점 다 내렸어 매니저님 받았어요,complete,train,template,clear
+u01826,신림점 오늘 뭐 내려,stop_items,train,template,clear
+u01827,자 이거 터짐,report_issue,test,template,ask
+u01828,아 검수 모드 켜줘,scan,train,template,clear
+u01829,음 내릴 물건 알려주세요,stop_items,test,template,clear
+u01830,어 커피 마시고 싶다 빨리,other,train,template,clear
+u01831,여기 우유 몇 개야,stop_items,train,template,ask
+u01832,저기 기록해줘 커피 네 박스 박살났어 얼른,report_issue,train,template,clear
+u01833,저기 이제 뭐 하면 돼요,next_stop,train,template,hard
+u01834,저기 다음 어디 가야 하죠,next_stop,test,template,clear
+u01835,그 다음 코스 알려줘,next_stop,train,template,clear
+u01836,잠깐 오늘 몇 월 며칠이야,other,train,template,clear
+u01837,잠깐 검수 모드 켜줘 빨리,scan,train,template,clear
+u01838,서초점 근처에 맛집 있나,other,test,gemini,clear
+u01839,어 남은 점포 알려줘 빨리,next_stop,train,template,clear
+u01840,잠깐 카메라 좀 열어요,scan,train,template,clear
+u01841,어 카메라로 확인할래 지금,scan,train,template,clear
+u01842,이거 뭔지 확인해봐 빨리,scan,val,template,hard
+u01843,어 삼성점에서 젤리 냉장이 안 됐어 빨리,report_issue,train,template,clear
+u01844,남은 점포 몇 개나 있냐,next_stop,train,gemini,clear
+u01845,잠깐 요거트 요즘 잘 팔리나 빨리,other,train,template,hard
+u01846,어 삼성점 하차 완료,complete,val,template,clear
+u01847,이제 논현점 라면 몇 박스야,stop_items,val,template,clear
+u01848,개포점 마요 도시락 3판 이거 우리 거 아니래,report_issue,train,template,clear
+u01849,저기 퇴근하고 싶다 얼른,other,train,template,clear
+u01850,이제 다음 꺼 어디 있는 데예요,next_stop,train,template,hard
+u01851,자 농담 하나 해줘 빨리,other,train,template,clear
+u01852,음 내일 비 와 지금,other,train,template,clear
+u01853,그 노래 틀어줘,other,train,template,clear
+u01854,저기 기록해줘 스팸마요 12개 새고 있어 좀,report_issue,train,template,clear
+u01855,다음 목적지가 어디였지,next_stop,train,gemini,clear
+u01856,음 매니저님한테 전달했어요,complete,train,template,clear
+u01857,이제 이거 읽어봐,scan,train,template,hard
+u01858,여기 캔커피 8판 개수가 안 맞아 빨리,report_issue,train,template,clear
+u01859,아 서초점 샌드위치 몇 개 내려야 하지,stop_items,test,gemini,clear
+u01860,잠원점 사이다 한 박스 덜 들어왔다,report_issue,train,gemini,clear
+u01861,어 콜라 여기 몇 개 들어가,stop_items,train,template,clear
+u01862,음 이거 읽어봐,scan,train,template,hard
+u01863,아 네비 다음에 어디 가래,next_stop,test,gemini,clear
+u01864,다음 배송지 말해줘 빨리,next_stop,test,template,clear
+u01865,이제 어디로 가면 돼,next_stop,val,template,clear
+u01866,잠깐 음악 틀어줘 얼른,other,train,template,clear
+u01867,역삼점에 내릴 물건 뭐야,stop_items,train,gemini,clear
+u01868,어 물 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u01869,어 검수 할게 지금,scan,train,template,clear
+u01870,잠깐 여기 정리됐어요,complete,train,template,hard
+u01871,아 검수 시작,scan,train,template,clear
+u01872,그 요구르트 1개쯤 다 녹았어요,report_issue,train,template,clear
+u01873,치킨마요도시락 두 개 안 왔어,report_issue,test,gemini,clear
+u01874,금천점 배송 완료,complete,train,template,clear
+u01875,이제 방배점 거 다 실렸나,stop_items,val,template,hard
+u01876,오늘 날씨 어때,other,val,template,clear
+u01877,다음 행선지 알려줘,next_stop,val,template,clear
+u01878,가산점 라면 몇 박스지,stop_items,test,gemini,clear
+u01879,아 불량 기록 젤리 녹았음,report_issue,train,template,clear
+u01880,저기 남은 배송지 몇 개야 빨리,next_stop,val,template,clear
+u01881,저기 이거 좀 문제인데,report_issue,val,template,hard
+u01882,그 이거 하나 빠졌어 좀,report_issue,test,template,ask
+u01883,저기 음 저기,other,train,template,clear
+u01884,지금까지 몇 군데 했어 지금,next_stop,train,template,clear
+u01885,잠깐 하차 끝났어 얼른,complete,train,template,clear
+u01886,음 다음 점포 어디였지,next_stop,train,template,clear
+u01887,저기 새우깡 상태 좀 봐야겠다 얼른,report_issue,test,template,hard
+u01888,어 다음 꺼 어디 있는 데야 빨리,next_stop,train,template,hard
+u01889,노래 틀어줘,other,train,template,clear
+u01890,가락점 꺼 좀 봐주세요,stop_items,train,template,hard
+u01891,방배점 마감 지금,complete,train,template,clear
+u01892,엄마한테 전화해주세요,other,test,template,clear
+u01893,자 다음 거,next_stop,train,template,hard
+u01894,그 점장님 받았어,complete,train,template,clear
+u01895,이제 스캔 모드로 바꿔줘 얼른,scan,train,template,clear
+u01896,아 스캔 키라고,scan,train,gemini,clear
+u01897,저기 오늘 남은 일정 알려줘 지금,next_stop,train,template,clear
+u01898,아 라벨 찍을게,scan,train,template,clear
+u01899,그 요거트 좀 깨졌어 빨리,report_issue,val,template,clear
+u01900,자 남은 배송지 몇 개야,next_stop,val,template,clear
+u01901,아 우유 몇 개였지 좀,stop_items,train,template,ask
+u01902,잠깐 배고프다 좀,other,train,template,clear
+u01903,저기 오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u01904,역삼점 물량 확인해주세요,stop_items,train,template,clear
+u01905,잠깐 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u01906,다음은 어디로 가 빨리,next_stop,train,template,clear
+u01907,여기 뭐 내려야 돼 빨리,stop_items,train,template,clear
+u01908,다음 어디야 지금,next_stop,train,template,clear
+u01909,잠깐 여기 납품 물량 얼마예요,stop_items,val,template,clear
+u01910,커피 마시고 싶다 지금,other,train,template,clear
+u01911,아 손가락 쓸렸다 아프네,other,train,gemini,clear
+u01912,주유소 어디 있어 좀,other,val,template,clear
+u01913,어 3박스 정도 부족해 참치삼각김밥,report_issue,train,template,clear
+u01914,어 이제 어디로 가면 돼,next_stop,val,template,clear
+u01915,저기 뉴스 틀어줘,other,train,template,clear
+u01916,기록해줘 캔커피 세 개 깨졌어,report_issue,train,template,clear
+u01917,퇴근하고 싶다 지금,other,train,template,clear
+u01918,물건 오배송이야 기록해주세요,report_issue,train,template,ask
+u01919,저기 물품 스캔 켜줘 지금,scan,test,template,clear
+u01920,자 근처 화장실 어디야 빨리,other,test,template,clear
+u01921,자 물 내리는 거야,stop_items,train,template,hard
+u01922,저기 여기 납품 끝났어요,complete,train,template,clear
+u01923,아 몇 군데 남았어 빨리,next_stop,train,template,clear
+u01924,이상 있어 삼각김밥 박스 눌렸어,report_issue,train,template,ask
+u01925,저기 감자칩 몇 개 내리면 돼,stop_items,train,template,clear
+u01926,이제 하차 끝났어,complete,train,template,clear
+u01927,어 석촌점 오늘 뭐 내려,stop_items,train,template,clear
+u01928,문정점 치킨마요도시락 잘못 왔어,report_issue,test,template,clear
+u01929,저기 노래 틀어줘,other,train,template,clear
+u01930,어 남은 점포 알려줘,next_stop,train,template,clear
+u01931,어 여기 도시락 몇 개 가져가 빨리,stop_items,train,template,ask
+u01932,아 검수 모드 켜줘 지금,scan,train,template,clear
+u01933,저기 다음 들를 데 어디예요,next_stop,train,template,clear
+u01934,잠깐 오늘 얼마나 했지,next_stop,train,template,clear
+u01935,검수 할게,scan,train,template,clear
+u01936,개포점 거 뭐 있었지,stop_items,train,template,clear
+u01937,자 아이스크림 문제 있어 박스 눌렸어 얼른,report_issue,train,template,clear
+u01938,저기 남은 코스 몇 개예요,next_stop,train,template,clear
+u01939,점장님한테 넘겼어요,complete,test,template,clear
+u01940,여기 마무리했어,complete,train,template,clear
+u01941,이제 오늘 여기 물건 뭐야 지금,stop_items,train,template,clear
+u01942,아 남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u01943,음 하차 끝났어요,complete,train,template,clear
+u01944,역삼점에 뭐 가져가야 하죠,stop_items,train,template,clear
+u01945,저기 다음 점포 어디였죠,next_stop,train,template,clear
+u01946,아 여기 인수인계 마쳤어요,complete,train,template,clear
+u01947,바코드 켜 빨리,scan,test,template,clear
+u01948,여기 다 됐어,complete,val,template,clear
+u01949,저기 구로점 리스트 불러주세요,stop_items,test,template,clear
+u01950,자 음 저기 지금,other,train,template,clear
+u01951,오늘 몇 월 며칠이야 지금,other,train,template,clear
+u01952,저기 남은 배송지 몇 개야 지금,next_stop,val,template,clear
+u01953,잠깐 매니저님 오늘 안 계시네 지금,other,train,template,hard
+u01954,자 에어컨 켜주세요,other,train,template,clear
+u01955,음 직원분한테 전달했어요,complete,train,template,clear
+u01956,아 청담점 요구르트 12판 덜 왔어 지금,report_issue,train,template,clear
+u01957,아 오늘 힘들다 지금,other,train,template,clear
+u01958,아 지금 몇 시야,other,test,template,clear
+u01959,자 콜라 좀 애매한데 미지근해,report_issue,train,template,hard
+u01960,어 치킨마요 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u01961,수서점 내릴 거,stop_items,train,gemini,clear
+u01962,음 다음 거 빨리,next_stop,train,template,hard
+u01963,그 삼각김밥 여기 몇 개 들어가 좀,stop_items,train,template,ask
+u01964,잠깐 라디오 켜줘,other,train,template,clear
+u01965,아 내일 비 와 얼른,other,train,template,clear
+u01966,카메라 바코드 모드,scan,train,gemini,clear
+u01967,음 검수 모드 켜줘,scan,train,template,clear
+u01968,잠깐 점심 뭐 먹지,other,train,template,clear
+u01969,어 이제 어디로 가면 돼 빨리,next_stop,val,template,clear
+u01970,음 3봉지 온도가 높아,report_issue,train,template,ask
+u01971,어 송장 찍을게,scan,train,template,clear
+u01972,젤리 주문이랑 달라,report_issue,train,template,clear
+u01973,잠깐 컵라면 냉장이 안 됐어 기록 좀,report_issue,train,template,clear
+u01974,커피 내리는 거야 빨리,stop_items,train,template,hard
+u01975,잠깐 참치김밥 모자람 같기도 하고,report_issue,train,template,hard
+u01976,자 삼성점 거 뭐 있었지,stop_items,train,template,clear
+u01977,자 바나나우유 수량 얼마야 지금,stop_items,train,template,clear
+u01978,저기 참치김밥 녹았음 1개,report_issue,val,template,clear
+u01979,잠실점 내릴 거 알려줘,stop_items,train,template,clear
+u01980,냉동 상태 이상함 녹았어,report_issue,test,gemini,ask
+u01981,자 딸기우유 여섯판쯤 상했어요,report_issue,train,template,clear
+u01982,내일 비 오냐,other,train,gemini,clear
+u01983,아 엄마한테 전화해줘 빨리,other,test,template,clear
+u01984,아 삼각김밥 수량 얼마야,stop_items,train,template,ask
+u01985,다음 들를 데 어디야,next_stop,train,template,clear
+u01986,잠깐 논현점 도시락 다섯 판 엉뚱한 게 실렸어요,report_issue,train,template,ask
+u01987,잠깐 스캐너 열어주세요,scan,val,template,clear
+u01988,저기 오늘 얼마나 했지,next_stop,train,template,clear
+u01989,아 다음 어디예요,next_stop,train,template,clear
+u01990,아 여기 다 됐어 좀,complete,val,template,clear
+u01991,아 어디 가야 되더라,next_stop,train,template,clear
+u01992,저기 다음 어디야 좀,next_stop,train,template,clear
+u01993,잠깐 다음 목적지 뭐야 얼른,next_stop,train,template,clear
+u01994,저기 불량 기록 서울우유 하나 빠졌어 빨리,report_issue,train,template,clear
+u01995,근처 화장실 어디야 빨리,other,test,template,clear
+u01996,음 다음 코스 알려주세요,next_stop,train,template,clear
+u01997,잠깐 매니저님 확인했어 완료,complete,test,template,clear
+u01998,음 저기,other,train,template,clear
+u01999,음 다음은 어디로 가,next_stop,train,template,clear
+u02000,그 제육도시락 몇 개 내리면 돼요,stop_items,train,template,clear
+u02001,어 내릴 물건 알려주세요,stop_items,test,template,clear
+u02002,이제 다음 가야 할 곳 알려줘 빨리,next_stop,train,template,clear
+u02003,자 콜라 문제 있어 좀,report_issue,train,template,ask
+u02004,지금까지 몇 군데 했어 얼른,next_stop,train,template,clear
+u02005,잠깐 다 넣어놨어,complete,test,template,hard
+u02006,아 커피 마시고 싶다 지금,other,train,template,clear
+u02007,그 이거 맞는지 봐줘 좀,scan,train,template,hard
+u02008,아 오늘 몇 월 며칠이야 좀,other,train,template,clear
+u02009,음 차 막히네,other,train,template,clear
+u02010,어 이거 뭔지 확인해봐,scan,val,template,hard
+u02011,압구정점 내릴 거 알려주세요,stop_items,train,template,clear
+u02012,콜라 박스 하나 비어있어요,report_issue,test,template,clear
+u02013,어 스캔 켜주세요,scan,val,template,clear
+u02014,그 오늘 납품 많네 빨리,other,val,template,hard
+u02015,아 오늘따라 트럭 승차감 왜 이러냐,other,train,gemini,clear
+u02016,차 막히네 지금,other,train,template,clear
+u02017,석촌점 새우깡 몇 박스야,stop_items,val,template,clear
+u02018,어 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear
+u02019,음 주유소 어디 있어 얼른,other,val,template,clear
+u02020,아 커피 한 잔 마시고 싶다,other,test,gemini,clear
+u02021,음악 틀어주세요,other,train,template,clear
+u02022,검수 시작,scan,train,template,clear
+u02023,그 다음 어디 가야 하죠,next_stop,test,template,clear
+u02024,가락점 납품할 거 몇 가지야,stop_items,val,template,clear
+u02025,이제 일원점 배송 완료,complete,train,template,clear
+u02026,음 가락점 아이스크림 6개 주문이랑 달라 등록해줘 빨리,report_issue,test,template,clear
+u02027,잠깐 납품 완료야 빨리,complete,train,template,clear
+u02028,반포점 다 내렸어 사장님 받았어 지금,complete,train,template,clear
+u02029,음 청담점 납품 완료 처리해줘,complete,train,template,clear
+u02030,그 열 판 정도 차갑지가 않아 제육도시락 얼른,report_issue,train,template,clear
+u02031,아 퇴근하고 싶다 지금,other,train,template,clear
+u02032,삼성점은 주차하기 편해서 좋아,other,test,gemini,clear
+u02033,잠깐 삼각김밥 여기 몇 개 들어가,stop_items,train,template,ask
+u02034,잠깐 몇 개 남았죠,next_stop,test,template,clear
+u02035,자 주유소 어디 있어 빨리,other,val,template,clear
+u02036,점장님 확인했어 완료 빨리,complete,test,template,clear
+u02037,잠깐 다음 들를 데 어디야 빨리,next_stop,train,template,clear
+u02038,어 수고했어,other,val,template,clear
+u02039,이제 오늘 남은 일정 알려주세요,next_stop,train,template,clear
+u02040,이제 오늘 여기 물건 뭐야,stop_items,train,template,clear
+u02041,그 제육 도시락 얼마나 내려야 해요,stop_items,train,template,clear
+u02042,역삼점 컵라면 몇 박스야 얼른,stop_items,val,template,clear
+u02043,저기 지금까지 몇 군데 했어요,next_stop,train,template,clear
+u02044,어 여기 삼각김밥 몇 개 가져가 얼른,stop_items,train,template,ask
+u02045,자 이제 어디로 가면 돼요,next_stop,val,template,clear
+u02046,이제 초코파이 있어,stop_items,train,template,hard
+u02047,이제 매니저님 오늘 안 계시네,other,train,template,hard
+u02048,불량 기록 바나나 우유 엉뚱한 게 실렸어요,report_issue,train,template,clear
+u02049,아 주유소 어디 있어,other,val,template,clear
+u02050,우유 몇 개 내리면 돼 좀,stop_items,train,template,ask
+u02051,저기 샌드위치 다섯 개 주문이랑 달라,report_issue,train,template,clear
+u02052,이제 삼성점 다 내렸어 점장님 받았어 좀,complete,train,template,clear
+u02053,어 다음 행선지 알려주세요,next_stop,val,template,clear
+u02054,아 남은 점포 알려줘 얼른,next_stop,train,template,clear
+u02055,잠깐 어디 가야 되더라,next_stop,train,template,clear
+u02056,그 인수인계 끝났어요,complete,train,template,clear
+u02057,어 여기 다 됐어요,complete,val,template,clear
+u02058,그 라벨 찍을게 빨리,scan,train,template,clear
+u02059,자 스캔 모드로 바꿔줘 얼른,scan,train,template,clear
+u02060,어 여기 정리됐어요,complete,train,template,hard
+u02061,이거 맞는지 봐줘 좀,scan,train,template,hard
+u02062,이제 이번 점포 품목 알려줘 빨리,stop_items,train,template,clear
+u02063,아 요구르트 잘못 왔어,report_issue,train,template,clear
+u02064,제육 도시락 요즘 잘 팔리나,other,train,template,hard
+u02065,잠깐 청담점 물량 확인해줘 지금,stop_items,train,template,clear
+u02066,캔커피 문제 있어,report_issue,train,template,ask
+u02067,어 볼륨 좀 키워주세요,other,train,template,clear
+u02068,그 다음은 어디로 가,next_stop,train,template,clear
+u02069,송장 바코드 스캔 켜,scan,train,gemini,clear
+u02070,음 우유 얼마나 내려야 해,stop_items,train,template,ask
+u02071,저기 다음 어디예요,next_stop,train,template,clear
+u02072,자 여기 도시락 몇 개 가져가,stop_items,train,template,ask
+u02073,어 카메라 좀 열어 얼른,scan,train,template,clear
+u02074,잠깐 여기 끝나면 어디 가,next_stop,train,template,hard
+u02075,상품 찍어볼게요,scan,train,template,clear
+u02076,그 다음은 빨리,next_stop,val,template,hard
+u02077,저기 청담점 끝 빨리,complete,train,template,clear
+u02078,어 찍어 좀,scan,train,template,hard
+u02079,아 스캐너 열어줘,scan,val,template,clear
+u02080,잠깐 신사점 삼각김밥 몇 박스예요,stop_items,val,template,ask
+u02081,음 오늘 날씨 어때,other,val,template,clear
+u02082,음 어디 가야 되더라 좀,next_stop,train,template,clear
+u02083,자 다음 점포 알려주세요,next_stop,train,template,clear
+u02084,물건 개수가 안 맞아 기록해줘,report_issue,train,template,ask
+u02085,음 남은 점포 알려줘,next_stop,train,template,clear
+u02086,이제 스캔할게 지금,scan,train,template,clear
+u02087,음 노래 틀어줘,other,train,template,clear
+u02088,아 지금까지 몇 군데 했어,next_stop,train,template,clear
+u02089,잠깐 여기 내릴 거 읽어주세요,stop_items,test,template,clear
+u02090,아 여기 납품 물량 얼마야 빨리,stop_items,val,template,clear
+u02091,이제 딸기우유 얼마나 내려야 해요,stop_items,train,template,clear
+u02092,도곡점 마감 지금,complete,train,template,clear
+u02093,카메라 좀,scan,test,template,hard
+u02094,그 오늘 몇 곳 더 가야 돼 좀,next_stop,train,template,clear
+u02095,저기 다음 코스 알려줘 얼른,next_stop,train,template,clear
+u02096,이제 기록해줘 샌드위치 8개 깨졌어,report_issue,train,template,clear
+u02097,이제 QR 찍을게,scan,val,template,clear
+u02098,잠깐 가락점 오늘 뭐 내려,stop_items,train,template,clear
+u02099,네 봉지 정도 깨졌어 초코파이,report_issue,train,template,clear
+u02100,자 기록해줘 이온음료 세개 모자라 얼른,report_issue,train,template,clear
+u02101,문정점 하차 완료,complete,val,gemini,clear
+u02102,그 반포점에 뭐 가져가야 하지,stop_items,train,template,clear
+u02103,어 여기 사이다 몇 개예요,stop_items,train,template,clear
+u02104,저기 내일 비 와,other,train,template,clear
+u02105,신사점 들어가는 길 공사하더라,other,train,gemini,clear
+u02106,라벨 찍을게 지금,scan,train,template,clear
+u02107,어 반포점 도시락 몇 박스야 지금,stop_items,val,template,ask
+u02108,자 다음 배송지 말해줘 빨리,next_stop,test,template,clear
+u02109,아 다음 어디야 빨리,next_stop,train,template,clear
+u02110,잠깐 사이다 요즘 잘 팔리나,other,train,template,hard
+u02111,아 스캔 켜줘,scan,val,template,clear
+u02112,이제 여기 끝나면 어디 가,next_stop,train,template,hard
+u02113,가락점 삼각김밥 몇 박스야 좀,stop_items,val,template,ask
+u02114,음 여기 사이다 몇 개 가져가,stop_items,train,template,clear
+u02115,저기 삼각김밥 수량 얼마예요,stop_items,train,template,ask
+u02116,저기 남은 점포 알려줘 빨리,next_stop,train,template,clear
+u02117,그 젤리 엉뚱한 게 실렸어 두박스 지금,report_issue,val,template,clear
+u02118,그 물품 스캔 켜줘 얼른,scan,test,template,clear
+u02119,자 주유소 어디 있어요,other,val,template,clear
+u02120,어제 압구정점 가는 길 막혔어요,other,train,template,hard
+u02121,저기 청담점 점장님 친절하시더라,other,test,template,hard
+u02122,이 점포 납품 품목 뭐였죠,stop_items,train,template,clear
+u02123,물건 비어있어 기록해줘,report_issue,train,template,ask
+u02124,저기 도곡점 꺼 좀 봐주세요,stop_items,train,template,hard
+u02125,음 어 잠깐만,other,test,template,clear
+u02126,아 수고했어요,other,val,template,clear
+u02127,물품 스캔 켜줘,scan,test,template,clear
+u02128,잠깐 검품 시작할게요,scan,train,template,clear
+u02129,이제 문정점 하차 완료,complete,val,template,clear
+u02130,음 다음 들를 데 어디야,next_stop,train,template,clear
+u02131,이제 오늘 몇 월 며칠이예요,other,train,template,clear
+u02132,2판 수량이 안 맞아,report_issue,train,template,ask
+u02133,라벨 찍을게 얼른,scan,train,template,clear
+u02134,이거 다른 게 왔어요,report_issue,test,template,ask
+u02135,저기 QR 찍을게요,scan,val,template,clear
+u02136,아 수서점 물량 확인해줘,stop_items,train,template,clear
+u02137,이제 가락점 물량 확인해줘,stop_items,train,template,clear
+u02138,몇 개 남았지 빨리,next_stop,test,template,clear
+u02139,아 몇 개 남았지 빨리,next_stop,test,template,clear
+u02140,아 졈심 뭐 먹죠,other,train,template,clear
+u02141,아 구로점 스팸마요삼각김밥 새고 있어 얼른,report_issue,test,template,clear
+u02142,여기 내릴 박스가 몇 개냐,stop_items,train,gemini,clear
+u02143,저기 여기 뭐였더라,stop_items,train,template,hard
+u02144,점장님한테 넘겼어 얼른,complete,test,template,clear
+u02145,아 오늘 얼마나 했지,next_stop,train,template,clear
+u02146,음 수서점 마감,complete,train,template,clear
+u02147,다음 들러야 할 매장,next_stop,train,gemini,clear
+u02148,저기 아 아이스크림 박살났어 어떡해,report_issue,train,template,clear
+u02149,몇 군데 남았어 얼른,next_stop,train,template,clear
+u02150,자 다음 납품처 어디지 좀,next_stop,test,template,clear
+u02151,바코드 좀 확인할게 빨리,scan,train,template,clear
+u02152,엄마한테 전화해줘,other,test,template,clear
+u02153,송장 찍게 카메라 열어줘,scan,train,gemini,clear
+u02154,음 바나나우유 맛있겠다,other,train,template,hard
+u02155,어 어 잠깐만,other,test,template,clear
+u02156,어 어디 가야 되더라 좀,next_stop,train,template,clear
+u02157,잠깐 확인 좀 해볼게,scan,train,template,hard
+u02158,어 이거 찍어볼게 얼른,scan,train,template,clear
+u02159,청담점 꺼 좀 봐줘,stop_items,train,template,hard
+u02160,어 여기 끝나면 어디 가,next_stop,train,template,hard
+u02161,이제 이거 좀 문제인데 지금,report_issue,val,template,hard
+u02162,잠깐 다음 어디 가야 하지 빨리,next_stop,test,template,clear
+u02163,바나나 우유 좀 덜 왔어,report_issue,val,template,clear
+u02164,잠깐 신사점 마감 지금,complete,train,template,clear
+u02165,이제 이거 뭔지 확인해봐,scan,val,template,hard
+u02166,음 오늘 힘들다 빨리,other,train,template,clear
+u02167,그 매니저님한테 인계했어,complete,test,template,clear
+u02168,자 이거 맞는지 봐줘,scan,train,template,hard
+u02169,어 압구정점 납품할 거 몇 가지예요,stop_items,val,template,clear
+u02170,자 오늘 몇 곳 더 가야 돼,next_stop,train,template,clear
+u02171,저기 여기 마무리했어요,complete,train,template,clear
+u02172,음 여기 바나나우유 몇 개 가져가,stop_items,train,template,clear
+u02173,그 커피 마시고 싶다,other,train,template,clear
+u02174,잠실점 새우깡 두 봉지 터짐,report_issue,train,template,clear
+u02175,이제 다 내렸어,complete,val,template,clear
+u02176,송파점 배송 완료 좀,complete,train,template,clear
+u02177,그 다음 배송지 말해주세요,next_stop,test,template,clear
+u02178,아 도시락 수량 얼마예요,stop_items,train,template,ask
+u02179,아 그 다음은 지금,next_stop,val,template,hard
+u02180,그 압구정점 마감,complete,train,template,clear
+u02181,딸기 우유 상태 안 좋아 차갑지가 않아 지금,report_issue,train,template,clear
+u02182,저기 여기 인수인계 마쳤어,complete,train,template,clear
+u02183,그 잠실점 물건 뭐 내려 빨리,stop_items,train,template,clear
+u02184,잠깐 요거트 세 봉지쯤 녹았음,report_issue,train,template,clear
+u02185,음 수고했어,other,val,template,clear
+u02186,어 컵라면 좀 애매한데 잘못 왔어,report_issue,train,template,hard
+u02187,다 넣어놨어 빨리,complete,test,template,hard
+u02188,이제 카메라,scan,test,template,hard
+u02189,저기 아이스크림 다른 게 왔어 같기도 하고,report_issue,train,template,hard
+u02190,사장님 오늘 안 계시네,other,train,template,hard
+u02191,직원분한테 인계했어,complete,test,template,clear
+u02192,자 스캔 모드로 바꿔줘,scan,train,template,clear
+u02193,자 다 넣어놨어요,complete,test,template,hard
+u02194,저기 다음 코스 좀 알려줄래,next_stop,train,gemini,clear
+u02195,그 남은 점포 알려주세요,next_stop,train,template,clear
+u02196,이제 여기 다 됐어,complete,val,template,clear
+u02197,음 대치점 리스트 불러주세요,stop_items,test,template,clear
+u02198,어 카메라로 확인할래 빨리,scan,train,template,clear
+u02199,잠깐 오늘 날씨 어때,other,val,template,clear
+u02200,아니야 됐어 얼른,other,train,template,clear
+u02201,잠깐 남은 코스 몇 개야 좀,next_stop,train,template,clear
+u02202,다 내렸어,complete,val,template,clear
+u02203,자 매니저님 사인 받았어요,complete,train,template,clear
+u02204,저기 역삼점 끝,complete,train,template,clear
+u02205,이제 잠실점 리스트 불러줘 지금,stop_items,test,template,clear
+u02206,음 캔커피 이상한데,report_issue,train,template,hard
+u02207,점장님한테 인계했어요,complete,test,template,clear
+u02208,이 집 뭐 내리더라 얼른,stop_items,train,template,clear
+u02209,압구정점에 내릴 아이스크림 수량,stop_items,test,gemini,clear
+u02210,스캔 켜주세요,scan,val,template,clear
+u02211,음 이거 맞는지 봐줘 얼른,scan,train,template,hard
+u02212,그 기록해줘 감자칩 여섯개 녹았음 좀,report_issue,train,template,clear
+u02213,저기 도곡점 마감 빨리,complete,train,template,clear
+u02214,여기 내릴 거 읽어줘 좀,stop_items,test,template,clear
+u02215,송장 인식하게 스캔 켜라,scan,test,gemini,clear
+u02216,그 카메라로 확인할래,scan,train,template,clear
+u02217,감자칩 맛있겠다,other,train,template,hard
+u02218,그 라디오 켜줘,other,train,template,clear
+u02219,저기 농담 하나 해줘 좀,other,train,template,clear
+u02220,여기 우유 몇 개예요,stop_items,train,template,ask
+u02221,그 다음 어디야 지금,next_stop,train,template,clear
+u02222,그 다음 점포 어디였지 얼른,next_stop,train,template,clear
+u02223,청담점에 바나나 우유 세 개 잘못 온 듯,report_issue,train,gemini,clear
+u02224,제육 도시락 있어,stop_items,train,template,hard
+u02225,음 다음 가야 할 곳 알려주세요,next_stop,train,template,clear
+u02226,아 박스 바코드 찍게 켜줘,scan,test,gemini,clear
+u02227,아 점장님한테 인계했어 지금,complete,test,template,clear
+u02228,알바생 오늘 안 계시네,other,train,template,hard
+u02229,음 카메라 좀 열어,scan,train,template,clear
+u02230,음 여기 다 됐어,complete,val,template,clear
+u02231,어 새우깡 2개쯤 주문이랑 달라 얼른,report_issue,train,template,clear
+u02232,자 남은 곳 몇 개 더 있어 좀,next_stop,train,template,clear
+u02233,이제 이번 점포 품목 알려주세요,stop_items,train,template,clear
+u02234,잠깐 바코드 좀 확인할게요,scan,train,template,clear
+u02235,신사점에 뭐 가져가야 하죠,stop_items,train,template,clear
+u02236,잠깐 근처 화장실 어디야 좀,other,test,template,clear
+u02237,저기 카메라로 확인할래 빨리,scan,train,template,clear
+u02238,어 딸기우유 문제 있어 덜 왔어요,report_issue,train,template,clear
+u02239,저기 삼각김밥 이상한데,report_issue,train,template,hard
+u02240,음 엄마한테 전화해줘 얼른,other,test,template,clear
+u02241,자 바코드 찍을게,scan,test,template,clear
+u02242,음 감자칩 이상한데,report_issue,train,template,hard
+u02243,잠깐 매니저님한테 넘겼어요,complete,test,template,clear
+u02244,음 이온 음료 상태 안 좋아 냉장이 안 됐어,report_issue,train,template,clear
+u02245,음 음 저기,other,train,template,clear
+u02246,자 퇴근하고 싶다,other,train,template,clear
+u02247,마요 도시락 상태 좀 봐야겠다,report_issue,test,template,hard
+u02248,서초점 오케이 좀,complete,val,template,hard
+u02249,잠깐 감자칩 이거 맞나,report_issue,train,template,hard
+u02250,사장님 사인 받았어,complete,train,template,clear
+u02251,아 청담점 납품 목록 뭐예요,stop_items,val,template,clear
+u02252,어 몇 군데 남았어,next_stop,train,template,clear
+u02253,그 여기 납품 물량 얼마야,stop_items,val,template,clear
+u02254,다음 납품점 어디냐,next_stop,test,gemini,clear
+u02255,여기 다 됐어요,complete,val,template,clear
+u02256,새우깡 요즘 잘 팔리나,other,train,template,hard
+u02257,이제 사장님 확인했어 완료 빨리,complete,test,template,clear
+u02258,방배점 납품 다 했어요,complete,train,template,clear
+u02259,내일 비 와,other,train,template,clear
+u02260,아 문정점 납품 다 했어요,complete,train,template,clear
+u02261,저기 여기 다 됐어요,complete,val,template,clear
+u02262,잠깐 치킨마요 문제 있어요,report_issue,train,template,ask
+u02263,이제 뉴스 틀어줘 빨리,other,train,template,clear
+u02264,아 여기 납품 끝났어 좀,complete,train,template,clear
+u02265,이제 이제 어디야 빨리,next_stop,train,template,clear
+u02266,송파점 다 줬어,complete,test,gemini,clear
+u02267,저기 알바생 받았어요,complete,train,template,clear
+u02268,여기 뭐였더라 지금,stop_items,train,template,hard
+u02269,삼성점 내릴 품목이랑 수량 좀,stop_items,train,gemini,clear
+u02270,이제 뭐 하면 돼,next_stop,train,template,hard
+u02271,다음 목적지 뭐야 얼른,next_stop,train,template,clear
+u02272,아 몇 개 남았지,next_stop,test,template,clear
+u02273,자 농담 하나 해줘,other,train,template,clear
+u02274,라디오 켜줘,other,train,template,clear
+u02275,물 두 박스 빠졌음,report_issue,train,gemini,clear
+u02276,음 다음 납품처 어디지 좀,next_stop,test,template,clear
+u02277,새우깡 6박스 냉장이 안 됐어요,report_issue,train,template,clear
+u02278,이제 졸리다,other,train,template,clear
+u02279,잠깐 상품 찍어볼게,scan,train,template,clear
+u02280,아 여기 샌드위치 몇 개야 얼른,stop_items,train,template,clear
+u02281,점심 뭐 먹죠,other,train,template,clear
+u02282,아 젤리 상태 안 좋아 온도가 높아,report_issue,train,template,clear
+u02283,아 스캔할게,scan,train,template,clear
+u02284,음 여기 납품 끝났어 얼른,complete,train,template,clear
+u02285,일원점 완료 찍어라,complete,val,gemini,clear
+u02286,우유 이상한데 좀,report_issue,train,template,hard
+u02287,어 남은 점포 알려줘 얼른,next_stop,train,template,clear
+u02288,커피 마시고 싶다 좀,other,train,template,clear
+u02289,음 점심 뭐 먹지 얼른,other,train,template,clear
+u02290,잠깐 볼륨 좀 키워줘,other,train,template,clear
+u02291,잠깐 송파점 배송 완료,complete,train,template,clear
+u02292,이제 캔커피 깨졌어 12개,report_issue,val,template,clear
+u02293,잠깐 매니저님가 확인했대,complete,train,template,hard
+u02294,점심 뭐 먹지 얼른,other,train,template,clear
+u02295,저기 바코드 읽을게 좀,scan,train,template,clear
+u02296,요구르트 내리는 거예요,stop_items,train,template,hard
+u02297,수서점 납품할 거 몇 가지야,stop_items,val,template,clear
+u02298,이제 어디로 갈지 알려주세요,next_stop,test,template,hard
+u02299,자 마요 도시락 좀 애매한데 개수가 안 맞아,report_issue,train,template,hard
+u02300,저기 딸기 우유 박스 하나 차갑지가 않아,report_issue,test,template,clear
+u02301,그 여기 내릴 거 읽어주세요,stop_items,test,template,clear
+u02302,아 여기 도시락 몇 개 가져가,stop_items,train,template,ask
+u02303,음 다음 가야 할 곳 알려줘,next_stop,train,template,clear
+u02304,어디로 갈지 알려주세요,next_stop,test,template,hard
+u02305,그 수서점 아이스크림 세판 주문이랑 달라 등록해주세요,report_issue,test,template,clear
+u02306,도시락 수량 몇 개인지 봐줘,stop_items,test,gemini,ask
+u02307,음 이제 어디야,next_stop,train,template,clear
+u02308,어 물건 확인할게 얼른,scan,test,template,clear
+u02309,여기 납품 물량 얼마야 좀,stop_items,val,template,clear
+u02310,어 압구정점 딸기우유 여섯 박스 모자라 등록해주세요,report_issue,test,template,clear
+u02311,자 남은 곳 몇 개 더 있어 얼른,next_stop,train,template,clear
+u02312,음 다음 거,next_stop,train,template,hard
+u02313,이제 서초점 끝,complete,train,template,clear
+u02314,역삼점 오케이,complete,val,template,hard
+u02315,기록해줘 마요 도시락 열개 파손됐어요,report_issue,train,template,clear
+u02316,바코드 찍자 스캐너 열어,scan,train,gemini,clear
+u02317,볼륨 좀 올려줄래,other,train,gemini,clear
+u02318,어 잠깐만 빨리,other,test,template,clear
+u02319,잠깐 물 부족해 세 개,report_issue,val,template,clear
+u02320,아 주유소 어디 있어 얼른,other,val,template,clear
+u02321,어 바코드 읽을게 얼른,scan,train,template,clear
+u02322,매니저님 사인 받았어,complete,train,template,clear
+u02323,저기 퇴근하고 싶다,other,train,template,clear
+u02324,아 여기 인수인계 마쳤어 빨리,complete,train,template,clear
+u02325,이 점포 납품 품목 뭐였지,stop_items,train,template,clear
+u02326,아 졸리다,other,train,template,clear
+u02327,저기 라벨 찍을게 빨리,scan,train,template,clear
+u02328,잠깐 오늘 진행상황 어때 빨리,next_stop,val,template,clear
+u02329,잠깐 오늘 여기 물건 뭐야,stop_items,train,template,clear
+u02330,자 이상 있어 아이스크림 터짐,report_issue,train,template,clear
+u02331,이제 신림점 납품 완료 처리해줘,complete,train,template,clear
+u02332,방배점 완료,complete,train,gemini,clear
+u02333,어 바코드 읽을게요,scan,train,template,clear
+u02334,아 바코드 읽을게요,scan,train,template,clear
+u02335,잠깐 물품 스캔 켜줘 빨리,scan,test,template,clear
+u02336,어 그 다음은,next_stop,val,template,hard
+u02337,아 다음 가게 어디였더라,next_stop,train,gemini,clear
+u02338,잠깐 불량 기록 바나나우유 터졌어 좀,report_issue,train,template,clear
+u02339,잠깐 딸기 우유 박스 하나 이거 우리 거 아니래,report_issue,test,template,clear
+u02340,문정점 물량 확인해주세요,stop_items,train,template,clear
+u02341,저기 노래 틀어주세요,other,train,template,clear
+u02342,잠깐 점장님한테 인계했어요,complete,test,template,clear
+u02343,어 잠깐만 좀,other,test,template,clear
+u02344,자 알바생한테 전달했어,complete,train,template,clear
+u02345,카메라로 확인할래 빨리,scan,train,template,clear
+u02346,음 에어컨 켜줘,other,train,template,clear
+u02347,잠깐 삼성점 마감,complete,train,template,clear
+u02348,이제 청담점 배송 완료,complete,train,template,clear
+u02349,음 오늘 납품 많네,other,val,template,hard
+u02350,석촌점 다 내렸어 직원분 받았어,complete,train,template,clear
+u02351,어 생수 상태 좀 봐야겠다,report_issue,test,template,hard
+u02352,아 남은 곳 몇 개 더 있어 빨리,next_stop,train,template,clear
+u02353,이 다음 코스는 어디냐,next_stop,train,gemini,clear
+u02354,아 이 점포 납품 품목 뭐였지 좀,stop_items,train,template,clear
+u02355,여섯 판 상했어요,report_issue,train,template,ask
+u02356,음 여기 뭐였더라,stop_items,train,template,hard
+u02357,그 사장님 확인했어 완료,complete,test,template,clear
+u02358,어 청담점 납품 완료 처리해줘,complete,train,template,clear
+u02359,젤리 얼마나 내려야 해 얼른,stop_items,train,template,clear
+u02360,스팸마요삼각김밥 몇 개 내리면 돼,stop_items,train,template,clear
+u02361,이제 여기 완료 처리,complete,val,template,clear
+u02362,매니저님한테 줬어 지금,complete,train,template,hard
+u02363,이제 문정점 오늘 뭐 내려,stop_items,train,template,clear
+u02364,어 도시락 얼마나 내려야 해,stop_items,train,template,ask
+u02365,저기 감자칩 맛있겠다,other,train,template,hard
+u02366,이제 이거 이거 우리 거 아니래 빨리,report_issue,test,template,ask
+u02367,이제 이번 점포 끝,complete,train,template,clear
+u02368,검수 모드 켜줘 얼른,scan,train,template,clear
+u02369,음 다 내렸어,complete,val,template,clear
+u02370,감자칩 두 봉지 터져서 옴,report_issue,train,gemini,clear
+u02371,아 남은 점포 알려줘 빨리,next_stop,train,template,clear
+u02372,이제 여기 납품 물량 얼마야 지금,stop_items,val,template,clear
+u02373,금천점에 초코파이 몇 개 들어가냐,stop_items,train,gemini,clear
+u02374,그 찍어 빨리,scan,train,template,hard
+u02375,음 점장님 사인 받았어요,complete,train,template,clear
+u02376,이제 라벨 찍을게 얼른,scan,train,template,clear
+u02377,어 여기 내릴 거 읽어줘,stop_items,test,template,clear
+u02378,이제 다음은 어디로 가,next_stop,train,template,clear
+u02379,도시락 수량 얼마예요,stop_items,train,template,ask
+u02380,잠깐 잠원점 점장님 친절하시더라,other,test,template,hard
+u02381,어 잠깐만,other,test,template,clear
+u02382,도시락 한 개 안 왔는데,report_issue,test,gemini,ask
+u02383,음 삼각김밥 몇 개 내리면 돼요,stop_items,train,template,ask
+u02384,자 다음 배송지 말해주세요,next_stop,test,template,clear
+u02385,다음 거 얼른,next_stop,train,template,hard
+u02386,그 남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u02387,자 이번 점포 끝,complete,train,template,clear
+u02388,배송 완료 눌러줘,complete,train,template,clear
+u02389,신사점 거 다 실렸나,stop_items,val,template,hard
+u02390,그 사장님한테 인계했어 빨리,complete,test,template,clear
+u02391,사장님가 확인했대,complete,train,template,hard
+u02392,남은 곳 몇 개 더 있어,next_stop,train,template,clear
+u02393,저기 제육 도시락 네 판 이상 생겼어 다 찢어졌어 빨리,report_issue,val,template,clear
+u02394,라디오 켜줘 지금,other,train,template,clear
+u02395,음 하차 끝났어,complete,train,template,clear
+u02396,저기 바나나우유 여기 들어가는 거 맞아 얼른,stop_items,test,template,hard
+u02397,자 여기 뭐였더라,stop_items,train,template,hard
+u02398,자 스캔할게,scan,train,template,clear
+u02399,그 점심 뭐 먹지 지금,other,train,template,clear
+u02400,물 맛있겠다,other,train,template,hard
+u02401,이제 뉴스 틀어줘,other,train,template,clear
+u02402,어 여기 완료 처리,complete,val,template,clear
+u02403,음 여기 감자칩 몇 개야 얼른,stop_items,train,template,clear
+u02404,어 다음 점포 알려줘,next_stop,train,template,clear
+u02405,납품 완료야,complete,train,template,clear
+u02406,스캐너 열어줘,scan,val,template,clear
+u02407,이제 바코드 스캔 시작 지금,scan,train,template,clear
+u02408,아 사이다 여기 들어가는 거 맞아 얼른,stop_items,test,template,hard
+u02409,어 매니저님한테 줬어,complete,train,template,hard
+u02410,이제 여기 완료 처리 빨리,complete,val,template,clear
+u02411,아 카메라 좀 열어,scan,train,template,clear
+u02412,음 하차 끝났어 좀,complete,train,template,clear
+u02413,다음 납품처 어디죠,next_stop,test,template,clear
+u02414,이제 감자칩 요즘 잘 팔리나 지금,other,train,template,hard
+u02415,자 다음 들를 데 어디야 얼른,next_stop,train,template,clear
+u02416,이제 사이다 있어 좀,stop_items,train,template,hard
+u02417,어 다음 점포 어디였죠,next_stop,train,template,clear
+u02418,아 다음 어디로 쏘면 되지,next_stop,train,gemini,clear
+u02419,음 문정점 물량 확인해줘 좀,stop_items,train,template,clear
+u02420,이번 점포 끝,complete,train,template,clear
+u02421,그 송장 찍을게요,scan,train,template,clear
+u02422,어 검수 할게 얼른,scan,train,template,clear
+u02423,저기 이 집 뭐 내리더라,stop_items,train,template,clear
+u02424,아 상품 찍어볼게,scan,train,template,clear
+u02425,논현점 젤리 수량 말해봐,stop_items,test,gemini,clear
+u02426,이제 다음 목적지 뭐야 지금,next_stop,train,template,clear
+u02427,어 잠원점 리스트 불러줘,stop_items,test,template,clear
+u02428,신사점 스팸마요삼각김밥 여섯판 녹았음,report_issue,train,template,clear
+u02429,남은 점포 알려줘,next_stop,train,template,clear
+u02430,잠깐 검수 시작,scan,train,template,clear
+u02431,이제 우유 얼마나 내려야 해요,stop_items,train,template,ask
+u02432,스캔 화면으로 넘겨줘,scan,train,gemini,clear
+u02433,금천점 젤리 세봉지 하나 빠졌어,report_issue,train,template,clear
+u02434,자 참치삼각김밥 몇 개였지,stop_items,train,template,clear
+u02435,잠깐 검수 할게요,scan,train,template,clear
+u02436,잠깐 스캔 모드로 바꿔줘 지금,scan,train,template,clear
+u02437,물건 확인할게요,scan,test,template,clear
+u02438,음 다음 어디예요,next_stop,train,template,clear
+u02439,구로점 내릴 목록 좀 틀어봐,stop_items,test,gemini,clear
+u02440,어 스캐너 열어주세요,scan,val,template,clear
+u02441,잠깐 점장님한테 전달했어 좀,complete,train,template,clear
+u02442,노래 다음 곡으로 넘겨,other,test,gemini,clear
+u02443,저기 다음 목적지 뭐야 얼른,next_stop,train,template,clear
+u02444,매니저님한테 줬어요,complete,train,template,hard
+u02445,그 잠실점 다 내렸어 매니저님 받았어,complete,train,template,clear
+u02446,저기 새우깡 있어 얼른,stop_items,train,template,hard
+u02447,역삼점에 뭐 가져가야 하지 좀,stop_items,train,template,clear
+u02448,자 다음 가야 할 곳 알려줘 빨리,next_stop,train,template,clear
+u02449,남은 배송지 몇 개야 좀,next_stop,val,template,clear
+u02450,아 논현점에 도시락 몇 개 내리냐,stop_items,train,gemini,ask
+u02451,개포점 납품 완료 처리해줘,complete,train,template,clear
+u02452,저기 다음 배송지 어디야,next_stop,train,gemini,clear
+u02453,압구정점 매니저님한테 드렸어요,complete,train,gemini,clear
+u02454,배송 완료 눌러줘 좀,complete,train,template,clear
+u02455,에어컨 켜주세요,other,train,template,clear
+u02456,알바생한테 넘겼어,complete,test,template,clear
+u02457,음 다음은 어디로 가 좀,next_stop,train,template,clear
+u02458,남은 집 어디어디 남았지,next_stop,test,gemini,clear
+u02459,자 여기 뭐 내려야 돼,stop_items,train,template,clear
+u02460,여기 도시락 몇 개야,stop_items,train,template,ask
+u02461,어 근처 화장실 어디야 얼른,other,test,template,clear
+u02462,송파점 점장님 친절하시더라,other,test,template,hard
+u02463,잠깐 5개 이거 우리 거 아니래 지금,report_issue,train,template,ask
+u02464,잠깐 납품 완료야 지금,complete,train,template,clear
+u02465,어 에어컨 켜줘 빨리,other,train,template,clear
+u02466,여기 들어갈 거 뭐뭐야 얼른,stop_items,test,template,clear
+u02467,이제 다음 점포 알려줘,next_stop,train,template,clear
+u02468,음 바코드 켜 좀,scan,test,template,clear
+u02469,음 바코드 읽을게,scan,train,template,clear
+u02470,방배점 사장님 확인 완료,complete,test,gemini,clear
+u02471,자 졸리다,other,train,template,clear
+u02472,이제 바코드 찍을게,scan,test,template,clear
+u02473,스캔할게요,scan,train,template,clear
+u02474,이제 배송 완료 눌러줘 빨리,complete,train,template,clear
+u02475,저기 도곡점 물건 뭐 내려,stop_items,train,template,clear
+u02476,송파점 배송 완료,complete,train,template,clear
+u02477,문정점 서울우유 온도가 높아요,report_issue,test,gemini,clear
+u02478,삼각김밥 수량 얼마야,stop_items,train,template,ask
+u02479,카메라 켜줘 스캔하게,scan,train,gemini,clear
+u02480,음 점장님 확인했어 완료,complete,test,template,clear
+u02481,음 다 내렸어요,complete,val,template,clear
+u02482,잠깐 젤리 문제 있어 이거 우리 거 아니래 빨리,report_issue,train,template,clear
+u02483,그 근처 화장실 어디야,other,test,template,clear
+u02484,그 생수 좀 애매한데 수량이 안 맞아,report_issue,train,template,hard
+u02485,수서점 요거트 몇 개 들었지,stop_items,test,gemini,clear
+u02486,가락점에서 딸기우유 미지근해요,report_issue,train,template,clear
+u02487,오늘 배송 물량 진짜 많네,other,train,gemini,clear
+u02488,그 샌드위치 쪽에 문제가 좀 있어요,report_issue,val,template,ask
+u02489,자 오늘 남은 일정 알려줘,next_stop,train,template,clear
+u02490,음 바코드 좀 확인할게요,scan,train,template,clear
+u02491,아 직원분한테 전달했어요,complete,train,template,clear
+u02492,송장 찍게 준비해,scan,val,gemini,clear
+u02493,잠깐 하차 끝났어요,complete,train,template,clear
+u02494,어 검수 시작 지금,scan,train,template,clear
+u02495,아 라벨 찍을게요,scan,train,template,clear
+u02496,아 차 막히네 얼른,other,train,template,clear
+u02497,어 오늘 몇 곳 더 가야 돼요,next_stop,train,template,clear
+u02498,담배나 하나 피고 올까,other,train,gemini,clear
+u02499,그 남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u02500,그 남은 점포 알려줘 좀,next_stop,train,template,clear
+u02501,그 세개 정도 온도가 높아 바나나우유,report_issue,train,template,clear
+u02502,잠깐 이온음료 한박스쯤 덜 왔어,report_issue,train,template,clear
+u02503,서울우유 박스 하나 주문이랑 달라,report_issue,test,template,clear
+u02504,석촌점 오늘 뭐 내려,stop_items,train,template,clear
+u02505,어 여기 삼각김밥 몇 개 가져가,stop_items,train,template,ask
+u02506,스캔 모드로 바꿔줘,scan,train,template,clear
+u02507,저기 음악 틀어줘 지금,other,train,template,clear
+u02508,어 뉴스 틀어주세요,other,train,template,clear
+u02509,저기 다음 어디 가야 하지 지금,next_stop,test,template,clear
+u02510,잠깐 다 내렸어 빨리,complete,val,template,clear
+u02511,이제 음악 틀어주세요,other,train,template,clear
+u02512,그 검품 시작할게 지금,scan,train,template,clear
+u02513,바코드 켜 좀,scan,test,template,clear
+u02514,금천점 이온음료 세 개 찌그러졌어요,report_issue,train,gemini,clear
+u02515,아 초코파이 여기 몇 개 들어가,stop_items,train,template,clear
+u02516,아 오늘 몇 월 며칠이예요,other,train,template,clear
+u02517,기록해줘 아이스크림 세 판 다 찢어졌어요,report_issue,train,template,clear
+u02518,잠깐 물품 스캔 켜줘 지금,scan,test,template,clear
+u02519,그 여기 마무리했어,complete,train,template,clear
+u02520,다음 갈 매장 위치 알려줘,next_stop,val,gemini,clear
+u02521,여기 삼각김밥 몇 개야 얼른,stop_items,train,template,ask
+u02522,딸기 우유 요즘 잘 팔리나,other,train,template,hard
+u02523,새우깡 한 봉지 뜯어짐,report_issue,train,gemini,clear
+u02524,이제 송장 찍을게요,scan,train,template,clear
+u02525,다음 거,next_stop,train,template,hard
+u02526,저기 개포점 바나나우유 12개 냉장이 안 됐어 등록해줘 좀,report_issue,test,template,clear
+u02527,생수 엉뚱한 게 실렸어 좀,report_issue,train,template,clear
+u02528,음 농담 하나 해줘,other,train,template,clear
+u02529,음 이거 맞는지 봐줘 지금,scan,train,template,hard
+u02530,반포점 우유 미지근하다 온도이상,report_issue,train,gemini,ask
+u02531,잠깐 카메라 켜줘 지금,scan,train,template,clear
+u02532,잠깐 도시락 수량 얼마예요,stop_items,train,template,ask
+u02533,아 생수 맛있겠다,other,train,template,hard
+u02534,대치점 생수 한 박스 부족합니다,report_issue,train,gemini,clear
+u02535,잠깐 찍어 빨리,scan,train,template,hard
+u02536,아 샌드위치 몇 개 내리면 돼 좀,stop_items,train,template,clear
+u02537,어 라벨 찍을게 좀,scan,train,template,clear
+u02538,아 검수 할게,scan,train,template,clear
+u02539,자 다음 점포 어디였죠,next_stop,train,template,clear
+u02540,음 요거트 터짐 같기도 하고,report_issue,train,template,hard
+u02541,저기 스캐너 열어주세요,scan,val,template,clear
+u02542,구로점에 제육도시락 보냈는데 잘못 왔어 빨리,report_issue,train,template,clear
+u02543,수고했어 지금,other,val,template,clear
+u02544,구로점 캔커피 한 박스 상자가 젖었네,report_issue,test,gemini,clear
+u02545,삼각김밥 얼마나 내려야 해,stop_items,train,template,ask
+u02546,그 스캔 모드로 바꿔줘 지금,scan,train,template,clear
+u02547,구로점 점장님 친절하시더라,other,test,template,hard
+u02548,남은 코스 몇 개야 좀,next_stop,train,template,clear
+u02549,아 여기 다 됐어요,complete,val,template,clear
+u02550,젤리 얼마나 내려야 해요,stop_items,train,template,clear
+u02551,아 볼륨 좀 키워줘 얼른,other,train,template,clear
+u02552,스캔 좀 해볼게 좀,scan,train,template,clear
+u02553,이제 어디야 지금,next_stop,train,template,clear
+u02554,라디오 켜줘 좀,other,train,template,clear
+u02555,아 다음 꺼 어디 있는 데야 좀,next_stop,train,template,hard
+u02556,아 문정점 도시락 몇 박스야,stop_items,val,template,ask
+u02557,아 다음 납품처 어디지,next_stop,test,template,clear
+u02558,아 다음 들를 데 어디예요,next_stop,train,template,clear
+u02559,자 남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u02560,아 참치김밥 여기 들어가는 거 맞아,stop_items,test,template,hard
+u02561,오늘 몇 월 며칠이야 좀,other,train,template,clear
+u02562,저기 여기 사이다 12박스 오배송이예요,report_issue,train,template,clear
+u02563,카메라 켜줘 빨리,scan,train,template,clear
+u02564,음 스캔할게요,scan,train,template,clear
+u02565,음 스캔 좀 해볼게요,scan,train,template,clear
+u02566,개포점 다 인계했습니다,complete,val,gemini,clear
+u02567,이제 석촌점 하차 완료 좀,complete,val,template,clear
+u02568,이거 깨졌어 얼른,report_issue,test,template,ask
+u02569,고마워,other,val,template,clear
+u02570,카메라 켜주세요,scan,train,template,clear
+u02571,아 납품 완료예요,complete,train,template,clear
+u02572,어 커피 깨졌어 네 박스 빨리,report_issue,val,template,clear
+u02573,어 오늘 힘들다,other,train,template,clear
+u02574,삼각김밥 몇 개였죠,stop_items,train,template,ask
+u02575,저기 오늘 얼마나 했죠,next_stop,train,template,clear
+u02576,아 점심 뭐 먹지,other,train,template,clear
+u02577,음 샌드위치 내리는 거야,stop_items,train,template,hard
+u02578,자 제육도시락 박스 하나 차갑지가 않아,report_issue,test,template,clear
+u02579,잠깐 청담점 스팸마요삼각김밥 한개 터졌어,report_issue,train,template,clear
+u02580,아 신호 진짜 안 바뀌네,other,train,gemini,clear
+u02581,자 지금 몇 시예요,other,test,template,clear
+u02582,요구르트 좀 애매한데 미지근해,report_issue,train,template,hard
+u02583,자 카메라 좀 열어요,scan,train,template,clear
+u02584,음 직원분가 확인했대 지금,complete,train,template,hard
+u02585,이거 딴 물건이 온 것 같은데 오배송,report_issue,val,gemini,ask
+u02586,어 컵라면 박스 하나 터졌어 빨리,report_issue,test,template,clear
+u02587,이제 스캐너 켜 빨리,scan,val,template,clear
+u02588,저기 삼각김밥 여기 몇 개 들어가,stop_items,train,template,ask
+u02589,아 여기 뭐였더라 지금,stop_items,train,template,hard
+u02590,어 다 넣어놨어,complete,test,template,hard
+u02591,그 오늘 진행상황 어때,next_stop,val,template,clear
+u02592,도시락 얼마나 내려야 해,stop_items,train,template,ask
+u02593,제육도시락 녹았음,report_issue,train,template,clear
+u02594,어 물건 터졌어 기록해줘 지금,report_issue,train,template,ask
+u02595,자 스팸마요 있어 좀,stop_items,train,template,hard
+u02596,아 이상 있어 콜라 찌그러졌어 얼른,report_issue,train,template,clear
+u02597,아 바코드 스캔 시작,scan,train,template,clear
+u02598,수서점 납품 다 했어요,complete,train,template,clear
+u02599,아 초코파이 주문이랑 달라 어떡해요,report_issue,train,template,clear
+u02600,잠깐 딸기 우유 문제 있어 하나 빠졌어 좀,report_issue,train,template,clear
+u02601,아 요구르트 비어있어 어떡해,report_issue,train,template,clear
+u02602,이제 볼륨 좀 키워주세요,other,train,template,clear
+u02603,여덟개 오배송이야,report_issue,train,template,ask
+u02604,저기 이거 뭔지 확인해봐,scan,val,template,hard
+u02605,이제 컵라면 비어있어 같기도 하고,report_issue,train,template,hard
+u02606,저기 이거 녹았음,report_issue,test,template,ask
+u02607,서초점에 샌드위치 보냈는데 하나 빠졌어 좀,report_issue,train,template,clear
+u02608,다음 매장 어디로 넘어가면 돼,next_stop,test,gemini,clear
+u02609,가산점 납품 마쳤습니다,complete,test,gemini,clear
+u02610,자 수서점 이온 음료 찌그러졌어 얼른,report_issue,test,template,clear
+u02611,직원분 사인 받았어 빨리,complete,train,template,clear
+u02612,반포점 리스트 불러줘,stop_items,test,template,clear
+u02613,제육도시락 좀 하나 빠졌어요,report_issue,val,template,clear
+u02614,대치점 매니저님 인계 끝,complete,train,gemini,clear
+u02615,음 스캔할게 좀,scan,train,template,clear
+u02616,아 스캔 모드로 바꿔줘 지금,scan,train,template,clear
+u02617,음 송파점 하차 완료,complete,val,template,clear
+u02618,금천점 알바생 전달 완료,complete,train,gemini,clear
+u02619,아 납품 완료야 얼른,complete,train,template,clear
+u02620,저기 서울우유 몇 개 내리면 돼,stop_items,train,template,clear
+u02621,잠깐 샌드위치 상태 좀 봐야겠다 좀,report_issue,test,template,hard
+u02622,개포점 하차 물량 말해줘,stop_items,train,gemini,clear
+u02623,역삼점 다 내려놓고 간다,complete,train,gemini,clear
+u02624,그 검수 모드 켜줘,scan,train,template,clear
+u02625,저기 스캔 좀 해볼게요,scan,train,template,clear
+u02626,이제 남은 코스 몇 개야,next_stop,train,template,clear
+u02627,완료 찍어줘 빨리,complete,train,template,clear
+u02628,자 논현점 물량 확인해줘,stop_items,train,template,clear
+u02629,일원점 마감,complete,train,template,clear
+u02630,어 초코파이 문제 있어,report_issue,train,template,ask
+u02631,아 스캔 모드로 바꿔줘,scan,train,template,clear
+u02632,음 잠실점 끝 좀,complete,train,template,clear
+u02633,다음 목적지 뭐야 지금,next_stop,train,template,clear
+u02634,잠깐 다음 배송지 말해주세요,next_stop,test,template,clear
+u02635,하차 끝났어요,complete,train,template,clear
+u02636,저기 몇 개 남았죠,next_stop,test,template,clear
+u02637,다음 가야 할 가게 이름이 뭐야,next_stop,train,gemini,clear
+u02638,어 가락점 납품 다 했어요,complete,train,template,clear
+u02639,3개 녹았음,report_issue,train,template,ask
+u02640,배송 완료 눌러주세요,complete,train,template,clear
+u02641,초코파이 이거 우리 거 아니래 두 개,report_issue,val,template,clear
+u02642,자 이거 찍어볼게 지금,scan,train,template,clear
+u02643,이제 배고프다,other,train,template,clear
+u02644,여기 들어갈 거 뭐뭐야 빨리,stop_items,test,template,clear
+u02645,검품 시작할게요,scan,train,template,clear
+u02646,오늘 납품 많네,other,val,template,hard
+u02647,어 대치점 물건 뭐 내려 빨리,stop_items,train,template,clear
+u02648,논현점 거 다 실렸나,stop_items,val,template,hard
+u02649,자 상품 찍어볼게,scan,train,template,clear
+u02650,다음 점포 알려줘 빨리,next_stop,train,template,clear
+u02651,어 음 저기,other,train,template,clear
+u02652,이제 물건 확인할게요,scan,test,template,clear
+u02653,아 농담 하나 해주세요,other,train,template,clear
+u02654,검수 시작 좀,scan,train,template,clear
+u02655,다음 납품처 어디지,next_stop,test,template,clear
+u02656,음 오늘 힘들다 얼른,other,train,template,clear
+u02657,어디로 갈지 알려줘,next_stop,test,template,hard
+u02658,카메라 좀 열어요,scan,train,template,clear
+u02659,자 다음 어디 가야 하죠,next_stop,test,template,clear
+u02660,삼성점 제육도시락 두 개 깨졌습니다,report_issue,train,gemini,clear
+u02661,아 제육도시락 좀 애매한데 엉뚱한 게 실렸어요,report_issue,train,template,hard
+u02662,수서점 하차 완료 빨리,complete,val,template,clear
+u02663,요거트 문제 있어요,report_issue,train,template,ask
+u02664,그 QR 찍을게 얼른,scan,val,template,clear
+u02665,여기 완료 처리,complete,val,template,clear
+u02666,초코파이 문제 있어 부족해 빨리,report_issue,train,template,clear
+u02667,서초점 내리기 끝,complete,train,gemini,clear
+u02668,자 오늘 남은 일정 알려줘 얼른,next_stop,train,template,clear
+u02669,이제 바코드 찍을게요,scan,test,template,clear
+u02670,송파점 하차 완료,complete,val,template,clear
+u02671,도곡점 내릴 거 알려줘 얼른,stop_items,train,template,clear
+u02672,음 몇 개 남았지,next_stop,test,template,clear
+u02673,음 점심 뭐 먹죠,other,train,template,clear
+u02674,자 대치점 도시락 몇 박스야,stop_items,val,template,ask
+u02675,이제 라디오 켜줘,other,train,template,clear
+u02676,어 삼성점 리스트 불러줘 빨리,stop_items,test,template,clear
+u02677,사장님한테 전달했어,complete,train,template,clear
+u02678,그 하차 끝났어요,complete,train,template,clear
+u02679,그 남은 배송지 몇 개예요,next_stop,val,template,clear
+u02680,점심 뭐 먹지 지금,other,train,template,clear
+u02681,아 잠실점 납품 다 했어,complete,train,template,clear
+u02682,그 커피 8개 상했어요,report_issue,train,template,clear
+u02683,그 콜라 수량 얼마야 빨리,stop_items,train,template,clear
+u02684,내릴 물건 알려줘 좀,stop_items,test,template,clear
+u02685,저기 내일 비 와 빨리,other,train,template,clear
+u02686,이제 여기 납품 끝났어 지금,complete,train,template,clear
+u02687,이제 스캐너 켜,scan,val,template,clear
+u02688,아 다음 들를 데 어디야 얼른,next_stop,train,template,clear
+u02689,이제 오늘 얼마나 했지,next_stop,train,template,clear
+u02690,저기 캔커피 2판 이상 생겼어 미지근해요,report_issue,val,template,clear
+u02691,저기 오늘 날씨 어때 지금,other,val,template,clear
+u02692,새우깡 내리는 거예요,stop_items,train,template,hard
+u02693,어 불량 기록 도시락 차갑지가 않아,report_issue,train,template,ask
+u02694,음 끝났어 다음 빨리,complete,train,template,hard
+u02695,스캔 모드 켜봐,scan,train,gemini,clear
+u02696,압구정점 마감,complete,train,template,clear
+u02697,사이다 다 녹았어 1봉지 지금,report_issue,val,template,clear
+u02698,이제 찍어,scan,train,template,hard
+u02699,졸리다 얼른,other,train,template,clear
+u02700,음 다음 코스 알려줘 빨리,next_stop,train,template,clear
+u02701,아 송파점 거 다 실렸나,stop_items,val,template,hard
+u02702,남은 배송지 리스트 좀 보여줘,next_stop,train,gemini,clear
+u02703,여기 삼각김밥 네 판 깨졌어 좀,report_issue,train,template,ask
+u02704,어 3봉지 정도 깨졌어 마요 도시락 지금,report_issue,train,template,clear
+u02705,아니야 됐어요,other,train,template,clear
+u02706,어 신사점에서 초코파이 터짐,report_issue,train,template,clear
+u02707,바코드 촬영하게 카메라 켜,scan,train,gemini,clear
+u02708,어 바코드 찍을게 좀,scan,test,template,clear
+u02709,저기 몇 군데 남았어 좀,next_stop,train,template,clear
+u02710,아 물품 스캔 켜줘,scan,test,template,clear
+u02711,저기 사장님 오늘 안 계시네,other,train,template,hard
+u02712,음 이 집 뭐 내리더라,stop_items,train,template,clear
+u02713,자 수고했어요,other,val,template,clear
+u02714,새우깡 두박스 다른 게 왔어 좀,report_issue,train,template,clear
+u02715,점심 뭐 먹지 좀,other,train,template,clear
+u02716,어 바코드 켜,scan,test,template,clear
+u02717,어 여기 도시락 몇 개 가져가 좀,stop_items,train,template,ask
+u02718,감자칩 오배송이야 같기도 하고,report_issue,train,template,hard
+u02719,자 여기 초코파이 5개 찌그러졌어요,report_issue,train,template,clear
+u02720,잠깐 스캔 좀 해볼게,scan,train,template,clear
+u02721,자 오늘 여기 물건 뭐예요,stop_items,train,template,clear
+u02722,오늘 남은 일정 알려줘 빨리,next_stop,train,template,clear
+u02723,저기 카메라 좀 열어 지금,scan,train,template,clear
+u02724,아 여기 납품 끝났어 지금,complete,train,template,clear
+u02725,음 바코드 찍을게,scan,test,template,clear
+u02726,압구정점 요거트 몇 개 상한 것 같은데,report_issue,train,gemini,clear
+u02727,저기 역삼점 배송 완료,complete,train,template,clear
+u02728,문정점 물량 확인해줘 빨리,stop_items,train,template,clear
+u02729,이제 잠원점 납품 목록 뭐야,stop_items,val,template,clear
+u02730,차 막히네 얼른,other,train,template,clear
+u02731,남은 곳 몇 개 더 있어요,next_stop,train,template,clear
+u02732,이제 이 점포 납품 품목 뭐였지 얼른,stop_items,train,template,clear
+u02733,아 여기 다 됐어 빨리,complete,val,template,clear
+u02734,이제 커피 마시고 싶다,other,train,template,clear
+u02735,직원분 사인 받았어요,complete,train,template,clear
+u02736,저기 사장님한테 넘겼어요,complete,test,template,clear
+u02737,아 고마워 빨리,other,val,template,clear
+u02738,치킨마요 이상한데,report_issue,train,template,hard
+u02739,음 점장님 오늘 안 계시네 빨리,other,train,template,hard
+u02740,이제 금천점 삼각김밥 몇 박스야 지금,stop_items,val,template,ask
+u02741,자 바코드 읽을게 빨리,scan,train,template,clear
+u02742,오늘 남은 일정 알려줘 얼른,next_stop,train,template,clear
+u02743,아니야 됐어 빨리,other,train,template,clear
+u02744,이제 바나나우유 문제 있어,report_issue,train,template,ask
+u02745,저기 남은 배송지 몇 개예요,next_stop,val,template,clear
+u02746,아 매니저님한테 넘겼어요,complete,test,template,clear
+u02747,가산점 물량 확인해줘,stop_items,train,template,clear
+u02748,저기 졸리다,other,train,template,clear
+u02749,음 요거트 박스 하나 새고 있어요,report_issue,test,template,clear
+u02750,그 여기 정리됐어 좀,complete,train,template,hard
+u02751,알바생한테 줬어,complete,train,template,hard
+u02752,방배점에서 바나나우유 엉뚱한 게 실렸어 얼른,report_issue,train,template,clear
+u02753,사장님한테 전달했어요,complete,train,template,clear

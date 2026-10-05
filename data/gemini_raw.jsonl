@@ -1,0 +1,236 @@
+{"text": "저기 다음 배송지 어디야", "label": {"fn": "next_stop"}}
+{"text": "아 다음에 어디 가야 되더라", "label": {"fn": "next_stop"}}
+{"text": "다음 어디 가면 되지", "label": {"fn": "next_stop"}}
+{"text": "남은 점포 몇 개나 있냐", "label": {"fn": "next_stop"}}
+{"text": "다음 코스 좀 알려줘", "label": {"fn": "next_stop"}}
+{"text": "이제 어디로 가면 돼", "label": {"fn": "next_stop"}}
+{"text": "그 다음 찍을 곳 어디냐", "label": {"fn": "next_stop"}}
+{"text": "다음 목적지 불러봐", "label": {"fn": "next_stop"}}
+{"text": "아 다음 납품처 어디지", "label": {"fn": "next_stop"}}
+{"text": "남은 집 어디어디 남았지", "label": {"fn": "next_stop"}}
+{"text": "다음 가게 네비 찍어줘", "label": {"fn": "next_stop"}}
+{"text": "다음 목적지가 어디였지", "label": {"fn": "next_stop"}}
+{"text": "저기 다음 코스 좀 알려줄래", "label": {"fn": "next_stop"}}
+{"text": "이제 남아있는 배송지가 어디야", "label": {"fn": "next_stop"}}
+{"text": "다음 들릴 점포 어디냐고", "label": {"fn": "next_stop"}}
+{"text": "아 납품할 곳 몇 개 남았어", "label": {"fn": "next_stop"}}
+{"text": "다음 출발할 점포 알려줘", "label": {"fn": "next_stop"}}
+{"text": "다음 배송할 데 가르쳐줘", "label": {"fn": "next_stop"}}
+{"text": "저 다음 어디 가요", "label": {"fn": "next_stop"}}
+{"text": "다음 매장 어디로 넘어가면 돼", "label": {"fn": "next_stop"}}
+{"text": "다음 찍힌 데 어디냐", "label": {"fn": "next_stop"}}
+{"text": "아 다음 가게 어디였더라", "label": {"fn": "next_stop"}}
+{"text": "다음 도착지 어디야", "label": {"fn": "next_stop"}}
+{"text": "다음 갈 곳 좀 다시 말해줘", "label": {"fn": "next_stop"}}
+{"text": "지금 다음 남은 데가 어디지", "label": {"fn": "next_stop"}}
+{"text": "다음 배송 점포 말해줘", "label": {"fn": "next_stop"}}
+{"text": "다음은 어디로 갑니까", "label": {"fn": "next_stop"}}
+{"text": "다음 갈 매장 위치 알려줘", "label": {"fn": "next_stop"}}
+{"text": "아 네비 다음에 어디 가래", "label": {"fn": "next_stop"}}
+{"text": "남은 배송지 리스트 좀 보여줘", "label": {"fn": "next_stop"}}
+{"text": "다음 하차할 곳 어디야", "label": {"fn": "next_stop"}}
+{"text": "다음 들러야 할 매장", "label": {"fn": "next_stop"}}
+{"text": "이 다음 코스는 어디냐", "label": {"fn": "next_stop"}}
+{"text": "저 다음 목적지 확인 좀", "label": {"fn": "next_stop"}}
+{"text": "다음에 갈 데가 어디더라", "label": {"fn": "next_stop"}}
+{"text": "남은 점포 몇 개냐고", "label": {"fn": "next_stop"}}
+{"text": "아 다음 어디로 쏘면 되지", "label": {"fn": "next_stop"}}
+{"text": "다음 납품점 어디냐", "label": {"fn": "next_stop"}}
+{"text": "다음 가야 할 가게 이름이 뭐야", "label": {"fn": "next_stop"}}
+{"text": "다음 배송지 좀 알려주라", "label": {"fn": "next_stop"}}
+{"text": "역삼점에 내릴 물건 뭐야", "label": {"fn": "stop_items", "store": "역삼점"}}
+{"text": "아 서초점 샌드위치 몇 개 내려야 하지", "label": {"fn": "stop_items", "store": "서초점", "item": "샌드위치"}}
+{"text": "방배점 내릴 거 좀 불러봐", "label": {"fn": "stop_items", "store": "방배점"}}
+{"text": "반포점에 수량이 어떻게 되더라", "label": {"fn": "stop_items", "store": "반포점"}}
+{"text": "도곡점에 콜라 몇 박스 들어가지", "label": {"fn": "stop_items", "store": "도곡점", "item": "콜라"}}
+{"text": "대치점 내릴 품목 보여줘", "label": {"fn": "stop_items", "store": "대치점"}}
+{"text": "수서점 내릴 거", "label": {"fn": "stop_items", "store": "수서점"}}
+{"text": "아 논현점에 도시락 몇 개 내리냐", "label": {"fn": "stop_items", "store": "논현점", "item": "도시락"}}
+{"text": "신사점 물량 얼마냐", "label": {"fn": "stop_items", "store": "신사점"}}
+{"text": "청담점에 우유 몇 개 들어가요", "label": {"fn": "stop_items", "store": "청담점", "item": "우유"}}
+{"text": "삼성점 내릴 품목이랑 수량 좀", "label": {"fn": "stop_items", "store": "삼성점"}}
+{"text": "석촌점에 컵라면 몇 개 내려야 돼", "label": {"fn": "stop_items", "store": "석촌점", "item": "컵라면"}}
+{"text": "가락점 들어갈 거 알려줘", "label": {"fn": "stop_items", "store": "가락점"}}
+{"text": "문정점에 생수 얼마나 내리죠", "label": {"fn": "stop_items", "store": "문정점", "item": "생수"}}
+{"text": "송파점은 내릴 게 뭐지", "label": {"fn": "stop_items", "store": "송파점"}}
+{"text": "아 잠실점에 제육 도시락 몇 개지", "label": {"fn": "stop_items", "store": "잠실점", "item": "제육 도시락"}}
+{"text": "개포점 하차 물량 말해줘", "label": {"fn": "stop_items", "store": "개포점"}}
+{"text": "일원점 삼각김밥 몇 개 내려", "label": {"fn": "stop_items", "store": "일원점", "item": "삼각김밥"}}
+{"text": "압구정점에 내릴 아이스크림 수량", "label": {"fn": "stop_items", "store": "압구정점", "item": "아이스크림"}}
+{"text": "잠원점 하차 품목 확인해줘", "label": {"fn": "stop_items", "store": "잠원점"}}
+{"text": "가산점 라면 몇 박스지", "label": {"fn": "stop_items", "store": "가산점", "item": "라면"}}
+{"text": "구로점 내릴 목록 좀 틀어봐", "label": {"fn": "stop_items", "store": "구로점"}}
+{"text": "금천점에 초코파이 몇 개 들어가냐", "label": {"fn": "stop_items", "store": "금천점", "item": "초코파이"}}
+{"text": "신림점에 바나나 우유 몇 개 내립니까", "label": {"fn": "stop_items", "store": "신림점", "item": "바나나 우유"}}
+{"text": "여기 내릴 물건이 뭐야", "label": {"fn": "stop_items"}}
+{"text": "이번 매장 하차 품목좀 알려줘", "label": {"fn": "stop_items"}}
+{"text": "아 삼각김밥 몇 개 내리는 거였지", "label": {"fn": "stop_items", "item": "삼각김밥"}}
+{"text": "여기 내릴 박스가 몇 개냐", "label": {"fn": "stop_items"}}
+{"text": "이번 점포 물량 확인좀 하자", "label": {"fn": "stop_items"}}
+{"text": "도시락 수량 몇 개인지 봐줘", "label": {"fn": "stop_items", "item": "도시락"}}
+{"text": "역삼점에 내릴 물건목록 불러라", "label": {"fn": "stop_items", "store": "역삼점"}}
+{"text": "서초점 딸기우유 몇 봉지냐", "label": {"fn": "stop_items", "store": "서초점", "item": "딸기우유"}}
+{"text": "방배점 수량 좀 체크해줘", "label": {"fn": "stop_items", "store": "방배점"}}
+{"text": "반포점 커피 얼마나 하차하지", "label": {"fn": "stop_items", "store": "반포점", "item": "커피"}}
+{"text": "도곡점에 참치김밥 몇 개 들어가", "label": {"fn": "stop_items", "store": "도곡점", "item": "참치김밥"}}
+{"text": "대치점 짐 뭐뭐 내리냐", "label": {"fn": "stop_items", "store": "대치점"}}
+{"text": "수서점 요거트 몇 개 들었지", "label": {"fn": "stop_items", "store": "수서점", "item": "요거트"}}
+{"text": "논현점 젤리 수량 말해봐", "label": {"fn": "stop_items", "store": "논현점", "item": "젤리"}}
+{"text": "신사점 내릴 박스 목록 전부", "label": {"fn": "stop_items", "store": "신사점"}}
+{"text": "역삼점 납품 끝났어", "label": {"fn": "complete", "store": "역삼점"}}
+{"text": "아 서초점 점장님한테 다 전해드렸습니다", "label": {"fn": "complete", "store": "서초점", "receiver": "점장님"}}
+{"text": "방배점 완료", "label": {"fn": "complete", "store": "방배점"}}
+{"text": "반포점 직원분한테 내리고 가요", "label": {"fn": "complete", "store": "반포점", "receiver": "직원분"}}
+{"text": "도곡점 물건 다 내렸다", "label": {"fn": "complete", "store": "도곡점"}}
+{"text": "대치점 매니저님 인계 끝", "label": {"fn": "complete", "store": "대치점", "receiver": "매니저님"}}
+{"text": "수서점 끝났습니다", "label": {"fn": "complete", "store": "수서점"}}
+{"text": "아 논현점 알바생한테 짐 다 건넸어", "label": {"fn": "complete", "store": "논현점", "receiver": "알바생"}}
+{"text": "신사점 사장님한테 납품 마무리함", "label": {"fn": "complete", "store": "신사점", "receiver": "사장님"}}
+{"text": "청담점 배송 끝", "label": {"fn": "complete", "store": "청담점"}}
+{"text": "삼성점 다 내렸어요", "label": {"fn": "complete", "store": "삼성점"}}
+{"text": "석촌점 납품 완료 처리해라", "label": {"fn": "complete", "store": "석촌점"}}
+{"text": "가락점 점장님 서인 받았음", "label": {"fn": "complete", "store": "가락점", "receiver": "점장님"}}
+{"text": "문정점 하차 완료", "label": {"fn": "complete", "store": "문정점"}}
+{"text": "송파점 다 줬어", "label": {"fn": "complete", "store": "송파점"}}
+{"text": "아 잠실점 직원분 확인 완료", "label": {"fn": "complete", "store": "잠실점", "receiver": "직원분"}}
+{"text": "개포점 다 인계했습니다", "label": {"fn": "complete", "store": "개포점"}}
+{"text": "일원점 완료 찍어라", "label": {"fn": "complete", "store": "일원점"}}
+{"text": "압구정점 매니저님한테 드렸어요", "label": {"fn": "complete", "store": "압구정점", "receiver": "매니저님"}}
+{"text": "잠원점 하차 다 끝남", "label": {"fn": "complete", "store": "잠원점"}}
+{"text": "가산점 납품 마쳤습니다", "label": {"fn": "complete", "store": "가산점"}}
+{"text": "구로점 완료했음", "label": {"fn": "complete", "store": "구로점"}}
+{"text": "금천점 알바생 전달 완료", "label": {"fn": "complete", "store": "금천점", "receiver": "알바생"}}
+{"text": "신림점 다 내렸다 찍어라", "label": {"fn": "complete", "store": "신림점"}}
+{"text": "점장님한테 전부 잘 전달했습니다", "label": {"fn": "complete", "receiver": "점장님"}}
+{"text": "여기 납품 다 끝났어", "label": {"fn": "complete"}}
+{"text": "사장님한테 서명 받았어요", "label": {"fn": "complete", "receiver": "사장님"}}
+{"text": "짐 다 뺐다 완료처리 해", "label": {"fn": "complete"}}
+{"text": "직원분 확인받고 철수합니다", "label": {"fn": "complete", "receiver": "직원분"}}
+{"text": "하차 마쳤습니다", "label": {"fn": "complete"}}
+{"text": "아 여기 점포 하차 끝났음", "label": {"fn": "complete"}}
+{"text": "매니저님한테 물건 다 넘김", "label": {"fn": "complete", "receiver": "매니저님"}}
+{"text": "이번 집 배송 완료", "label": {"fn": "complete"}}
+{"text": "알바생한테 짐 넘겨줬어", "label": {"fn": "complete", "receiver": "알바생"}}
+{"text": "배송 다 마쳤어요", "label": {"fn": "complete"}}
+{"text": "역삼점 다 내려놓고 간다", "label": {"fn": "complete", "store": "역삼점"}}
+{"text": "서초점 내리기 끝", "label": {"fn": "complete", "store": "서초점"}}
+{"text": "방배점 사장님 확인 완료", "label": {"fn": "complete", "store": "방배점", "receiver": "사장님"}}
+{"text": "반포점 작업 마침", "label": {"fn": "complete", "store": "반포점"}}
+{"text": "아 역삼점 샌드위치 두 개 터졌어", "label": {"fn": "report_issue", "store": "역삼점", "item": "샌드위치", "issue": "파손", "qty": 2, "unit": "개"}}
+{"text": "서초점 라면 한 박스 모자라요", "label": {"fn": "report_issue", "store": "서초점", "item": "라면", "issue": "수량부족", "qty": 1, "unit": "박스"}}
+{"text": "방배점에 잘못 들어왔네 제육 도시락 하나 오배송", "label": {"fn": "report_issue", "store": "방배점", "item": "제육 도시락", "issue": "오배송", "qty": 1, "unit": "개"}}
+{"text": "반포점 우유 미지근하다 온도이상", "label": {"fn": "report_issue", "store": "반포점", "item": "우유", "issue": "온도이상"}}
+{"text": "도곡점 도시락 세 개 찌그러짐", "label": {"fn": "report_issue", "store": "도곡점", "item": "도시락", "issue": "파손", "qty": 3, "unit": "개"}}
+{"text": "대치점 생수 한 박스 부족합니다", "label": {"fn": "report_issue", "store": "대치점", "item": "생수", "issue": "수량부족", "qty": 1, "unit": "박스"}}
+{"text": "수서점 아이스크림 다 녹았어", "label": {"fn": "report_issue", "store": "수서점", "item": "아이스크림", "issue": "온도이상"}}
+{"text": "논현점에 참치삼각김밥 두 개 박살났네", "label": {"fn": "report_issue", "store": "논현점", "item": "참치삼각김밥", "issue": "파손", "qty": 2, "unit": "개"}}
+{"text": "신사점 콜라 다섯 캔 안 들어옴", "label": {"fn": "report_issue", "store": "신사점", "item": "콜라", "issue": "수량부족", "qty": 5, "unit": "개"}}
+{"text": "청담점에 바나나 우유 세 개 잘못 온 듯", "label": {"fn": "report_issue", "store": "청담점", "item": "바나나 우유", "issue": "오배송", "qty": 3, "unit": "개"}}
+{"text": "삼성점 제육도시락 두 개 깨졌습니다", "label": {"fn": "report_issue", "store": "삼성점", "item": "제육도시락", "issue": "파손", "qty": 2, "unit": "개"}}
+{"text": "석촌점 요구르트 한 판 터짐", "label": {"fn": "report_issue", "store": "석촌점", "item": "요구르트", "issue": "파손", "qty": 1, "unit": "판"}}
+{"text": "가락점 삼각김밥 두 개 안 왔다", "label": {"fn": "report_issue", "store": "가락점", "item": "삼각김밥", "issue": "수량부족", "qty": 2, "unit": "개"}}
+{"text": "문정점 서울우유 온도가 높아요", "label": {"fn": "report_issue", "store": "문정점", "item": "서울우유", "issue": "온도이상"}}
+{"text": "송파점에 딸기 우유 네 개 샜어", "label": {"fn": "report_issue", "store": "송파점", "item": "딸기 우유", "issue": "파손", "qty": 4, "unit": "개"}}
+{"text": "잠실점 컵라면 한 박스 구멍 남", "label": {"fn": "report_issue", "store": "잠실점", "item": "컵라면", "issue": "파손", "qty": 1, "unit": "박스"}}
+{"text": "개포점 참치김밥 잘못 내렸네 오배송", "label": {"fn": "report_issue", "store": "개포점", "item": "참치김밥", "issue": "오배송"}}
+{"text": "일원점 스팸마요 두 개 부족해", "label": {"fn": "report_issue", "store": "일원점", "item": "스팸마요", "issue": "수량부족", "qty": 2, "unit": "개"}}
+{"text": "압구정점 요거트 몇 개 상한 것 같은데", "label": {"fn": "report_issue", "store": "압구정점", "item": "요거트", "issue": "온도이상"}}
+{"text": "잠원점 사이다 한 박스 덜 들어왔다", "label": {"fn": "report_issue", "store": "잠원점", "item": "사이다", "issue": "수량부족", "qty": 1, "unit": "박스"}}
+{"text": "가산점 초코파이 두 봉지 찢어짐", "label": {"fn": "report_issue", "store": "가산점", "item": "초코파이", "issue": "파손", "qty": 2, "unit": "봉지"}}
+{"text": "구로점 캔커피 한 박스 상자가 젖었네", "label": {"fn": "report_issue", "store": "구로점", "item": "캔커피", "issue": "파손", "qty": 1, "unit": "박스"}}
+{"text": "금천점 이온음료 세 개 찌그러졌어요", "label": {"fn": "report_issue", "store": "금천점", "item": "이온음료", "issue": "파손", "qty": 3, "unit": "개"}}
+{"text": "신림점 치킨마요 하나 모자람", "label": {"fn": "report_issue", "store": "신림점", "item": "치킨마요", "issue": "수량부족", "qty": 1, "unit": "개"}}
+{"text": "아 우유 터졌다", "label": {"fn": "report_issue", "item": "우유", "issue": "파손"}}
+{"text": "도시락 한 개 안 왔는데", "label": {"fn": "report_issue", "item": "도시락", "issue": "수량부족", "qty": 1, "unit": "개"}}
+{"text": "이거 딴 물건이 온 것 같은데 오배송", "label": {"fn": "report_issue", "issue": "오배송"}}
+{"text": "냉동 상태 이상함 녹았어", "label": {"fn": "report_issue", "issue": "온도이상"}}
+{"text": "새우깡 한 봉지 뜯어짐", "label": {"fn": "report_issue", "item": "새우깡", "issue": "파손", "qty": 1, "unit": "봉지"}}
+{"text": "역삼점 파손 접수해줘", "label": {"fn": "report_issue", "store": "역삼점", "issue": "파손"}}
+{"text": "서초점 물건 수량 모자람", "label": {"fn": "report_issue", "store": "서초점", "issue": "수량부족"}}
+{"text": "마요 도시락 세 개 찌그러짐", "label": {"fn": "report_issue", "item": "마요 도시락", "issue": "파손", "qty": 3, "unit": "개"}}
+{"text": "감자칩 두 봉지 터져서 옴", "label": {"fn": "report_issue", "item": "감자칩", "issue": "파손", "qty": 2, "unit": "봉지"}}
+{"text": "바나나우유 한 판 박살남", "label": {"fn": "report_issue", "item": "바나나우유", "issue": "파손", "qty": 1, "unit": "판"}}
+{"text": "치킨마요도시락 두 개 안 왔어", "label": {"fn": "report_issue", "item": "치킨마요도시락", "issue": "수량부족", "qty": 2, "unit": "개"}}
+{"text": "이온 음료 한 박스 샜네", "label": {"fn": "report_issue", "item": "이온 음료", "issue": "파손", "qty": 1, "unit": "박스"}}
+{"text": "스팸마요삼각김밥 오배송인 듯", "label": {"fn": "report_issue", "item": "스팸마요삼각김밥", "issue": "오배송"}}
+{"text": "물 두 박스 빠졌음", "label": {"fn": "report_issue", "item": "물", "issue": "수량부족", "qty": 2, "unit": "박스"}}
+{"text": "아 바코드 스캔 좀 켜라", "label": {"fn": "scan"}}
+{"text": "카메라 켜줘 스캔하게", "label": {"fn": "scan"}}
+{"text": "송장 찍게 스캔 준비해줘", "label": {"fn": "scan"}}
+{"text": "스캐너 좀 틀어볼래", "label": {"fn": "scan"}}
+{"text": "아 바코드 찍어야 돼 리더기 켜", "label": {"fn": "scan"}}
+{"text": "스캔 화면으로 넘겨줘", "label": {"fn": "scan"}}
+{"text": "송장 스캔 켜라", "label": {"fn": "scan"}}
+{"text": "바코드 카메라 좀 켜줘", "label": {"fn": "scan"}}
+{"text": "스캔 모드 켜봐", "label": {"fn": "scan"}}
+{"text": "아 이거 바코드 읽게 스캔 열어", "label": {"fn": "scan"}}
+{"text": "송장 찍게 카메라 열어줘", "label": {"fn": "scan"}}
+{"text": "바코드 찍어야 되니까 스캐너 켜", "label": {"fn": "scan"}}
+{"text": "스캔 작동시켜줘", "label": {"fn": "scan"}}
+{"text": "카메라 켜서 송장 스캔하자", "label": {"fn": "scan"}}
+{"text": "저기 스캔 켜줘라", "label": {"fn": "scan"}}
+{"text": "바코드 좀 읽자 스캔 올려", "label": {"fn": "scan"}}
+{"text": "송장 좀 찍게 스캐너 작동해", "label": {"fn": "scan"}}
+{"text": "아 스캔 준비 좀 해봐", "label": {"fn": "scan"}}
+{"text": "바코드 폰으로 찍게 스캔 틀어", "label": {"fn": "scan"}}
+{"text": "스캔 켜봐라 바로 찍게", "label": {"fn": "scan"}}
+{"text": "카메라 스캔 켜줘", "label": {"fn": "scan"}}
+{"text": "송장 인식하게 스캔 켜라", "label": {"fn": "scan"}}
+{"text": "바코드 리더기 켜줘", "label": {"fn": "scan"}}
+{"text": "스캔 화면 틀어봐", "label": {"fn": "scan"}}
+{"text": "아 박스 바코드 찍게 켜줘", "label": {"fn": "scan"}}
+{"text": "스캐너 켜라고", "label": {"fn": "scan"}}
+{"text": "송장 스캔 열어라", "label": {"fn": "scan"}}
+{"text": "바코드 촬영하게 카메라 켜", "label": {"fn": "scan"}}
+{"text": "스캔 준비해줘 바로 찍게", "label": {"fn": "scan"}}
+{"text": "아 이거 찍어야 돼 스캔 올려줘", "label": {"fn": "scan"}}
+{"text": "카메라 켜줘 스캔 좀 하자", "label": {"fn": "scan"}}
+{"text": "송장 바코드 스캔 켜", "label": {"fn": "scan"}}
+{"text": "스캔 좀 틀어줄래", "label": {"fn": "scan"}}
+{"text": "바코드 찍자 스캐너 열어", "label": {"fn": "scan"}}
+{"text": "스캔 실행해라", "label": {"fn": "scan"}}
+{"text": "송장 읽게 스캔 켜봐", "label": {"fn": "scan"}}
+{"text": "카메라 바코드 모드", "label": {"fn": "scan"}}
+{"text": "아 스캔 키라고", "label": {"fn": "scan"}}
+{"text": "송장 찍게 준비해", "label": {"fn": "scan"}}
+{"text": "스캔 켜라 얼른", "label": {"fn": "scan"}}
+{"text": "아 차 너무 막히네 오늘", "label": {"fn": "other"}}
+{"text": "역삼점 점장님 오늘 기분 좋으시네", "label": {"fn": "other"}}
+{"text": "신나는 노래 좀 틀어봐라", "label": {"fn": "other"}}
+{"text": "오늘 날씨 되게 춥다", "label": {"fn": "other"}}
+{"text": "아 배고픈데 뭐 먹지", "label": {"fn": "other"}}
+{"text": "서초점 근처에 맛집 있나", "label": {"fn": "other"}}
+{"text": "담배나 하나 피고 올까", "label": {"fn": "other"}}
+{"text": "오늘 배송 물량 진짜 많네", "label": {"fn": "other"}}
+{"text": "아 졸려 죽겠네 라디오나 틀어봐", "label": {"fn": "other"}}
+{"text": "신사점 들어가는 길 공사하더라", "label": {"fn": "other"}}
+{"text": "지금 몇 시냐", "label": {"fn": "other"}}
+{"text": "어이 기름 얼마나 남았지", "label": {"fn": "other"}}
+{"text": "아 신호 진짜 안 바뀌네", "label": {"fn": "other"}}
+{"text": "방배점 앞에 주차할 데가 없네", "label": {"fn": "other"}}
+{"text": "오늘 비 온다더니 하늘 찌푸둥하네", "label": {"fn": "other"}}
+{"text": "볼륨 좀 올려줄래", "label": {"fn": "other"}}
+{"text": "아 허리 아파라", "label": {"fn": "other"}}
+{"text": "잠실점 사장님 친절하셔서 좋다", "label": {"fn": "other"}}
+{"text": "오늘 퇴근하고 뭐 하지", "label": {"fn": "other"}}
+{"text": "뉴스 좀 틀어봐라", "label": {"fn": "other"}}
+{"text": "아 박스 진짜 무게 나가네", "label": {"fn": "other"}}
+{"text": "도곡점 골목길 왜 이렇게 좁냐", "label": {"fn": "other"}}
+{"text": "야 야 차 빼달라고 해야겠네", "label": {"fn": "other"}}
+{"text": "오늘 이상하게 차가 없네 다행이다", "label": {"fn": "other"}}
+{"text": "아 커피 한 잔 마시고 싶다", "label": {"fn": "other"}}
+{"text": "청담점 알바생 새로 바뀌었네", "label": {"fn": "other"}}
+{"text": "음악 좀 꺼봐", "label": {"fn": "other"}}
+{"text": "야 오늘 금요일이라 길 엄청 밀리겠어", "label": {"fn": "other"}}
+{"text": "에어컨 좀 세게 틀어라", "label": {"fn": "other"}}
+{"text": "아 아 마이크 테스트", "label": {"fn": "other"}}
+{"text": "삼성점은 주차하기 편해서 좋아", "label": {"fn": "other"}}
+{"text": "내일 비 오냐", "label": {"fn": "other"}}
+{"text": "아 손가락 쓸렸다 아프네", "label": {"fn": "other"}}
+{"text": "가락점 지나갈 때마다 맛있는 냄새 나네", "label": {"fn": "other"}}
+{"text": "핸드폰 충전 잘 되고 있나", "label": {"fn": "other"}}
+{"text": "아 눈 침침하네 야간 운전 힘들어", "label": {"fn": "other"}}
+{"text": "송파점 길가에 경찰 있더라 조심해라", "label": {"fn": "other"}}
+{"text": "노래 다음 곡으로 넘겨", "label": {"fn": "other"}}
+{"text": "아 오늘따라 트럭 승차감 왜 이러냐", "label": {"fn": "other"}}
+{"text": "잠원점 도착하려면 멀었나", "label": {"fn": "other"}}
