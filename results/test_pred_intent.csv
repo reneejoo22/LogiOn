@@ -1,0 +1,432 @@
+﻿id,text,label,split,source,ambiguity,pred,conf,correct
+u00000,지금 다음 남은 데가 어디지,next_stop,test,gemini,clear,next_stop,0.9708632230758667,True
+u00005,저기 참치삼각김밥 박스 하나 수량이 안 맞아,report_issue,test,template,clear,report_issue,0.939264714717865,True
+u00007,바나나우유 박스 하나 새고 있어 빨리,report_issue,test,template,clear,report_issue,0.9351046681404114,True
+u00011,스캐너 켜라고,scan,test,gemini,clear,scan,0.9697117805480957,True
+u00018,송장 스캔 켜라,scan,test,gemini,clear,scan,0.9674937129020691,True
+u00026,이온 음료 한 박스 샜네,report_issue,test,gemini,clear,report_issue,0.716462254524231,True
+u00030,근처 화장실 어디야 좀,other,test,template,clear,stop_items,0.5209435224533081,False
+u00035,그 내릴 물건 알려줘 빨리,stop_items,test,template,clear,stop_items,0.945652186870575,True
+u00037,아 이거 바코드 읽게 스캔 열어,scan,test,gemini,clear,scan,0.9670938849449158,True
+u00039,스캔 작동시켜줘,scan,test,gemini,clear,scan,0.9691270589828491,True
+u00041,바코드 켜 지금,scan,test,template,clear,scan,0.9697917103767395,True
+u00043,잠깐 여기 들어갈 거 뭐뭐야 좀,stop_items,test,template,clear,stop_items,0.9433992505073547,True
+u00044,송장 스캔 열어라,scan,test,gemini,clear,scan,0.964245080947876,True
+u00048,자 어디로 갈지 알려줘,next_stop,test,template,hard,next_stop,0.9568480253219604,True
+u00051,서초점 라면 한 박스 모자라요,report_issue,test,gemini,clear,report_issue,0.9193167090415955,True
+u00054,이제 어 잠깐만,other,test,template,clear,other,0.9173764586448669,True
+u00056,아 근처 화장실 어디예요,other,test,template,clear,stop_items,0.6921750903129578,False
+u00060,저기 바코드 찍을게요,scan,test,template,clear,scan,0.9718989729881287,True
+u00064,자 몇 개 남았지,next_stop,test,template,clear,next_stop,0.944774866104126,True
+u00068,이제 근처 화장실 어디예요,other,test,template,clear,stop_items,0.6060729026794434,False
+u00093,아 카메라,scan,test,template,hard,scan,0.9686066508293152,True
+u00094,그 이거 다른 게 왔어요,report_issue,test,template,ask,report_issue,0.5347122550010681,True
+u00095,젤리 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.8620176315307617,False
+u00108,아 물품 스캔 켜주세요,scan,test,template,clear,scan,0.8563525080680847,True
+u00117,어 바코드 켜 얼른,scan,test,template,clear,scan,0.9700958728790283,True
+u00118,잠깐 바코드 찍을게 지금,scan,test,template,clear,scan,0.9719476699829102,True
+u00120,바나나우유 상태 좀 봐야겠다 좀,report_issue,test,template,hard,report_issue,0.8599067330360413,True
+u00134,몇 개 남았지,next_stop,test,template,clear,next_stop,0.9601020216941833,True
+u00140,개포점 딸기우유 네 개 개수가 안 맞아 등록해줘,report_issue,test,template,clear,report_issue,0.9376024603843689,True
+u00153,아 청담점 아이스크림 4개 온도가 높아 등록해주세요,report_issue,test,template,clear,report_issue,0.9222104549407959,True
+u00166,저기 카메라,scan,test,template,hard,scan,0.966719388961792,True
+u00168,자 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear,stop_items,0.9438946843147278,True
+u00176,바코드 찍을게 얼른,scan,test,template,clear,scan,0.9722377061843872,True
+u00188,신림점 치킨마요 하나 모자람,report_issue,test,gemini,clear,report_issue,0.9383357167243958,True
+u00193,방배점 점장님 친절하시더라,other,test,template,hard,other,0.8433446288108826,True
+u00199,이제 근처 화장실 어디야,other,test,template,clear,stop_items,0.4442986845970154,False
+u00201,자 바코드 켜,scan,test,template,clear,scan,0.970687985420227,True
+u00202,어 물품 스캔 켜줘 좀,scan,test,template,clear,scan,0.8820510506629944,True
+u00204,일원점 삼각김밥 몇 개 내려,stop_items,test,gemini,ask,stop_items,0.9410359263420105,True
+u00214,그 다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9612286686897278,True
+u00226,여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear,stop_items,0.9454331398010254,True
+u00232,아 여기 들어갈 거 뭐뭐야 지금,stop_items,test,template,clear,stop_items,0.9463326930999756,True
+u00239,이제 알바생한테 인계했어,complete,test,template,clear,complete,0.9630516171455383,True
+u00242,그 전달 완료했어,complete,test,template,clear,complete,0.9663527607917786,True
+u00243,지금 몇 시야,other,test,template,clear,other,0.8599808812141418,True
+u00252,그 물건 확인할게 빨리,scan,test,template,clear,stop_items,0.6468344926834106,False
+u00253,석촌점 납품 완료 처리해라,complete,test,gemini,clear,complete,0.9606177806854248,True
+u00265,다음 도착지 어디야,next_stop,test,gemini,clear,next_stop,0.9687156677246094,True
+u00278,저기 다 넣어놨어요,complete,test,template,hard,scan,0.7556743621826172,False
+u00290,근처 화장실 어디야 얼른,other,test,template,clear,stop_items,0.42653173208236694,False
+u00292,아 다음 어디 가야 하죠,next_stop,test,template,clear,next_stop,0.9692947268486023,True
+u00295,제육 도시락 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.7158379554748535,False
+u00310,저기 다음 어디 가야 하지 얼른,next_stop,test,template,clear,next_stop,0.9682191610336304,True
+u00311,저기 여기 들어갈 거 뭐뭐야 빨리,stop_items,test,template,clear,stop_items,0.9447950720787048,True
+u00315,자 청담점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.9344092607498169,True
+u00322,자 근처 화장실 어디야,other,test,template,clear,stop_items,0.5203543305397034,False
+u00327,음 다 넣어놨어,complete,test,template,hard,scan,0.5179429650306702,False
+u00328,그 어디로 갈지 알려줘 지금,next_stop,test,template,hard,next_stop,0.9563913345336914,True
+u00338,음 다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9623844623565674,True
+u00340,다음 배송지 말해줘,next_stop,test,template,clear,next_stop,0.9587041735649109,True
+u00342,이제 사장님한테 인계했어 얼른,complete,test,template,clear,complete,0.9647542834281921,True
+u00351,저기 전달 완료했어요,complete,test,template,clear,complete,0.9670413732528687,True
+u00353,내릴 물건 알려줘 빨리,stop_items,test,template,clear,stop_items,0.9433472752571106,True
+u00366,아 다음 배송지 말해줘,next_stop,test,template,clear,next_stop,0.9598501920700073,True
+u00368,다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9527313709259033,True
+u00372,어 바코드 찍을게,scan,test,template,clear,scan,0.9723899960517883,True
+u00375,잠깐 초코파이 여기 들어가는 거 맞아 빨리,stop_items,test,template,hard,report_issue,0.7674961090087891,False
+u00377,알바생 확인했어 완료 얼른,complete,test,template,clear,complete,0.9650600552558899,True
+u00378,아 반포점 점장님 친절하시더라,other,test,template,hard,other,0.782111406326294,True
+u00388,음 전달 완료했어 지금,complete,test,template,clear,complete,0.9667237401008606,True
+u00392,어 지금 몇 시예요,other,test,template,clear,other,0.948599636554718,True
+u00394,잠깐 물건 확인할게 지금,scan,test,template,clear,stop_items,0.6229044198989868,False
+u00405,송장 읽게 스캔 켜봐,scan,test,gemini,clear,scan,0.96998131275177,True
+u00410,자 엄마한테 전화해줘,other,test,template,clear,other,0.9384152293205261,True
+u00411,사이다 박스 하나 수량이 안 맞아,report_issue,test,template,clear,report_issue,0.9388253092765808,True
+u00433,아 바코드 찍을게 빨리,scan,test,template,clear,scan,0.9721554517745972,True
+u00439,잠깐 전달 완료했어요,complete,test,template,clear,complete,0.9667329788208008,True
+u00449,아 점장님한테 넘겼어 좀,complete,test,template,clear,complete,0.9610894918441772,True
+u00458,아 바코드 찍을게,scan,test,template,clear,scan,0.9723528027534485,True
+u00460,아 직원분한테 넘겼어 빨리,complete,test,template,clear,complete,0.9643586874008179,True
+u00462,알바생한테 인계했어 얼른,complete,test,template,clear,complete,0.9616471529006958,True
+u00463,자 어 잠깐만,other,test,template,clear,other,0.9379677772521973,True
+u00468,물품 스캔 켜주세요,scan,test,template,clear,scan,0.7689831256866455,True
+u00469,저기 어디로 갈지 알려줘,next_stop,test,template,hard,next_stop,0.9539011716842651,True
+u00480,바나나우유 박스 하나 엉뚱한 게 실렸어,report_issue,test,template,clear,report_issue,0.9413376450538635,True
+u00488,이제 내릴 물건 알려줘 빨리,stop_items,test,template,clear,stop_items,0.9462745189666748,True
+u00490,잠깐 카메라,scan,test,template,hard,scan,0.9646754264831543,True
+u00493,근처 화장실 어디예요,other,test,template,clear,stop_items,0.6382951140403748,False
+u00494,아 박스 진짜 무게 나가네,other,test,gemini,clear,report_issue,0.8640235662460327,False
+u00506,자 엄마한테 전화해줘 지금,other,test,template,clear,other,0.9375712871551514,True
+u00530,요구르트 박스 하나 온도가 높아,report_issue,test,template,clear,report_issue,0.9370469450950623,True
+u00542,아 바코드 찍을게요,scan,test,template,clear,scan,0.9725142121315002,True
+u00547,이제 여기 내릴 거 읽어줘,stop_items,test,template,clear,stop_items,0.7916973233222961,True
+u00552,그 역삼점 리스트 불러줘 빨리,stop_items,test,template,clear,stop_items,0.9231777787208557,True
+u00560,매니저님한테 인계했어 지금,complete,test,template,clear,complete,0.9659206867218018,True
+u00562,음 물건 확인할게,scan,test,template,clear,stop_items,0.4935342073440552,False
+u00578,아 어 잠깐만,other,test,template,clear,other,0.9377065300941467,True
+u00580,어 카메라,scan,test,template,hard,scan,0.9679083228111267,True
+u00586,저기 어 잠깐만,other,test,template,clear,other,0.938488781452179,True
+u00595,이제 청담점 바나나우유 모자람 빨리,report_issue,test,template,clear,report_issue,0.9434186816215515,True
+u00599,바코드 찍을게 좀,scan,test,template,clear,scan,0.9720109701156616,True
+u00604,여기 들어갈 거 뭐뭐야,stop_items,test,template,clear,stop_items,0.9457784295082092,True
+u00620,아 차 너무 막히네 오늘,other,test,gemini,clear,other,0.9491284489631653,True
+u00624,아 여기 점포 하차 끝났음,complete,test,gemini,clear,complete,0.9649105668067932,True
+u00636,지금 몇 시야 좀,other,test,template,clear,other,0.9243149161338806,True
+u00640,저기 사이다 박스 하나 하나 빠졌어 빨리,report_issue,test,template,clear,report_issue,0.9366713762283325,True
+u00643,잠실점 사장님 친절하셔서 좋다,other,test,gemini,clear,other,0.8232678771018982,True
+u00650,논현점 제육도시락 12봉지 엉뚱한 게 실렸어 등록해줘 얼른,report_issue,test,template,clear,report_issue,0.9270908236503601,True
+u00665,어 물건 확인할게,scan,test,template,clear,stop_items,0.5031480193138123,False
+u00678,다음 어디 가야 하죠,next_stop,test,template,clear,next_stop,0.9687805771827698,True
+u00681,다음은 어디로 갑니까,next_stop,test,gemini,clear,next_stop,0.9703844785690308,True
+u00690,음 내릴 물건 알려줘 얼른,stop_items,test,template,clear,stop_items,0.9400175213813782,True
+u00692,음 사장님한테 인계했어 좀,complete,test,template,clear,complete,0.9637102484703064,True
+u00701,수서점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.9410867094993591,True
+u00708,음 캔커피 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.8146085739135742,False
+u00711,내릴 물건 알려줘,stop_items,test,template,clear,stop_items,0.9402315616607666,True
+u00717,그 어 잠깐만,other,test,template,clear,other,0.9158484935760498,True
+u00719,그 잠원점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.9333198666572571,True
+u00727,저기 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9437717795372009,True
+u00729,이제 반포점 리스트 불러줘 지금,stop_items,test,template,clear,stop_items,0.9240706562995911,True
+u00736,그 지금 몇 시야,other,test,template,clear,other,0.8471866846084595,True
+u00751,자 여기 들어갈 거 뭐뭐야,stop_items,test,template,clear,stop_items,0.9445705413818359,True
+u00756,음 어디로 갈지 알려줘,next_stop,test,template,hard,next_stop,0.9585636258125305,True
+u00758,저기 대치점 사이다 엉뚱한 게 실렸어,report_issue,test,template,clear,report_issue,0.9378511905670166,True
+u00764,저 다음 목적지 확인 좀,next_stop,test,gemini,clear,next_stop,0.9638335704803467,True
+u00769,스캔 실행해라,scan,test,gemini,clear,scan,0.9715248346328735,True
+u00770,음 생수 박스 하나 터졌어요,report_issue,test,template,clear,report_issue,0.9398179054260254,True
+u00773,수서점 젤리 한 개 덜 왔어 등록해주세요,report_issue,test,template,clear,report_issue,0.9191103577613831,True
+u00775,자 다 넣어놨어,complete,test,template,hard,complete,0.44426530599594116,True
+u00787,음 이거 잘못 왔어 빨리,report_issue,test,template,ask,report_issue,0.8340058922767639,True
+u00788,여기 내릴 거 읽어줘,stop_items,test,template,clear,stop_items,0.6923444867134094,True
+u00789,사장님 확인했어 완료 빨리,complete,test,template,clear,complete,0.9666098952293396,True
+u00806,감자칩 박스 하나 부족해 좀,report_issue,test,template,clear,report_issue,0.9408014416694641,True
+u00818,다음 하차할 곳 어디야,next_stop,test,gemini,clear,next_stop,0.967499852180481,True
+u00822,어 구로점 리스트 불러줘,stop_items,test,template,clear,stop_items,0.9288478493690491,True
+u00836,어 직원분한테 넘겼어 얼른,complete,test,template,clear,complete,0.9628134965896606,True
+u00838,신사점 리스트 불러줘,stop_items,test,template,clear,stop_items,0.9339516758918762,True
+u00840,자 몇 개 남았지 지금,next_stop,test,template,clear,next_stop,0.9548622369766235,True
+u00855,이제 잠원점 리스트 불러줘,stop_items,test,template,clear,stop_items,0.9042112231254578,True
+u00857,자 전달 완료했어,complete,test,template,clear,complete,0.9664662480354309,True
+u00883,바코드 찍을게 지금,scan,test,template,clear,scan,0.9721446633338928,True
+u00884,다음 어디 가야 하지,next_stop,test,template,clear,next_stop,0.9687787890434265,True
+u00885,저기 잠원점 감자칩 10개 모자람 등록해주세요,report_issue,test,template,clear,report_issue,0.9023661613464355,True
+u00888,아 다음에 어디 가야 되더라,next_stop,test,gemini,clear,next_stop,0.9710426330566406,True
+u00894,음 바코드 켜 지금,scan,test,template,clear,scan,0.9691565036773682,True
+u00906,몇 개 남았지 얼른,next_stop,test,template,clear,next_stop,0.957230269908905,True
+u00911,아 이거 찍어야 돼 스캔 올려줘,scan,test,gemini,clear,scan,0.968224048614502,True
+u00944,매니저님한테 인계했어,complete,test,template,clear,complete,0.966296911239624,True
+u00947,이제 새우깡 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.6667469143867493,False
+u00949,그 다음 어디 가야 하지 빨리,next_stop,test,template,clear,next_stop,0.9689010977745056,True
+u00968,잠원점 하차 다 끝남,complete,test,gemini,clear,complete,0.9528886079788208,True
+u00976,저기 사장님한테 넘겼어 좀,complete,test,template,clear,complete,0.9622739553451538,True
+u00982,여기 내릴 물건이 뭐야,stop_items,test,gemini,clear,stop_items,0.9497826099395752,True
+u00996,자 다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9634461402893066,True
+u01001,이제 엄마한테 전화해줘,other,test,template,clear,other,0.92652827501297,True
+u01011,알바생한테 넘겼어요,complete,test,template,clear,complete,0.962562084197998,True
+u01015,이제 물건 확인할게 빨리,scan,test,template,clear,scan,0.4697178304195404,True
+u01017,이제 남아있는 배송지가 어디야,next_stop,test,gemini,clear,next_stop,0.9430883526802063,True
+u01019,서초점 점장님 친절하시더라 좀,other,test,template,hard,other,0.780870258808136,True
+u01022,어 지금 몇 시야 좀,other,test,template,clear,other,0.9055380821228027,True
+u01026,자 이거 터졌어 좀,report_issue,test,template,ask,report_issue,0.9294066429138184,True
+u01043,음 여기 내릴 거 읽어줘 빨리,stop_items,test,template,clear,stop_items,0.6976128220558167,True
+u01046,몇 개 남았지 좀,next_stop,test,template,clear,next_stop,0.9590675234794617,True
+u01048,그 물건 확인할게요,scan,test,template,clear,stop_items,0.7924959063529968,False
+u01051,음 직원분한테 넘겼어 좀,complete,test,template,clear,complete,0.9584200382232666,True
+u01052,저기 다음 배송지 말해줘,next_stop,test,template,clear,next_stop,0.954010546207428,True
+u01053,다음 가게 네비 찍어줘,next_stop,test,gemini,clear,next_stop,0.6083799004554749,True
+u01073,음 전달 완료했어 얼른,complete,test,template,clear,complete,0.9665971994400024,True
+u01077,청담점 배송 끝,complete,test,gemini,clear,complete,0.9623470306396484,True
+u01083,어 전달 완료했어요,complete,test,template,clear,complete,0.9667921662330627,True
+u01090,자 여기 내릴 거 읽어줘,stop_items,test,template,clear,stop_items,0.7165784239768982,True
+u01095,엄마한테 전화해줘 지금,other,test,template,clear,other,0.9410999417304993,True
+u01100,잠깐 다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9632618427276611,True
+u01106,물건 확인할게,scan,test,template,clear,stop_items,0.5321199297904968,False
+u01107,다음 배송 점포 말해줘,next_stop,test,gemini,clear,next_stop,0.9547308683395386,True
+u01116,그 몇 개 남았죠,next_stop,test,template,clear,next_stop,0.952967643737793,True
+u01118,근처 화장실 어디야,other,test,template,clear,stop_items,0.4958851933479309,False
+u01119,아 알바생 확인했어 완료,complete,test,template,clear,complete,0.9650524854660034,True
+u01120,아 몇 개 남았죠,next_stop,test,template,clear,next_stop,0.9454384446144104,True
+u01131,내릴 물건 알려주세요,stop_items,test,template,clear,stop_items,0.9382194876670837,True
+u01137,잠깐 물품 스캔 켜줘,scan,test,template,clear,scan,0.8046456575393677,True
+u01141,새우깡 박스 하나 새고 있어 지금,report_issue,test,template,clear,report_issue,0.9346015453338623,True
+u01142,엄마한테 전화해줘 얼른,other,test,template,clear,other,0.9380296468734741,True
+u01143,음 문정점 콜라 덜 왔어 지금,report_issue,test,template,clear,report_issue,0.9213473796844482,True
+u01148,바코드 찍을게,scan,test,template,clear,scan,0.9723216891288757,True
+u01164,지금 몇 시예요,other,test,template,clear,other,0.9501435160636902,True
+u01165,잠깐 다음 어디 가야 하지,next_stop,test,template,clear,next_stop,0.9681665301322937,True
+u01167,이제 마요 도시락 상태 좀 봐야겠다,report_issue,test,template,hard,report_issue,0.6308256387710571,True
+u01175,바코드 켜,scan,test,template,clear,scan,0.9702370166778564,True
+u01176,아 바코드 스캔 좀 켜라,scan,test,gemini,clear,scan,0.9700607657432556,True
+u01182,물품 스캔 켜줘 지금,scan,test,template,clear,scan,0.8438518643379211,True
+u01195,잠원점 하차 품목 확인해줘,stop_items,test,gemini,clear,stop_items,0.9337254166603088,True
+u01201,이제 사장님한테 넘겼어 좀,complete,test,template,clear,complete,0.9640722870826721,True
+u01209,매니저님한테 물건 다 넘김,complete,test,gemini,clear,report_issue,0.6589274406433105,False
+u01217,음 반포점 점장님 친절하시더라,other,test,template,hard,other,0.7870194315910339,True
+u01218,아 점장님한테 넘겼어,complete,test,template,clear,complete,0.9649710059165955,True
+u01229,아 근처 화장실 어디야,other,test,template,clear,stop_items,0.5712490677833557,False
+u01238,음 사장님한테 인계했어,complete,test,template,clear,complete,0.9653919339179993,True
+u01247,어 다 넣어놨어요,complete,test,template,hard,scan,0.4973113536834717,False
+u01248,도곡점 골목길 왜 이렇게 좁냐,other,test,gemini,clear,other,0.38212066888809204,True
+u01260,어 사이다 상태 좀 봐야겠다,report_issue,test,template,hard,report_issue,0.7598430514335632,True
+u01265,압구정점 이온 음료 미지근해,report_issue,test,template,clear,report_issue,0.9237446188926697,True
+u01266,음 지금 몇 시야,other,test,template,clear,other,0.8382003903388977,True
+u01269,방배점 수량 좀 체크해줘,stop_items,test,gemini,clear,stop_items,0.931218683719635,True
+u01275,그 여기 내릴 거 읽어줘,stop_items,test,template,clear,stop_items,0.792582094669342,True
+u01282,아 압구정점 점장님 친절하시더라,other,test,template,hard,other,0.8147066235542297,True
+u01286,그 도곡점 감자칩 세 개 하나 빠졌어 등록해줘,report_issue,test,template,clear,report_issue,0.9230898022651672,True
+u01297,다음 목적지 불러봐,next_stop,test,gemini,clear,next_stop,0.96306973695755,True
+u01303,저기 지금 몇 시야,other,test,template,clear,other,0.7862971425056458,True
+u01314,자 몇 개 남았지 빨리,next_stop,test,template,clear,next_stop,0.9487354755401611,True
+u01328,잠깐 카메라 좀,scan,test,template,hard,scan,0.9626132845878601,True
+u01331,아 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9563873410224915,True
+u01339,음 지금 몇 시예요,other,test,template,clear,other,0.9493423104286194,True
+u01344,아 역삼점 콜라 두개 주문이랑 달라 등록해주세요,report_issue,test,template,clear,report_issue,0.7779685854911804,True
+u01347,그 어디로 갈지 알려주세요,next_stop,test,template,hard,next_stop,0.9547533392906189,True
+u01350,음 카메라,scan,test,template,hard,scan,0.9604837894439697,True
+u01362,어 몇 개 남았죠,next_stop,test,template,clear,next_stop,0.9462599754333496,True
+u01381,아 다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9653740525245667,True
+u01382,논현점 이온음료 다섯박스 하나 빠졌어 등록해줘,report_issue,test,template,clear,report_issue,0.9338411092758179,True
+u01386,잠깐 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear,stop_items,0.9450027346611023,True
+u01396,잠깐 어 잠깐만,other,test,template,clear,other,0.9465293884277344,True
+u01400,아 잠실점 직원분 확인 완료,complete,test,gemini,clear,complete,0.9623589515686035,True
+u01406,그 점장님한테 인계했어 좀,complete,test,template,clear,complete,0.963246762752533,True
+u01407,이제 이거 비어있어,report_issue,test,template,ask,report_issue,0.9263666868209839,True
+u01408,야 오늘 금요일이라 길 엄청 밀리겠어,other,test,gemini,clear,other,0.9338158369064331,True
+u01419,아 송파점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.9362413287162781,True
+u01428,송파점 길가에 경찰 있더라 조심해라,other,test,gemini,clear,stop_items,0.608311116695404,False
+u01432,자 생수 상태 좀 봐야겠다,report_issue,test,template,hard,report_issue,0.525375485420227,True
+u01433,방배점 내릴 거 좀 불러봐,stop_items,test,gemini,clear,stop_items,0.940518856048584,True
+u01444,반포점 커피 얼마나 하차하지,stop_items,test,gemini,clear,stop_items,0.9170588850975037,True
+u01449,잠깐 바코드 켜,scan,test,template,clear,scan,0.9701471328735352,True
+u01450,어 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9516737461090088,True
+u01459,잠깐 내릴 물건 알려줘,stop_items,test,template,clear,stop_items,0.9347365498542786,True
+u01463,음 바코드 켜,scan,test,template,clear,scan,0.9699918627738953,True
+u01468,어 일원점 물 오배송이예요,report_issue,test,template,clear,report_issue,0.778779149055481,True
+u01469,삼성점 다 내렸어요,complete,test,gemini,clear,complete,0.9608832597732544,True
+u01471,여기 내릴 거 읽어줘 얼른,stop_items,test,template,clear,stop_items,0.713969349861145,True
+u01473,카메라,scan,test,template,hard,scan,0.9558585286140442,True
+u01490,그 지금 몇 시야 좀,other,test,template,clear,other,0.9092726111412048,True
+u01513,그 다 넣어놨어요,complete,test,template,hard,complete,0.43086278438568115,True
+u01522,저기 사장님 확인했어 완료,complete,test,template,clear,complete,0.9659907817840576,True
+u01539,그 점장님한테 인계했어 빨리,complete,test,template,clear,complete,0.9644879698753357,True
+u01580,이제 바코드 켜,scan,test,template,clear,scan,0.9700507521629333,True
+u01590,그 바코드 찍을게요,scan,test,template,clear,scan,0.97107994556427,True
+u01596,그 치킨마요도시락 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.7708660364151001,False
+u01600,사장님 확인했어 완료,complete,test,template,clear,complete,0.9667389988899231,True
+u01605,마요 도시락 세 개 찌그러짐,report_issue,test,gemini,clear,report_issue,0.9385691285133362,True
+u01614,아 매니저님 확인했어 완료,complete,test,template,clear,complete,0.9664008617401123,True
+u01633,저기 이거 잘못 왔어요,report_issue,test,template,ask,report_issue,0.8537890315055847,True
+u01667,음 매니저님한테 인계했어,complete,test,template,clear,complete,0.9659847617149353,True
+u01670,그 근처 화장실 어디야 빨리,other,test,template,clear,next_stop,0.5231754779815674,False
+u01674,잠깐 엄마한테 전화해주세요,other,test,template,clear,other,0.9383891820907593,True
+u01676,자 어 잠깐만 얼른,other,test,template,clear,other,0.9309586882591248,True
+u01680,가락점 들어갈 거 알려줘,stop_items,test,gemini,clear,stop_items,0.9488022923469543,True
+u01682,이제 몇 개 남았지,next_stop,test,template,clear,next_stop,0.9611959457397461,True
+u01685,스캔 켜봐라 바로 찍게,scan,test,gemini,clear,scan,0.9727481007575989,True
+u01692,석촌점에 컵라면 몇 개 내려야 돼,stop_items,test,gemini,clear,stop_items,0.9388535618782043,True
+u01699,아 다음 어디 가야 하지,next_stop,test,template,clear,next_stop,0.968695878982544,True
+u01702,어 여기 내릴 거 읽어주세요,stop_items,test,template,clear,stop_items,0.7502353191375732,True
+u01706,역삼점 콜라 엉뚱한 게 실렸어,report_issue,test,template,clear,report_issue,0.9412419199943542,True
+u01708,아 물품 스캔 켜줘 좀,scan,test,template,clear,scan,0.8942945599555969,True
+u01710,여기 내릴 거 읽어주세요,stop_items,test,template,clear,stop_items,0.7251113653182983,True
+u01732,여기 들어갈 거 뭐뭐야 좀,stop_items,test,template,clear,stop_items,0.945180356502533,True
+u01737,전달 완료했어요,complete,test,template,clear,complete,0.9666033387184143,True
+u01744,아 바코드 찍어야 돼 리더기 켜,scan,test,gemini,clear,scan,0.9667578339576721,True
+u01755,그 엄마한테 전화해줘 빨리,other,test,template,clear,other,0.9160919189453125,True
+u01757,음 반포점 리스트 불러줘 좀,stop_items,test,template,clear,stop_items,0.9267987012863159,True
+u01770,이제 참치삼각김밥 상태 좀 봐야겠다 지금,report_issue,test,template,hard,report_issue,0.882108211517334,True
+u01773,자 바코드 켜 얼른,scan,test,template,clear,scan,0.9704195261001587,True
+u01782,이제 가락점 새우깡 녹았음,report_issue,test,template,clear,report_issue,0.9409563541412354,True
+u01797,어 어디로 갈지 알려주세요,next_stop,test,template,hard,next_stop,0.9551277160644531,True
+u01808,어 점장님한테 인계했어 얼른,complete,test,template,clear,complete,0.9629337787628174,True
+u01809,아 다음 어디 가야 하지 지금,next_stop,test,template,clear,next_stop,0.9683681130409241,True
+u01811,그 우유 박스 하나 모자람,report_issue,test,template,ask,report_issue,0.9373714923858643,True
+u01814,자 근처 화장실 어디야 지금,other,test,template,clear,stop_items,0.5529319047927856,False
+u01815,아 이온음료 박스 하나 수량이 안 맞아,report_issue,test,template,clear,report_issue,0.9409587979316711,True
+u01816,내릴 물건 알려줘 지금,stop_items,test,template,clear,stop_items,0.9420799016952515,True
+u01819,직원분한테 넘겼어,complete,test,template,clear,complete,0.9657195806503296,True
+u01827,자 이거 터짐,report_issue,test,template,ask,report_issue,0.8963083624839783,True
+u01829,음 내릴 물건 알려주세요,stop_items,test,template,clear,stop_items,0.9369924664497375,True
+u01834,저기 다음 어디 가야 하죠,next_stop,test,template,clear,next_stop,0.9691630005836487,True
+u01838,서초점 근처에 맛집 있나,other,test,gemini,clear,stop_items,0.7978565692901611,False
+u01859,아 서초점 샌드위치 몇 개 내려야 하지,stop_items,test,gemini,clear,stop_items,0.9506420493125916,True
+u01863,아 네비 다음에 어디 가래,next_stop,test,gemini,clear,next_stop,0.8295823335647583,True
+u01864,다음 배송지 말해줘 빨리,next_stop,test,template,clear,next_stop,0.9588105082511902,True
+u01873,치킨마요도시락 두 개 안 왔어,report_issue,test,gemini,clear,report_issue,0.9368076920509338,True
+u01878,가산점 라면 몇 박스지,stop_items,test,gemini,clear,stop_items,0.9358317852020264,True
+u01882,그 이거 하나 빠졌어 좀,report_issue,test,template,ask,report_issue,0.9245915412902832,True
+u01887,저기 새우깡 상태 좀 봐야겠다 얼른,report_issue,test,template,hard,report_issue,0.6195428967475891,True
+u01892,엄마한테 전화해주세요,other,test,template,clear,other,0.9366171360015869,True
+u01919,저기 물품 스캔 켜줘 지금,scan,test,template,clear,scan,0.8143619298934937,True
+u01920,자 근처 화장실 어디야 빨리,other,test,template,clear,stop_items,0.46611493825912476,False
+u01928,문정점 치킨마요도시락 잘못 왔어,report_issue,test,template,clear,report_issue,0.9333768486976624,True
+u01939,점장님한테 넘겼어요,complete,test,template,clear,complete,0.9656166434288025,True
+u01947,바코드 켜 빨리,scan,test,template,clear,scan,0.9703702330589294,True
+u01949,저기 구로점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.9393838047981262,True
+u01958,아 지금 몇 시야,other,test,template,clear,other,0.8192831873893738,True
+u01980,냉동 상태 이상함 녹았어,report_issue,test,gemini,ask,report_issue,0.9373735189437866,True
+u01983,아 엄마한테 전화해줘 빨리,other,test,template,clear,other,0.926548421382904,True
+u01995,근처 화장실 어디야 빨리,other,test,template,clear,stop_items,0.44861721992492676,False
+u01997,잠깐 매니저님 확인했어 완료,complete,test,template,clear,complete,0.9656252861022949,True
+u02001,어 내릴 물건 알려주세요,stop_items,test,template,clear,stop_items,0.9417405724525452,True
+u02005,잠깐 다 넣어놨어,complete,test,template,hard,scan,0.4382297098636627,False
+u02012,콜라 박스 하나 비어있어요,report_issue,test,template,clear,report_issue,0.9268246293067932,True
+u02018,어 여기 들어갈 거 뭐뭐예요,stop_items,test,template,clear,stop_items,0.9435247778892517,True
+u02020,아 커피 한 잔 마시고 싶다,other,test,gemini,clear,other,0.9560893177986145,True
+u02023,그 다음 어디 가야 하죠,next_stop,test,template,clear,next_stop,0.9694076180458069,True
+u02026,음 가락점 아이스크림 6개 주문이랑 달라 등록해줘 빨리,report_issue,test,template,clear,report_issue,0.8417257070541382,True
+u02032,삼성점은 주차하기 편해서 좋아,other,test,gemini,clear,other,0.5803002715110779,True
+u02034,잠깐 몇 개 남았죠,next_stop,test,template,clear,next_stop,0.9587965607643127,True
+u02036,점장님 확인했어 완료 빨리,complete,test,template,clear,complete,0.9665624499320984,True
+u02089,잠깐 여기 내릴 거 읽어주세요,stop_items,test,template,clear,stop_items,0.854250967502594,True
+u02093,카메라 좀,scan,test,template,hard,scan,0.9584762454032898,True
+u02108,자 다음 배송지 말해줘 빨리,next_stop,test,template,clear,next_stop,0.9615191221237183,True
+u02118,그 물품 스캔 켜줘 얼른,scan,test,template,clear,scan,0.8036947846412659,True
+u02121,저기 청담점 점장님 친절하시더라,other,test,template,hard,other,0.8195658326148987,True
+u02125,음 어 잠깐만,other,test,template,clear,other,0.9381404519081116,True
+u02127,물품 스캔 켜줘,scan,test,template,clear,scan,0.7901934385299683,True
+u02134,이거 다른 게 왔어요,report_issue,test,template,ask,report_issue,0.6229864358901978,True
+u02138,몇 개 남았지 빨리,next_stop,test,template,clear,next_stop,0.9614251255989075,True
+u02139,아 몇 개 남았지 빨리,next_stop,test,template,clear,next_stop,0.955715000629425,True
+u02141,아 구로점 스팸마요삼각김밥 새고 있어 얼른,report_issue,test,template,clear,report_issue,0.9396630525588989,True
+u02144,점장님한테 넘겼어 얼른,complete,test,template,clear,complete,0.9651011228561401,True
+u02150,자 다음 납품처 어디지 좀,next_stop,test,template,clear,next_stop,0.9630906581878662,True
+u02152,엄마한테 전화해줘,other,test,template,clear,other,0.940468966960907,True
+u02155,어 어 잠깐만,other,test,template,clear,other,0.9346182346343994,True
+u02162,잠깐 다음 어디 가야 하지 빨리,next_stop,test,template,clear,next_stop,0.9682053923606873,True
+u02167,그 매니저님한테 인계했어,complete,test,template,clear,complete,0.965985119342804,True
+u02177,그 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9549816250801086,True
+u02187,다 넣어놨어 빨리,complete,test,template,hard,scan,0.4911537766456604,False
+u02188,이제 카메라,scan,test,template,hard,scan,0.966547966003418,True
+u02191,직원분한테 인계했어,complete,test,template,clear,complete,0.9658892154693604,True
+u02193,자 다 넣어놨어요,complete,test,template,hard,scan,0.4313375651836395,False
+u02197,음 대치점 리스트 불러주세요,stop_items,test,template,clear,stop_items,0.943341851234436,True
+u02205,이제 잠실점 리스트 불러줘 지금,stop_items,test,template,clear,stop_items,0.8835484981536865,True
+u02207,점장님한테 인계했어요,complete,test,template,clear,complete,0.965941846370697,True
+u02209,압구정점에 내릴 아이스크림 수량,stop_items,test,gemini,clear,stop_items,0.800110399723053,True
+u02214,여기 내릴 거 읽어줘 좀,stop_items,test,template,clear,stop_items,0.7664850354194641,True
+u02215,송장 인식하게 스캔 켜라,scan,test,gemini,clear,scan,0.9640735983848572,True
+u02226,아 박스 바코드 찍게 켜줘,scan,test,gemini,clear,scan,0.9620679616928101,True
+u02227,아 점장님한테 인계했어 지금,complete,test,template,clear,complete,0.9639835357666016,True
+u02236,잠깐 근처 화장실 어디야 좀,other,test,template,clear,stop_items,0.4802917242050171,False
+u02240,음 엄마한테 전화해줘 얼른,other,test,template,clear,other,0.9376261234283447,True
+u02241,자 바코드 찍을게,scan,test,template,clear,scan,0.9726299047470093,True
+u02243,잠깐 매니저님한테 넘겼어요,complete,test,template,clear,complete,0.9655922651290894,True
+u02247,마요 도시락 상태 좀 봐야겠다,report_issue,test,template,hard,report_issue,0.7125683426856995,True
+u02254,다음 납품점 어디냐,next_stop,test,gemini,clear,next_stop,0.9578690528869629,True
+u02257,이제 사장님 확인했어 완료 빨리,complete,test,template,clear,complete,0.9664725661277771,True
+u02266,송파점 다 줬어,complete,test,gemini,clear,complete,0.956171452999115,True
+u02272,아 몇 개 남았지,next_stop,test,template,clear,next_stop,0.9542081356048584,True
+u02276,음 다음 납품처 어디지 좀,next_stop,test,template,clear,next_stop,0.9623068571090698,True
+u02298,이제 어디로 갈지 알려주세요,next_stop,test,template,hard,next_stop,0.9597464203834534,True
+u02300,저기 딸기 우유 박스 하나 차갑지가 않아,report_issue,test,template,clear,report_issue,0.9312002062797546,True
+u02301,그 여기 내릴 거 읽어주세요,stop_items,test,template,clear,stop_items,0.8315131068229675,True
+u02304,어디로 갈지 알려주세요,next_stop,test,template,hard,next_stop,0.9568058848381042,True
+u02305,그 수서점 아이스크림 세판 주문이랑 달라 등록해주세요,report_issue,test,template,clear,report_issue,0.7369818687438965,True
+u02306,도시락 수량 몇 개인지 봐줘,stop_items,test,gemini,ask,stop_items,0.9452263712882996,True
+u02308,어 물건 확인할게 얼른,scan,test,template,clear,scan,0.5023860335350037,True
+u02310,어 압구정점 딸기우유 여섯 박스 모자라 등록해주세요,report_issue,test,template,clear,report_issue,0.8207617998123169,True
+u02318,어 잠깐만 빨리,other,test,template,clear,other,0.9138686656951904,True
+u02335,잠깐 물품 스캔 켜줘 빨리,scan,test,template,clear,scan,0.8684635758399963,True
+u02339,잠깐 딸기 우유 박스 하나 이거 우리 거 아니래,report_issue,test,template,clear,report_issue,0.8928076028823853,True
+u02342,잠깐 점장님한테 인계했어요,complete,test,template,clear,complete,0.9648606181144714,True
+u02343,어 잠깐만 좀,other,test,template,clear,other,0.9384825825691223,True
+u02351,어 생수 상태 좀 봐야겠다,report_issue,test,template,hard,report_issue,0.6220771074295044,True
+u02357,그 사장님 확인했어 완료,complete,test,template,clear,complete,0.9665631055831909,True
+u02366,이제 이거 이거 우리 거 아니래 빨리,report_issue,test,template,ask,stop_items,0.7019997835159302,False
+u02377,어 여기 내릴 거 읽어줘,stop_items,test,template,clear,stop_items,0.6833924651145935,True
+u02380,잠깐 잠원점 점장님 친절하시더라,other,test,template,hard,other,0.764011025428772,True
+u02381,어 잠깐만,other,test,template,clear,other,0.9384658336639404,True
+u02382,도시락 한 개 안 왔는데,report_issue,test,gemini,ask,report_issue,0.8304166197776794,True
+u02384,자 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9588513374328613,True
+u02390,그 사장님한테 인계했어 빨리,complete,test,template,clear,complete,0.9649364948272705,True
+u02396,저기 바나나우유 여기 들어가는 거 맞아 얼른,stop_items,test,template,hard,report_issue,0.8050299882888794,False
+u02408,아 사이다 여기 들어가는 거 맞아 얼른,stop_items,test,template,hard,report_issue,0.767212986946106,False
+u02413,다음 납품처 어디죠,next_stop,test,template,clear,next_stop,0.9639293551445007,True
+u02425,논현점 젤리 수량 말해봐,stop_items,test,gemini,clear,stop_items,0.7695391178131104,True
+u02427,어 잠원점 리스트 불러줘,stop_items,test,template,clear,stop_items,0.9160447120666504,True
+u02437,물건 확인할게요,scan,test,template,clear,stop_items,0.7424814105033875,False
+u02439,구로점 내릴 목록 좀 틀어봐,stop_items,test,gemini,clear,stop_items,0.9312922954559326,True
+u02442,노래 다음 곡으로 넘겨,other,test,gemini,clear,next_stop,0.42139557003974915,False
+u02456,알바생한테 넘겼어,complete,test,template,clear,complete,0.9631417989730835,True
+u02458,남은 집 어디어디 남았지,next_stop,test,gemini,clear,next_stop,0.9687187075614929,True
+u02461,어 근처 화장실 어디야 얼른,other,test,template,clear,stop_items,0.5141345858573914,False
+u02462,송파점 점장님 친절하시더라,other,test,template,hard,other,0.8374248743057251,True
+u02466,여기 들어갈 거 뭐뭐야 얼른,stop_items,test,template,clear,stop_items,0.9421760439872742,True
+u02468,음 바코드 켜 좀,scan,test,template,clear,scan,0.9690257906913757,True
+u02470,방배점 사장님 확인 완료,complete,test,gemini,clear,complete,0.9649947881698608,True
+u02472,이제 바코드 찍을게,scan,test,template,clear,scan,0.9720941781997681,True
+u02477,문정점 서울우유 온도가 높아요,report_issue,test,gemini,clear,report_issue,0.921466588973999,True
+u02480,음 점장님 확인했어 완료,complete,test,template,clear,complete,0.9664486646652222,True
+u02483,그 근처 화장실 어디야,other,test,template,clear,stop_items,0.5405062437057495,False
+u02485,수서점 요거트 몇 개 들었지,stop_items,test,gemini,clear,stop_items,0.9384124875068665,True
+u02503,서울우유 박스 하나 주문이랑 달라,report_issue,test,template,clear,report_issue,0.831678032875061,True
+u02509,저기 다음 어디 가야 하지 지금,next_stop,test,template,clear,next_stop,0.9688062071800232,True
+u02513,바코드 켜 좀,scan,test,template,clear,scan,0.9697521328926086,True
+u02518,잠깐 물품 스캔 켜줘 지금,scan,test,template,clear,scan,0.838829755783081,True
+u02526,저기 개포점 바나나우유 12개 냉장이 안 됐어 등록해줘 좀,report_issue,test,template,clear,report_issue,0.9414452910423279,True
+u02544,구로점 캔커피 한 박스 상자가 젖었네,report_issue,test,gemini,clear,report_issue,0.9428154230117798,True
+u02547,구로점 점장님 친절하시더라,other,test,template,hard,other,0.8491014838218689,True
+u02557,아 다음 납품처 어디지,next_stop,test,template,clear,next_stop,0.9665497541427612,True
+u02560,아 참치김밥 여기 들어가는 거 맞아,stop_items,test,template,hard,report_issue,0.8031110167503357,False
+u02568,이거 깨졌어 얼른,report_issue,test,template,ask,report_issue,0.9211621284484863,True
+u02578,자 제육도시락 박스 하나 차갑지가 않아,report_issue,test,template,clear,report_issue,0.9406863451004028,True
+u02581,자 지금 몇 시예요,other,test,template,clear,other,0.9483783841133118,True
+u02586,어 컵라면 박스 하나 터졌어 빨리,report_issue,test,template,clear,report_issue,0.9412394165992737,True
+u02590,어 다 넣어놨어,complete,test,template,hard,scan,0.43085211515426636,False
+u02606,저기 이거 녹았음,report_issue,test,template,ask,report_issue,0.9256239533424377,True
+u02608,다음 매장 어디로 넘어가면 돼,next_stop,test,gemini,clear,next_stop,0.9635787010192871,True
+u02609,가산점 납품 마쳤습니다,complete,test,gemini,clear,complete,0.9660246968269348,True
+u02610,자 수서점 이온 음료 찌그러졌어 얼른,report_issue,test,template,clear,report_issue,0.9402150511741638,True
+u02612,반포점 리스트 불러줘,stop_items,test,template,clear,stop_items,0.9335663318634033,True
+u02621,잠깐 샌드위치 상태 좀 봐야겠다 좀,report_issue,test,template,hard,report_issue,0.8274248242378235,True
+u02634,잠깐 다음 배송지 말해주세요,next_stop,test,template,clear,next_stop,0.9505836367607117,True
+u02636,저기 몇 개 남았죠,next_stop,test,template,clear,next_stop,0.9234113097190857,True
+u02644,여기 들어갈 거 뭐뭐야 빨리,stop_items,test,template,clear,stop_items,0.9440787434577942,True
+u02652,이제 물건 확인할게요,scan,test,template,clear,stop_items,0.7358925938606262,False
+u02655,다음 납품처 어디지,next_stop,test,template,clear,next_stop,0.9643839597702026,True
+u02657,어디로 갈지 알려줘,next_stop,test,template,hard,next_stop,0.9584689140319824,True
+u02659,자 다음 어디 가야 하죠,next_stop,test,template,clear,next_stop,0.9688068628311157,True
+u02669,이제 바코드 찍을게요,scan,test,template,clear,scan,0.9721388220787048,True
+u02672,음 몇 개 남았지,next_stop,test,template,clear,next_stop,0.9514884948730469,True
+u02676,어 삼성점 리스트 불러줘 빨리,stop_items,test,template,clear,stop_items,0.9027621746063232,True
+u02684,내릴 물건 알려줘 좀,stop_items,test,template,clear,stop_items,0.9422490000724792,True
+u02708,어 바코드 찍을게 좀,scan,test,template,clear,scan,0.9720309972763062,True
+u02710,아 물품 스캔 켜줘,scan,test,template,clear,scan,0.8754436373710632,True
+u02716,어 바코드 켜,scan,test,template,clear,scan,0.9703686237335205,True
+u02725,음 바코드 찍을게,scan,test,template,clear,scan,0.9721896052360535,True
+u02736,저기 사장님한테 넘겼어요,complete,test,template,clear,complete,0.9647424221038818,True
+u02746,아 매니저님한테 넘겼어요,complete,test,template,clear,complete,0.9655895829200745,True
+u02749,음 요거트 박스 하나 새고 있어요,report_issue,test,template,clear,report_issue,0.9317626357078552,True
