@@ -36,6 +36,12 @@ huggingface/
 sherpa-onnx-*/
 *.tar.bz2
 
+# 백엔드 로컬 DB / 테스트 캐시
+*.db
+*.db-wal
+*.db-shm
+.pytest_cache/
+
 # 비밀 값
 .env
 .env.*
