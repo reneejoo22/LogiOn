@@ -1,5 +1,10 @@
 package com.example.logion.screens
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.LocalOverscrollFactory
 import androidx.compose.foundation.background
@@ -16,11 +21,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.logion.data.deliveryStops
 import com.example.logion.data.mockDriver
+import com.example.logion.data.remote.DriverResponse
+import com.example.logion.data.remote.RetrofitClient
 import com.example.logion.model.DeliveryStop
 import com.example.logion.ui.theme.*
 import java.time.LocalDateTime
@@ -36,18 +43,55 @@ import kotlinx.coroutines.delay
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
+    stops: List<DeliveryStop>,
     completedStops: Set<Int>,
+    departAt: String?,
+    estEndAt: String?,
     isListening: Boolean,
     onStopClick: (DeliveryStop) -> Unit
 ) {
-    // 완료된 배송 수와 전체 진행률 계산
-    val completedCount = completedStops.size
-    val progress = completedCount.toFloat() / deliveryStops.size.toFloat()
+    val context = LocalContext.current
 
-    // 완료되지 않은 배송지 중 첫 번째 장소를 다음 배송지로 사용
-    val nextStop = deliveryStops.firstOrNull {
+    // 서버 응답 전에는 Mock 기사 정보를 사용
+    var driver by remember {
+        mutableStateOf<DriverResponse?>(null)
+    }
+
+    // 홈 화면이 열리면 실제 기사 정보를 서버에서 불러옴
+    LaunchedEffect(Unit) {
+        try {
+            driver = RetrofitClient.api.getDriver()
+
+            Log.d(
+                "API_DRIVER",
+                "홈 기사 정보 불러오기 성공: ${driver?.name}"
+            )
+        } catch (e: Exception) {
+            Log.e(
+                "API_DRIVER",
+                "홈 기사 정보 불러오기 실패",
+                e
+            )
+        }
+    }
+
+    // 완료된 배송 수와 전체 진행률
+    val completedCount = completedStops.size
+
+    val progress = if (stops.isEmpty()) {
+        0f
+    } else {
+        completedCount.toFloat() / stops.size.toFloat()
+    }
+
+    // 완료되지 않은 첫 번째 배송지를 다음 배송지로 사용
+    val nextStop = stops.firstOrNull {
         !completedStops.contains(it.id)
     }
+
+    // 서버에서 받은 배송 시간
+    val departTimeText = formatRouteTime(departAt)
+    val endTimeText = formatRouteTime(estEndAt)
 
     // 현재 날짜와 시간
     var currentTime by remember {
@@ -61,12 +105,12 @@ fun HomeScreen(
         }
     }
 
-    // 날짜, 요일, 오전/오후, 시간 표시
     val currentTimeText = remember(currentTime) {
         val formatter = DateTimeFormatter.ofPattern(
             "yyyy년 M월 d일 EEEE · a h:mm",
             Locale.KOREAN
         )
+
         currentTime.format(formatter)
     }
 
@@ -95,22 +139,26 @@ fun HomeScreen(
                 )
             ) {
                 item {
-                    // 현재 날짜, 시간과 로그인된 기사 정보
+                    // 현재 날짜, 시간과 기사 정보
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Column(modifier = Modifier.weight(1f)) {
+                        Column(
+                            modifier = Modifier.weight(1f)
+                        ) {
                             Text(
                                 text = currentTimeText,
                                 style = MaterialTheme.typography.labelLarge,
                                 color = LogiOnSubText
                             )
 
-                            Spacer(modifier = Modifier.height(5.dp))
+                            Spacer(Modifier.height(5.dp))
 
                             Text(
-                                text = "안녕하세요, ${mockDriver.name} 기사님",
+                                text = "안녕하세요, ${
+                                    driver?.name ?: mockDriver.name
+                                } 기사님",
                                 style = MaterialTheme.typography.headlineMedium,
                                 color = LogiOnText
                             )
@@ -121,9 +169,12 @@ fun HomeScreen(
                             shape = CircleShape,
                             color = Color(0xFFD7F1E6)
                         ) {
-                            Box(contentAlignment = Alignment.Center) {
+                            Box(
+                                contentAlignment = Alignment.Center
+                            ) {
                                 Text(
-                                    text = mockDriver.initial,
+                                    text = driver?.initial
+                                        ?: mockDriver.initial,
                                     fontSize = 19.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = LogiOnGreen2
@@ -132,7 +183,7 @@ fun HomeScreen(
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(Modifier.height(16.dp))
 
                     // 오늘 전체 배송 진행률
                     Card(
@@ -161,7 +212,7 @@ fun HomeScreen(
                                         color = Color(0xFF62D9AD)
                                     ) {}
 
-                                    Spacer(modifier = Modifier.width(7.dp))
+                                    Spacer(Modifier.width(7.dp))
 
                                     Text(
                                         text = "오늘 배송",
@@ -170,58 +221,71 @@ fun HomeScreen(
                                     )
                                 }
 
-                                Spacer(modifier = Modifier.weight(1f))
+                                Spacer(Modifier.weight(1f))
 
                                 Text(
-                                    text = "$completedCount / ${deliveryStops.size}",
+                                    text = "$completedCount / ${stops.size}",
                                     fontSize = 21.sp,
                                     fontWeight = FontWeight.Bold,
                                     color = Color.White
                                 )
                             }
 
-                            Spacer(modifier = Modifier.height(6.dp))
+                            Spacer(Modifier.height(6.dp))
 
                             Text(
                                 text = "완료율 ${(progress * 100).toInt()}%",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = Color.White.copy(alpha = 0.78f)
+                                color = Color.White.copy(
+                                    alpha = 0.78f
+                                )
                             )
 
-                            Spacer(modifier = Modifier.height(10.dp))
+                            Spacer(Modifier.height(10.dp))
 
                             LinearProgressIndicator(
-                                progress = { progress },
+                                progress = {
+                                    progress
+                                },
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .height(6.dp),
                                 color = Color(0xFF62D9AD),
-                                trackColor = Color.White.copy(alpha = 0.18f)
+                                trackColor = Color.White.copy(
+                                    alpha = 0.18f
+                                )
                             )
 
-                            Spacer(modifier = Modifier.height(9.dp))
+                            Spacer(Modifier.height(9.dp))
 
-                            Row(modifier = Modifier.fillMaxWidth()) {
+                            // 서버에서 받은 출발 및 예상 종료 시간
+                            Row(
+                                modifier = Modifier.fillMaxWidth()
+                            ) {
                                 Text(
-                                    text = "출발 09:40",
+                                    text = "출발 $departTimeText",
                                     style = MaterialTheme.typography.bodySmall,
-                                    color = Color.White.copy(alpha = 0.8f)
+                                    color = Color.White.copy(
+                                        alpha = 0.8f
+                                    )
                                 )
 
-                                Spacer(modifier = Modifier.weight(1f))
+                                Spacer(Modifier.weight(1f))
 
                                 Text(
-                                    text = "예상 종료 12:05",
+                                    text = "예상 종료 $endTimeText",
                                     style = MaterialTheme.typography.bodySmall,
-                                    color = Color.White.copy(alpha = 0.8f)
+                                    color = Color.White.copy(
+                                        alpha = 0.8f
+                                    )
                                 )
                             }
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(20.dp))
+                    Spacer(Modifier.height(20.dp))
 
-                    // AI가 추천한 다음 배송지 안내
+                    // 다음 배송지 추천 영역
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         verticalAlignment = Alignment.CenterVertically
@@ -233,7 +297,7 @@ fun HomeScreen(
                                 color = LogiOnSubText
                             )
 
-                            Spacer(modifier = Modifier.height(3.dp))
+                            Spacer(Modifier.height(3.dp))
 
                             Text(
                                 text = if (nextStop != null) {
@@ -246,7 +310,7 @@ fun HomeScreen(
                             )
                         }
 
-                        Spacer(modifier = Modifier.weight(1f))
+                        Spacer(Modifier.weight(1f))
 
                         Icon(
                             imageVector = Icons.Default.AutoAwesome,
@@ -256,9 +320,9 @@ fun HomeScreen(
                         )
                     }
 
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(Modifier.height(12.dp))
 
-                    // 남아 있는 배송지가 있을 때만 다음 배송 카드 표시
+                    // 남아 있는 배송지가 있을 때만 표시
                     if (nextStop != null) {
                         Card(
                             modifier = Modifier
@@ -273,9 +337,14 @@ fun HomeScreen(
                             colors = CardDefaults.cardColors(
                                 containerColor = Color.White
                             ),
-                            border = BorderStroke(1.dp, LogiOnBorder)
+                            border = BorderStroke(
+                                1.dp,
+                                LogiOnBorder
+                            )
                         ) {
-                            Column(modifier = Modifier.padding(16.dp)) {
+                            Column(
+                                modifier = Modifier.padding(16.dp)
+                            ) {
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
                                     verticalAlignment = Alignment.CenterVertically
@@ -298,7 +367,7 @@ fun HomeScreen(
                                                 modifier = Modifier.size(13.dp)
                                             )
 
-                                            Spacer(modifier = Modifier.width(3.dp))
+                                            Spacer(Modifier.width(3.dp))
 
                                             Text(
                                                 text = "AI 추천",
@@ -308,7 +377,7 @@ fun HomeScreen(
                                         }
                                     }
 
-                                    Spacer(modifier = Modifier.weight(1f))
+                                    Spacer(Modifier.weight(1f))
 
                                     Text(
                                         text = "도착까지 ${nextStop.distance}",
@@ -317,9 +386,9 @@ fun HomeScreen(
                                     )
                                 }
 
-                                Spacer(modifier = Modifier.height(13.dp))
+                                Spacer(Modifier.height(13.dp))
 
-                                // 다음 배송지의 기본 정보
+                                // 다음 배송지 기본 정보
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
@@ -330,16 +399,18 @@ fun HomeScreen(
                                         modifier = Modifier.size(23.dp)
                                     )
 
-                                    Spacer(modifier = Modifier.width(10.dp))
+                                    Spacer(Modifier.width(10.dp))
 
-                                    Column(modifier = Modifier.weight(1f)) {
+                                    Column(
+                                        modifier = Modifier.weight(1f)
+                                    ) {
                                         Text(
                                             text = nextStop.name,
                                             style = MaterialTheme.typography.titleLarge,
                                             color = LogiOnText
                                         )
 
-                                        Spacer(modifier = Modifier.height(2.dp))
+                                        Spacer(Modifier.height(2.dp))
 
                                         Text(
                                             text = nextStop.address,
@@ -356,9 +427,9 @@ fun HomeScreen(
                                     )
                                 }
 
-                                Spacer(modifier = Modifier.height(11.dp))
+                                Spacer(Modifier.height(11.dp))
 
-                                // 도착 예정 시간과 배송 박스 수
+                                // 도착 예정 시간과 박스 수
                                 Row(
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
@@ -369,7 +440,7 @@ fun HomeScreen(
                                         modifier = Modifier.size(16.dp)
                                     )
 
-                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Spacer(Modifier.width(4.dp))
 
                                     Text(
                                         text = "${nextStop.eta} 도착 예정",
@@ -377,7 +448,7 @@ fun HomeScreen(
                                         color = LogiOnSubText
                                     )
 
-                                    Spacer(modifier = Modifier.width(12.dp))
+                                    Spacer(Modifier.width(12.dp))
 
                                     Icon(
                                         imageVector = Icons.Default.Inventory2,
@@ -386,7 +457,7 @@ fun HomeScreen(
                                         modifier = Modifier.size(16.dp)
                                     )
 
-                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Spacer(Modifier.width(4.dp))
 
                                     Text(
                                         text = "박스 ${nextStop.boxes}개",
@@ -395,12 +466,53 @@ fun HomeScreen(
                                     )
                                 }
 
-                                Spacer(modifier = Modifier.height(12.dp))
+                                Spacer(Modifier.height(12.dp))
 
-                                // 추후 지도 API 또는 지도 화면과 연결할 버튼
+                                // 서버 좌표 사용
                                 Button(
                                     onClick = {
-                                        // TODO: 지도 화면 연결
+                                        val lat = nextStop.lat
+                                        val lng = nextStop.lng
+
+                                        val uri =
+                                            if (
+                                                lat != null &&
+                                                lng != null
+                                            ) {
+                                                val query = Uri.encode(
+                                                    "$lat,$lng(${nextStop.name})"
+                                                )
+
+                                                Uri.parse(
+                                                    "geo:$lat,$lng?q=$query"
+                                                )
+                                            } else {
+                                                // 좌표가 없을 때만 주소 검색
+                                                val address = Uri.encode(
+                                                    nextStop.address
+                                                )
+
+                                                Uri.parse(
+                                                    "geo:0,0?q=$address"
+                                                )
+                                            }
+
+                                        try {
+                                            context.startActivity(
+                                                Intent(
+                                                    Intent.ACTION_VIEW,
+                                                    uri
+                                                )
+                                            )
+                                        } catch (
+                                            e: ActivityNotFoundException
+                                        ) {
+                                            Toast.makeText(
+                                                context,
+                                                "사용 가능한 지도 앱이 없습니다.",
+                                                Toast.LENGTH_SHORT
+                                            ).show()
+                                        }
                                     },
                                     modifier = Modifier
                                         .fillMaxWidth()
@@ -417,7 +529,7 @@ fun HomeScreen(
                                         modifier = Modifier.size(19.dp)
                                     )
 
-                                    Spacer(modifier = Modifier.width(7.dp))
+                                    Spacer(Modifier.width(7.dp))
 
                                     Text(
                                         text = "배송지 위치 보기",
@@ -427,96 +539,114 @@ fun HomeScreen(
                             }
                         }
 
-                        Spacer(modifier = Modifier.height(12.dp))
+                        Spacer(Modifier.height(12.dp))
 
-                        // 다음 배송 전 미리 확인해야 할 상품 안내
-                        Card(
-                            modifier = Modifier.fillMaxWidth(),
-                            shape = RoundedCornerShape(17.dp),
-                            colors = CardDefaults.cardColors(
-                                containerColor = LogiOnOrangeLight
-                            ),
-                            border = BorderStroke(
-                                1.dp,
-                                Color(0xFFF3C9A8)
-                            )
-                        ) {
-                            Row(
-                                modifier = Modifier.padding(13.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                Surface(
-                                    modifier = Modifier.size(38.dp),
-                                    shape = RoundedCornerShape(11.dp),
-                                    color = Color(0xFFFFDFC1)
+                        // 서버에 배송 전 확인사항이 있을 때만 표시
+                        nextStop.notice
+                            ?.takeIf {
+                                it.isNotBlank()
+                            }
+                            ?.let { notice ->
+                                Card(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    shape = RoundedCornerShape(17.dp),
+                                    colors = CardDefaults.cardColors(
+                                        containerColor = LogiOnOrangeLight
+                                    ),
+                                    border = BorderStroke(
+                                        1.dp,
+                                        Color(0xFFF3C9A8)
+                                    )
                                 ) {
-                                    Box(contentAlignment = Alignment.Center) {
-                                        Icon(
-                                            imageVector = Icons.Default.WarningAmber,
-                                            contentDescription = null,
-                                            tint = LogiOnOrange,
-                                            modifier = Modifier.size(21.dp)
-                                        )
+                                    Row(
+                                        modifier = Modifier.padding(13.dp),
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        Surface(
+                                            modifier = Modifier.size(38.dp),
+                                            shape = RoundedCornerShape(11.dp),
+                                            color = Color(0xFFFFDFC1)
+                                        ) {
+                                            Box(
+                                                contentAlignment = Alignment.Center
+                                            ) {
+                                                Icon(
+                                                    imageVector = Icons.Default.WarningAmber,
+                                                    contentDescription = null,
+                                                    tint = LogiOnOrange,
+                                                    modifier = Modifier.size(21.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(Modifier.width(11.dp))
+
+                                        Column(
+                                            modifier = Modifier.weight(1f)
+                                        ) {
+                                            Text(
+                                                text = "배송 전 확인이 필요해요",
+                                                style = MaterialTheme.typography.titleMedium,
+                                                color = LogiOnText
+                                            )
+
+                                            Spacer(Modifier.height(2.dp))
+
+                                            Text(
+                                                text = notice,
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = LogiOnSubText
+                                            )
+                                        }
                                     }
                                 }
 
-                                Spacer(modifier = Modifier.width(11.dp))
-
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Text(
-                                        text = "배송 전 확인이 필요해요",
-                                        style = MaterialTheme.typography.titleMedium,
-                                        color = LogiOnText
-                                    )
-
-                                    Spacer(modifier = Modifier.height(2.dp))
-
-                                    Text(
-                                        text = "냉장 상품 4박스가 별도 구역에 있습니다.",
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = LogiOnSubText
-                                    )
-                                }
-
-                                Icon(
-                                    imageVector = Icons.Default.ChevronRight,
-                                    contentDescription = null,
-                                    tint = LogiOnText,
-                                    modifier = Modifier.size(20.dp)
-                                )
+                                Spacer(Modifier.height(13.dp))
                             }
+
+                        // VoiceDock과 연결된 음성 입력 상태
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Check,
+                                contentDescription = null,
+                                tint = LogiOnGreen2,
+                                modifier = Modifier.size(16.dp)
+                            )
+
+                            Spacer(Modifier.width(6.dp))
+
+                            Text(
+                                text = if (isListening) {
+                                    "음성 입력 중입니다."
+                                } else {
+                                    "음성 입력을 종료했습니다."
+                                },
+                                style = MaterialTheme.typography.bodySmall,
+                                color = LogiOnSubText
+                            )
                         }
 
-                        Spacer(modifier = Modifier.height(13.dp))
+                        Spacer(Modifier.height(10.dp))
                     }
-
-                    // VoiceDock과 연결된 현재 음성 입력 상태 표시
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Check,
-                            contentDescription = null,
-                            tint = LogiOnGreen2,
-                            modifier = Modifier.size(16.dp)
-                        )
-
-                        Spacer(modifier = Modifier.width(6.dp))
-
-                        Text(
-                            text = if (isListening) {
-                                "음성 입력 중입니다."
-                            } else {
-                                "음성 입력을 종료했습니다."
-                            },
-                            style = MaterialTheme.typography.bodySmall,
-                            color = LogiOnSubText
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.height(10.dp))
                 }
             }
         }
+    }
+}
+
+// 백엔드 날짜+시간 문자열에서 HH:mm만 표시
+private fun formatRouteTime(
+    value: String?
+): String {
+    if (value.isNullOrBlank()) {
+        return "-"
+    }
+
+    return if ("T" in value) {
+        value.substringAfter("T").take(5)
+    } else {
+        value.take(5)
     }
 }

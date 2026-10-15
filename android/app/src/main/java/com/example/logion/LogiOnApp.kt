@@ -1,179 +1,410 @@
 package com.example.logion
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.example.logion.data.remote.CompleteRequest
+import com.example.logion.data.remote.RetrofitClient
+import com.example.logion.data.remote.StopDetailResponse
+import com.example.logion.data.remote.ZoneCheckRequest
 import com.example.logion.model.DeliveryStop
-import com.example.logion.screens.HomeScreen
-import com.example.logion.screens.LogiOnBottomNavigation
-import com.example.logion.screens.MoreScreen
-import com.example.logion.screens.RouteScreen
-import com.example.logion.screens.ScanScreen
-import com.example.logion.screens.StopDetailSheet
-import com.example.logion.screens.VoiceDock
+import com.example.logion.screens.*
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
+import java.io.IOException
 
 // ==============================
-// LogiOn 앱의 메인 화면 구성
-// 화면 전환과 배송 상태, 상품 확인 상태를 관리함
+// LogiOn 앱 메인
+// 화면 전환, 배송 데이터, 서버 오류 상태를 관리함
 // ==============================
 
 @Composable
 fun LogiOnApp() {
-    // 현재 선택된 하단 메뉴를 저장
-    var selectedTab by remember {
-        mutableStateOf("home")
+    var selectedTab by remember { mutableStateOf("home") }
+    var scanPage by remember { mutableStateOf("main") }
+    var issueStopId by remember { mutableStateOf<Int?>(null) }
+
+    var selectedStop by remember { mutableStateOf<DeliveryStop?>(null) }
+    var selectedStopDetail by remember { mutableStateOf<StopDetailResponse?>(null) }
+
+    var stops by remember { mutableStateOf<List<DeliveryStop>>(emptyList()) }
+    var completedStops by remember { mutableStateOf(setOf<Int>()) }
+    var departAt by remember { mutableStateOf<String?>(null) }
+    var estEndAt by remember { mutableStateOf<String?>(null) }
+
+    var isListening by remember { mutableStateOf(false) }
+    var processingStopIds by remember { mutableStateOf(setOf<Int>()) }
+
+    val coroutineScope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+
+    fun showMessage(message: String) {
+        coroutineScope.launch {
+            snackbarHostState.showSnackbar(message, withDismissAction = true)
+        }
     }
 
-    // 사용자가 선택해서 열어둔 배송지 상세 정보
-    var selectedStop by remember {
-        mutableStateOf<DeliveryStop?>(null)
+    // 같은 배송지 API 중복 호출 방지
+    fun beginProcessing(stopId: Int): Boolean {
+        if (stopId in processingStopIds) return false
+        processingStopIds = processingStopIds + stopId
+        return true
     }
 
-    // 완료된 배송지의 id를 저장
-    var completedStops by remember {
-        mutableStateOf(setOf<Int>())
+    fun endProcessing(stopId: Int) {
+        processingStopIds = processingStopIds - stopId
     }
 
-    // 배송지별 상품 체크 상태를 저장
-    var checkedItemsByStop by remember {
-        mutableStateOf<Map<Int, Set<String>>>(emptyMap())
+    // 오늘 배송 정보 새로고침
+    suspend fun refreshTodayRoute() {
+        try {
+            val route = RetrofitClient.api.getTodayRoute()
+
+            departAt = route.departAt
+            estEndAt = route.estEndAt
+
+            stops = route.stops.map { remoteStop ->
+                DeliveryStop(
+                    id = remoteStop.id,
+                    name = remoteStop.store.name,
+                    address = remoteStop.store.address,
+                    eta = formatEta(remoteStop.eta),
+                    status = when {
+                        remoteStop.status == "done" -> "완료"
+                        remoteStop.isNext -> "다음 배송"
+                        else -> "예정"
+                    },
+                    boxes = remoteStop.boxes,
+                    distance = remoteStop.distanceKm?.let { "$it km" } ?: "-",
+                    notice = remoteStop.notice,
+                    lat = remoteStop.store.lat,
+                    lng = remoteStop.store.lng
+                )
+            }
+
+            completedStops = route.stops
+                .filter { it.status == "done" }
+                .map { it.id }
+                .toSet()
+
+            if (route.stops.isEmpty()) showMessage("오늘 예정된 배송이 없습니다.")
+
+            Log.d(
+                "API_ROUTE",
+                "배송 상태 새로고침 완료: ${route.summary.done}/${route.summary.total}"
+            )
+        } catch (e: Exception) {
+            Log.e("API_ROUTE", "오늘 배송 불러오기 실패", e)
+            showMessage(
+                apiErrorMessage(e, "오늘 배송 정보를 불러오지 못했습니다.")
+            )
+        }
     }
 
-    // 하단 음성 입력 버튼의 현재 상태
-    var isListening by remember {
-        mutableStateOf(false)
+    // 배송지 상세 조회
+    fun openStopDetail(stop: DeliveryStop) {
+        coroutineScope.launch {
+            if (!beginProcessing(stop.id)) return@launch
+
+            try {
+                selectedStopDetail = RetrofitClient.api.getStopDetail(stop.id)
+                selectedStop = stop
+                Log.d("API_DETAIL", "배송지 상세 조회 성공: ${stop.name}")
+            } catch (e: Exception) {
+                Log.e("API_DETAIL", "배송지 상세 조회 실패: ${stop.name}", e)
+                showMessage(
+                    apiErrorMessage(e, "배송지 정보를 불러오지 못했습니다.")
+                )
+            } finally {
+                endProcessing(stop.id)
+            }
+        }
     }
 
-    // 한 배송지에서 확인해야 하는 전체 상품 구역
-    val allItems = setOf(
-        "담배류",
-        "상온 음료",
-        "냉장 상품",
-        "간편식"
-    )
+    LaunchedEffect(Unit) {
+        refreshTodayRoute()
+    }
 
     Scaffold(
-        // 모든 화면에서 공통으로 사용하는 음성 입력창과 하단 네비게이션
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         bottomBar = {
             Column {
                 VoiceDock(
                     isListening = isListening,
-                    onVoiceClick = {
-                        isListening = !isListening
-                    }
+                    onVoiceClick = { isListening = !isListening }
                 )
 
                 LogiOnBottomNavigation(
                     selectedTab = selectedTab,
                     onTabSelected = { tab ->
                         selectedTab = tab
+
+                        if (tab != "scan") {
+                            scanPage = "main"
+                            issueStopId = null
+                        }
                     }
                 )
             }
         }
     ) { paddingValues ->
-        Box(
-            modifier = Modifier.padding(paddingValues)
-        ) {
-            // 선택된 하단 탭에 맞는 화면 표시
+        Box(modifier = Modifier.padding(paddingValues)) {
             when (selectedTab) {
                 "home" -> {
                     HomeScreen(
+                        stops = stops,
                         completedStops = completedStops,
+                        departAt = departAt,
+                        estEndAt = estEndAt,
                         isListening = isListening,
-                        onStopClick = { stop ->
-                            selectedStop = stop
-                        }
+                        onStopClick = ::openStopDetail
                     )
                 }
 
                 "route" -> {
                     RouteScreen(
+                        stops = stops,
                         completedStops = completedStops,
-                        onStopClick = { stop ->
-                            selectedStop = stop
-                        },
-
-                        // 배송목록의 빠른 체크 버튼으로 완료/완료 취소 처리
+                        onStopClick = ::openStopDetail,
                         onQuickToggleComplete = { stop ->
-                            val alreadyCompleted =
-                                completedStops.contains(stop.id)
+                            coroutineScope.launch {
+                                if (!beginProcessing(stop.id)) return@launch
 
-                            if (alreadyCompleted) {
-                                completedStops =
-                                    completedStops - stop.id
-                            } else {
-                                completedStops =
-                                    completedStops + stop.id
+                                try {
+                                    if (stop.id in completedStops) {
+                                        RetrofitClient.api.cancelComplete(stop.id)
+                                        Log.d(
+                                            "API_COMPLETE",
+                                            "배송 완료 취소 성공: ${stop.name}"
+                                        )
+                                    } else {
+                                        RetrofitClient.api.completeStop(
+                                            stopId = stop.id,
+                                            body = CompleteRequest()
+                                        )
+                                        Log.d(
+                                            "API_COMPLETE",
+                                            "배송 완료 성공: ${stop.name}"
+                                        )
+                                    }
 
-                                checkedItemsByStop =
-                                    checkedItemsByStop + (
-                                            stop.id to allItems
-                                            )
+                                    refreshTodayRoute()
+                                } catch (e: Exception) {
+                                    Log.e("API_COMPLETE", "배송 상태 변경 실패", e)
+                                    showMessage(
+                                        apiErrorMessage(
+                                            e,
+                                            "배송 상태를 변경하지 못했습니다."
+                                        )
+                                    )
+                                } finally {
+                                    endProcessing(stop.id)
+                                }
                             }
                         }
                     )
                 }
 
-                "scan" -> ScanScreen()
+                "scan" -> {
+                    when (scanPage) {
+                        "camera" -> {
+                            CameraScanScreen(
+                                onBack = { scanPage = "main" }
+                            )
+                        }
+
+                        "manual" -> {
+                            ManualBarcodeScreen(
+                                onBack = { scanPage = "main" }
+                            )
+                        }
+
+                        "issue" -> {
+                            IssueReportScreen(
+                                stops = stops,
+                                initialStopId = issueStopId,
+                                onBack = {
+                                    scanPage = "main"
+                                    issueStopId = null
+                                }
+                            )
+                        }
+
+                        else -> {
+                            ScanScreen(
+                                onCameraScanClick = { scanPage = "camera" },
+                                onManualInputClick = { scanPage = "manual" },
+                                onIssueReportClick = {
+                                    issueStopId = null
+                                    scanPage = "issue"
+                                }
+                            )
+                        }
+                    }
+                }
+
                 "more" -> MoreScreen()
             }
 
-            // 배송지를 선택했을 때 화면 위에 상세 BottomSheet 표시
-            selectedStop?.let { stop ->
-                val isCompleted =
-                    completedStops.contains(stop.id)
+            val stop = selectedStop
+            val detail = selectedStopDetail
 
-                val checkedItems =
-                    checkedItemsByStop[stop.id] ?: emptySet()
+            if (stop != null && detail != null) {
+                val isProcessing = stop.id in processingStopIds
 
                 StopDetailSheet(
                     stop = stop,
-                    isCompleted = isCompleted,
-                    checkedItems = checkedItems,
+                    detail = detail,
+                    isProcessing = isProcessing,
 
-                    // 상품을 체크하거나 해제할 때 배송지별 상태를 저장
-                    onCheckedItemsChange = { newItems ->
-                        checkedItemsByStop =
-                            checkedItemsByStop + (
-                                    stop.id to newItems
+                    onZoneToggle = { zone ->
+                        coroutineScope.launch {
+                            if (!beginProcessing(stop.id)) return@launch
+
+                            try {
+                                selectedStopDetail = RetrofitClient.api.setZoneChecked(
+                                    stopId = stop.id,
+                                    category = zone.category,
+                                    body = ZoneCheckRequest(checked = !zone.checked)
+                                )
+
+                                Log.d(
+                                    "API_ZONE",
+                                    "${zone.label} 체크 변경 성공"
+                                )
+                            } catch (e: Exception) {
+                                Log.e(
+                                    "API_ZONE",
+                                    "${zone.label} 체크 변경 실패",
+                                    e
+                                )
+
+                                showMessage(
+                                    apiErrorMessage(
+                                        e,
+                                        "상품 확인 상태를 저장하지 못했습니다."
                                     )
+                                )
+                            } finally {
+                                endProcessing(stop.id)
+                            }
+                        }
                     },
 
                     onClose = {
-                        selectedStop = null
+                        if (!isProcessing) {
+                            selectedStop = null
+                            selectedStopDetail = null
+                        }
                     },
 
-                    // 상세 화면에서 배송 완료 처리
                     onComplete = {
-                        completedStops =
-                            completedStops + stop.id
+                        coroutineScope.launch {
+                            if (!beginProcessing(stop.id)) return@launch
 
-                        checkedItemsByStop =
-                            checkedItemsByStop + (
-                                    stop.id to allItems
+                            try {
+                                RetrofitClient.api.completeStop(
+                                    stopId = stop.id,
+                                    body = CompleteRequest()
+                                )
+
+                                refreshTodayRoute()
+                                selectedStop = null
+                                selectedStopDetail = null
+
+                                Log.d(
+                                    "API_COMPLETE",
+                                    "배송 완료 성공: ${stop.name}"
+                                )
+                            } catch (e: Exception) {
+                                Log.e("API_COMPLETE", "배송 완료 실패", e)
+
+                                showMessage(
+                                    apiErrorMessage(
+                                        e,
+                                        "배송 완료 처리에 실패했습니다."
                                     )
-
-                        selectedStop = null
+                                )
+                            } finally {
+                                endProcessing(stop.id)
+                            }
+                        }
                     },
 
-                    // 완료된 배송지를 다시 미완료 상태로 변경
                     onCancelComplete = {
-                        completedStops = completedStops - stop.id
-                        // 취소 시 상품 확인 상태도 초기화
-                        checkedItemsByStop = checkedItemsByStop - stop.id
+                        coroutineScope.launch {
+                            if (!beginProcessing(stop.id)) return@launch
 
-                        selectedStop = null
+                            try {
+                                RetrofitClient.api.cancelComplete(stop.id)
+
+                                refreshTodayRoute()
+                                selectedStop = null
+                                selectedStopDetail = null
+
+                                Log.d(
+                                    "API_COMPLETE",
+                                    "배송 완료 취소 성공: ${stop.name}"
+                                )
+                            } catch (e: Exception) {
+                                Log.e(
+                                    "API_COMPLETE",
+                                    "배송 완료 취소 실패",
+                                    e
+                                )
+
+                                showMessage(
+                                    apiErrorMessage(
+                                        e,
+                                        "배송 완료 취소에 실패했습니다."
+                                    )
+                                )
+                            } finally {
+                                endProcessing(stop.id)
+                            }
+                        }
+                    },
+
+                    onIssueReport = {
+                        if (!isProcessing) {
+                            issueStopId = stop.id
+                            selectedStop = null
+                            selectedStopDetail = null
+                            selectedTab = "scan"
+                            scanPage = "issue"
+                        }
                     }
                 )
             }
         }
     }
+}
+
+// 백엔드 날짜+시간에서 HH:mm만 표시
+private fun formatEta(eta: String): String =
+    eta.substringAfter("T", eta).take(5)
+
+// 서버 오류 -> 사용자용 문구
+private fun apiErrorMessage(
+    exception: Exception,
+    defaultMessage: String
+): String = when (exception) {
+    is IOException -> "서버에 연결할 수 없습니다."
+
+    is HttpException -> when (exception.code()) {
+        404 -> "요청한 정보를 찾을 수 없습니다."
+        408 -> "서버 응답이 지연되고 있습니다."
+        500, 502, 503 -> "서버에 문제가 발생했습니다."
+        else -> defaultMessage
+    }
+
+    else -> defaultMessage
 }

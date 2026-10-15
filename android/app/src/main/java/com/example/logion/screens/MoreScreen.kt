@@ -1,5 +1,6 @@
 package com.example.logion.screens
 
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.LocalOverscrollFactory
 import androidx.compose.foundation.background
@@ -20,6 +21,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import com.example.logion.data.mockDriver
+import com.example.logion.data.remote.DriverResponse
+import com.example.logion.data.remote.RetrofitClient
 import com.example.logion.ui.theme.*
 
 // ==============================
@@ -30,6 +33,20 @@ import com.example.logion.ui.theme.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MoreScreen() {
+
+    // 서버 응답 전에는 Mock 기사 정보를 사용
+    var driver by remember { mutableStateOf<DriverResponse?>(null) }
+
+    // 더보기 화면이 열리면 실제 기사 정보를 서버에서 불러옴
+    LaunchedEffect(Unit) {
+        try {
+            driver = RetrofitClient.api.getDriver()
+            Log.d("API_DRIVER", "기사 정보 불러오기 성공: ${driver?.name}")
+        } catch (e: Exception) {
+            Log.e("API_DRIVER", "기사 정보 불러오기 실패", e)
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -59,7 +76,7 @@ fun MoreScreen() {
                     color = LogiOnSubText
                 )
 
-                Spacer(modifier = Modifier.height(2.dp))
+                Spacer(Modifier.height(2.dp))
 
                 Text(
                     text = "더보기",
@@ -67,7 +84,7 @@ fun MoreScreen() {
                     color = LogiOnText
                 )
 
-                Spacer(modifier = Modifier.height(5.dp))
+                Spacer(Modifier.height(5.dp))
 
                 Text(
                     text = "기사 프로필과 기기 상태를 확인하세요.",
@@ -75,9 +92,9 @@ fun MoreScreen() {
                     color = LogiOnSubText
                 )
 
-                Spacer(modifier = Modifier.height(15.dp))
+                Spacer(Modifier.height(15.dp))
 
-                // MockUser에서 가져온 현재 기사 프로필
+                // 서버의 기사 정보를 표시하고, 응답 전에는 Mock 데이터를 사용
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(18.dp),
@@ -103,26 +120,28 @@ fun MoreScreen() {
                             ) {
                                 Box(contentAlignment = Alignment.Center) {
                                     Text(
-                                        text = mockDriver.initial,
+                                        text = driver?.initial ?: mockDriver.initial,
                                         style = MaterialTheme.typography.headlineSmall,
                                         color = LogiOnGreen2
                                     )
                                 }
                             }
 
-                            Spacer(modifier = Modifier.width(12.dp))
+                            Spacer(Modifier.width(12.dp))
 
                             Column(modifier = Modifier.weight(1f)) {
                                 Text(
-                                    text = "${mockDriver.name} 기사님",
+                                    text = "${driver?.name ?: mockDriver.name} 기사님",
                                     style = MaterialTheme.typography.titleLarge,
                                     color = LogiOnText
                                 )
 
-                                Spacer(modifier = Modifier.height(2.dp))
+                                Spacer(Modifier.height(2.dp))
 
                                 Text(
-                                    text = "${mockDriver.area} · 차량 ${mockDriver.vehicleNumber}",
+                                    text = "${driver?.area ?: mockDriver.area} · 차량 ${
+                                        driver?.vehicleNumber ?: mockDriver.vehicleNumber
+                                    }",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = LogiOnSubText
                                 )
@@ -136,9 +155,9 @@ fun MoreScreen() {
                             )
                         }
 
-                        Spacer(modifier = Modifier.height(11.dp))
+                        Spacer(Modifier.height(11.dp))
                         HorizontalDivider(color = LogiOnBorder)
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(Modifier.height(10.dp))
 
                         // 오프라인 데이터 저장 상태 표시
                         Row(
@@ -159,7 +178,7 @@ fun MoreScreen() {
                                 }
                             }
 
-                            Spacer(modifier = Modifier.width(6.dp))
+                            Spacer(Modifier.width(6.dp))
 
                             Text(
                                 text = "오프라인 캐시 정상",
@@ -167,7 +186,7 @@ fun MoreScreen() {
                                 color = LogiOnSubText
                             )
 
-                            Spacer(modifier = Modifier.weight(1f))
+                            Spacer(Modifier.weight(1f))
 
                             Text(
                                 text = "98%",
@@ -178,7 +197,7 @@ fun MoreScreen() {
                     }
                 }
 
-                Spacer(modifier = Modifier.height(11.dp))
+                Spacer(Modifier.height(11.dp))
 
                 // 기사 개인 설정 메뉴
                 MoreMenuCard(
@@ -186,26 +205,26 @@ fun MoreScreen() {
                     title = "음성 안내 설정"
                 )
 
-                Spacer(modifier = Modifier.height(7.dp))
+                Spacer(Modifier.height(7.dp))
 
                 MoreMenuCard(
                     icon = Icons.Default.Tune,
                     title = "운송 환경 설정"
                 )
 
-                Spacer(modifier = Modifier.height(7.dp))
+                Spacer(Modifier.height(7.dp))
 
                 MoreMenuCard(
                     icon = Icons.Default.HelpOutline,
                     title = "도움말 및 문의"
                 )
 
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(Modifier.height(10.dp))
 
                 // 추후 공지, 운행 리포트, 관리자 기능과 연결할 영역
                 AdditionalMenuCard()
 
-                Spacer(modifier = Modifier.height(10.dp))
+                Spacer(Modifier.height(10.dp))
             }
         }
     }
@@ -251,7 +270,7 @@ private fun MoreMenuCard(
                 modifier = Modifier.size(21.dp)
             )
 
-            Spacer(modifier = Modifier.width(11.dp))
+            Spacer(Modifier.width(11.dp))
 
             Text(
                 text = title,
@@ -324,7 +343,7 @@ private fun AdditionalMenuCard() {
                 }
             }
 
-            Spacer(modifier = Modifier.width(9.dp))
+            Spacer(Modifier.width(9.dp))
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -333,7 +352,7 @@ private fun AdditionalMenuCard() {
                     color = LogiOnText
                 )
 
-                Spacer(modifier = Modifier.height(1.dp))
+                Spacer(Modifier.height(1.dp))
 
                 Text(
                     text = "관리자 연결 및 추가 작업 도구",
