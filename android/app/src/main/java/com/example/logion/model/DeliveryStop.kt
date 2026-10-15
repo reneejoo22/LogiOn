@@ -7,5 +7,8 @@ data class DeliveryStop(
     val eta: String,
     val status: String,
     val boxes: Int,
-    val distance: String
+    val distance: String,
+    val notice: String? = null,
+    val lat: Double? = null,
+    val lng: Double? = null
 )

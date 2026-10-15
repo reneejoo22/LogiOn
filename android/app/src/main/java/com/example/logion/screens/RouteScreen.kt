@@ -18,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.logion.data.deliveryStops
 import com.example.logion.model.DeliveryStop
 import com.example.logion.ui.theme.*
 
@@ -30,6 +29,7 @@ import com.example.logion.ui.theme.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RouteScreen(
+    stops: List<DeliveryStop>,
     completedStops: Set<Int>,
     onStopClick: (DeliveryStop) -> Unit,
     onQuickToggleComplete: (DeliveryStop) -> Unit
@@ -40,7 +40,7 @@ fun RouteScreen(
     }
 
     // 완료되지 않은 배송지 중 첫 번째 장소를 현재 진행 중인 배송으로 지정
-    val activeStop = deliveryStops.firstOrNull {
+    val activeStop = stops.firstOrNull {
         !completedStops.contains(it.id)
     }
 
@@ -48,11 +48,11 @@ fun RouteScreen(
     val visibleStops = when (selectedFilter) {
         "active" -> activeStop?.let { listOf(it) } ?: emptyList()
 
-        "completed" -> deliveryStops.filter {
+        "completed" -> stops.filter {
             completedStops.contains(it.id)
         }
 
-        else -> deliveryStops
+        else -> stops
     }
 
     Column(
@@ -95,7 +95,7 @@ fun RouteScreen(
                         Spacer(modifier = Modifier.width(5.dp))
 
                         Text(
-                            text = "${deliveryStops.size}곳",
+                            text = "${stops.size}곳",
                             style = MaterialTheme.typography.headlineSmall,
                             color = LogiOnGreen2
                         )
@@ -115,7 +115,7 @@ fun RouteScreen(
                         horizontalArrangement = Arrangement.spacedBy(7.dp)
                     ) {
                         RouteFilterChip(
-                            text = "전체 ${deliveryStops.size}",
+                            text = "전체 ${stops.size}",
                             selected = selectedFilter == "all",
                             onClick = {
                                 selectedFilter = "all"
