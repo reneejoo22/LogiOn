@@ -1,0 +1,432 @@
+﻿id,text,target,split,source,ambiguity,pred_raw,valid_json,fn_ok,exact,tp,n_pred,n_gold,final_ok
+u00000,지금 다음 남은 데가 어디지,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00005,저기 참치삼각김밥 박스 하나 수량이 안 맞아,"{""fn"":""report_issue"",""item"":""참치삼각김밥"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""참치삼각김밥"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u00007,바나나우유 박스 하나 새고 있어 빨리,"{""fn"":""report_issue"",""item"":""바나나우유"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""item"":""바나나우유"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u00011,스캐너 켜라고,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00018,송장 스캔 켜라,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00026,이온 음료 한 박스 샜네,"{""fn"":""report_issue"",""item"":""이온 음료"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",test,gemini,clear,"{""fn"":""report_issue"",""item"":""이온 음료"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",True,True,True,4,4,4,True
+u00030,근처 화장실 어디야 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00035,그 내릴 물건 알려줘 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00037,아 이거 바코드 읽게 스캔 열어,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00039,스캔 작동시켜줘,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00041,바코드 켜 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00043,잠깐 여기 들어갈 거 뭐뭐야 좀,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00044,송장 스캔 열어라,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00048,자 어디로 갈지 알려줘,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00051,서초점 라면 한 박스 모자라요,"{""fn"":""report_issue"",""store"":""서초점"",""item"":""라면"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",test,gemini,clear,"{""fn"":""report_issue"",""store"":""서초점"",""item"":""라면"",""issue"":""수량부족"",""qty"":1,""unit"":""박""}",True,True,False,4,5,5,False
+u00054,이제 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00056,아 근처 화장실 어디예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00060,저기 바코드 찍을게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00064,자 몇 개 남았지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u00068,이제 근처 화장실 어디예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00093,아 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00094,그 이거 다른 게 왔어요,"{""fn"":""report_issue"",""issue"":""오배송""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""오배송""}",True,True,True,1,1,1,True
+u00095,젤리 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""젤리""}",test,template,hard,"{""fn"":""stop_items"",""item"":""젤리""}",True,True,True,1,1,1,True
+u00108,아 물품 스캔 켜주세요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00117,어 바코드 켜 얼른,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00118,잠깐 바코드 찍을게 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00120,바나나우유 상태 좀 봐야겠다 좀,"{""fn"":""report_issue"",""item"":""바나나우유""}",test,template,hard,"{""fn"":""stop_items"",""item"":""바나나우유""}",True,False,False,1,1,1,False
+u00134,몇 개 남았지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u00140,개포점 딸기우유 네 개 개수가 안 맞아 등록해줘,"{""fn"":""report_issue"",""store"":""개포점"",""item"":""딸기우유"",""issue"":""수량부족"",""qty"":4,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""개포점"",""item"":""딸기우유"",""issue"":""수량부족"",""qty"":4,""unit"":""개""}",True,True,True,5,5,5,True
+u00153,아 청담점 아이스크림 4개 온도가 높아 등록해주세요,"{""fn"":""report_issue"",""store"":""청담점"",""item"":""아이스크림"",""issue"":""온도이상"",""qty"":4,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""청담점"",""item"":""아이스크림"",""issue"":""온도이상"",""qty"":4,""unit"":""개""}",True,True,True,5,5,5,True
+u00166,저기 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00168,자 여기 들어갈 거 뭐뭐예요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00176,바코드 찍을게 얼른,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00188,신림점 치킨마요 하나 모자람,"{""fn"":""report_issue"",""store"":""신림점"",""item"":""치킨마요"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",test,gemini,clear,"{""fn"":""report_issue"",""store"":""신림점"",""item"":""치킨마요"",""issue"":""수량부족""}",True,True,False,3,3,5,False
+u00193,방배점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00199,이제 근처 화장실 어디야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00201,자 바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00202,어 물품 스캔 켜줘 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00204,일원점 삼각김밥 몇 개 내려,"{""fn"":""stop_items"",""store"":""일원점"",""item"":""삼각김밥""}",test,gemini,ask,"{""fn"":""stop_items"",""store"":""일원점"",""item"":""삼각김밥""}",True,True,True,2,2,2,True
+u00214,그 다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00226,여기 들어갈 거 뭐뭐예요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00232,아 여기 들어갈 거 뭐뭐야 지금,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00239,이제 알바생한테 인계했어,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u00242,그 전달 완료했어,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00243,지금 몇 시야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00252,그 물건 확인할게 빨리,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00253,석촌점 납품 완료 처리해라,"{""fn"":""complete"",""store"":""석촌점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""석촌점""}",True,True,True,1,1,1,True
+u00265,다음 도착지 어디야,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00278,저기 다 넣어놨어요,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00290,근처 화장실 어디야 얼른,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00292,아 다음 어디 가야 하죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00295,제육 도시락 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""제육 도시락""}",test,template,hard,"{""fn"":""stop_items"",""item"":""제육 도시락""}",True,True,True,1,1,1,True
+u00310,저기 다음 어디 가야 하지 얼른,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00311,저기 여기 들어갈 거 뭐뭐야 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00315,자 청담점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""청담점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""청담점""}",True,True,True,1,1,1,True
+u00322,자 근처 화장실 어디야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00327,음 다 넣어놨어,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00328,그 어디로 갈지 알려줘 지금,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00338,음 다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00340,다음 배송지 말해줘,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00342,이제 사장님한테 인계했어 얼른,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u00351,저기 전달 완료했어요,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00353,내릴 물건 알려줘 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00366,아 다음 배송지 말해줘,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00368,다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00372,어 바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00375,잠깐 초코파이 여기 들어가는 거 맞아 빨리,"{""fn"":""stop_items"",""item"":""초코파이""}",test,template,hard,"{""fn"":""stop_items"",""item"":""초코파이""}",True,True,True,1,1,1,True
+u00377,알바생 확인했어 완료 얼른,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u00378,아 반포점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00388,음 전달 완료했어 지금,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00392,어 지금 몇 시예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00394,잠깐 물건 확인할게 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00405,송장 읽게 스캔 켜봐,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00410,자 엄마한테 전화해줘,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00411,사이다 박스 하나 수량이 안 맞아,"{""fn"":""report_issue"",""item"":""사이다"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""사이다"",""issue"":""수량부족""}",True,True,True,2,2,2,True
+u00433,아 바코드 찍을게 빨리,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00439,잠깐 전달 완료했어요,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00449,아 점장님한테 넘겼어 좀,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u00458,아 바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00460,아 직원분한테 넘겼어 빨리,"{""fn"":""complete"",""receiver"":""직원분""}",test,template,clear,"{""fn"":""complete"",""receiver"":""직원분""}",True,True,True,1,1,1,True
+u00462,알바생한테 인계했어 얼른,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u00463,자 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00468,물품 스캔 켜주세요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00469,저기 어디로 갈지 알려줘,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00480,바나나우유 박스 하나 엉뚱한 게 실렸어,"{""fn"":""report_issue"",""item"":""바나나우유"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""item"":""바나나우유"",""issue"":""오배송"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u00488,이제 내릴 물건 알려줘 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00490,잠깐 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00493,근처 화장실 어디예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00494,아 박스 진짜 무게 나가네,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""report_issue"",""issue"":""수량부족""}",True,False,False,0,1,0,False
+u00506,자 엄마한테 전화해줘 지금,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00530,요구르트 박스 하나 온도가 높아,"{""fn"":""report_issue"",""item"":""요구르트"",""issue"":""온도이상""}",test,template,clear,"{""fn"":""report_issue"",""item"":""요구르트"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u00542,아 바코드 찍을게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00547,이제 여기 내릴 거 읽어줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u00552,그 역삼점 리스트 불러줘 빨리,"{""fn"":""stop_items"",""store"":""역삼점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""역삼점""}",True,True,True,1,1,1,True
+u00560,매니저님한테 인계했어 지금,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u00562,음 물건 확인할게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00578,아 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00580,어 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00586,저기 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00595,이제 청담점 바나나우유 모자람 빨리,"{""fn"":""report_issue"",""store"":""청담점"",""item"":""바나나우유"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""store"":""청담점"",""item"":""바나나우유"",""issue"":""수량부족""}",True,True,True,3,3,3,True
+u00599,바코드 찍을게 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00604,여기 들어갈 거 뭐뭐야,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00620,아 차 너무 막히네 오늘,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00624,아 여기 점포 하차 끝났음,"{""fn"":""complete""}",test,gemini,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00636,지금 몇 시야 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00640,저기 사이다 박스 하나 하나 빠졌어 빨리,"{""fn"":""report_issue"",""item"":""사이다"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""사이다"",""issue"":""수량부족""}",True,True,True,2,2,2,True
+u00643,잠실점 사장님 친절하셔서 좋다,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00650,논현점 제육도시락 12봉지 엉뚱한 게 실렸어 등록해줘 얼른,"{""fn"":""report_issue"",""store"":""논현점"",""item"":""제육도시락"",""issue"":""오배송"",""qty"":12,""unit"":""봉지""}",test,template,clear,"{""fn"":""report_issue"",""store"":""논현점"",""item"":""제육도시락"",""issue"":""오배송"",""qty"":12,""unit"":""봉지""}",True,True,True,5,5,5,True
+u00665,어 물건 확인할게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00678,다음 어디 가야 하죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00681,다음은 어디로 갑니까,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00690,음 내릴 물건 알려줘 얼른,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00692,음 사장님한테 인계했어 좀,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u00701,수서점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""수서점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""수서점""}",True,True,True,1,1,1,True
+u00708,음 캔커피 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""캔커피""}",test,template,hard,"{""fn"":""stop_items"",""item"":""캔커피""}",True,True,True,1,1,1,True
+u00711,내릴 물건 알려줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00717,그 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00719,그 잠원점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""잠원점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""잠원점""}",True,True,True,1,1,1,True
+u00727,저기 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00729,이제 반포점 리스트 불러줘 지금,"{""fn"":""stop_items"",""store"":""반포점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""반포점""}",True,True,True,1,1,1,True
+u00736,그 지금 몇 시야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u00751,자 여기 들어갈 거 뭐뭐야,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00756,음 어디로 갈지 알려줘,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00758,저기 대치점 사이다 엉뚱한 게 실렸어,"{""fn"":""report_issue"",""store"":""대치점"",""item"":""사이다"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""store"":""대치점"",""item"":""사이다"",""issue"":""오배송""}",True,True,True,3,3,3,True
+u00764,저 다음 목적지 확인 좀,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00769,스캔 실행해라,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00770,음 생수 박스 하나 터졌어요,"{""fn"":""report_issue"",""item"":""생수"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""item"":""생수"",""issue"":""파손""}",True,True,True,2,2,2,True
+u00773,수서점 젤리 한 개 덜 왔어 등록해주세요,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""젤리"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""젤리"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",True,True,True,5,5,5,True
+u00775,자 다 넣어놨어,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00787,음 이거 잘못 왔어 빨리,"{""fn"":""report_issue"",""issue"":""오배송""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""오배송""}",True,True,True,1,1,1,True
+u00788,여기 내릴 거 읽어줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u00789,사장님 확인했어 완료 빨리,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u00806,감자칩 박스 하나 부족해 좀,"{""fn"":""report_issue"",""item"":""감자칩"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""감자칩"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u00818,다음 하차할 곳 어디야,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00822,어 구로점 리스트 불러줘,"{""fn"":""stop_items"",""store"":""구로점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""구로점""}",True,True,True,1,1,1,True
+u00836,어 직원분한테 넘겼어 얼른,"{""fn"":""complete"",""receiver"":""직원분""}",test,template,clear,"{""fn"":""complete"",""receiver"":""직원분""}",True,True,True,1,1,1,True
+u00838,신사점 리스트 불러줘,"{""fn"":""stop_items"",""store"":""신사점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""신사점""}",True,True,True,1,1,1,True
+u00840,자 몇 개 남았지 지금,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u00855,이제 잠원점 리스트 불러줘,"{""fn"":""stop_items"",""store"":""잠원점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""잠원점""}",True,True,True,1,1,1,True
+u00857,자 전달 완료했어,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u00883,바코드 찍을게 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00884,다음 어디 가야 하지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00885,저기 잠원점 감자칩 10개 모자람 등록해주세요,"{""fn"":""report_issue"",""store"":""잠원점"",""item"":""감자칩"",""issue"":""수량부족"",""qty"":10,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""잠원점"",""item"":""감자칩"",""issue"":""수량부족"",""qty"":10,""unit"":""개""}",True,True,True,5,5,5,True
+u00888,아 다음에 어디 가야 되더라,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00894,음 바코드 켜 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00906,몇 개 남았지 얼른,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u00911,아 이거 찍어야 돼 스캔 올려줘,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u00944,매니저님한테 인계했어,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u00947,이제 새우깡 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""새우깡""}",test,template,hard,"{""fn"":""stop_items"",""item"":""새우깡""}",True,True,True,1,1,1,True
+u00949,그 다음 어디 가야 하지 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u00968,잠원점 하차 다 끝남,"{""fn"":""complete"",""store"":""잠원점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""잠원점""}",True,True,True,1,1,1,True
+u00976,저기 사장님한테 넘겼어 좀,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u00982,여기 내릴 물건이 뭐야,"{""fn"":""stop_items""}",test,gemini,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u00996,자 다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01001,이제 엄마한테 전화해줘,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01011,알바생한테 넘겼어요,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u01015,이제 물건 확인할게 빨리,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01017,이제 남아있는 배송지가 어디야,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01019,서초점 점장님 친절하시더라 좀,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01022,어 지금 몇 시야 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01026,자 이거 터졌어 좀,"{""fn"":""report_issue"",""issue"":""파손""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""파손""}",True,True,True,1,1,1,True
+u01043,음 여기 내릴 거 읽어줘 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01046,몇 개 남았지 좀,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01048,그 물건 확인할게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01051,음 직원분한테 넘겼어 좀,"{""fn"":""complete"",""receiver"":""직원분""}",test,template,clear,"{""fn"":""complete"",""receiver"":""직원분""}",True,True,True,1,1,1,True
+u01052,저기 다음 배송지 말해줘,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01053,다음 가게 네비 찍어줘,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01073,음 전달 완료했어 얼른,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u01077,청담점 배송 끝,"{""fn"":""complete"",""store"":""청담점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""청담점""}",True,True,True,1,1,1,True
+u01083,어 전달 완료했어요,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u01090,자 여기 내릴 거 읽어줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01095,엄마한테 전화해줘 지금,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01100,잠깐 다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01106,물건 확인할게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01107,다음 배송 점포 말해줘,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01116,그 몇 개 남았죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01118,근처 화장실 어디야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01119,아 알바생 확인했어 완료,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u01120,아 몇 개 남았죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01131,내릴 물건 알려주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01137,잠깐 물품 스캔 켜줘,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01141,새우깡 박스 하나 새고 있어 지금,"{""fn"":""report_issue"",""item"":""새우깡"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""item"":""새우깡"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u01142,엄마한테 전화해줘 얼른,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01143,음 문정점 콜라 덜 왔어 지금,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""콜라"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""콜라"",""issue"":""수량부족""}",True,True,True,3,3,3,True
+u01148,바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01164,지금 몇 시예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01165,잠깐 다음 어디 가야 하지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01167,이제 마요 도시락 상태 좀 봐야겠다,"{""fn"":""report_issue"",""item"":""마요 도시락""}",test,template,hard,"{""fn"":""stop_items"",""item"":""마요 도시락""}",True,False,False,1,1,1,False
+u01175,바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01176,아 바코드 스캔 좀 켜라,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01182,물품 스캔 켜줘 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01195,잠원점 하차 품목 확인해줘,"{""fn"":""stop_items"",""store"":""잠원점""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""잠원점""}",True,True,True,1,1,1,True
+u01201,이제 사장님한테 넘겼어 좀,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u01209,매니저님한테 물건 다 넘김,"{""fn"":""complete"",""receiver"":""매니저님""}",test,gemini,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u01217,음 반포점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01218,아 점장님한테 넘겼어,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u01229,아 근처 화장실 어디야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01238,음 사장님한테 인계했어,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u01247,어 다 넣어놨어요,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u01248,도곡점 골목길 왜 이렇게 좁냐,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01260,어 사이다 상태 좀 봐야겠다,"{""fn"":""report_issue"",""item"":""사이다""}",test,template,hard,"{""fn"":""stop_items"",""item"":""사이다""}",True,False,False,1,1,1,False
+u01265,압구정점 이온 음료 미지근해,"{""fn"":""report_issue"",""store"":""압구정점"",""item"":""이온 음료"",""issue"":""온도이상""}",test,template,clear,"{""fn"":""report_issue"",""store"":""압구정점"",""item"":""이온 음료"",""issue"":""온도이상""}",True,True,True,3,3,3,True
+u01266,음 지금 몇 시야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01269,방배점 수량 좀 체크해줘,"{""fn"":""stop_items"",""store"":""방배점""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""방배점""}",True,True,True,1,1,1,True
+u01275,그 여기 내릴 거 읽어줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01282,아 압구정점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01286,그 도곡점 감자칩 세 개 하나 빠졌어 등록해줘,"{""fn"":""report_issue"",""store"":""도곡점"",""item"":""감자칩"",""issue"":""수량부족"",""qty"":3,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""도곡점"",""item"":""감자칩"",""issue"":""수량부족"",""qty"":3,""unit"":""개""}",True,True,True,5,5,5,True
+u01297,다음 목적지 불러봐,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01303,저기 지금 몇 시야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01314,자 몇 개 남았지 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01328,잠깐 카메라 좀,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01331,아 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01339,음 지금 몇 시예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01344,아 역삼점 콜라 두개 주문이랑 달라 등록해주세요,"{""fn"":""report_issue"",""store"":""역삼점"",""item"":""콜라"",""issue"":""오배송"",""qty"":2,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""역삼점"",""item"":""콜라"",""issue"":""온도이상"",""qty"":2,""unit"":""개""}",True,True,False,4,5,5,False
+u01347,그 어디로 갈지 알려주세요,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01350,음 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01362,어 몇 개 남았죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01381,아 다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01382,논현점 이온음료 다섯박스 하나 빠졌어 등록해줘,"{""fn"":""report_issue"",""store"":""논현점"",""item"":""이온음료"",""issue"":""수량부족"",""qty"":5,""unit"":""박스""}",test,template,clear,"{""fn"":""report_issue"",""store"":""논현점"",""item"":""이온음료"",""issue"":""수량부족"",""qty"":5,""unit"":""박스""}",True,True,True,5,5,5,True
+u01386,잠깐 여기 들어갈 거 뭐뭐예요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01396,잠깐 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01400,아 잠실점 직원분 확인 완료,"{""fn"":""complete"",""store"":""잠실점"",""receiver"":""직원분""}",test,gemini,clear,"{""fn"":""complete"",""store"":""잠실점""}",True,True,False,1,1,2,False
+u01406,그 점장님한테 인계했어 좀,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u01407,이제 이거 비어있어,"{""fn"":""report_issue"",""issue"":""수량부족""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""수량부족""}",True,True,True,1,1,1,True
+u01408,야 오늘 금요일이라 길 엄청 밀리겠어,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01419,아 송파점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""송파점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""송파점""}",True,True,True,1,1,1,True
+u01428,송파점 길가에 경찰 있더라 조심해라,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01432,자 생수 상태 좀 봐야겠다,"{""fn"":""report_issue"",""item"":""생수""}",test,template,hard,"{""fn"":""scan"",""item"":""생수""}",True,False,False,1,1,1,False
+u01433,방배점 내릴 거 좀 불러봐,"{""fn"":""stop_items"",""store"":""방배점""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""방배점""}",True,True,True,1,1,1,True
+u01444,반포점 커피 얼마나 하차하지,"{""fn"":""stop_items"",""store"":""반포점"",""item"":""커피""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""반포점"",""item"":""커피""}",True,True,True,2,2,2,True
+u01449,잠깐 바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01450,어 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01459,잠깐 내릴 물건 알려줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01463,음 바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01468,어 일원점 물 오배송이예요,"{""fn"":""report_issue"",""store"":""일원점"",""item"":""물"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""store"":""일원점""}",True,True,False,1,1,3,False
+u01469,삼성점 다 내렸어요,"{""fn"":""complete"",""store"":""삼성점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""삼성점""}",True,True,True,1,1,1,True
+u01471,여기 내릴 거 읽어줘 얼른,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01473,카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01490,그 지금 몇 시야 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01513,그 다 넣어놨어요,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u01522,저기 사장님 확인했어 완료,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u01539,그 점장님한테 인계했어 빨리,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u01580,이제 바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01590,그 바코드 찍을게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01596,그 치킨마요도시락 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""치킨마요도시락""}",test,template,hard,"{""fn"":""stop_items"",""item"":""치킨마요도시락""}",True,True,True,1,1,1,True
+u01600,사장님 확인했어 완료,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u01605,마요 도시락 세 개 찌그러짐,"{""fn"":""report_issue"",""item"":""마요 도시락"",""issue"":""파손"",""qty"":3,""unit"":""개""}",test,gemini,clear,"{""fn"":""report_issue"",""item"":""마요 도시락"",""issue"":""파손"",""qty"":3,""unit"":""개""}",True,True,True,4,4,4,True
+u01614,아 매니저님 확인했어 완료,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u01633,저기 이거 잘못 왔어요,"{""fn"":""report_issue"",""issue"":""오배송""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""오배송""}",True,True,True,1,1,1,True
+u01667,음 매니저님한테 인계했어,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u01670,그 근처 화장실 어디야 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01674,잠깐 엄마한테 전화해주세요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01676,자 어 잠깐만 얼른,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01680,가락점 들어갈 거 알려줘,"{""fn"":""stop_items"",""store"":""가락점""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""가락점""}",True,True,True,1,1,1,True
+u01682,이제 몇 개 남았지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u01685,스캔 켜봐라 바로 찍게,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01692,석촌점에 컵라면 몇 개 내려야 돼,"{""fn"":""stop_items"",""store"":""석촌점"",""item"":""컵라면""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""석촌점""}",True,True,False,1,1,2,False
+u01699,아 다음 어디 가야 하지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01702,어 여기 내릴 거 읽어주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01706,역삼점 콜라 엉뚱한 게 실렸어,"{""fn"":""report_issue"",""store"":""역삼점"",""item"":""콜라"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""store"":""역삼점"",""item"":""콜라"",""issue"":""오배송""}",True,True,True,3,3,3,True
+u01708,아 물품 스캔 켜줘 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01710,여기 내릴 거 읽어주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u01732,여기 들어갈 거 뭐뭐야 좀,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01737,전달 완료했어요,"{""fn"":""complete""}",test,template,clear,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u01744,아 바코드 찍어야 돼 리더기 켜,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01755,그 엄마한테 전화해줘 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01757,음 반포점 리스트 불러줘 좀,"{""fn"":""stop_items"",""store"":""반포점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""반포점""}",True,True,True,1,1,1,True
+u01770,이제 참치삼각김밥 상태 좀 봐야겠다 지금,"{""fn"":""report_issue"",""item"":""참치삼각김밥""}",test,template,hard,"{""fn"":""stop_items"",""item"":""참치삼각김밥""}",True,False,False,1,1,1,False
+u01773,자 바코드 켜 얼른,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01782,이제 가락점 새우깡 녹았음,"{""fn"":""report_issue"",""store"":""가락점"",""item"":""새우깡"",""issue"":""온도이상""}",test,template,clear,"{""fn"":""report_issue"",""store"":""가락점"",""item"":""새우깡"",""issue"":""온도이상""}",True,True,True,3,3,3,True
+u01797,어 어디로 갈지 알려주세요,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01808,어 점장님한테 인계했어 얼른,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u01809,아 다음 어디 가야 하지 지금,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01811,그 우유 박스 하나 모자람,"{""fn"":""report_issue"",""item"":""우유"",""issue"":""수량부족""}",test,template,ask,"{""fn"":""report_issue"",""item"":""우유"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,True
+u01814,자 근처 화장실 어디야 지금,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01815,아 이온음료 박스 하나 수량이 안 맞아,"{""fn"":""report_issue"",""item"":""이온음료"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""이온음료"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u01816,내릴 물건 알려줘 지금,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01819,직원분한테 넘겼어,"{""fn"":""complete"",""receiver"":""직원분""}",test,template,clear,"{""fn"":""complete"",""receiver"":""직원분""}",True,True,True,1,1,1,True
+u01827,자 이거 터짐,"{""fn"":""report_issue"",""issue"":""파손""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""파손""}",True,True,True,1,1,1,True
+u01829,음 내릴 물건 알려주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u01834,저기 다음 어디 가야 하죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01838,서초점 근처에 맛집 있나,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01859,아 서초점 샌드위치 몇 개 내려야 하지,"{""fn"":""stop_items"",""store"":""서초점"",""item"":""샌드위치""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""서초점"",""item"":""샌드위치""}",True,True,True,2,2,2,True
+u01863,아 네비 다음에 어디 가래,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01864,다음 배송지 말해줘 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u01873,치킨마요도시락 두 개 안 왔어,"{""fn"":""report_issue"",""item"":""치킨마요도시락"",""issue"":""수량부족"",""qty"":2,""unit"":""개""}",test,gemini,clear,"{""fn"":""report_issue"",""item"":""치킨마요도시락"",""issue"":""수량부족"",""qty"":2,""unit"":""개""}",True,True,True,4,4,4,True
+u01878,가산점 라면 몇 박스지,"{""fn"":""stop_items"",""store"":""가산점"",""item"":""라면""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""가산점""}",True,True,False,1,1,2,False
+u01882,그 이거 하나 빠졌어 좀,"{""fn"":""report_issue"",""issue"":""수량부족""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",True,True,False,1,3,1,True
+u01887,저기 새우깡 상태 좀 봐야겠다 얼른,"{""fn"":""report_issue"",""item"":""새우깡""}",test,template,hard,"{""fn"":""stop_items"",""item"":""새우깡""}",True,False,False,1,1,1,False
+u01892,엄마한테 전화해주세요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01919,저기 물품 스캔 켜줘 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01920,자 근처 화장실 어디야 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01928,문정점 치킨마요도시락 잘못 왔어,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""치킨마요도시락"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""치킨마요도시락"",""issue"":""오배송""}",True,True,True,3,3,3,True
+u01939,점장님한테 넘겼어요,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u01947,바코드 켜 빨리,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u01949,저기 구로점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""구로점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""구로점""}",True,True,True,1,1,1,True
+u01958,아 지금 몇 시야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01980,냉동 상태 이상함 녹았어,"{""fn"":""report_issue"",""issue"":""온도이상""}",test,gemini,ask,"{""fn"":""report_issue"",""issue"":""온도이상""}",True,True,True,1,1,1,True
+u01983,아 엄마한테 전화해줘 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01995,근처 화장실 어디야 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u01997,잠깐 매니저님 확인했어 완료,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u02001,어 내릴 물건 알려주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u02005,잠깐 다 넣어놨어,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u02012,콜라 박스 하나 비어있어요,"{""fn"":""report_issue"",""item"":""콜라"",""issue"":""수량부족""}",test,template,clear,"{""fn"":""report_issue"",""item"":""콜라"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u02018,어 여기 들어갈 거 뭐뭐예요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u02020,아 커피 한 잔 마시고 싶다,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02023,그 다음 어디 가야 하죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02026,음 가락점 아이스크림 6개 주문이랑 달라 등록해줘 빨리,"{""fn"":""report_issue"",""store"":""가락점"",""item"":""아이스크림"",""issue"":""오배송"",""qty"":6,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""가락점"",""item"":""아이스크림"",""issue"":""오배송"",""qty"":6,""unit"":""개""}",True,True,True,5,5,5,True
+u02032,삼성점은 주차하기 편해서 좋아,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02034,잠깐 몇 개 남았죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02036,점장님 확인했어 완료 빨리,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02089,잠깐 여기 내릴 거 읽어주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u02093,카메라 좀,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02108,자 다음 배송지 말해줘 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02118,그 물품 스캔 켜줘 얼른,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02121,저기 청담점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02125,음 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02127,물품 스캔 켜줘,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02134,이거 다른 게 왔어요,"{""fn"":""report_issue"",""issue"":""오배송""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""오배송""}",True,True,True,1,1,1,True
+u02138,몇 개 남았지 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02139,아 몇 개 남았지 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02141,아 구로점 스팸마요삼각김밥 새고 있어 얼른,"{""fn"":""report_issue"",""store"":""구로점"",""item"":""스팸마요삼각김밥"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""store"":""구로점"",""item"":""스팸마요삼각김밥"",""issue"":""파손""}",True,True,True,3,3,3,True
+u02144,점장님한테 넘겼어 얼른,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02150,자 다음 납품처 어디지 좀,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02152,엄마한테 전화해줘,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02155,어 어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02162,잠깐 다음 어디 가야 하지 빨리,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02167,그 매니저님한테 인계했어,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u02177,그 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02187,다 넣어놨어 빨리,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u02188,이제 카메라,"{""fn"":""scan""}",test,template,hard,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02191,직원분한테 인계했어,"{""fn"":""complete"",""receiver"":""직원분""}",test,template,clear,"{""fn"":""complete"",""receiver"":""직원분""}",True,True,True,1,1,1,True
+u02193,자 다 넣어놨어요,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u02197,음 대치점 리스트 불러주세요,"{""fn"":""stop_items"",""store"":""대치점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""대치점""}",True,True,True,1,1,1,True
+u02205,이제 잠실점 리스트 불러줘 지금,"{""fn"":""stop_items"",""store"":""잠실점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""잠실점""}",True,True,True,1,1,1,True
+u02207,점장님한테 인계했어요,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02209,압구정점에 내릴 아이스크림 수량,"{""fn"":""stop_items"",""store"":""압구정점"",""item"":""아이스크림""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""압구정점"",""item"":""아이스크림""}",True,True,True,2,2,2,True
+u02214,여기 내릴 거 읽어줘 좀,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u02215,송장 인식하게 스캔 켜라,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02226,아 박스 바코드 찍게 켜줘,"{""fn"":""scan""}",test,gemini,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02227,아 점장님한테 인계했어 지금,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02236,잠깐 근처 화장실 어디야 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02240,음 엄마한테 전화해줘 얼른,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02241,자 바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02243,잠깐 매니저님한테 넘겼어요,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u02247,마요 도시락 상태 좀 봐야겠다,"{""fn"":""report_issue"",""item"":""마요 도시락""}",test,template,hard,"{""fn"":""stop_items"",""item"":""마요 도시락""}",True,False,False,1,1,1,False
+u02254,다음 납품점 어디냐,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02257,이제 사장님 확인했어 완료 빨리,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u02266,송파점 다 줬어,"{""fn"":""complete"",""store"":""송파점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""송파점""}",True,True,True,1,1,1,True
+u02272,아 몇 개 남았지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02276,음 다음 납품처 어디지 좀,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02298,이제 어디로 갈지 알려주세요,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02300,저기 딸기 우유 박스 하나 차갑지가 않아,"{""fn"":""report_issue"",""item"":""딸기 우유"",""issue"":""온도이상""}",test,template,clear,"{""fn"":""report_issue"",""item"":""딸기 우유"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u02301,그 여기 내릴 거 읽어주세요,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u02304,어디로 갈지 알려주세요,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02305,그 수서점 아이스크림 세판 주문이랑 달라 등록해주세요,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""아이스크림"",""issue"":""오배송"",""qty"":3,""unit"":""판""}",test,template,clear,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""아이스크림"",""issue"":""오배송"",""qty"":3,""unit"":""판""}",True,True,True,5,5,5,True
+u02306,도시락 수량 몇 개인지 봐줘,"{""fn"":""stop_items"",""item"":""도시락""}",test,gemini,ask,"{""fn"":""stop_items"",""item"":""도시락""}",True,True,True,1,1,1,True
+u02308,어 물건 확인할게 얼른,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02310,어 압구정점 딸기우유 여섯 박스 모자라 등록해주세요,"{""fn"":""report_issue"",""store"":""압구정점"",""item"":""딸기우유"",""issue"":""수량부족"",""qty"":6,""unit"":""박스""}",test,template,clear,"{""fn"":""report_issue"",""store"":""압구정점"",""item"":""딸기우유"",""issue"":""수량부족"",""qty"":6,""unit"":""박스""}",True,True,True,5,5,5,True
+u02318,어 잠깐만 빨리,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02335,잠깐 물품 스캔 켜줘 빨리,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02339,잠깐 딸기 우유 박스 하나 이거 우리 거 아니래,"{""fn"":""report_issue"",""item"":""딸기 우유"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""item"":""딸기 우유"",""issue"":""오배송""}",True,True,True,2,2,2,True
+u02342,잠깐 점장님한테 인계했어요,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02343,어 잠깐만 좀,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02351,어 생수 상태 좀 봐야겠다,"{""fn"":""report_issue"",""item"":""생수""}",test,template,hard,"{""fn"":""stop_items"",""item"":""생수""}",True,False,False,1,1,1,False
+u02357,그 사장님 확인했어 완료,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u02366,이제 이거 이거 우리 거 아니래 빨리,"{""fn"":""report_issue"",""issue"":""오배송""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""오배송""}",True,True,True,1,1,1,True
+u02377,어 여기 내릴 거 읽어줘,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""scan""}",True,False,False,0,0,0,False
+u02380,잠깐 잠원점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02381,어 잠깐만,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02382,도시락 한 개 안 왔는데,"{""fn"":""report_issue"",""item"":""도시락"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",test,gemini,ask,"{""fn"":""report_issue"",""item"":""도시락"",""issue"":""수량부족"",""qty"":1,""unit"":""개""}",True,True,True,4,4,4,True
+u02384,자 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02390,그 사장님한테 인계했어 빨리,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u02396,저기 바나나우유 여기 들어가는 거 맞아 얼른,"{""fn"":""stop_items"",""item"":""바나나우유""}",test,template,hard,"{""fn"":""stop_items"",""item"":""바나나우유""}",True,True,True,1,1,1,True
+u02408,아 사이다 여기 들어가는 거 맞아 얼른,"{""fn"":""stop_items"",""item"":""사이다""}",test,template,hard,"{""fn"":""stop_items"",""item"":""사이다""}",True,True,True,1,1,1,True
+u02413,다음 납품처 어디죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02425,논현점 젤리 수량 말해봐,"{""fn"":""stop_items"",""store"":""논현점"",""item"":""젤리""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""논현점"",""item"":""젤리""}",True,True,True,2,2,2,True
+u02427,어 잠원점 리스트 불러줘,"{""fn"":""stop_items"",""store"":""잠원점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""잠원점""}",True,True,True,1,1,1,True
+u02437,물건 확인할게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02439,구로점 내릴 목록 좀 틀어봐,"{""fn"":""stop_items"",""store"":""구로점""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""구로점""}",True,True,True,1,1,1,True
+u02442,노래 다음 곡으로 넘겨,"{""fn"":""other""}",test,gemini,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02456,알바생한테 넘겼어,"{""fn"":""complete"",""receiver"":""알바생""}",test,template,clear,"{""fn"":""complete"",""receiver"":""알바생""}",True,True,True,1,1,1,True
+u02458,남은 집 어디어디 남았지,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02461,어 근처 화장실 어디야 얼른,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02462,송파점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02466,여기 들어갈 거 뭐뭐야 얼른,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u02468,음 바코드 켜 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02470,방배점 사장님 확인 완료,"{""fn"":""complete"",""store"":""방배점"",""receiver"":""사장님""}",test,gemini,clear,"{""fn"":""complete"",""store"":""방배점"",""receiver"":""사장님""}",True,True,True,2,2,2,True
+u02472,이제 바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02477,문정점 서울우유 온도가 높아요,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""서울우유"",""issue"":""온도이상""}",test,gemini,clear,"{""fn"":""report_issue"",""store"":""문정점"",""item"":""서울우유"",""issue"":""온도이상""}",True,True,True,3,3,3,True
+u02480,음 점장님 확인했어 완료,"{""fn"":""complete"",""receiver"":""점장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""점장님""}",True,True,True,1,1,1,True
+u02483,그 근처 화장실 어디야,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02485,수서점 요거트 몇 개 들었지,"{""fn"":""stop_items"",""store"":""수서점"",""item"":""요거트""}",test,gemini,clear,"{""fn"":""stop_items"",""store"":""수서점"",""item"":""요거트""}",True,True,True,2,2,2,True
+u02503,서울우유 박스 하나 주문이랑 달라,"{""fn"":""report_issue"",""item"":""서울우유"",""issue"":""오배송""}",test,template,clear,"{""fn"":""report_issue"",""item"":""서울우유"",""issue"":""오배송""}",True,True,True,2,2,2,True
+u02509,저기 다음 어디 가야 하지 지금,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02513,바코드 켜 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02518,잠깐 물품 스캔 켜줘 지금,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02526,저기 개포점 바나나우유 12개 냉장이 안 됐어 등록해줘 좀,"{""fn"":""report_issue"",""store"":""개포점"",""item"":""바나나우유"",""issue"":""온도이상"",""qty"":12,""unit"":""개""}",test,template,clear,"{""fn"":""report_issue"",""store"":""개포점"",""item"":""바나나우유"",""issue"":""온도이상"",""qty"":12,""unit"":""개""}",True,True,True,5,5,5,True
+u02544,구로점 캔커피 한 박스 상자가 젖었네,"{""fn"":""report_issue"",""store"":""구로점"",""item"":""캔커피"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",test,gemini,clear,"{""fn"":""report_issue"",""store"":""구로점"",""item"":""캔커피"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",True,True,True,5,5,5,True
+u02547,구로점 점장님 친절하시더라,"{""fn"":""other""}",test,template,hard,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02557,아 다음 납품처 어디지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02560,아 참치김밥 여기 들어가는 거 맞아,"{""fn"":""stop_items"",""item"":""참치김밥""}",test,template,hard,"{""fn"":""stop_items"",""item"":""참치김밥""}",True,True,True,1,1,1,True
+u02568,이거 깨졌어 얼른,"{""fn"":""report_issue"",""issue"":""파손""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""파손""}",True,True,True,1,1,1,True
+u02578,자 제육도시락 박스 하나 차갑지가 않아,"{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상""}",test,template,clear,"{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u02581,자 지금 몇 시예요,"{""fn"":""other""}",test,template,clear,"{""fn"":""other""}",True,True,True,0,0,0,True
+u02586,어 컵라면 박스 하나 터졌어 빨리,"{""fn"":""report_issue"",""item"":""컵라면"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""item"":""컵라면"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",True,True,False,2,4,2,False
+u02590,어 다 넣어놨어,"{""fn"":""complete""}",test,template,hard,"{""fn"":""complete""}",True,True,True,0,0,0,True
+u02606,저기 이거 녹았음,"{""fn"":""report_issue"",""issue"":""온도이상""}",test,template,ask,"{""fn"":""report_issue"",""issue"":""온도이상""}",True,True,True,1,1,1,True
+u02608,다음 매장 어디로 넘어가면 돼,"{""fn"":""next_stop""}",test,gemini,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02609,가산점 납품 마쳤습니다,"{""fn"":""complete"",""store"":""가산점""}",test,gemini,clear,"{""fn"":""complete"",""store"":""가산점""}",True,True,True,1,1,1,True
+u02610,자 수서점 이온 음료 찌그러졌어 얼른,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""이온 음료"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""store"":""수서점"",""item"":""이온 음료"",""issue"":""파손""}",True,True,True,3,3,3,True
+u02612,반포점 리스트 불러줘,"{""fn"":""stop_items"",""store"":""반포점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""반포점""}",True,True,True,1,1,1,True
+u02621,잠깐 샌드위치 상태 좀 봐야겠다 좀,"{""fn"":""report_issue"",""item"":""샌드위치""}",test,template,hard,"{""fn"":""stop_items"",""item"":""샌드위치""}",True,False,False,1,1,1,False
+u02634,잠깐 다음 배송지 말해주세요,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02636,저기 몇 개 남았죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02644,여기 들어갈 거 뭐뭐야 빨리,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u02652,이제 물건 확인할게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02655,다음 납품처 어디지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02657,어디로 갈지 알려줘,"{""fn"":""next_stop""}",test,template,hard,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02659,자 다음 어디 가야 하죠,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""next_stop""}",True,True,True,0,0,0,True
+u02669,이제 바코드 찍을게요,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02672,음 몇 개 남았지,"{""fn"":""next_stop""}",test,template,clear,"{""fn"":""stop_items""}",True,False,False,0,0,0,False
+u02676,어 삼성점 리스트 불러줘 빨리,"{""fn"":""stop_items"",""store"":""삼성점""}",test,template,clear,"{""fn"":""stop_items"",""store"":""삼성점""}",True,True,True,1,1,1,True
+u02684,내릴 물건 알려줘 좀,"{""fn"":""stop_items""}",test,template,clear,"{""fn"":""stop_items""}",True,True,True,0,0,0,True
+u02708,어 바코드 찍을게 좀,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02710,아 물품 스캔 켜줘,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02716,어 바코드 켜,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02725,음 바코드 찍을게,"{""fn"":""scan""}",test,template,clear,"{""fn"":""scan""}",True,True,True,0,0,0,True
+u02736,저기 사장님한테 넘겼어요,"{""fn"":""complete"",""receiver"":""사장님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""사장님""}",True,True,True,1,1,1,True
+u02746,아 매니저님한테 넘겼어요,"{""fn"":""complete"",""receiver"":""매니저님""}",test,template,clear,"{""fn"":""complete"",""receiver"":""매니저님""}",True,True,True,1,1,1,True
+u02749,음 요거트 박스 하나 새고 있어요,"{""fn"":""report_issue"",""item"":""요거트"",""issue"":""파손""}",test,template,clear,"{""fn"":""report_issue"",""item"":""요거트"",""issue"":""파손""}",True,True,True,2,2,2,True
