@@ -372,7 +372,7 @@ python scripts/export_intent_onnx.py          # export/intent_onnx/ + results/v2
 cd export/intent_onnx && python infer.py "다음 어디야"   # onnxruntime + tokenizers 만 필요 (torch 불필요)
 ```
 
-int8 정확도가 0.5%p 높은 것은 431건 중 2건 차이로 **측정 오차 범위**입니다(양자화로 좋아진 것이 아님). 시간은 **이 PC 의 CPU** 값이며 보드 값이 아닙니다.
+int8 정확도가 0.5%p 높은 것은 431건 중 2건 차이로 **측정 오차 범위**입니다(양자화로 좋아진 것이 아님). 시간은 **이 PC 의 CPU 4스레드로 한 문장씩** 잰 값이며 보드(RK3588) 값이 아닙니다. (위 v1 절의 `1.9 ms/문장` 은 **GPU 배치** 기준이라 이 표와 직접 비교할 수 없습니다.)
 
 ### RKLLM W8A8 변환 — **미실행**
 
