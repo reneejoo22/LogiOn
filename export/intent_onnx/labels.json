@@ -1,0 +1,16 @@
+{
+  "id2label": {
+    "0": "next_stop",
+    "1": "stop_items",
+    "2": "complete",
+    "3": "report_issue",
+    "4": "scan",
+    "5": "other"
+  },
+  "max_len": 64,
+  "inputs": [
+    "input_ids",
+    "attention_mask",
+    "token_type_ids"
+  ]
+}
