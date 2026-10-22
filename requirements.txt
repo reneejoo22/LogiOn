@@ -20,3 +20,6 @@ ipykernel>=6.29
 # 6단계 STT (선택)
 sherpa-onnx>=1.10
 soundfile>=0.12
+onnx>=1.16
+onnxruntime>=1.18
+tokenizers>=0.20
