@@ -14,6 +14,7 @@
 | --- | --- |
 | **1차 보고 정리** | [`docs/1st_report_summary.md`](docs/1st_report_summary.md) — 한 일, v1/v2/v2.1 비교, 남은 문제, 다음 계획 |
 | **채팅 데모** | `python demo/chat_server.py` → http://localhost:7860 — 앱 채팅 화면 모양으로 실제 모델을 붙여 돌려 봄 ([캡처](docs/chat_demo/)) |
+| **앱 + 백엔드 시연** | 백엔드를 켜고 앱의 **AI 채팅 탭**에서 말하면 실제 DB 에 기록됨 — [실행 방법 4](#4-앱--백엔드-시연-ai-채팅-탭) |
 | **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
 | **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
 | **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
@@ -145,6 +146,8 @@ LoRA는 `q/k/v/o/gate/up/down_proj`에 적용했고 학습 가능 파라미터�
 
 **torch는 반드시 CUDA 빌드로 따로 설치해야 합니다.** pip 기본 저장소의 torch는 CPU 전용이라 `torch.cuda.is_available()`가 `False`가 됩니다. RTX 50 시리즈(Blackwell, sm_120)는 **cu128 이상** 빌드가 필요합니다.
 
+**Python 은 3.10~3.13 을 쓰세요 (3.12 권장).** 3.15 는 아직 torch 빌드가 없어 `No matching distribution found for torch` 로 실패합니다. 3.15 가 깔려 있으면 `py install 3.12` 후 `py -3.12 -m venv .venv` 로 만드세요. 명령은 **저장소 루트(`LogiOn\`)에서** 실행합니다.
+
 ```bash
 python -m venv .venv
 .venv\Scripts\activate            # Windows (Linux/macOS: source .venv/bin/activate)
@@ -201,6 +204,31 @@ python demo/chat_server.py --no-models   # 모델 없이 화면만
 - 되묻기가 걸리면 **선택지 버튼**이 나오고, 누르면 이어서 처리합니다.
 - 배송 데이터는 `backend/app/db/seed.py` 를 읽어 쓰고 **변경은 이 서버 메모리 안에서만** 일어납니다. 백엔드 서버나 코드는 건드리지 않습니다.
 - 캡처는 `python scripts/capture_chat_demo.py` 로 다시 만들 수 있습니다 (→ `docs/chat_demo/`). 문장별 수치는 [`docs/chat_demo/results.md`](docs/chat_demo/results.md) 에 있습니다.
+- `.py` 파일을 더블클릭하면 실행되지 않고 코드만 열립니다. 위 명령을 터미널에서 실행하고, `http://localhost:7860` 이 찍히면 **브라우저로 그 주소를 여세요** (터미널 창은 켜 둔 채로).
+
+### 4. 앱 + 백엔드 시연 (AI 채팅 탭)
+
+채팅 데모와 달리 **실제 백엔드 DB** 에 붙습니다. 앱 AI 채팅 탭 → `POST /api/assistant/chat` → AI 파이프라인 → DB.
+"납품 완료", "우유 두 개 터졌어" 처럼 말하면 배송 기록에 실제로 반영되고, 홈·운행 목록이 바로 새로고침됩니다.
+
+1. 모델 준비 (`out/intent_model`, `out/fc_merged`). 없으면 2단계 노트북을 먼저 실행합니다.
+2. 백엔드 켜기 — 1단계에서 만든 루트 `.venv` 를 씁니다 (torch·transformers 와 백엔드 패키지가 같이 필요).
+   ```powershell
+   cd LogiOn
+   .venv\Scripts\Activate.ps1
+   pip install -r backend\requirements.txt     # 처음 한 번
+   cd backend
+   uvicorn app.main:app --host 0.0.0.0 --port 8000
+   ```
+   모델 로딩에 수십 초 걸립니다. http://localhost:8000/api/assistant/status 가 `"ready": true` 이면 준비된 것입니다.
+3. Android Studio 에서 `android/` 를 열고 에뮬레이터로 실행 → **AI 채팅 탭**.
+   - 상단 카드가 `AI 연결됨 · <GPU 이름>` 이면 연결된 것이고, 빨간색이면 서버가 꺼져 있거나 모델이 없는 것입니다.
+   - 시험 문장: `다음 어디야`, `서울숲점 콜라 몇 박스야`, `우유 두 개 터졌어`, `성수연무장점 납품 완료`
+   - 되물을 때는 선택지 버튼이 나오고, 누르면 이어서 처리합니다.
+4. 앱 서버 주소는 `android/.../data/remote/RetrofitClient.kt` 의 `BASE_URL` (에뮬레이터 기본값 `http://10.0.2.2:8000/`). 실제 폰·보드에서는 PC/보드 IP 로 바꾸세요.
+
+- 시연 데이터를 처음 상태로 돌리려면 서버를 끄고 `backend/data/logion.db` 를 지운 뒤 다시 켭니다.
+- 백엔드 API·구조는 [`backend/README.md`](backend/README.md) 를 보세요.
 
 ### GPU 요구사항 (중요)
 
@@ -488,7 +516,8 @@ python scripts/board_latency.py --sv-dir <SenseVoice> --tts-model <VITS> --base-
 - STT를 거치지 않았으므로 **STT 오류가 누적됐을 때의 성능**을 모릅니다. 데이터 생성 시 자모 치환으로 오인식을 약 10% 흉내 냈을 뿐입니다.
 - `next_stop` vs `stop_items`처럼 **문장만으로 구분 불가능한 발화**가 남아 있습니다. 화면 상태나 직전 대화를 문맥으로 넣어야 풀립니다.
 - 속도는 **PC GPU 기준**입니다. 보드(RK3588 NPU) 실측치가 아닙니다.
-- 배송 DB가 **노트북 안의 가상 DB**입니다. 앱/백엔드 팀의 실제 API로 교체해야 합니다.
+- 노트북과 채팅 데모(`demo/chat_server.py`)는 **메모리 안의 가상 DB** 를 씁니다. 실제 DB 연결은 백엔드 `/api/assistant/chat` 으로 되어 있습니다 (실행 방법 4).
+- AI 학습 데이터의 점포(역삼점 등 24곳)와 백엔드 DB 점포(3곳)가 아직 다릅니다. DB 에 없는 점포를 말하면 지어내지 않고 되묻습니다.
 
 **다음 단계**
 
