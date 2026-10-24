@@ -251,6 +251,9 @@ fun LogiOnApp() {
                     }
                 }
 
+                // ai 채팅
+                "chat" -> ChatScreen()
+
                 "more" -> MoreScreen()
             }
 

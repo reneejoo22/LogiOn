@@ -2,6 +2,7 @@ package com.example.logion.screens
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ChatBubbleOutline
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.QrCodeScanner
@@ -14,7 +15,7 @@ import com.example.logion.ui.theme.*
 
 // ==============================
 // 하단 네비게이션
-// 홈, 배송목록, 스캔, 더보기 화면 간 이동을 담당함
+// 홈, 배송목록, 스캔, 채팅, 더보기 화면 간 이동
 // ==============================
 
 @Composable
@@ -26,7 +27,6 @@ fun LogiOnBottomNavigation(
         containerColor = MaterialTheme.colorScheme.surface,
         tonalElevation = 0.dp
     ) {
-        // 앱의 주요 화면 4개를 하단 탭으로 이동
         NavigationBarItem(
             selected = selectedTab == "home",
             onClick = { onTabSelected("home") },
@@ -66,6 +66,20 @@ fun LogiOnBottomNavigation(
                 )
             },
             label = { Text("스캔") },
+            colors = navigationColors()
+        )
+
+        NavigationBarItem(
+            selected = selectedTab == "chat",
+            onClick = { onTabSelected("chat") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.ChatBubbleOutline,
+                    contentDescription = "채팅",
+                    modifier = Modifier.size(21.dp)
+                )
+            },
+            label = { Text("채팅") },
             colors = navigationColors()
         )
 
