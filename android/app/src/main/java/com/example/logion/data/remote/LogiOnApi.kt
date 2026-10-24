@@ -180,6 +180,35 @@ data class BarcodeDeliveryResponse(
     val unit: String
 )
 
+// AI 채팅 요청
+data class ChatRequest(
+    val text: String,
+    @SerializedName("session_id")
+    val sessionId: String
+)
+
+// AI 채팅 응답
+data class ChatResponse(
+    val reply: String,
+    val fn: String?,
+    val route: String?,
+    val ask: String?,
+    val options: List<String>?,
+    val action: String?,
+    @SerializedName("stop_id")
+    val stopId: Int?,
+    val conf: Double,
+    @SerializedName("latency_ms")
+    val latencyMs: Int
+)
+
+// AI 모델 상태
+data class AssistantStatusResponse(
+    val ready: Boolean,
+    val device: String?,
+    val error: String?
+)
+
 interface LogiOnApi {
 
     @GET("api/health")
@@ -226,4 +255,14 @@ interface LogiOnApi {
     suspend fun getProductByBarcode(
         @Path("barcode") barcode: String
     ): BarcodeProductResponse
+
+    // AI 채팅 (모델이 없으면 503)
+    @POST("api/assistant/chat")
+    suspend fun chat(
+        @Body body: ChatRequest
+    ): ChatResponse
+
+    // AI 모델이 올라갔는지 확인
+    @GET("api/assistant/status")
+    suspend fun getAssistantStatus(): AssistantStatusResponse
 }

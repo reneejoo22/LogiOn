@@ -216,6 +216,7 @@ class Assistant:
             if len(rows) == 1:
                 out["item"], out["product_id"] = rows[0]["name"], rows[0]["id"]
             elif len(rows) > 1:
+                out["_missing"] = "item"   # 질문에 '품목' 이 없어 run() 이 점포로 착각하지 않게
                 return out, ", ".join(cands) + " 중 어떤 건가요?", cands
             else:
                 return out, f"'{out['item']}'이라는 품목을 찾지 못했어요.", []
@@ -393,9 +394,9 @@ class Assistant:
         trace["resolve"] = steps
 
         if ask:
-            miss = "item" if "품목" in ask else ("issue" if "문제" in ask else "store")
+            miss = call2.get("_missing") or ("item" if "품목" in ask else ("issue" if "문제" in ask else "store"))
             self.pending = {"kind": "slot", "missing": miss, "options": opts,
-                            "call": {k: v for k, v in call2.items() if k != "_stop"}}
+                            "call": {k: v for k, v in call2.items() if not k.startswith("_")}}
             T["전체"] = (time.perf_counter() - t_all) * 1000
             trace.update(request=None, reply=ask, route="ask_slot", options=opts, timings=T, fn=fn)
             return trace

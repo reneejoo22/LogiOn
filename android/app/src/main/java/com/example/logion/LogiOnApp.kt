@@ -252,7 +252,16 @@ fun LogiOnApp() {
                 }
 
                 // ai 채팅
-                "chat" -> ChatScreen()
+                "chat" -> ChatScreen(
+                    // 음성/채팅으로 완료·이상 보고를 하면 운행 목록을 다시 불러옴
+                    onRouteChanged = {
+                        coroutineScope.launch { refreshTodayRoute() }
+                    },
+                    onOpenScanner = {
+                        selectedTab = "scan"
+                        scanPage = "camera"
+                    }
+                )
 
                 "more" -> MoreScreen()
             }
