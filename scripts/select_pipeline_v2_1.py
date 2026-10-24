@@ -81,6 +81,7 @@ def fc_generate(model, tok, texts, bs):
 # ---------------- 1) 두 모델의 val·test 예측을 미리 다 만들어 둠 (한 번에 하나씩 올려서 VRAM 절약) ----------------
 P = {}        # P[(의도분류 버전, split)] = 확률 배열
 RAW = {}      # RAW[(FC 버전, split)]     = LLM 출력 문자열
+TIMING = {}   # 단계별 1문장당 시간 (그림·문서에서 읽어 쓰도록 결과에 남긴다)
 for ver, d in MODELS.items():
     t0 = time.time()
     m = AutoModelForSequenceClassification.from_pretrained(f"{d}/intent_model").eval().to(DEVICE)
@@ -88,6 +89,8 @@ for ver, d in MODELS.items():
     tk = AutoTokenizer.from_pretrained(f"{d}/intent_model")
     for s, (vi, _) in SPLITS.items():
         P[(ver, s)] = intent_probs(m, tk, vi.text.tolist())
+    n = sum(len(v[0]) for v in SPLITS.values())
+    TIMING[f"intent_{ver}_ms_per_sentence"] = (time.time() - t0) / n * 1000
     del m, tk
     gc.collect(); torch.cuda.empty_cache()
     print(f"의도분류 {ver}: 확률 계산 완료 ({time.time() - t0:.0f}초)")
@@ -98,6 +101,8 @@ for ver, d in MODELS.items():
     tk = AutoTokenizer.from_pretrained(f"{d}/fc_merged")
     for s, (_, vf) in SPLITS.items():
         RAW[(ver, s)] = fc_generate(m, tk, vf.text.tolist(), args.gen_bs)
+    n = sum(len(v[1]) for v in SPLITS.values())
+    TIMING[f"fc_{ver}_ms_per_sentence"] = (time.time() - t0) / n * 1000
     del m, tk
     gc.collect(); torch.cuda.empty_cache()
     print(f"function calling {ver}: 생성 완료 ({time.time() - t0:.0f}초)")
@@ -227,6 +232,11 @@ summary = {
     "note": "선정은 val 383건만 사용, test 431건은 이 설정으로 한 번만 평가함. 선정 규칙은 logs/ai-improve-1022.md 참고.",
     "selected_config": CFG, "tau_criterion_comparison_on_val": tau_cmp,
     "val_best_pipeline_incl_ask": float(best.pipeline_incl_ask),
+    "timing_ms_per_sentence": {
+        **{k: round(v, 2) for k, v in TIMING.items()},
+        "환경": f"{DEVICE}" + (f" {torch.cuda.get_device_name(0)}" if DEVICE == "cuda" else "")
+                 + f", 배치 처리 (의도분류 64, LLM {args.gen_bs}), 모델 불러오는 시간 포함",
+        "주의": "배치로 한꺼번에 처리한 평균이다. 한 문장씩 부르면 더 걸린다 (데모 노트북 참고). 보드 값이 아니다."},
     "test": {"v2_1": S21, "v2": S_ref["v2"], "v1": S_ref["v1"]},
     "test_ask_examples": ask_rows.head(15).to_dict("records"),
 }

@@ -29,6 +29,14 @@
     }
   },
   "val_best_pipeline_incl_ask": 0.9686684073107049,
+  "timing_ms_per_sentence": {
+    "intent_v1_ms_per_sentence": 1.07,
+    "intent_v2_ms_per_sentence": 0.54,
+    "fc_v1_ms_per_sentence": 162.52,
+    "fc_v2_ms_per_sentence": 161.71,
+    "환경": "cuda NVIDIA GeForce RTX 5050, 배치 처리 (의도분류 64, LLM 8), 모델 불러오는 시간 포함",
+    "주의": "배치로 한꺼번에 처리한 평균이다. 한 문장씩 부르면 더 걸린다 (데모 노트북 참고). 보드 값이 아니다."
+  },
   "test": {
     "v2_1": {
       "n": 431.0,

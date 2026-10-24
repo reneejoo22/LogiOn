@@ -162,10 +162,13 @@ sum_lines = [
     f"되묻기 비율 {pct(M['ask_rate'])}     ·     틀리게 실행 {pct(M['wrong_exec_rate'])}"
     f"     ·     LLM 생략 {pct(M['llm_skip_rate'])}",
 ]
-if ONNX:
+TM = S.get("timing_ms_per_sentence", {})
+fc_ms = TM.get(f"fc_{S['selected_config']['fc']}_ms_per_sentence")
+if ONNX and fc_ms:
     sum_lines.append(
         f"단계별 시간: 의도분류 ONNX int8 {ONNX['onnx_int8']['cpu_ms_per_sentence_bs1']:.1f}ms (PC CPU 4스레드)"
-        f"     ·     LLM 생성 약 166ms/문장 (PC GPU 배치)     ·     값 보정·응답 1ms 미만")
+        f"     ·     LLM 생성 {fc_ms:.0f}ms/문장 (PC GPU, 배치 처리 평균)"
+        f"     ·     값 보정·응답 1ms 미만")
 sum_lines.append("※ 보드(RK3588) 실측값이 아니며, STT·TTS 단계는 아직 측정하지 않았음 (미실행)")
 box(4, 0.5, 128, 14, sum_lines, C["sum"], 8.5)
 
