@@ -1,0 +1,3 @@
+﻿text,before,after
+방배점에 잘못 들어왔네 제육 도시락 하나 오배송,"{""fn"": ""report_issue"", ""store"": ""방배점"", ""item"": ""제육 도시락"", ""issue"": ""오배송"", ""qty"": 1, ""unit"": ""개""}","{""fn"": ""report_issue"", ""store"": ""방배점"", ""item"": ""제육 도시락"", ""issue"": ""오배송"", ""qty"": 1}"
+신림점 치킨마요 하나 모자람,"{""fn"": ""report_issue"", ""store"": ""신림점"", ""item"": ""치킨마요"", ""issue"": ""수량부족"", ""qty"": 1, ""unit"": ""개""}","{""fn"": ""report_issue"", ""store"": ""신림점"", ""item"": ""치킨마요"", ""issue"": ""수량부족"", ""qty"": 1}"

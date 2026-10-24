@@ -1,0 +1,1802 @@
+[
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 가락점 납품 다 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"가락점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 납품 완료야 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n점장님한테 전달했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"점장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 납품 완료야 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 신림점 납품 완료 처리해주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"신림점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n알바생 받았어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"알바생\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n매니저님한테 줬어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"매니저님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 여기 정리됐어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n짐 다 뺐다 완료처리 해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n일원점 마감<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"일원점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 알바생가 확인했대<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"알바생\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 이번 점포 끝<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 끝났어 다음 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 송파점 배송 완료<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"송파점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 서초점 끝<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"서초점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n반포점 직원분한테 내리고 가요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"반포점\",\"receiver\":\"직원분\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 여기 정리됐어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 도곡점 배송 완료 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"도곡점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 완료 찍어주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 하차 끝났어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 논현점 납품 다 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"논현점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 가락점 배송 완료<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"가락점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 여기 정리됐어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n사장님가 확인했대<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 매니저님한테 전달했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"매니저님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 알바생 사인 받았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"알바생\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 여기 마무리했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n직원분가 확인했대<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"직원분\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n점장님한테 전부 잘 전달했습니다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"점장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 반포점 납품 다 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"반포점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 배송 완료 눌러주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 배송 완료 눌러줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n금천점 알바생 전달 완료<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"금천점\",\"receiver\":\"알바생\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 인수인계 끝났어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 여기 인수인계 마쳤어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n역삼점 납품 끝났어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"역삼점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n청담점 마감<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"청담점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n사장님 사인 받았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n일원점 다 내렸어 사장님 받았어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"일원점\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 마무리했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 납품 완료예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 완료 찍어줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 마무리했어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n직원분 사인 받았어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"직원분\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 석촌점 끝<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"석촌점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n납품 완료야 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 여기 납품 끝났어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 삼성점 납품 다 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"삼성점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 정리됐어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 끝났어 다음 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 잠실점 납품 다 했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"잠실점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 가락점 납품 완료 처리해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"가락점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n문정점 배송 완료 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"문정점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n사장님한테 서명 받았어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 여기 마무리했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 삼성점 끝<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"삼성점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 인수인계 마쳤어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 삼성점 다 내렸어 매니저님 받았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"삼성점\",\"receiver\":\"매니저님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n신사점 사장님한테 납품 마무리함<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"신사점\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 하차 끝났어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 끝났어 다음<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 하차 끝났어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 인수인계 마쳤어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 납품 끝났어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 청담점 배송 완료<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"청담점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 끝났어 다음<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n하차 끝났어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 완료 찍어줘 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 하차 끝났어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 배송 완료 눌러주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 직원분 받았어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"직원분\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n매니저님한테 줬어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"매니저님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 매니저님한테 줬어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"매니저님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n사장님 받았어 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"receiver\":\"사장님\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 삼성점 납품 다 했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"complete\",\"store\":\"삼성점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 다음 들를 데 어디야 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 남은 점포 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 다음은 어디로 가 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 지금까지 몇 군데 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 남은 점포 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 이제 뭐 하면 돼요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 다음 어디야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n오늘 남은 일정 알려줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 다음 어디예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 가야 할 가게 이름이 뭐야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 어디 가야 되더라 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 목적지 뭐야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 지금까지 몇 군데 했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 이제 뭐 하면 돼<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 이제 어디야 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 오늘 몇 곳 더 가야 돼<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 가야 할 곳 알려줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 목적지 뭐예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 코스 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n남은 코스 몇 개야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 남은 코스 몇 개야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 남은 점포 알려줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 다음 거<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 다음 들를 데 어디야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 점포 어디였지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 몇 군데 남았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 지금까지 몇 군데 했어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 다음 가야 할 곳 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어디 가야 되더라 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 끝나면 어디 가 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 목적지가 어디였지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 다음 어디야 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 다음 코스 알려줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 남은 코스 몇 개야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 코스 좀 알려줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 오늘 남은 일정 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 다음 꺼 어디 있는 데예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 들를 데 어디야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n남은 곳 몇 개 더 있어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 다음 점포 어디였지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 오늘 남은 일정 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 오늘 몇 곳 더 가야 돼 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n남은 배송지 리스트 좀 보여줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 다음 코스 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 남은 곳 몇 개 더 있어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 다음은 어디로 가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 다음은 어디로 가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n오늘 남은 일정 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 오늘 몇 곳 더 가야 돼<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n오늘 남은 일정 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 다음 가야 할 곳 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 다음 점포 알려줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 오늘 얼마나 했지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 지금까지 몇 군데 했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 어디 가야 되더라 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 남은 코스 몇 개야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 몇 군데 남았어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 이제 뭐 하면 돼 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 다음 목적지 뭐야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 몇 군데 남았어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 남은 점포 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 몇 군데 남았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 다음 코스 좀 알려줄래<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 다음 찍을 곳 어디냐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 다음 들를 데 어디예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 다음 어디예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 오늘 몇 곳 더 가야 돼 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 남은 곳 몇 개 더 있어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n남은 코스 몇 개야 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 이제 뭐 하면 돼 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n다음 목적지 뭐야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 다음 꺼 어디 있는 데야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 남은 곳 몇 개 더 있어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"next_stop\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 내일 비 와 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 어제 송파점 가는 길 막혔어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 차 막히네 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 커피 마시고 싶다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 볼륨 좀 키워주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n뉴스 틀어줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 점심 뭐 먹지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 볼륨 좀 키워줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 어제 서초점 가는 길 막혔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n사이다 맛있겠다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 커피 마시고 싶다 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n커피 마시고 싶다 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 퇴근하고 싶다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n방배점 앞에 주차할 데가 없네<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 내일 비 와<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n농담 하나 해주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n지금 몇 시냐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 아니야 됐어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 오늘 힘들다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 농담 하나 해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 배고프다 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 음악 틀어줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 음 저기<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n농담 하나 해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 커피 마시고 싶다 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 졸리다 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 오늘 힘들다 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n뉴스 틀어줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 내일 비 와 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 내일 비 와<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 커피 마시고 싶다 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 뉴스 틀어주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 도시락 요즘 잘 팔리나 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 어제 가락점 가는 길 막혔어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 라디오 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n오늘 힘들다 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 퇴근하고 싶다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 눈 침침하네 야간 운전 힘들어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 커피 마시고 싶다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n라디오 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 점심 뭐 먹지 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 배고프다 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n신나는 노래 좀 틀어봐라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 에어컨 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 어제 수서점 가는 길 막혔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 오늘 몇 월 며칠이야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 농담 하나 해줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n담배나 하나 피고 올까<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 볼륨 좀 키워줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 퇴근하고 싶다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 배고프다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 퇴근하고 싶다 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 배고프다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n점심 뭐 먹지 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 배고픈데 뭐 먹지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 퇴근하고 싶다 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어제 구로점 가는 길 막혔어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 차 막히네<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 농담 하나 해줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 졸리다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 어제 대치점 가는 길 막혔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 딸기 우유 맛있겠다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 점심 뭐 먹지 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 음악 틀어줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 오늘 몇 월 며칠이예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 음 저기 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 허리 아파라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n농담 하나 해줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 농담 하나 해주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어제 금천점 가는 길 막혔어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 점심 뭐 먹지 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 내일 비 와 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 볼륨 좀 키워주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음악 틀어줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 오늘 몇 월 며칠이야 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"other\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이상 있어 삼각김밥 박스 눌렸어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"삼각김밥\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 1개 녹았음<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"온도이상\",\"qty\":1,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 젤리 한개쯤 덜 왔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"젤리\",\"issue\":\"수량부족\",\"qty\":1,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n물건 온도가 높아 기록해주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 감자칩 이거 우리 거 아니래 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"감자칩\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이온 음료 엉뚱한 게 실렸어 기록 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"이온 음료\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n금천점 이온음료 세 개 찌그러졌어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"금천점\",\"item\":\"이온음료\",\"issue\":\"파손\",\"qty\":3,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 도곡점에서 샌드위치 깨졌어 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"도곡점\",\"item\":\"샌드위치\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n압구정점 컵라면 6개 온도가 높아 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"압구정점\",\"item\":\"컵라면\",\"issue\":\"온도이상\",\"qty\":6,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 딸기우유 다 찢어졌어 같기도 하고<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"딸기우유\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n방배점에서 바나나우유 엉뚱한 게 실렸어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"방배점\",\"item\":\"바나나우유\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n젤리 주문이랑 달라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"젤리\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n기록해줘 감자칩 다섯 봉지 다 찢어졌어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"감자칩\",\"issue\":\"파손\",\"qty\":5,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 논현점 아이스크림 여덟 판 덜 왔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"논현점\",\"item\":\"아이스크림\",\"issue\":\"수량부족\",\"qty\":8,\"unit\":\"판\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 제육도시락 상태 안 좋아 엉뚱한 게 실렸어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"제육도시락\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 마요 도시락 녹았음<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"마요 도시락\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 젤리 박스 눌렸어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"젤리\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n마요 도시락 문제 있어 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"마요 도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 신사점 젤리 여섯 박스 다 녹았어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"신사점\",\"item\":\"젤리\",\"issue\":\"온도이상\",\"qty\":6,\"unit\":\"박스\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 아이스크림 상태 안 좋아 다 녹았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"아이스크림\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n물건 오배송이야 기록해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n대치점에서 바나나우유 모자람<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"대치점\",\"item\":\"바나나우유\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 수서점 요거트 10봉지 오배송이야 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"수서점\",\"item\":\"요거트\",\"issue\":\"오배송\",\"qty\":10,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 여기 사이다 하나 박스 눌렸어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"사이다\",\"issue\":\"파손\",\"qty\":1}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n개포점 참치김밥 잘못 내렸네 오배송<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"개포점\",\"item\":\"참치김밥\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n삼성점 제육도시락 두 개 깨졌습니다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"삼성점\",\"item\":\"제육도시락\",\"issue\":\"파손\",\"qty\":2,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 초코파이 좀 애매한데 잘못 왔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"초코파이\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 샌드위치 이거 맞나<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"샌드위치\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 감자칩 하나쯤 다 찢어졌어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"감자칩\",\"issue\":\"파손\",\"qty\":1}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n샌드위치 모자람 기록 좀 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"샌드위치\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n기록해줘 캔커피 두 박스 깨졌어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"캔커피\",\"issue\":\"파손\",\"qty\":2,\"unit\":\"박스\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 딸기우유 덜 왔어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"딸기우유\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n수서점에 사이다 보냈는데 오배송이예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"수서점\",\"item\":\"사이다\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아이스크림 이거 맞나<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"아이스크림\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n새우깡 다섯 다른 게 왔어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"새우깡\",\"issue\":\"오배송\",\"qty\":5}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 가산점에서 콜라 녹았음<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"가산점\",\"item\":\"콜라\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 참치김밥 모자람 기록 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"참치김밥\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 감자칩 두개쯤 박스 눌렸어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"감자칩\",\"issue\":\"파손\",\"qty\":2,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 5게 정도 모자람 참치삼각김밥 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"참치삼각김밥\",\"issue\":\"수량부족\",\"qty\":5,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 2박스 냉장이 안 됐어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"온도이상\",\"qty\":2,\"unit\":\"박스\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이온 음료 상태 안 좋아 냉장이 안 됐어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"이온 음료\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 감자칩 온도가 높아 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"감자칩\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 아이스크림 미지근해 같기도 하고 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"아이스크림\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n불량 기록 제육 도시락 이거 우리 거 아니래<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"제육 도시락\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 이온 음료 이상한데<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"이온 음료\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n치킨마요도시락 문제 있어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"치킨마요도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 도곡점에서 딸기 우유 터짐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"도곡점\",\"item\":\"딸기 우유\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n삼각김밥 좀 애매한데 터짐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"삼각김밥\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이온 음료 하나 빠졌어 기록 좀 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"이온 음료\",\"issue\":\"수량부족\",\"qty\":1}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 불량 기록 새우깡 부족해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"새우깡\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 딸기 우유 열봉지 이거 우리 거 아니래<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"딸기 우유\",\"issue\":\"오배송\",\"qty\":10,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 일원점에서 생수 주문이랑 달라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"일원점\",\"item\":\"생수\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n가락점 삼각김밥 두 개 안 왔다<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"가락점\",\"item\":\"삼각김밥\",\"issue\":\"수량부족\",\"qty\":2,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n기록해줘 아이스크림 8봉지 다 찢어졌어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"아이스크림\",\"issue\":\"파손\",\"qty\":8,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n수서점에 커피 보냈는데 박스 눌렸어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"수서점\",\"item\":\"커피\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n새우깡 한 봉지 뜯어짐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"새우깡\",\"issue\":\"파손\",\"qty\":1,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 대치점에 이온 음료 보냈는데 다 녹았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"대치점\",\"item\":\"이온 음료\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n샌드위치 상했어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"샌드위치\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 캔커피 문제 있어 엉뚱한 게 실렸어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"캔커피\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n역삼점 파손 접수해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"역삼점\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n마요 도시락 좀 애매한데 잘못 왔어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"마요 도시락\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 사이다 다 찢어졌어 기록 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"사이다\",\"issue\":\"파손\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 12판 정도 온도가 높아 바나나우유 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"바나나우유\",\"issue\":\"온도이상\",\"qty\":12,\"unit\":\"판\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 아이스크림 엉뚱한 게 실렸어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"아이스크림\",\"issue\":\"오배송\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 송파점에서 샌드위치 수량이 안 맞아<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"송파점\",\"item\":\"샌드위치\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 참치삼각김밥 여섯 판쯤 깨졌어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"참치삼각김밥\",\"issue\":\"파손\",\"qty\":6,\"unit\":\"판\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n참치삼각김밥 여덟개쯤 미지근해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"참치삼각김밥\",\"issue\":\"온도이상\",\"qty\":8,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 딸기우유 문제 있어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"딸기우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 1개 모자람<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"수량부족\",\"qty\":1,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n서초점 물건 수량 모자람<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"서초점\",\"issue\":\"수량부족\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n수서점 아이스크림 다 녹았어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"store\":\"수서점\",\"item\":\"아이스크림\",\"issue\":\"온도이상\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 여기 요거트 다섯개 엉뚱한 게 실렸어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"요거트\",\"issue\":\"오배송\",\"qty\":5,\"unit\":\"개\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 8박스 냉장이 안 됐어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"issue\":\"온도이상\",\"qty\":8,\"unit\":\"박스\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 샌드위치 이상한데<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"샌드위치\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 기록해줘 딸기 우유 세봉지 덜 왔어 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"report_issue\",\"item\":\"딸기 우유\",\"issue\":\"수량부족\",\"qty\":3,\"unit\":\"봉지\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 이거 맞는지 봐줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 바코드 읽을게 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 카메라로 확인할래 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 검수 할게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 검수 할게 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이거 찍어볼게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 스캔 좀 해볼게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n찍어 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 이거 맞는지 봐줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 상품 찍어볼게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 카메라로 확인할래 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 스캔할게 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n바코드 읽을게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n스캔 준비해줘 바로 찍게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 검수 할게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 바코드 스캔 시작<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 찍어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 스캔 좀 해볼게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 바코드 좀 확인할게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n카메라 켜줘 스캔 좀 하자<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 검수 할게 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 카메라로 확인할래<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n스캔 켜라 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 스캔 모드로 바꿔줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n스캔 모드로 바꿔줘 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n검품 시작할게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n바코드 찍어야 되니까 스캐너 켜<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 카메라로 확인할래<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n라벨 찍을게 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이거 읽어봐 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 검수 시작<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 검수 시작 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 상품 찍어볼게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 스캔 좀 해볼게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 스캔할게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n검수 모드 켜줘 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n스캔할게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 상품 찍어볼게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 송장 찍을게 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 찍어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 상품 찍어볼게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 검수 시작 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 바코드 좀 확인할게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 이거 읽어봐<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 찍어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n바코드 인식 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 스캔 모드로 바꿔줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 라벨 찍을게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 바코드 읽을게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n카메라 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이거 찍어볼게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 찍어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 카메라 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 카메라 좀 열어<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n카메라 켜줘 스캔하게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n바코드 읽을게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 바코드 읽을게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 바코드 읽을게 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 바코드 스캔 시작 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 라벨 찍을게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 바코드 좀 확인할게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 이거 맞는지 봐줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 바코드 인식 켜줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 바코드 스캔 시작 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 카메라 켜줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 카메라 켜줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n검수 모드 켜줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 찍어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 카메라 켜주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 송장 찍을게요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 바코드 스캔 시작<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 바코드 스캔 시작<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n스캔 모드로 바꿔줘 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 이거 맞는지 봐줘 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 바코드 읽을게<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"scan\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 반포점에 뭐 가져가야 하지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"반포점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 일원점 거 뭐 있었죠<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"일원점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아이스크림 얼마나 내려야 해요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"아이스크림\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n샌드위치 몇 개였지 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"샌드위치\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 제육 도시락 여기 몇 개 들어가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"제육 도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 샌드위치 몇 개 내리면 돼<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"샌드위치\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n젤리 얼마나 내려야 해 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"젤리\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 신림점 내릴 거 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"신림점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 우유 수량 얼마야 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 잠원점 거 뭐 있었지 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"잠원점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 역삼점 거 뭐 있었지 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"역삼점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 물 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"물\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 여기 뭐였더라 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 청담점 물량 확인해줘 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"청담점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 우유 몇 개였지 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 도시락 수량 얼마예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n압구정점 내릴 거 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"압구정점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 초코파이 수량 얼마예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"초코파이\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 여기 도시락 몇 개 가져가 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 우유 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 반포점에 뭐 가져가야 하죠<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"반포점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 삼성점 내릴 거 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"삼성점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n송파점은 내릴 게 뭐지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"송파점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 삼각김밥 얼마나 내려야 해요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"삼각김밥\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n개포점 오늘 뭐 내려 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"개포점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 이 점포 납품 품목 뭐였지 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 도시락 수량 얼마예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 삼각김밥 수량 얼마야 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"삼각김밥\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 일원점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"일원점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n콜라 얼마나 내려야 해 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"콜라\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 여기 뭐 내려야 돼요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 이 집 뭐 내리더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이제 이 점포 납품 품목 뭐였지 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n구로점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"구로점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 이 집 뭐 내리더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n가락점 꺼 좀 봐주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"가락점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n신림점에 바나나 우유 몇 개 내립니까<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"신림점\",\"item\":\"바나나 우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 이 집 뭐 내리더라 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n석촌점 물량 확인해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"석촌점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n청담점 꺼 좀 봐줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"청담점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 제육 도시락 몇 개 내리면 돼<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"제육 도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 신사점 꺼 좀 봐줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"신사점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 논현점 물량 확인해줘<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"논현점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 역삼점 꺼 좀 봐주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"역삼점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 서초점 물건 뭐 내려 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"서초점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 도시락 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n우유 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 이번 점포 품목 알려주세요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n역삼점에 뭐 가져가야 하지 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"역삼점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 여기 도시락 몇 개예요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 스팸마요 있어요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"스팸마요\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n아 오늘 여기 물건 뭐야 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 여기 도시락 몇 개야 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 사이다 여기 몇 개 들어가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"사이다\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이번 점포 품목 알려줘 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 이 집 뭐 내리더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n여기 뭐였더라 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 우유 얼마나 내려야 해 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 바나나우유 수량 얼마야 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"바나나우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 제육도시락 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"제육도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n역삼점에 내릴 물건 뭐야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"역삼점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n청담점에 우유 몇 개 들어가요<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"청담점\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n이 집 뭐 내리더라 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n신림점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"신림점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n젤리 있어 지금<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"젤리\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n어 우유 몇 개였지<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n우유 수량 얼마야<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"우유\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n그 삼각김밥 여기 몇 개 들어가 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"삼각김밥\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n감자칩 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"감자칩\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 스팸마요 있어 좀<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"스팸마요\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 치킨마요도시락 여기 몇 개 들어가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"치킨마요도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n저기 이 집 뭐 내리더라 얼른<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n음 수서점 물량 확인해줘 빨리<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"store\":\"수서점\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n자 여기 도시락 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\",\"item\":\"도시락\"}"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.<|im_end|>\n<|im_start|>user\n잠깐 이 집 뭐 내리더라<|im_end|>\n<|im_start|>assistant\n",
+  "target": "{\"fn\":\"stop_items\"}"
+ }
+]

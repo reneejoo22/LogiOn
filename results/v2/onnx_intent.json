@@ -1,0 +1,26 @@
+{
+  "n_test": 431,
+  "threads": 4,
+  "model_dir": "out\\intent_model",
+  "size_mb": {
+    "fp32_mb": 259.8700227737427,
+    "int8_mb": 65.31682968139648
+  },
+  "pytorch": {
+    "acc": 0.9071925754060325,
+    "cpu_ms_per_sentence_bs1": 15.122349001467228
+  },
+  "onnx_fp32": {
+    "acc": 0.9071925754060325,
+    "agree_with_pytorch": 1.0,
+    "max_abs_prob_diff": 2.5033950805664062e-06,
+    "cpu_ms_per_sentence_bs1": 6.48223712236519
+  },
+  "onnx_int8": {
+    "acc": 0.9118329466357309,
+    "agree_with_pytorch": 0.9907192575406032,
+    "max_abs_prob_diff": 0.37729310989379883,
+    "cpu_ms_per_sentence_bs1": 2.875297911586175
+  },
+  "note": "CPU 4스레드, 문장 1개씩 처리한 시간(토크나이징 포함). 이 PC 에서 잰 값이며 보드(RK3588)의 시간이 아님. PyTorch 시간은 앞 100문장 기준."
+}

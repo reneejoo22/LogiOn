@@ -6,6 +6,18 @@
 
 이 저장소는 그중 **AI 파트**(데이터 설계 → 의도분류 학습 → function calling 학습 → 평가 → 파이프라인)를 담고 있습니다.
 
+![LogiOn 구조와 측정 결과](docs/architecture.png)
+
+### 먼저 볼 것
+
+| | |
+| --- | --- |
+| **1차 보고 정리** | [`docs/1st_report_summary.md`](docs/1st_report_summary.md) — 한 일, v1/v2/v2.1 비교, 남은 문제, 다음 계획 |
+| **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
+| **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
+| **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
+| **선택된 설정** | [`config/pipeline_v2_1.json`](config/pipeline_v2_1.json) — 모델 경로·기준값 한 파일 |
+
 ---
 
 ## 전체 구조
@@ -33,6 +45,23 @@
 ```
 
 **핵심 설계**: LLM은 "말한 값을 JSON으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기 판단은 규칙 코드(④)가 맡습니다. 모델이 없는 값을 지어내지 않게 하고, 보드에서 LLM 호출 횟수를 줄이기 위해서입니다.
+
+> v2.1 부터 `next_stop` 은 빠른 길에서 빠졌습니다. 자세한 이유는 [개선 내역](#개선-내역v1--v2) 참고.
+
+```mermaid
+flowchart TD
+    A["🎤 음성 → STT<br/>SenseVoice int8"] --> B["의도분류<br/>klue/roberta-small<br/>정확도 0.907"]
+    B --> C{"갈림길<br/>margin · 확신도"}
+    C -- "margin &lt; 0.05" --> ASK["선택지로 되묻기<br/>'남은 배송지? 내릴 물건?'<br/>실행 안 함 · 0.5%"]
+    C -- "scan/other 확신 ≥ 0.9" --> FAST["빠른 길<br/>LLM 생략 · 24.1%"]
+    C -- "그 외" --> SLOT["값이 있는 기능<br/>stop_items(store?, item?)<br/>complete(store?, receiver?)<br/>report_issue(store?, item?, issue, qty?, unit)"]
+    SLOT --> LLM["function calling<br/>Qwen2.5-1.5B + LoRA<br/>fn 0.886 · 완전일치 0.847"]
+    FAST --> RES["값 보정 resolve()<br/>DB 이름·단위 맞추기<br/>빈 값은 되묻기"]
+    LLM --> RES
+    RES --> EXEC["실행 · 백엔드 API<br/>/api/routes/today · /api/stops/{id}<br/>/complete · /issues"]
+    EXEC --> OUT["응답 문장 → 🔊 TTS VITS"]
+    ASK --> OUT
+```
 
 ---
 
@@ -169,9 +198,12 @@ jupyter notebook notebooks/LogiOn_AI_pipeline.ipynb
 
 ---
 
-## 실제 실행한 test 결과
+## 실제 실행한 test 결과 (v1)
 
 RTX 5050 (8GB) / torch 2.11.0+cu128 / transformers 4.57.6 환경에서 실제로 돌린 결과입니다. test 431건 (학습에 쓰지 않은 틀 + 제미나이 데이터 30%).
+
+> 이 절은 **v1**(첫 학습) 결과입니다. 이후 데이터·규칙을 고쳐 다시 학습한 **v2** 와의 비교는 아래 [개선 내역(v1 → v2)](#개선-내역v1--v2) 에 있습니다.
+> v1 결과 파일은 `results/v1/`, v2 는 `results/v2/` 에 있습니다.
 
 ### 의도분류 (klue/roberta-small)
 
@@ -294,6 +326,140 @@ source·ambiguity별
 
 ---
 
+## 개선 내역(v1 → v2)
+
+브랜치 `ai-improve-1022` 에서 한 작업입니다. 자세한 내용은 **[docs/midterm_ai_summary.md](docs/midterm_ai_summary.md)** 와 작업 기록 `logs/ai-improve-1022.md` 에 있습니다.
+수치는 모두 실제 실행값이고, 돌리지 못한 것은 **미실행**으로 적었습니다.
+
+### 1) 데이터·규칙 수정
+
+v1 오답 57건을 원인별로 분류해 보니 **11건(19%)이 모델 잘못이 아니라 데이터 잘못**이었습니다. 말에는 수량이 있는데 정답 JSON 에 `qty` 가 빠져 있던 report_issue 문장들입니다.
+
+- 모든 말 틀의 고정 문구를 훑어 수량 표현이 있는데 정답에 없는 것을 찾아 고쳤습니다 (틀 `{item} 박스 하나 {issue}`, 문제 표현 `하나 빠졌어`).
+- 제미나이 데이터의 수량 라벨도 같은 기준으로 2건 보정했습니다 (말하지 않은 `unit` 제거).
+- "둘·다섯"처럼 **단위 없이 말하는 경우**를 넣고, 그때는 정답에 `qty` 만 쓰도록 했습니다.
+- 재생성 결과 **"수량을 말했는데 정답에 qty 가 없는 문장 = 0건"** (고치기 전 27건).
+
+### 2) 선택지로 되묻기
+
+의도분류 1등과 2등 확률 차(margin)가 기준 `tau` 보다 작으면 **실행하지 않고 두 후보를 말해 주며 되묻습니다.**
+
+```
+기사: 다음 거 뭐야
+비서: 남은 배송지 말씀하시는 건가요, 내릴 물건 말씀하시는 건가요?
+기사: 배송지          ("물건" / "첫 번째" / "2번" 같은 답도 받습니다)
+비서: 다음은 방배점이에요. 남은 곳은 4곳이에요.
+```
+
+- 2등이 `other` 면 선택지를 주지 않고 "다시 말씀해 주세요" 로 답합니다.
+- `next_stop`·`scan`·`other` 는 확률 ≥0.9 면 LLM 을 건너뜁니다 → test 에서 **45.5%** 가 LLM 없이 처리됩니다.
+- `tau` 는 val 에서 골랐습니다 (`results/v2/ask_sweep_val.csv`).
+
+> **주의 — 지금 설정에서 이 기능은 거의 발동하지 않습니다.**
+> 정해 둔 선택 기준(되묻기 비율 ≤10% 중 '되묻기 포함 성공률' 최고)은 tau 가 커질수록 값이 내려가는 지표라서, 구조적으로 **되묻기를 가장 적게 하는 tau=0.05** 가 뽑힙니다. 그 결과 test 431건 중 **2건(0.46%)** 만 되묻습니다.
+> 반면 실행 정확도는 tau 가 커질수록 계속 오릅니다 (tau=0.5 에서 0.944, 되묻기 6.3%). 기준을 바꿀지는 결정이 필요합니다.
+
+### 3) 재학습·비교 (같은 새 test 431건)
+
+두 모델을 **같은 새 test** 로 평가했습니다. 틀 배정은 v1 것을 그대로 써서(`data/template_split_v1.json`) v1 이 학습에서 본 틀이 새 test 에 들어가지 않게 했습니다. v1 의 train·val 문장과 겹친 새 test 문장은 **0건**입니다.
+
+| 지표 | v1 | v2 | 차이 |
+| --- | --- | --- | --- |
+| 의도분류 정확도 | 0.893 | **0.907** | **+0.014** |
+| 의도분류 macro F1 | 0.895 | **0.905** | **+0.010** |
+| FC JSON 유효율 | 1.000 | 1.000 | 0 |
+| FC fn 정확도 | 0.916 | 0.886 | −0.030 |
+| FC 완전일치 | 0.896 | 0.847 | −0.049 |
+| **FC 최종동작일치** | **0.898** | **0.847** | **−0.051** |
+| 전체 파이프라인(되묻기 없음) | 0.937 | 0.845 | −0.093 |
+| 틀리게 실행한 비율 | 0.063 | 0.151 | +0.088 |
+
+### 4) v2.1 — 기준값과 모델 조합 다시 고르기 (val 로만)
+
+| | 고른 값 | 근거 (val) |
+| --- | --- | --- |
+| 되묻기 `tau` | **0.05** (그대로) | 되묻기 비율 ≤10% 중 **실행 정확도** 최고 |
+| LLM 건너뛰기 기준 | **0.9** | 0.9/0.95/0.98/0.99 동점이라 가장 빠른 0.9 |
+| 건너뛰기 대상 | **`scan`, `other`** (`next_stop` 제외) | 0.9582 → **0.9687** |
+| 모델 조합 | **의도분류 v2 + FC v2** | 네 조합 중 1위 (0.9687) |
+
+선정은 `scripts/select_pipeline_v2_1.py` (격자 352줄, `results/v2_1/val_grid.csv`), 결과는 `config/pipeline_v2_1.json` 에 저장됩니다.
+
+| 지표 (test 431건) | v1 | v2 | **v2.1** |
+| --- | --- | --- | --- |
+| 의도분류 정확도 | 0.893 | 0.907 | **0.907** |
+| FC 최종동작일치 | **0.898** | 0.847 | 0.847 |
+| 파이프라인: 되묻기 포함 성공 | **0.903** | 0.849 | 0.852 |
+| 틀리게 실행한 비율 | **0.063** | 0.151 | 0.148 |
+| LLM 생략 비율 | 0.353 | 0.455 | **0.241** |
+
+> **되묻기 `tau` 에 대해 정정합니다.** 지난 기록에 "실행 정확도 기준이면 tau≈0.4~0.5 가 뽑힌다" 고 적었는데, 그 수치는 **의도분류 라벨만으로 잰 것**이었습니다. 실제 파이프라인으로 다시 재니 **tau 를 올려도 "틀리게 실행한 비율"이 0.0418 에서 전혀 줄지 않습니다.** tau 가 걸러내는 문장은 어차피 뒤의 LLM 이 바로잡던 것들이기 때문입니다. 두 기준 모두 tau=0.05 를 고릅니다.
+
+> **val 과 test 가 반대로 말합니다.** val 1위는 v2+v2(0.9687) 인데 test 1위는 v1+v1(0.903) 입니다. 아래 원인 A·B 의 두 틀이 **test 에만 있고 val 에는 없기** 때문입니다. 다음 차수에는 **새 test 세트**가 필요합니다.
+
+### 5) v2 에서 떨어진 이유
+
+**의도분류는 올랐지만 function calling 은 내려갔습니다(회귀).** v2 가 새로 틀린 37건 중 **25건이 test 에만 배정된 틀 2개**에서 나왔습니다.
+
+- **원인 A (17건)** — 1단계에서 고친 그 틀(`{item} 박스 하나 {issue}`)이 v1 배정에서 **train 0건 / test 17건**입니다. 동시에 "하나 → 단위 없음" 규칙을 넣었기 때문에, v2 는 "박스 하나"를 학습에서 못 본 채 `unit` 을 빼먹습니다 (v1 13/17 → v2 1/17). 1단계의 예견된 부작용입니다.
+  → 다음 반복: `{qty}` 를 "박스 하나"처럼 **단위-먼저** 형태로도 렌더링해 train 에 넣습니다 (틀 목록은 그대로이므로 공정 비교 유지).
+- **원인 B (13건)** — 틀 `물건 확인할게`(정답 `scan`)를 v2 가 전부 `stop_items` 로 답합니다. v1 은 13/13 맞혔습니다. **원인 미확정, 미해결로 남겨 둡니다.**
+
+**report_issue — 라벨 버그를 없앤 맞교환**: 오답 중 라벨 버그 **11건 → 0건**, 대신 수량·단위 생성 2건 → 16건(원인 A). 데이터 잘못은 해결됐고 남은 것은 학습 커버리지 문제입니다.
+
+**next_stop**: FC 최종동작일치 0.770 (v1 과 동일). 더 큰 문제는 의도분류가 `other` 70건 중 **24건을 `next_stop` 으로** 본다는 점입니다("근처 화장실 어디야"). `next_stop` 은 LLM 을 건너뛰고 바로 실행하므로 이 오분류가 그대로 잘못된 실행이 됩니다 → v2 의 "틀리게 실행" 15.1%의 주원인.
+
+---
+
+## 보드(Orange Pi 5+ / RK3588) 변환·측정
+
+### 의도분류 ONNX — 실행 완료
+
+| | 정확도 | PyTorch 와 예측 일치 | 크기 | CPU 1문장(4스레드) |
+| --- | --- | --- | --- | --- |
+| PyTorch | 0.9072 | – | 259.8 MB | 15.1 ms |
+| ONNX fp32 | 0.9072 | 1.000 | 259.9 MB | 6.5 ms |
+| **ONNX int8** | 0.9118 | **0.9907** | **65.3 MB** | **2.9 ms** |
+
+```bash
+python scripts/export_intent_onnx.py          # export/intent_onnx/ + results/v2/onnx_intent.json
+cd export/intent_onnx && python infer.py "다음 어디야"   # onnxruntime + tokenizers 만 필요 (torch 불필요)
+```
+
+int8 정확도가 0.5%p 높은 것은 431건 중 2건 차이로 **측정 오차 범위**입니다(양자화로 좋아진 것이 아님). 시간은 **이 PC 의 CPU 4스레드로 한 문장씩** 잰 값이며 보드(RK3588) 값이 아닙니다. (위 v1 절의 `1.9 ms/문장` 은 **GPU 배치** 기준이라 이 표와 직접 비교할 수 없습니다.)
+
+### RKLLM W8A8 변환 — **미실행**
+
+**이유: 이 PC 에 rkllm-toolkit 이 없습니다** (x86 Linux 전용, WSL 배포판·Docker·toolkit 휠 모두 없음).
+toolkit 없이 되는 준비 단계는 돌려서 확인했습니다.
+
+```bash
+python export/convert_rkllm.py --prepare-only    # 어디서나 됨: 캘리브레이션 450건 + max_context·eos 점검
+# x86 Linux + rkllm-toolkit 설치 후:
+python export/convert_rkllm.py --model-dir out/fc_merged --out export/model_w8a8.rkllm
+```
+
+| 확인한 것 | 결과 |
+| --- | --- |
+| 캘리브레이션 | 450건 → `export/calibration_w8a8.json` |
+| max_context | 데이터 최대 토큰 179 → 32 배수 192 → 여유 두어 **256** |
+| 종료 토큰 | `<\|im_end\|>` = **151645** 정상 등록 (보드 서버도 이 id 사용) |
+| 보드 생성 설정 | 학습·평가와 맞추려면 **top_k=1(탐욕), repeat_penalty=1.1** |
+
+### 보드 평가·단계별 지연 — **미실행**
+
+**이유: 보드 주소·SSH 정보가 없고 변환된 `.rkllm` 파일도 없습니다.** `results/v2/board/` 는 비어 있습니다.
+
+```bash
+python scripts/board_eval.py --base-url http://<보드IP>:<포트>/v1    # 보드 LLM 정확도 + PC 원본 비교 + TTFT
+python scripts/board_eval.py --selftest                              # 가짜 서버로 코드 동작만 확인 (성능 아님)
+python scripts/board_latency.py --sv-dir <SenseVoice> --tts-model <VITS> --base-url <보드LLM>
+```
+
+`board_latency.py` 는 실제 녹음 wav 가 있으면 `--wav-dir` 로 주는 것이 좋습니다. 없으면 test 문장을 TTS 로 합성해 측정하고 결과에 **합성 음성 기준**이라고 기록합니다.
+
+---
+
 ## 한계와 다음 단계
 
 **지금의 한계**
@@ -306,11 +472,15 @@ source·ambiguity별
 
 **다음 단계**
 
-1. **RKLLM 변환 (W8A8)** — `out/fc_merged/`를 입력으로 `data/calibration_utterances.json`(450건)을 써서 양자화. 양자화 전후 test 점수 비교 필요.
-2. **보드 포팅** — Orange Pi 5+에 STT(CPU 4스레드) + LLM(NPU) + TTS를 올리고 실제 지연시간 측정. NPU는 LLM 전용으로 둡니다.
-3. **실제 음성 평가** — 기사 목소리로 녹음한 발화 세트를 만들어 STT→파이프라인 전 구간 정확도 측정.
-4. **데이터 보강** — 위 오답 분석의 (a)(b)(c)와 "박스 하나" 라벨링 문제를 고쳐 재학습.
-5. **문맥 활용** — 현재 화면/직전 발화를 프롬프트에 넣어 모호한 발화 해소.
+1. **원인 A 수정 후 재학습** — `{qty}` 를 "박스 하나"처럼 단위-먼저 형태로도 렌더링해 train 에 넣기. 회귀의 큰 쪽(17건)이 여기서 풀립니다.
+   (이번에는 일부러 하지 않았습니다. v2 의 test 오답을 보고 데이터 규칙을 바꾸면 test 에 맞춰 조정하는 셈이 되기 때문입니다.)
+2. **원인 B 규명** — `물건 확인할게` → `scan` 을 v2 가 왜 전부 놓쳤는지 확인.
+3. **`tau` 선택 기준 결정** — 지금 기준은 되묻기를 사실상 끄게 만듭니다 (위 경고 참고).
+4. **`next_stop` 의 LLM 건너뛰기 재검토** — `other` 오분류가 그대로 잘못된 실행이 됩니다.
+5. **RKLLM 변환 (W8A8)** — x86 Linux + rkllm-toolkit 에서 실행. 양자화 전후 test 점수 비교 필요.
+6. **보드 포팅·측정** — Orange Pi 5+에 STT(CPU 4스레드) + LLM(NPU) + TTS를 올리고 `scripts/board_eval.py`·`board_latency.py` 로 실측. NPU는 LLM 전용으로 둡니다.
+7. **실제 음성 평가** — 기사 목소리로 녹음한 발화 세트를 만들어 STT→파이프라인 전 구간 정확도 측정.
+8. **문맥 활용** — 현재 화면/직전 발화를 프롬프트에 넣어 모호한 발화 해소.
 
 ---
 
@@ -322,20 +492,45 @@ LogiOn/
 ├─ requirements.txt
 ├─ .gitignore
 ├─ notebooks/
-│  └─ LogiOn_AI_pipeline.ipynb      실행 결과가 모두 들어간 노트북
+│  ├─ LogiOn_AI_pipeline.ipynb      데이터 생성·학습·평가 (실행 결과 포함)
+│  └─ LogiOn_demo_pipeline.ipynb    데모: 한 문장이 거치는 단계 (추론만, 실행 결과 포함)
+├─ config/
+│  └─ pipeline_v2_1.json            고른 설정 (모델 경로, tau, 건너뛰기 기준)
 ├─ data/
+│  ├─ README.md                     데이터셋 설명
 │  ├─ intent_dataset.csv            의도분류 학습용 (id, text, label, split, source, ambiguity)
 │  ├─ fc_dataset.csv                function calling 학습용 (id, text, target, split, source, ambiguity)
+│  ├─ template_split_v1.json        말 틀의 train/val/test 배정 (v1 과 공정 비교용으로 고정)
 │  ├─ gemini_prompt.txt             제미나이에 넣을 데이터 생성 프롬프트
 │  ├─ gemini_raw.jsonl              제미나이가 생성한 원본 236줄
-│  └─ calibration_utterances.json   RKLLM 양자화 캘리브레이션용 450건
+│  ├─ calibration_utterances.json   RKLLM 양자화 캘리브레이션용 450건
+│  └─ v1/                           v1 때 쓴 데이터 (보존)
+├─ scripts/
+│  ├─ select_pipeline_v2_1.py       기준값·모델 조합 고르기 (val) + test 1회 평가
+│  ├─ make_diagram.py               docs/architecture.png·svg 생성 (숫자는 결과 파일에서 읽음)
+│  ├─ export_intent_onnx.py         의도분류 ONNX(fp32/int8) 변환·검증
+│  ├─ board_eval.py                 보드 LLM 정확도 평가 + PC 원본과 비교
+│  ├─ board_latency.py              STT/의도분류/LLM/규칙/TTS 단계별 지연 측정
+│  └─ nb_rules.py                   노트북의 규칙 코드를 스크립트에서 불러오는 도우미
+├─ export/
+│  ├─ convert_rkllm.py              RKLLM W8A8 변환 (+ --prepare-only 로 캘리브레이션 준비)
+│  ├─ calibration_w8a8.json         RKLLM 형식 캘리브레이션 450건
+│  └─ intent_onnx/infer.py          보드용 의도분류 추론 (onnxruntime + tokenizers)
+├─ docs/
+│  ├─ 1st_report_summary.md         1차 보고 정리 (표 위주)
+│  ├─ midterm_ai_summary.md         중간 정리 (v1 → v2 비교, 원인 분석)
+│  ├─ backend_integration.md        백엔드 연결 가이드
+│  └─ architecture.png / .svg       구조 그림 (자동 생성)
+├─ logs/
+│  └─ ai-improve-1022.md            단계별 작업 기록과 판단 근거
 └─ results/
-   ├─ test_summary.json             핵심 지표
-   ├─ test_pred_intent.csv          의도분류 test 예측 431건 (틀린 건 포함)
-   └─ test_pred_fc.csv              function calling test 예측 431건 (지표 컬럼 포함)
+   ├─ v1/                           v1 결과 (보존)
+   ├─ v2/                           v2 결과 + v1 과의 비교 + ONNX 검증
+   ├─ v2/board/                     보드 측정 결과 (미실행, 비어 있음)
+   └─ v2_1/                         v2.1 결과 (val 격자, test 1회 평가, v1/v2/v2.1 비교)
 ```
 
-모델 가중치(`out/`)는 용량 때문에 저장소에 포함하지 않습니다. 노트북을 실행하면 다시 만들어집니다.
+모델 가중치(`out/`), ONNX·RKLLM 파일은 용량 때문에 저장소에 포함하지 않습니다. 노트북과 위 스크립트를 실행하면 다시 만들어집니다.
 
 ---
 

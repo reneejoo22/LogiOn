@@ -20,3 +20,11 @@ ipykernel>=6.29
 # 6단계 STT (선택)
 sherpa-onnx>=1.10
 soundfile>=0.12
+onnx>=1.16
+onnxruntime>=1.18
+tokenizers>=0.20
+
+# 구조 그림 생성 (scripts/make_diagram.py)
+matplotlib>=3.8
+# 보드 서버 호출 (scripts/board_eval.py, 데모 노트북의 SEND_TO_BACKEND=True)
+requests>=2.31

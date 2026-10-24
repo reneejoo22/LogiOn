@@ -1,0 +1,24 @@
+﻿gold_fn,cause,건수,모델
+complete,기타(값 오류),1,"v1 (v1 test, v1 라벨)"
+next_stop,기능 혼동,17,"v1 (v1 test, v1 라벨)"
+other,기능 혼동,1,"v1 (v1 test, v1 라벨)"
+report_issue,기타(값 오류),2,"v1 (v1 test, v1 라벨)"
+report_issue,라벨 버그,11,"v1 (v1 test, v1 라벨)"
+report_issue,본질적 모호성,9,"v1 (v1 test, v1 라벨)"
+report_issue,수량·단위 생성,2,"v1 (v1 test, v1 라벨)"
+stop_items,기능 혼동,12,"v1 (v1 test, v1 라벨)"
+stop_items,기타(값 오류),2,"v1 (v1 test, v1 라벨)"
+complete,기타(값 오류),1,v1 (새 test)
+next_stop,기능 혼동,18,v1 (새 test)
+other,기능 혼동,1,v1 (새 test)
+report_issue,본질적 모호성,9,v1 (새 test)
+report_issue,수량·단위 생성,5,v1 (새 test)
+stop_items,기능 혼동,8,v1 (새 test)
+stop_items,기타(값 오류),2,v1 (새 test)
+next_stop,기능 혼동,17,v2 (새 test)
+other,기능 혼동,1,v2 (새 test)
+report_issue,기타(값 오류),1,v2 (새 test)
+report_issue,본질적 모호성,9,v2 (새 test)
+report_issue,수량·단위 생성,16,v2 (새 test)
+scan,기능 혼동,13,v2 (새 test)
+stop_items,본질적 모호성,9,v2 (새 test)

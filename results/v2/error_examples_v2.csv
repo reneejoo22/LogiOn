@@ -1,0 +1,11 @@
+﻿text,target,pred_raw,gold_fn,ambiguity,source,cause
+어 몇 개 남았죠,"{""fn"":""next_stop""}","{""fn"":""stop_items""}",next_stop,clear,template,기능 혼동
+이온 음료 한 박스 샜네,"{""fn"":""report_issue"",""item"":""이온 음료"",""issue"":""파손"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""이온 음료"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}",report_issue,clear,gemini,기타(값 오류)
+잠깐 이온 음료 상태 좀 봐야겠다 좀,"{""fn"":""report_issue"",""item"":""이온 음료""}","{""fn"":""stop_items"",""item"":""이온 음료""}",report_issue,hard,template,본질적 모호성
+제육도시락 박스 하나 다 녹았어,"{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상"",""qty"":1}",report_issue,clear,template,수량·단위 생성
+저기 몇 개 남았죠,"{""fn"":""next_stop""}","{""fn"":""stop_items""}",next_stop,clear,template,기능 혼동
+이제 요거트 상태 좀 봐야겠다 얼른,"{""fn"":""report_issue"",""item"":""요거트""}","{""fn"":""stop_items"",""item"":""요거트""}",report_issue,hard,template,본질적 모호성
+어 이온음료 박스 하나 녹았음 좀,"{""fn"":""report_issue"",""item"":""이온음료"",""issue"":""온도이상"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""이온음료"",""issue"":""온도이상"",""qty"":1}",report_issue,clear,template,수량·단위 생성
+몇 개 남았지 얼른,"{""fn"":""next_stop""}","{""fn"":""stop_items""}",next_stop,clear,template,기능 혼동
+어 요거트 상태 좀 봐야겠다 지금,"{""fn"":""report_issue"",""item"":""요거트""}","{""fn"":""stop_items"",""item"":""요거트""}",report_issue,hard,template,본질적 모호성
+이제 물 박스 하나 개수가 안 맞아,"{""fn"":""report_issue"",""item"":""물"",""issue"":""수량부족"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""물"",""issue"":""수량부족"",""qty"":1}",report_issue,clear,template,수량·단위 생성
