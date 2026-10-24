@@ -6,6 +6,18 @@
 
 이 저장소는 그중 **AI 파트**(데이터 설계 → 의도분류 학습 → function calling 학습 → 평가 → 파이프라인)를 담고 있습니다.
 
+![LogiOn 구조와 측정 결과](docs/architecture.png)
+
+### 먼저 볼 것
+
+| | |
+| --- | --- |
+| **1차 보고 정리** | [`docs/1st_report_summary.md`](docs/1st_report_summary.md) — 한 일, v1/v2/v2.1 비교, 남은 문제, 다음 계획 |
+| **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
+| **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
+| **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
+| **선택된 설정** | [`config/pipeline_v2_1.json`](config/pipeline_v2_1.json) — 모델 경로·기준값 한 파일 |
+
 ---
 
 ## 전체 구조
@@ -33,6 +45,23 @@
 ```
 
 **핵심 설계**: LLM은 "말한 값을 JSON으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기 판단은 규칙 코드(④)가 맡습니다. 모델이 없는 값을 지어내지 않게 하고, 보드에서 LLM 호출 횟수를 줄이기 위해서입니다.
+
+> v2.1 부터 `next_stop` 은 빠른 길에서 빠졌습니다. 자세한 이유는 [개선 내역](#개선-내역v1--v2) 참고.
+
+```mermaid
+flowchart TD
+    A["🎤 음성 → STT<br/>SenseVoice int8"] --> B["의도분류<br/>klue/roberta-small<br/>정확도 0.907"]
+    B --> C{"갈림길<br/>margin · 확신도"}
+    C -- "margin &lt; 0.05" --> ASK["선택지로 되묻기<br/>'남은 배송지? 내릴 물건?'<br/>실행 안 함 · 0.5%"]
+    C -- "scan/other 확신 ≥ 0.9" --> FAST["빠른 길<br/>LLM 생략 · 24.1%"]
+    C -- "그 외" --> SLOT["값이 있는 기능<br/>stop_items(store?, item?)<br/>complete(store?, receiver?)<br/>report_issue(store?, item?, issue, qty?, unit)"]
+    SLOT --> LLM["function calling<br/>Qwen2.5-1.5B + LoRA<br/>fn 0.886 · 완전일치 0.847"]
+    FAST --> RES["값 보정 resolve()<br/>DB 이름·단위 맞추기<br/>빈 값은 되묻기"]
+    LLM --> RES
+    RES --> EXEC["실행 · 백엔드 API<br/>/api/routes/today · /api/stops/{id}<br/>/complete · /issues"]
+    EXEC --> OUT["응답 문장 → 🔊 TTS VITS"]
+    ASK --> OUT
+```
 
 ---
 
@@ -345,6 +374,31 @@ v1 오답 57건을 원인별로 분류해 보니 **11건(19%)이 모델 잘못�
 | 전체 파이프라인(되묻기 없음) | 0.937 | 0.845 | −0.093 |
 | 틀리게 실행한 비율 | 0.063 | 0.151 | +0.088 |
 
+### 4) v2.1 — 기준값과 모델 조합 다시 고르기 (val 로만)
+
+| | 고른 값 | 근거 (val) |
+| --- | --- | --- |
+| 되묻기 `tau` | **0.05** (그대로) | 되묻기 비율 ≤10% 중 **실행 정확도** 최고 |
+| LLM 건너뛰기 기준 | **0.9** | 0.9/0.95/0.98/0.99 동점이라 가장 빠른 0.9 |
+| 건너뛰기 대상 | **`scan`, `other`** (`next_stop` 제외) | 0.9582 → **0.9687** |
+| 모델 조합 | **의도분류 v2 + FC v2** | 네 조합 중 1위 (0.9687) |
+
+선정은 `scripts/select_pipeline_v2_1.py` (격자 352줄, `results/v2_1/val_grid.csv`), 결과는 `config/pipeline_v2_1.json` 에 저장됩니다.
+
+| 지표 (test 431건) | v1 | v2 | **v2.1** |
+| --- | --- | --- | --- |
+| 의도분류 정확도 | 0.893 | 0.907 | **0.907** |
+| FC 최종동작일치 | **0.898** | 0.847 | 0.847 |
+| 파이프라인: 되묻기 포함 성공 | **0.903** | 0.849 | 0.852 |
+| 틀리게 실행한 비율 | **0.063** | 0.151 | 0.148 |
+| LLM 생략 비율 | 0.353 | 0.455 | **0.241** |
+
+> **되묻기 `tau` 에 대해 정정합니다.** 지난 기록에 "실행 정확도 기준이면 tau≈0.4~0.5 가 뽑힌다" 고 적었는데, 그 수치는 **의도분류 라벨만으로 잰 것**이었습니다. 실제 파이프라인으로 다시 재니 **tau 를 올려도 "틀리게 실행한 비율"이 0.0418 에서 전혀 줄지 않습니다.** tau 가 걸러내는 문장은 어차피 뒤의 LLM 이 바로잡던 것들이기 때문입니다. 두 기준 모두 tau=0.05 를 고릅니다.
+
+> **val 과 test 가 반대로 말합니다.** val 1위는 v2+v2(0.9687) 인데 test 1위는 v1+v1(0.903) 입니다. 아래 원인 A·B 의 두 틀이 **test 에만 있고 val 에는 없기** 때문입니다. 다음 차수에는 **새 test 세트**가 필요합니다.
+
+### 5) v2 에서 떨어진 이유
+
 **의도분류는 올랐지만 function calling 은 내려갔습니다(회귀).** v2 가 새로 틀린 37건 중 **25건이 test 에만 배정된 틀 2개**에서 나왔습니다.
 
 - **원인 A (17건)** — 1단계에서 고친 그 틀(`{item} 박스 하나 {issue}`)이 v1 배정에서 **train 0건 / test 17건**입니다. 동시에 "하나 → 단위 없음" 규칙을 넣었기 때문에, v2 는 "박스 하나"를 학습에서 못 본 채 `unit` 을 빼먹습니다 (v1 13/17 → v2 1/17). 1단계의 예견된 부작용입니다.
@@ -438,7 +492,10 @@ LogiOn/
 ├─ requirements.txt
 ├─ .gitignore
 ├─ notebooks/
-│  └─ LogiOn_AI_pipeline.ipynb      실행 결과가 모두 들어간 노트북
+│  ├─ LogiOn_AI_pipeline.ipynb      데이터 생성·학습·평가 (실행 결과 포함)
+│  └─ LogiOn_demo_pipeline.ipynb    데모: 한 문장이 거치는 단계 (추론만, 실행 결과 포함)
+├─ config/
+│  └─ pipeline_v2_1.json            고른 설정 (모델 경로, tau, 건너뛰기 기준)
 ├─ data/
 │  ├─ README.md                     데이터셋 설명
 │  ├─ intent_dataset.csv            의도분류 학습용 (id, text, label, split, source, ambiguity)
@@ -449,6 +506,8 @@ LogiOn/
 │  ├─ calibration_utterances.json   RKLLM 양자화 캘리브레이션용 450건
 │  └─ v1/                           v1 때 쓴 데이터 (보존)
 ├─ scripts/
+│  ├─ select_pipeline_v2_1.py       기준값·모델 조합 고르기 (val) + test 1회 평가
+│  ├─ make_diagram.py               docs/architecture.png·svg 생성 (숫자는 결과 파일에서 읽음)
 │  ├─ export_intent_onnx.py         의도분류 ONNX(fp32/int8) 변환·검증
 │  ├─ board_eval.py                 보드 LLM 정확도 평가 + PC 원본과 비교
 │  ├─ board_latency.py              STT/의도분류/LLM/규칙/TTS 단계별 지연 측정
@@ -458,13 +517,17 @@ LogiOn/
 │  ├─ calibration_w8a8.json         RKLLM 형식 캘리브레이션 450건
 │  └─ intent_onnx/infer.py          보드용 의도분류 추론 (onnxruntime + tokenizers)
 ├─ docs/
-│  └─ midterm_ai_summary.md         중간 정리 (v1 → v2 비교, 원인 분석, 보드 현황)
+│  ├─ 1st_report_summary.md         1차 보고 정리 (표 위주)
+│  ├─ midterm_ai_summary.md         중간 정리 (v1 → v2 비교, 원인 분석)
+│  ├─ backend_integration.md        백엔드 연결 가이드
+│  └─ architecture.png / .svg       구조 그림 (자동 생성)
 ├─ logs/
 │  └─ ai-improve-1022.md            단계별 작업 기록과 판단 근거
 └─ results/
    ├─ v1/                           v1 결과 (보존)
    ├─ v2/                           v2 결과 + v1 과의 비교 + ONNX 검증
-   └─ v2/board/                     보드 측정 결과 (미실행, 비어 있음)
+   ├─ v2/board/                     보드 측정 결과 (미실행, 비어 있음)
+   └─ v2_1/                         v2.1 결과 (val 격자, test 1회 평가, v1/v2/v2.1 비교)
 ```
 
 모델 가중치(`out/`), ONNX·RKLLM 파일은 용량 때문에 저장소에 포함하지 않습니다. 노트북과 위 스크립트를 실행하면 다시 만들어집니다.
