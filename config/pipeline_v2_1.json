@@ -1,0 +1,58 @@
+{
+  "version": "v2.1",
+  "selected_on": "val 383건 (test 는 마지막 1회 평가에만 사용)",
+  "intent_model": "out/intent_model",
+  "fc_model": "out/fc_merged",
+  "intent_onnx": "export/intent_onnx",
+  "system_prompt": "편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.",
+  "funcs": [
+    "next_stop",
+    "stop_items",
+    "complete",
+    "report_issue",
+    "scan",
+    "other"
+  ],
+  "ask_tau": 0.05,
+  "ask_tau_rule": "val 에서 되묻기 비율 ≤ 10% 중 실행 정확도 최고 (동률이면 작은 tau)",
+  "skip_llm_conf": 0.9,
+  "skip_llm_fns": [
+    "scan",
+    "other"
+  ],
+  "skip_llm_rule": "이 기능이고 의도분류 확률이 기준 이상이면 LLM 을 부르지 않고 바로 실행",
+  "generation": {
+    "do_sample": false,
+    "top_k": 1,
+    "repetition_penalty": 1.1,
+    "max_new_tokens": 64,
+    "eos_token_id": 151645
+  },
+  "choice_labels": {
+    "next_stop": "남은 배송지",
+    "stop_items": "내릴 물건",
+    "report_issue": "문제 보고",
+    "complete": "납품 완료",
+    "scan": "스캔"
+  },
+  "retry_message": "다시 말씀해 주세요",
+  "test_metrics": {
+    "n": 431.0,
+    "intent_acc": 0.9071925754060325,
+    "intent_macro_f1": 0.9050558415944406,
+    "fc_json_valid": 1.0,
+    "fc_fn_acc": 0.8863109048723898,
+    "fc_exact": 0.8468677494199536,
+    "fc_slot_f1": 0.9683544303797469,
+    "fc_final_ok": 0.8468677494199536,
+    "pipeline_acc_no_ask": 0.8468677494199536,
+    "ask_rate": 0.004640371229698376,
+    "ask_incl_success": 0.9095127610208816,
+    "ask_incl_success_lenient": 0.9095127610208816,
+    "pipeline_direct_ok": 0.8468677494199536,
+    "pipeline_incl_ask": 0.851508120649652,
+    "exec_precision": 0.8508158508158508,
+    "wrong_exec_rate": 0.14849187935034802,
+    "llm_skip_rate": 0.24129930394431554
+  }
+}

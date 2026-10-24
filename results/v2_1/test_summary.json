@@ -1,0 +1,107 @@
+{
+  "note": "선정은 val 383건만 사용, test 431건은 이 설정으로 한 번만 평가함. 선정 규칙은 logs/ai-improve-1022.md 참고.",
+  "selected_config": {
+    "intent": "v2",
+    "fc": "v2",
+    "tau": 0.05,
+    "skip_conf": 0.9,
+    "skip_set": "next_stop 불포함",
+    "skip_fns": [
+      "scan",
+      "other"
+    ]
+  },
+  "tau_criterion_comparison_on_val": {
+    "설정": "의도분류 v2 + FC v2, 건너뛰기 기준 0.9, next_stop 포함 (= v2 와 같은 설정)",
+    "기존 기준(되묻기 포함 성공률)": {
+      "tau": 0.05,
+      "ask_rate": 0.0026109660574412533,
+      "exec_precision": 0.9581151832460733,
+      "ask_incl_success": 0.9164490861618799,
+      "pipeline_incl_ask": 0.95822454308094
+    },
+    "새 기준(실행 정확도)": {
+      "tau": 0.05,
+      "ask_rate": 0.0026109660574412533,
+      "exec_precision": 0.9581151832460733,
+      "ask_incl_success": 0.9164490861618799,
+      "pipeline_incl_ask": 0.95822454308094
+    }
+  },
+  "val_best_pipeline_incl_ask": 0.9686684073107049,
+  "test": {
+    "v2_1": {
+      "n": 431.0,
+      "intent_acc": 0.9071925754060325,
+      "intent_macro_f1": 0.9050558415944406,
+      "fc_json_valid": 1.0,
+      "fc_fn_acc": 0.8863109048723898,
+      "fc_exact": 0.8468677494199536,
+      "fc_slot_f1": 0.9683544303797469,
+      "fc_final_ok": 0.8468677494199536,
+      "pipeline_acc_no_ask": 0.8468677494199536,
+      "ask_rate": 0.004640371229698376,
+      "ask_incl_success": 0.9095127610208816,
+      "ask_incl_success_lenient": 0.9095127610208816,
+      "pipeline_direct_ok": 0.8468677494199536,
+      "pipeline_incl_ask": 0.851508120649652,
+      "exec_precision": 0.8508158508158508,
+      "wrong_exec_rate": 0.14849187935034802,
+      "llm_skip_rate": 0.24129930394431554
+    },
+    "v2": {
+      "n": 431.0,
+      "intent_acc": 0.9071925754060325,
+      "intent_macro_f1": 0.9050558415944406,
+      "fc_json_valid": 1.0,
+      "fc_fn_acc": 0.8863109048723898,
+      "fc_exact": 0.8468677494199536,
+      "fc_slot_f1": 0.9683544303797469,
+      "fc_final_ok": 0.8468677494199536,
+      "pipeline_acc_no_ask": 0.8445475638051044,
+      "ask_rate": 0.004640371229698376,
+      "ask_incl_success": 0.9095127610208816,
+      "ask_incl_success_lenient": 0.9095127610208816,
+      "pipeline_direct_ok": 0.8445475638051044,
+      "pipeline_incl_ask": 0.8491879350348028,
+      "exec_precision": 0.8484848484848485,
+      "wrong_exec_rate": 0.15081206496519722,
+      "llm_skip_rate": 0.4547563805104408
+    },
+    "v1": {
+      "n": 431.0,
+      "intent_acc": 0.8932714617169374,
+      "intent_macro_f1": 0.8947884320810401,
+      "fc_json_valid": 1.0,
+      "fc_fn_acc": 0.9164733178654292,
+      "fc_exact": 0.8955916473317865,
+      "fc_slot_f1": 0.9764521193092621,
+      "fc_final_ok": 0.8979118329466357,
+      "pipeline_acc_no_ask": 0.9373549883990719,
+      "ask_rate": 0.06496519721577726,
+      "ask_incl_success": 0.9048723897911833,
+      "ask_incl_success_lenient": 0.91415313225058,
+      "pipeline_direct_ok": 0.8723897911832946,
+      "pipeline_incl_ask": 0.9025522041763341,
+      "exec_precision": 0.9330024813895782,
+      "wrong_exec_rate": 0.06264501160092807,
+      "llm_skip_rate": 0.35266821345707655
+    }
+  },
+  "test_ask_examples": [
+    {
+      "text": "아 사이다 여기 들어가는 거 맞아 얼른",
+      "gold_fn": "stop_items",
+      "ask_msg": "문제 보고 말씀하시는 건가요, 내릴 물건 말씀하시는 건가요?",
+      "in_options": true,
+      "after_choice_ok": true
+    },
+    {
+      "text": "저기 물건 확인할게",
+      "gold_fn": "scan",
+      "ask_msg": "스캔 말씀하시는 건가요, 내릴 물건 말씀하시는 건가요?",
+      "in_options": true,
+      "after_choice_ok": true
+    }
+  ]
+}
