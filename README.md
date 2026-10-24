@@ -13,6 +13,7 @@
 | | |
 | --- | --- |
 | **1차 보고 정리** | [`docs/1st_report_summary.md`](docs/1st_report_summary.md) — 한 일, v1/v2/v2.1 비교, 남은 문제, 다음 계획 |
+| **채팅 데모** | `python demo/chat_server.py` → http://localhost:7860 — 앱 채팅 화면 모양으로 실제 모델을 붙여 돌려 봄 ([캡처](docs/chat_demo/)) |
 | **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
 | **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
 | **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
@@ -181,6 +182,25 @@ jupyter notebook notebooks/LogiOn_AI_pipeline.ipynb
 - 섹션 5 마지막 셀은 `RUN_INTERACTIVE = True`로 바꾸면 직접 문장을 입력해 볼 수 있습니다 (기본값 `False`: 일괄 실행 시 멈추지 않게).
 - 섹션 6은 SenseVoice 모델 폴더나 `test.wav`가 없으면 자동으로 건너뜁니다.
 - 이미 학습을 마쳤다면 섹션 2 첫 셀의 `SKIP_TRAIN = True`로 저장본을 불러와 4~5단계만 실행할 수 있습니다.
+
+### 3. 채팅 데모 (`python demo/chat_server.py`)
+
+앱의 AI 채팅 화면과 같은 모양으로, **실제 모델을 붙여** 한 문장이 처리되는 과정을 브라우저에서 보여 줍니다.
+
+```bash
+python demo/chat_server.py            # http://localhost:7860
+python demo/chat_server.py --port 8080
+python demo/chat_server.py --no-models   # 모델 없이 화면만
+```
+
+![채팅 데모](docs/chat_demo/00_full.png)
+
+- 파이썬 표준 라이브러리만 씁니다(추가 설치 없음). `out/intent_model`, `out/fc_merged` 가 필요하고, 없으면 무엇이 없는지 알려 주고 멈춥니다.
+- 화면 오른쪽 위 배지에 **`실제 모델 · <GPU 이름>`** 이 뜨면 모델이 올라간 것입니다.
+- 답변마다 **결과 카드**가 붙어 ② 의도분류 상위 3개와 margin, ③ LLM 출력과 확신도, ④ 값 보정 과정, ⑤ 백엔드에 보낼 요청, ⑥ 응답과 단계별 ms 를 보여 줍니다.
+- 되묻기가 걸리면 **선택지 버튼**이 나오고, 누르면 이어서 처리합니다.
+- 배송 데이터는 `backend/app/db/seed.py` 를 읽어 쓰고 **변경은 이 서버 메모리 안에서만** 일어납니다. 백엔드 서버나 코드는 건드리지 않습니다.
+- 캡처는 `python scripts/capture_chat_demo.py` 로 다시 만들 수 있습니다 (→ `docs/chat_demo/`). 문장별 수치는 [`docs/chat_demo/results.md`](docs/chat_demo/results.md) 에 있습니다.
 
 ### GPU 요구사항 (중요)
 
@@ -494,6 +514,9 @@ LogiOn/
 ├─ notebooks/
 │  ├─ LogiOn_AI_pipeline.ipynb      데이터 생성·학습·평가 (실행 결과 포함)
 │  └─ LogiOn_demo_pipeline.ipynb    데모: 한 문장이 거치는 단계 (추론만, 실행 결과 포함)
+├─ demo/
+│  ├─ chat_server.py                채팅 데모 서버 (표준 라이브러리만 사용)
+│  └─ pipeline.py                   추론 파이프라인 (서버가 import)
 ├─ config/
 │  └─ pipeline_v2_1.json            고른 설정 (모델 경로, tau, 건너뛰기 기준)
 ├─ data/
