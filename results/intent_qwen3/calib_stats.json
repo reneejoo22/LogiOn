@@ -1,0 +1,24 @@
+{
+ "n": 480,
+ "per_function": {
+  "complete": 80,
+  "next_stop": 80,
+  "other": 80,
+  "report_issue": 80,
+  "scan": 80,
+  "stop_items": 80
+ },
+ "ambiguity": {
+  "clear": 376,
+  "hard": 72,
+  "ask": 32
+ },
+ "polite_ending_rate": 0.2,
+ "filler_prefix_rate": 0.7833333333333333,
+ "mean_chars": 13.429166666666667,
+ "overlap_with_train_val_test": 0,
+ "model_output_equals_label_rate": 0.9958333333333333,
+ "seed": 20261029,
+ "templates_from": "train 몫 (data/template_split_v1.json)",
+ "prompt_tokens_max": 85
+}

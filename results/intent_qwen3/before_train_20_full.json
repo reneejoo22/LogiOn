@@ -1,0 +1,102 @@
+[
+ {
+  "text": "저기 바나나우유 좀 엉뚱한 게 실렸어 좀",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "새우깡 쪽에 문제가 좀 있어 지금",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "잠깐 오늘 납품 많네 빨리",
+  "label": "other",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "오늘 진행상황 어때 지금",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "어 이제 어디로 가면 돼 빨리",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "이제 오늘 날씨 어때",
+  "label": "other",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "어 고마워",
+  "label": "other",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "자 여기 다 됐어요",
+  "label": "complete",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "아 구로점 우유 몇 박스야 지금",
+  "label": "stop_items",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "그 오늘 진행상황 어때",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "이제 그 다음은",
+  "label": "next_stop",
+  "raw": "next_stop<|im_end|>"
+ },
+ {
+  "text": "석촌점 새우깡 몇 박스야",
+  "label": "stop_items",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "저기 남은 배송지 몇 개야 빨리",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "잠깐 여기 다 됐어 좀",
+  "label": "complete",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "아 물 쪽에 문제가 좀 있어",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "참치삼각김밥 부족해 두 개 빨리",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "이제 여기 납품 물량 얼마야 지금",
+  "label": "stop_items",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "잠깐 여기 납품 물량 얼마예요",
+  "label": "stop_items",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "그 이제 어디로 가면 돼 지금",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "저기 다 내렸어요",
+  "label": "complete",
+  "raw": "report_issue<|im_end|>"
+ }
+]

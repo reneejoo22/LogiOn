@@ -1,0 +1,143 @@
+{
+  "version": "v2.2-qwen3-intent",
+  "note": "의도분류 모듈만 Qwen3-0.6B LoRA 로 교체한 후보 설정. FC 모델·시스템 프롬프트·생성 설정은 v2.1 그대로. 기본 파이프라인은 아직 v2.1 이며 이 설정은 교체 결정이 아님. 보드(RKLLM) 측정은 하지 않았다.",
+  "base_config": "config/pipeline_v2_1.json",
+  "selected_on": "val 383건 (test 431건은 마지막 1회 평가에만 사용)",
+  "intent_backend": "qwen3_lora_generation",
+  "intent_model": "out/intent_qwen3_merged",
+  "intent_model_note": "git 제외 (fp16 병합본 1152 MB). 재현: scripts/train_intent_qwen3.py -> select_intent_qwen3_ckpt.py -> merge_intent_qwen3.py",
+  "intent_base": "Qwen/Qwen3-0.6B",
+  "intent_checkpoint": "checkpoint-244 (epoch 2, val 탐욕 정확도 0.8877 로 선택)",
+  "intent_reference_model": "out/intent_model",
+  "fc_model": "out/fc_merged",
+  "system_prompt": "편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수.",
+  "funcs": [
+    "next_stop",
+    "stop_items",
+    "complete",
+    "report_issue",
+    "scan",
+    "other"
+  ],
+  "intent_prompt": {
+    "system": "편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.",
+    "enable_thinking": false,
+    "user_prefix": "<|im_start|>user\n",
+    "user_postfix": "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "system_part": "<|im_start|>system\n{system}<|im_end|>\n",
+    "stop_token": "<|im_end|>",
+    "stop_token_id": 151645,
+    "generation": {
+      "do_sample": false,
+      "max_new_tokens": 8
+    },
+    "output_parse": "<|im_end|> 앞까지 자르고 공백 제거 -> 6개 라벨이 아니면 형식 오류 (다시 말씀해 주세요)",
+    "label_first_token_ids": {
+      "next_stop": 3600,
+      "stop_items": 9495,
+      "complete": 14737,
+      "report_issue": 11736,
+      "scan": 16405,
+      "other": 1575
+    }
+  },
+  "modes": {
+    "argmax_only": {
+      "use_on": "보드(RKLLM) 기본 후보. 로짓을 얻을 수 있는지 확인되지 않아 확률 없이 생성 단어만 쓴다.",
+      "ask_tau": null,
+      "ask_note": "확률이 없어 되묻기(margin) 판정 불가 -> 되묻기 0%",
+      "skip_llm_conf": null,
+      "skip_llm_fns": [
+        "scan",
+        "other"
+      ],
+      "skip_note": "확률이 없어 신뢰도 조건을 못 쓰므로 '이 기능으로 분류되면 LLM 생략'. 시뮬레이션은 one-hot(확률 1.0)로 계산. val 에서 next_stop 포함/불포함 중 선택.",
+      "test_metrics": {
+        "intent_acc": 0.8561,
+        "intent_macro_f1": 0.8625,
+        "fc_final_ok": 0.8469,
+        "pipeline_incl_ask": 0.8538,
+        "pipeline_direct_ok": 0.8538,
+        "exec_precision": 0.8538,
+        "wrong_exec_rate": 0.1462,
+        "ask_rate": 0.0,
+        "llm_skip_rate": 0.2807
+      }
+    },
+    "with_probabilities": {
+      "use_on": "PC 전용. 첫 생성 토큰 로짓에서 6개 라벨 첫 토큰만 소프트맥스 (RKLLM 이 로짓을 주는지 미확인).",
+      "ask_tau": 0.5,
+      "skip_llm_conf": 0.95,
+      "skip_llm_fns": [
+        "scan",
+        "other"
+      ],
+      "selection_rule": "v2.1 과 같음: val 에서 되묻기 <=10% 중 실행 정확도 최고(동률이면 작은 tau), 설정은 val pipeline_incl_ask 최고. tau 탐색 격자의 상한(0.5)에서 선택됨 -> 격자 가장자리.",
+      "test_metrics": {
+        "intent_acc": 0.8538,
+        "intent_macro_f1": 0.8604,
+        "fc_final_ok": 0.8469,
+        "pipeline_incl_ask": 0.8306,
+        "pipeline_direct_ok": 0.8237,
+        "exec_precision": 0.8534,
+        "wrong_exec_rate": 0.1415,
+        "ask_rate": 0.0348,
+        "llm_skip_rate": 0.2459
+      },
+      "v2_1_values_applied": {
+        "ask_tau": 0.05,
+        "skip_llm_conf": 0.9,
+        "skip_llm_fns": [
+          "scan",
+          "other"
+        ],
+        "test_metrics": {
+          "intent_acc": 0.8538,
+          "intent_macro_f1": 0.8604,
+          "fc_final_ok": 0.8469,
+          "pipeline_incl_ask": 0.8492,
+          "pipeline_direct_ok": 0.8492,
+          "exec_precision": 0.8551,
+          "wrong_exec_rate": 0.1439,
+          "ask_rate": 0.007,
+          "llm_skip_rate": 0.2483
+        }
+      }
+    }
+  },
+  "reference_v2_1_roberta": {
+    "test_metrics": {
+      "intent_acc": 0.9072,
+      "intent_macro_f1": 0.9051,
+      "fc_final_ok": 0.8469,
+      "pipeline_incl_ask": 0.8515,
+      "pipeline_direct_ok": 0.8469,
+      "exec_precision": 0.8508,
+      "wrong_exec_rate": 0.1485,
+      "ask_rate": 0.0046,
+      "llm_skip_rate": 0.2413
+    }
+  },
+  "generation": {
+    "do_sample": false,
+    "top_k": 1,
+    "repetition_penalty": 1.1,
+    "max_new_tokens": 64,
+    "eos_token_id": 151645
+  },
+  "choice_labels": {
+    "next_stop": "남은 배송지",
+    "stop_items": "내릴 물건",
+    "report_issue": "문제 보고",
+    "complete": "납품 완료",
+    "scan": "스캔"
+  },
+  "retry_message": "다시 말씀해 주세요",
+  "latency_ms": {
+    "pc_gpu_rtx5050_bf16_bs1_generate_mean": 137.6,
+    "pc_gpu_first_token_only_mean": 58.4,
+    "pc_cpu_4threads_fp32_generate_mean": 626.6,
+    "board_rk3588_w8a8_estimate": "약 250~280 ms (추정, 미측정): 벤치마크 TTFT 214 ms + 약 1.5 토큰 / 32.2 tok/s. 벤치마크 프롬프트 길이를 몰라 TTFT 가 우리 프롬프트(약 71 토큰)와 같다고 가정한 값",
+    "roberta_reference": "보드 ONNX 지연은 이 작업에서 다시 재지 않음"
+  }
+}

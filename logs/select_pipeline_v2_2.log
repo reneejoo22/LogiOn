@@ -1,0 +1,33 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+The tokenizer you are loading from 'C:\Users\AMLPC03\Desktop\LogiOn/out/fc_merged' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+FC test 출력이 v2.1 결과와 같은 비율: 1.0
+[test:roberta_v2_1] tau 0.05 skip 0.9 next_stop 불포함 -> pipeline_incl_ask 0.8515, wrong_exec 0.1485, skip 0.2413, ask 0.0046, intent_acc 0.9072
+[test:qwen3_prob_v21cfg] tau 0.05 skip 0.9 next_stop 불포함 -> pipeline_incl_ask 0.8492, wrong_exec 0.1439, skip 0.2483, ask 0.0070, intent_acc 0.8538
+
+[val:qwen3_prob] 상위 5 설정
+ skip_conf      skip_set  tau  ask_rate  exec_precision  pipeline_incl_ask  wrong_exec_rate  llm_skip_rate  intent_acc
+      0.95 next_stop 불포함  0.5    0.0392          0.9402             0.9034           0.0574         0.2924      0.8877
+      0.95  next_stop 포함  0.5    0.0392          0.9402             0.9034           0.0574         0.4073      0.8877
+      0.98 next_stop 불포함  0.5    0.0392          0.9402             0.9034           0.0574         0.2872      0.8877
+      0.98  next_stop 포함  0.5    0.0392          0.9402             0.9034           0.0574         0.3969      0.8877
+      0.99 next_stop 불포함  0.5    0.0392          0.9402             0.9034           0.0574         0.2768      0.8877
+[test:qwen3_prob] tau 0.5 skip 0.95 next_stop 불포함 -> pipeline_incl_ask 0.8306, wrong_exec 0.1415, skip 0.2459, ask 0.0348, intent_acc 0.8538
+
+[val:qwen3_argmax] 상위 5 설정
+ skip_conf      skip_set  tau  ask_rate  exec_precision  pipeline_incl_ask  wrong_exec_rate  llm_skip_rate  intent_acc
+       0.9 next_stop 불포함 0.05       0.0          0.8930             0.8930           0.1070         0.3499      0.8877
+       0.9  next_stop 포함 0.05       0.0          0.8825             0.8825           0.1175         0.4961      0.8877
+[test:qwen3_argmax] tau 0.05 skip 0.9 next_stop 불포함 -> pipeline_incl_ask 0.8538, wrong_exec 0.1462, skip 0.2807, ask 0.0000, intent_acc 0.8561
+
+=== test (431) ===
+                    roberta_v2_1  qwen3_prob_v21cfg  qwen3_prob  qwen3_argmax
+intent_acc                0.9072             0.8538      0.8538        0.8561
+intent_macro_f1           0.9051             0.8604      0.8604        0.8625
+fc_final_ok               0.8469             0.8469      0.8469        0.8469
+pipeline_incl_ask         0.8515             0.8492      0.8306        0.8538
+pipeline_direct_ok        0.8469             0.8492      0.8237        0.8538
+exec_precision            0.8508             0.8551      0.8534        0.8538
+wrong_exec_rate           0.1485             0.1439      0.1415        0.1462
+ask_rate                  0.0046             0.0070      0.0348        0.0000
+llm_skip_rate             0.2413             0.2483      0.2459        0.2807

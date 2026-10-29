@@ -1,0 +1,14 @@
+{
+ "device": "cpu",
+ "n": 40,
+ "threads": 4,
+ "gpu": null,
+ "dtype": "torch.float32",
+ "generate_ms_mean": 626.6128775430843,
+ "generate_ms_median": 627.4937498383224,
+ "generate_ms_p95": 710.577979683876,
+ "first_token_only_ms_mean": 581.6209573997185,
+ "first_token_only_ms_median": 585.2063996717334,
+ "prompt_tokens_mean": 71.0,
+ "generated_tokens_mean_incl_eos": 2.55
+}

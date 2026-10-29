@@ -1,0 +1,27 @@
+[
+ {
+  "text": "저기 바나나우유 좀 엉뚱한 게 실렸어 좀",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "새우깡 쪽에 문제가 좀 있어 지금",
+  "label": "report_issue",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "잠깐 오늘 납품 많네 빨리",
+  "label": "other",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "오늘 진행상황 어때 지금",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ },
+ {
+  "text": "어 이제 어디로 가면 돼 빨리",
+  "label": "next_stop",
+  "raw": "report_issue<|im_end|>"
+ }
+]

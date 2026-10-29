@@ -1,0 +1,40 @@
+{
+ "rows": [
+  {
+   "epoch": 1,
+   "ckpt": "checkpoint-122",
+   "val_acc_greedy": 0.7963446475195822,
+   "val_format_err": 0.0,
+   "val_acc_first_token_argmax": 0.7963446475195822,
+   "val_loss": 0.35113784670829773,
+   "mass_mean": 0.9964245557785034
+  },
+  {
+   "epoch": 2,
+   "ckpt": "checkpoint-244",
+   "val_acc_greedy": 0.8877284595300261,
+   "val_format_err": 0.0,
+   "val_acc_first_token_argmax": 0.8877284595300261,
+   "val_loss": 0.14742976427078247,
+   "mass_mean": 0.9990940093994141
+  },
+  {
+   "epoch": 3,
+   "ckpt": "checkpoint-366",
+   "val_acc_greedy": 0.8668407310704961,
+   "val_format_err": 0.0,
+   "val_acc_first_token_argmax": 0.8694516971279374,
+   "val_loss": 0.17129749059677124,
+   "mass_mean": 0.9994274973869324
+  }
+ ],
+ "selected": {
+  "epoch": 2,
+  "ckpt": "checkpoint-244",
+  "val_acc_greedy": 0.8877284595300261,
+  "val_format_err": 0.0,
+  "val_acc_first_token_argmax": 0.8877284595300261,
+  "val_loss": 0.14742976427078247,
+  "mass_mean": 0.9990940093994141
+ }
+}

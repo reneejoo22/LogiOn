@@ -1,0 +1,14 @@
+{
+ "device": "cuda",
+ "n": 100,
+ "threads": null,
+ "gpu": "NVIDIA GeForce RTX 5050",
+ "dtype": "torch.bfloat16",
+ "generate_ms_mean": 137.59051099419594,
+ "generate_ms_median": 115.97440019249916,
+ "generate_ms_p95": 168.5653147753328,
+ "first_token_only_ms_mean": 58.39136299677193,
+ "first_token_only_ms_median": 58.105750009417534,
+ "prompt_tokens_mean": 70.89,
+ "generated_tokens_mean_incl_eos": 2.46
+}

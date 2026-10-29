@@ -1,0 +1,3362 @@
+[
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n다음 들를 데 어디야 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "다음 들를 데 어디야 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 어디 가야 되더라",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 다음 점포 알려줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 다음 점포 알려줘 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n다음 가야 할 곳 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "다음 가야 할 곳 알려줘 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 다음 어디야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 다음 어디야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 다음 가야 할 곳 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 다음 가야 할 곳 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 다음 들를 데 어디야 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "아 다음 들를 데 어디야 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 가야 할 곳 알려줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 가야 할 곳 알려줘 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 남은 곳 몇 개 더 있어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 남은 곳 몇 개 더 있어 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 다음 점포 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 다음 점포 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n남은 곳 몇 개 더 있어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "남은 곳 몇 개 더 있어 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 남은 곳 몇 개 더 있어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 남은 곳 몇 개 더 있어",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 어디 가야 되더라",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 남은 점포 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 남은 점포 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 이제 어디야 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 이제 어디야 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 남은 점포 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "아 남은 점포 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 다음 가야 할 곳 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 다음 가야 할 곳 알려줘",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 오늘 얼마나 했지 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 오늘 얼마나 했지 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 남은 점포 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 남은 점포 알려줘",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n다음 점포 어디였지 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "다음 점포 어디였지 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 어디 가야 되더라",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 다음 점포 어디였지 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 다음 점포 어디였지 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 들를 데 어디야 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 들를 데 어디야 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 코스 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 코스 알려줘 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이제 어디야 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 이제 어디야 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 다음은 어디로 가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 다음은 어디로 가",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n몇 군데 남았어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "몇 군데 남았어 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 몇 군데 남았어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 몇 군데 남았어 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 지금까지 몇 군데 했어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 지금까지 몇 군데 했어",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 다음 목적지 뭐야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 다음 목적지 뭐야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 남은 곳 몇 개 더 있어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 남은 곳 몇 개 더 있어",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 남은 점포 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 남은 점포 알려줘 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 지금까지 몇 군데 했어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 지금까지 몇 군데 했어 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 어디 가야 되더라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 어디 가야 되더라",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 남은 코스 몇 개야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 남은 코스 몇 개야 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 이제 어디야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 이제 어디야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 남은 점포 알려줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 남은 점포 알려줘 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 오늘 남은 일정 알려줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 오늘 남은 일정 알려줘 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 어디 가야 되더라 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 어디 가야 되더라 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 오늘 남은 일정 알려줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 오늘 남은 일정 알려줘 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 다음 가야 할 곳 알려줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 다음 가야 할 곳 알려줘 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 어디야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 어디야 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 지금까지 몇 군데 했어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 지금까지 몇 군데 했어요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 오늘 몇 곳 더 가야 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 오늘 몇 곳 더 가야 돼요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 어디야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 어디야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 점포 어디였지 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 점포 어디였지 지금",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 다음은 어디로 가 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "음 다음은 어디로 가 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 목적지 뭐예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 목적지 뭐예요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 점포 어디였지 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 점포 어디였지 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 남은 곳 몇 개 더 있어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 남은 곳 몇 개 더 있어요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 오늘 남은 일정 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 오늘 남은 일정 알려줘",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n다음은 어디로 가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "다음은 어디로 가",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 지금까지 몇 군데 했어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 지금까지 몇 군데 했어 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 다음 어디야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 다음 어디야 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 남은 곳 몇 개 더 있어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 남은 곳 몇 개 더 있어 빨리",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이제 어디야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 이제 어디야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n남은 코스 몇 개예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "남은 코스 몇 개예요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 다음 점포 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "그 다음 점포 알려줘",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 지금까지 몇 군데 했어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 지금까지 몇 군데 했어요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 오늘 몇 곳 더 가야 돼 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 오늘 몇 곳 더 가야 돼 좀",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 어디예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 어디예요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 오늘 남은 일정 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "음 오늘 남은 일정 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 남은 점포 알려주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 남은 점포 알려주세요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 다음 가야 할 곳 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 다음 가야 할 곳 알려줘",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 오늘 몇 곳 더 가야 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 오늘 몇 곳 더 가야 돼요",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 다음 목적지 뭐야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 다음 목적지 뭐야",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 다음은 어디로 가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 다음은 어디로 가",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 오늘 몇 곳 더 가야 돼 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 오늘 몇 곳 더 가야 돼 얼른",
+  "label": "next_stop",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 다음 꺼 어디 있는 데야 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "아 다음 꺼 어디 있는 데야 지금",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 다음 꺼 어디 있는 데예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 다음 꺼 어디 있는 데예요",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이제 뭐 하면 돼<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 이제 뭐 하면 돼",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 여기 끝나면 어디 가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "어 여기 끝나면 어디 가",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 여기 끝나면 어디 가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 여기 끝나면 어디 가",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이제 뭐 하면 돼 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "저기 이제 뭐 하면 돼 지금",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이제 뭐 하면 돼<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "아 이제 뭐 하면 돼",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이제 뭐 하면 돼 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "아 이제 뭐 하면 돼 좀",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 다음 꺼 어디 있는 데야 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "잠깐 다음 꺼 어디 있는 데야 얼른",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 이제 뭐 하면 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 이제 뭐 하면 돼요",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 여기 끝나면 어디 가 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "이제 여기 끝나면 어디 가 빨리",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 다음 꺼 어디 있는 데예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "next_stop<|im_end|>",
+  "text": "자 다음 꺼 어디 있는 데예요",
+  "label": "next_stop",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 서울우유 몇 개 내리면 돼<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 서울우유 몇 개 내리면 돼",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n금천점 내릴 거 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "금천점 내릴 거 알려줘",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이 점포 납품 품목 뭐였지<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아 이 점포 납품 품목 뭐였지",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 여기 치킨마요 몇 개야 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 여기 치킨마요 몇 개야 좀",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 여기 딸기 우유 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 여기 딸기 우유 몇 개 가져가",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 삼성점 내릴 거 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 삼성점 내릴 거 알려줘",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이 집 뭐 내리더라 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 이 집 뭐 내리더라 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 가산점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 가산점 오늘 뭐 내려",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 신림점 물량 확인해줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 신림점 물량 확인해줘 좀",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n사이다 수량 얼마야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "사이다 수량 얼마야",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 뭐 내려야 돼 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "여기 뭐 내려야 돼 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠원점 물건 뭐 내려<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠원점 물건 뭐 내려",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 초코파이 몇 개였죠<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 초코파이 몇 개였죠",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 여기 물 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 여기 물 몇 개 가져가",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 삼성점 물량 확인해줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 삼성점 물량 확인해줘",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 수서점 내릴 거 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 수서점 내릴 거 알려줘",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n역삼점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "역삼점 오늘 뭐 내려",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 대치점에 뭐 가져가야 하지<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 대치점에 뭐 가져가야 하지",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 오늘 여기 물건 뭐예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠깐 오늘 여기 물건 뭐예요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n스팸마요삼각김밥 수량 얼마야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "스팸마요삼각김밥 수량 얼마야",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n대치점 물량 확인해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "대치점 물량 확인해주세요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n서초점 물건 뭐 내려 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "서초점 물건 뭐 내려 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 여기 아이스크림 몇 게 가져가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 여기 아이스크림 몇 게 가져가",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이 집 뭐 내리더라 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이 집 뭐 내리더라 좀",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아이스크림 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아이스크림 몇 개 내리면 돼요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 이번 점포 품목 알려줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 이번 점포 품목 알려줘",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 이 집 뭐 내리더라 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 이 집 뭐 내리더라 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 여기 물 몇 개 가져가 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "어 여기 물 몇 개 가져가 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 여기 뭐 내려야 돼 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 여기 뭐 내려야 돼 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n서초점 물량 확인해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "서초점 물량 확인해주세요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 여기 캔커피 몇 개예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아 여기 캔커피 몇 개예요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 여기 뭐 내려야 돼 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠깐 여기 뭐 내려야 돼 빨리",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이온음료 수량 얼마야 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이온음료 수량 얼마야 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n대치점에 뭐 가져가야 하죠<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "대치점에 뭐 가져가야 하죠",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 여기 뭐 내려야 돼<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 여기 뭐 내려야 돼",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n젤리 수량 얼마예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "젤리 수량 얼마예요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 개포점 물량 확인해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 개포점 물량 확인해주세요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이온음료 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 이온음료 얼마나 내려야 해",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 이번 점포 품목 알려줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 이번 점포 품목 알려줘 지금",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 신사점 오늘 뭐 내려<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 신사점 오늘 뭐 내려",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 스팸마요삼각김밥 수량 얼마야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 스팸마요삼각김밥 수량 얼마야 빨리",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이온음료 몇 개 내리면 돼<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 이온음료 몇 개 내리면 돼",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 제육도시락 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠깐 제육도시락 얼마나 내려야 해",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 신사점 물건 뭐 내려 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 신사점 물건 뭐 내려 빨리",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이온 음료 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "어 이온 음료 몇 개 내리면 돼요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 여기 생수 몇 개야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 여기 생수 몇 개야",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 여기 컵라면 몇 개야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "어 여기 컵라면 몇 개야",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n컵라면 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "컵라면 얼마나 내려야 해",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 바나나 우유 얼마나 내려야 해요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 바나나 우유 얼마나 내려야 해요",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 생수 수량 얼마야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 생수 수량 얼마야 빨리",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 여기 스팸마요 몇 개야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아 여기 스팸마요 몇 개야",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 여기 초코파이 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 여기 초코파이 몇 개 가져가",
+  "label": "stop_items",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 도시락 몇 개예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "여기 도시락 몇 개예요",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 우유 수량 얼마야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 우유 수량 얼마야",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 도시락 몇 개 가져가<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "여기 도시락 몇 개 가져가",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 우유 몇 개 내리면 돼 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 우유 몇 개 내리면 돼 얼른",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 삼각김밥 얼마나 내려야 해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 삼각김밥 얼마나 내려야 해",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n삼각김밥 몇 개였지<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "삼각김밥 몇 개였지",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 여기 우유 몇 개예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "어 여기 우유 몇 개예요",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 우유 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "음 우유 몇 개 내리면 돼요",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 도시락 몇 개 내리면 돼요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 도시락 몇 개 내리면 돼요",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n삼각김밥 몇 개 내리면 돼 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "삼각김밥 몇 개 내리면 돼 좀",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 삼각김밥 수량 얼마야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "저기 삼각김밥 수량 얼마야 빨리",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 여기 우유 몇 개야 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠깐 여기 우유 몇 개야 지금",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 여기 도시락 몇 개예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "어 여기 도시락 몇 개예요",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 도시락 몇 개였죠<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 도시락 몇 개였죠",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 오유 여기 몇 개 들어가 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아 오유 여기 몇 개 들어가 지금",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 우유 몇 개 내리면 돼 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "그 우유 몇 개 내리면 돼 지금",
+  "label": "stop_items",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n치킨마요 내리는 거야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "치킨마요 내리는 거야 빨리",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n신사점 꺼 좀 봐줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "신사점 꺼 좀 봐줘 빨리",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 콜라 내리는 거예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 콜라 내리는 거예요",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 역삼점 꺼 좀 봐줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이제 역삼점 꺼 좀 봐줘",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 콜라 있어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 콜라 있어 좀",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 요구르트 내리는 거예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 요구르트 내리는 거예요",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n감자칩 내리는 거야 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "감자칩 내리는 거야 지금",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n대치점 꺼 좀 봐줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "대치점 꺼 좀 봐줘 얼른",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 뭐였더라 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "여기 뭐였더라 얼른",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 도곡점 꺼 좀 봐줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "자 도곡점 꺼 좀 봐줘",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이온 음료 내리는 거예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "이온 음료 내리는 거예요",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아이스크림 내리는 거야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "아이스크림 내리는 거야",
+  "label": "stop_items",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 잠실점 다 내렸어 알바생 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 잠실점 다 내렸어 알바생 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 인수인계 마쳤어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "여기 인수인계 마쳤어 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n신사점 다 내렸어 점장님 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "신사점 다 내렸어 점장님 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n알바생 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "알바생 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 청담점 배송 완료 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 청담점 배송 완료 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 직원분한테 전달했어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 직원분한테 전달했어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n개포점 배송 완료<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "개포점 배송 완료",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 여기 인수인계 마쳤어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 여기 인수인계 마쳤어 빨리",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 여기 마무리했어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 여기 마무리했어 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 매니저님한테 전달했어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 매니저님한테 전달했어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 여기 인수인계 마쳤어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 여기 인수인계 마쳤어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 반포점 끝<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "잠깐 반포점 끝",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 납품 완료예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 납품 완료예요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 직원분한테 전달했어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 직원분한테 전달했어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n완료 찍어줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "완료 찍어줘 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 배송 완료 눌러줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 배송 완료 눌러줘 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 송파점 마감<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "잠깐 송파점 마감",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n신사점 다 내렸어 알바생 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "신사점 다 내렸어 알바생 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 여기 인수인계 마쳤어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 여기 인수인계 마쳤어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 사장님한테 전달했어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 사장님한테 전달했어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n구로점 배송 완료<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "구로점 배송 완료",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이번 점포 끝 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 이번 점포 끝 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 배송 완료 눌러줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 배송 완료 눌러줘",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 송파점 배송 완료<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 송파점 배송 완료",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 논현점 납품 완료 처리해줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "잠깐 논현점 납품 완료 처리해줘 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 잠실점 다 내렸어 알바생 받았어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 잠실점 다 내렸어 알바생 받았어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 납품 완료야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 납품 완료야",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 여기 납품 끝났어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 여기 납품 끝났어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 완료 찍어줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 완료 찍어줘",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 개포점 다 내렸어 사장님 받았어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 개포점 다 내렸어 사장님 받았어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n반포점 마감 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "반포점 마감 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 여기 납품 끝났어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 여기 납품 끝났어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 가산점 배송 완료 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 가산점 배송 완료 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 인수인계 끝났어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 인수인계 끝났어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 인수인계 끝났어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 인수인계 끝났어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 인수인계 끝났어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 인수인계 끝났어 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n인수인계 끝났어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "인수인계 끝났어 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 도곡점 끝<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 도곡점 끝",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 납품 완료야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 납품 완료야",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 도곡점 마감<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 도곡점 마감",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 인수인계 끝났어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 인수인계 끝났어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 잠원점 마감 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 잠원점 마감 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 배송 완료 눌러줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 배송 완료 눌러줘",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n여기 마무리했어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "여기 마무리했어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n송파점 다 내렸어 점장님 받았어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "송파점 다 내렸어 점장님 받았어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 완료 찍어주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 완료 찍어주세요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 여기 마무리했어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 여기 마무리했어 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 청담점 다 내렸어 매니저님 받았어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 청담점 다 내렸어 매니저님 받았어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 서초점 다 내렸어 사장님 받았어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 서초점 다 내렸어 사장님 받았어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 서초점 납품 다 했어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 서초점 납품 다 했어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 잠원점 납품 완료 처리해줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 잠원점 납품 완료 처리해줘 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 점장님 사인 받았어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 점장님 사인 받았어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n대치점 배송 완료 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "대치점 배송 완료 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 하차 끝났어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 하차 끝났어 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n직원분 사인 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "직원분 사인 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 석촌점 배송 완료<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 석촌점 배송 완료",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 인수인계 끝났어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 인수인계 끝났어 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 여기 납품 끝났어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 여기 납품 끝났어 빨리",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 방배점 납품 다 했어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 방배점 납품 다 했어 빨리",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 석촌점 끝 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "잠깐 석촌점 끝 얼른",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 반포점 끝 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "잠깐 반포점 끝 빨리",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 논현점 끝<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 논현점 끝",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n송파점 다 내렸어 직원분 받았어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "송파점 다 내렸어 직원분 받았어",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 완료 찍어줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 완료 찍어줘 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n반포점 마감<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "반포점 마감",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 배송 완료 눌러줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "그 배송 완료 눌러줘 좀",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n삼성점 마감 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "삼성점 마감 지금",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 매니저님 사인 받았어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "어 매니저님 사인 받았어요",
+  "label": "complete",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 여기 정리됐어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 여기 정리됐어",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 매니저님가 확인했대<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 매니저님가 확인했대",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 여기 정리됐어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 여기 정리됐어",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 알바생한테 줬어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "저기 알바생한테 줬어",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 사장님한테 줬어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "이제 사장님한테 줬어 좀",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n매니저님가 확인했대<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "매니저님가 확인했대",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 직원분가 확인했대<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "자 직원분가 확인했대",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 사장님한테 줬어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 사장님한테 줬어",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 끝났어 다음 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "음 끝났어 다음 얼른",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n끝났어 다음 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "끝났어 다음 좀",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 직원분가 확인했대<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 직원분가 확인했대",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 매니저님한테 줬어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "complete<|im_end|>",
+  "text": "아 매니저님한테 줬어",
+  "label": "complete",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 초코파이 터졌어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 초코파이 터졌어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 송파점에 제육도시락 보냈는데 잘못 왔어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 송파점에 제육도시락 보냈는데 잘못 왔어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 딸기 우유 문제 있어 다 찢어졌어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 딸기 우유 문제 있어 다 찢어졌어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 기록해줘 새우깡 두개 녹았음<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 기록해줘 새우깡 두개 녹았음",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 물 2개 덜 왔어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 물 2개 덜 왔어 얼른",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 치킨마요 상태 안 좋아 오배송이야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 치킨마요 상태 안 좋아 오배송이야",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 콜라 세 개쯤 녹았음<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 콜라 세 개쯤 녹았음",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n12개 정도 이거 우리 거 아니래 초코파이<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "12개 정도 이거 우리 거 아니래 초코파이",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 아 서울우유 덜 왔어 어떡해요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 아 서울우유 덜 왔어 어떡해요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 불량 기록 사이다 새고 있어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "어 불량 기록 사이다 새고 있어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 바나나우유 잘못 왔어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 바나나우유 잘못 왔어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 요거트 이거 우리 거 아니래 기록 좀 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 요거트 이거 우리 거 아니래 기록 좀 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 가락점에서 생수 다 녹았어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 가락점에서 생수 다 녹았어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 금천점에 커피 보냈는데 상했어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 금천점에 커피 보냈는데 상했어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n생수 다 찢어졌어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "생수 다 찢어졌어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 요거트 상태 안 좋아 오배송이야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 요거트 상태 안 좋아 오배송이야",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n샌드위치 박스 눌렸어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "샌드위치 박스 눌렸어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 기록해줘 컵라면 여덟 판 엉뚱한 게 실렸어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 기록해줘 컵라면 여덟 판 엉뚱한 게 실렸어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 샌드위치 상했어 어떡해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 샌드위치 상했어 어떡해",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 기록해줘 바나나 우유 다섯 봉지 찌그러졌어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 기록해줘 바나나 우유 다섯 봉지 찌그러졌어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 논현점 샌드위치 여덟봉지 다 찢어졌어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 논현점 샌드위치 여덟봉지 다 찢어졌어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 잠원점 바나나 우유 12개 오배송이예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 잠원점 바나나 우유 12개 오배송이예요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 물 온도가 높아 기록 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 물 온도가 높아 기록 좀",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 아이스크림 냉장이 안 됐어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 아이스크림 냉장이 안 됐어 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 딸기우유 세 개쯤 개수가 안 맞아 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 딸기우유 세 개쯤 개수가 안 맞아 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n사이다 3개쯤 개수가 안 맞아 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "사이다 3개쯤 개수가 안 맞아 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n초코파이 상태 안 좋아 파손됐어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "초코파이 상태 안 좋아 파손됐어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n콜라 10봉지쯤 녹았음 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "콜라 10봉지쯤 녹았음 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 신사점에서 치킨마요도시락 엉뚱한 게 실렸어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 신사점에서 치킨마요도시락 엉뚱한 게 실렸어 좀",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n삼성점 젤리 4봉지 다른 게 왔어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "삼성점 젤리 4봉지 다른 게 왔어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 아이스크림 온도가 높아<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 아이스크림 온도가 높아",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 초코파이 문제 있어 다 녹았어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 초코파이 문제 있어 다 녹았어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 요구르트 새고 있어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "어 요구르트 새고 있어 얼른",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n4개 정도 주문이랑 달라 바나나우유<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "4개 정도 주문이랑 달라 바나나우유",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 기록해줘 콜라 네 봉지 모자람<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 기록해줘 콜라 네 봉지 모자람",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 젤리 하나쯤 다 찢어졌어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 젤리 하나쯤 다 찢어졌어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 스팸마요삼각김밥 상태 안 좋아 냉장이 안 됐어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "잠깐 스팸마요삼각김밥 상태 안 좋아 냉장이 안 됐어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n젤리 터짐 기록 좀 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "젤리 터짐 기록 좀 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이상 있어 콜라 이거 우리 거 아니래 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 이상 있어 콜라 이거 우리 거 아니래 얼른",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n불량 기록 라면 이거 우리 거 아니래 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "불량 기록 라면 이거 우리 거 아니래 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n젤리 상태 안 좋아 잘못 왔어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "젤리 상태 안 좋아 잘못 왔어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n가락졈에서 아이스크림 모자람 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "가락졈에서 아이스크림 모자람 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 아 이온 음료 온도가 높아 어떡해 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 아 이온 음료 온도가 높아 어떡해 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n불량 기록 이온 음료 부족해<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "불량 기록 이온 음료 부족해",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 기록해줘 초코파이 두개 미지근해요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 기록해줘 초코파이 두개 미지근해요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이상 있어 서울우유 잘못 왔어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이상 있어 서울우유 잘못 왔어요",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 이온음료 넷 모자라 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "잠깐 이온음료 넷 모자라 빨리",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n감자칩 상태 안 좋아 하나 빠졌어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "감자칩 상태 안 좋아 하나 빠졌어",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n세 개 정도 부족해 바나나 우유 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "세 개 정도 부족해 바나나 우유 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 바나나우유 12개쯤 이거 우리 거 아니래<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 바나나우유 12개쯤 이거 우리 거 아니래",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 기록해줘 바나나우유 다섯 개 상했어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "잠깐 기록해줘 바나나우유 다섯 개 상했어 지금",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 아이스크림 미지근해 기록 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "저기 아이스크림 미지근해 기록 좀",
+  "label": "report_issue",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n물건 깨졌어 기록해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "물건 깨졌어 기록해주세요",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 기록해줘 삼각김밥 8개 박스 눌렸어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 기록해줘 삼각김밥 8개 박스 눌렸어 좀",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 불량 기록 삼각김밥 박살났어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 불량 기록 삼각김밥 박살났어",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 우유 냉장이 안 됐어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 우유 냉장이 안 됐어 빨리",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n8봉지 주문이랑 달라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "8봉지 주문이랑 달라",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n감자칩 문제 있어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "감자칩 문제 있어",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 물건 오배송이야 기록해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "어 물건 오배송이야 기록해주세요",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n물건 덜 왔어 기록해줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "물건 덜 왔어 기록해줘 좀",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 물건 새고 있어 기록해줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 물건 새고 있어 기록해줘 빨리",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이온음료 문제 있어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이온음료 문제 있어 좀",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이상 있어 삼각김밥 주문이랑 달라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 이상 있어 삼각김밥 주문이랑 달라",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 물건 다른 게 왔어 기록해줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "그 물건 다른 게 왔어 기록해줘",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n불량 기록 우유 주문이랑 달라<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "불량 기록 우유 주문이랑 달라",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 물건 미지근해 기록해주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 물건 미지근해 기록해주세요",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 둘 파손됐어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 둘 파손됐어",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 스팸마요 문제 있어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 스팸마요 문제 있어요",
+  "label": "report_issue",
+  "ambiguity": "ask"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n커피 좀 애매한데 비어있어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "커피 좀 애매한데 비어있어요",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n사이다 미지근해 같기도 하고<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "사이다 미지근해 같기도 하고",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 초코파이 엉뚱한 게 실렸어 같기도 하고<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "음 초코파이 엉뚱한 게 실렸어 같기도 하고",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 제육 도시락 이상한데 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "어 제육 도시락 이상한데 좀",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 물 이거 맞나 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 물 이거 맞나 지금",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 콜라 이상한데 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 콜라 이상한데 빨리",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 감자칩 이거 맞나<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "어 감자칩 이거 맞나",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 감자칩 이거 맞나<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 감자칩 이거 맞나",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 새우깡 이거 맞나<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "자 새우깡 이거 맞나",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 생수 이상한데 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "이제 생수 이상한데 지금",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 초코파이 이거 맞나 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "아 초코파이 이거 맞나 좀",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 컵라면 다른 게 왔어 같기도 하고 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "report_issue<|im_end|>",
+  "text": "잠깐 컵라면 다른 게 왔어 같기도 하고 좀",
+  "label": "report_issue",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 이거 찍어볼게 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 이거 찍어볼게 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 카메라 좀 열어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 카메라 좀 열어 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n스캔 좀 해볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "스캔 좀 해볼게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 검수 할게 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 검수 할게 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 검수 할게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "음 검수 할게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 이거 찍어볼게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 이거 찍어볼게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n카메라 켜줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "카메라 켜줘 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 카메라로 확인할래<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 카메라로 확인할래",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 카메라 좀 열어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 카메라 좀 열어 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 검품 시작할게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "그 검품 시작할게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n카메라 켜줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "카메라 켜줘 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 검품 시작할게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 검품 시작할게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 스캔 좀 해볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "그 스캔 좀 해볼게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 바코드 좀 확인할게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 바코드 좀 확인할게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 바코드 읽을게 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 바코드 읽을게 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 검수 할게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 검수 할게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 스캔할게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 스캔할게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n스캔 좀 해볼게 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "스캔 좀 해볼게 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 카메라 좀 열어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 카메라 좀 열어",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 스캔 모드로 바꿔줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 스캔 모드로 바꿔줘",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 검수 시작 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 검수 시작 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 바코드 좀 확인할게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "음 바코드 좀 확인할게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 바코드 스캔 시작 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 바코드 스캔 시작 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 스캔 모드로 바꿔줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 스캔 모드로 바꿔줘 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 바코드 스캔 시작 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 바코드 스캔 시작 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 송장 찍을게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 송장 찍을게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 상품 찍어볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 상품 찍어볼게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 검수 모드 켜줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 검수 모드 켜줘",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 검품 시작할게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "그 검품 시작할게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n스캔 좀 해볼게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "스캔 좀 해볼게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 바코드 읽을게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 바코드 읽을게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n검품 시작할게 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "검품 시작할게 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 스캔 모드로 바꿔줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 스캔 모드로 바꿔줘 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이거 찍어볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 이거 찍어볼게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 바코드 좀 확인할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 바코드 좀 확인할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 검수 모드 켜줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 검수 모드 켜줘",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 라벨 찍을게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 라벨 찍을게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 스캔할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 스캔할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이거 찍어볼게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이거 찍어볼게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n바코드 좀 확인할게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "바코드 좀 확인할게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 카메라 좀 열어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 카메라 좀 열어 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 송장 찍을게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 송장 찍을게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 스캔할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "그 스캔할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이거 찍어볼게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 이거 찍어볼게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 스캔 모드로 바꿔주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 스캔 모드로 바꿔주세요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 카메라 좀 열어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 카메라 좀 열어 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n검품 시작할게 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "검품 시작할게 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 카메라 좀 열어 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "잠깐 카메라 좀 열어 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 바코드 좀 확인할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 바코드 좀 확인할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 검수 시작 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 검수 시작 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 카메라로 확인할래 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 카메라로 확인할래 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n카메라 좀 열어 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "카메라 좀 열어 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 라벨 찍을게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 라벨 찍을게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 바코드 좀 확인할게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 바코드 좀 확인할게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 라벨 찍을게 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 라벨 찍을게 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 스캔 모드로 바꿔줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 스캔 모드로 바꿔줘",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 바코드 좀 확인할게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 바코드 좀 확인할게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n상품 찍어볼게 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "상품 찍어볼게 빨리",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 바코드 읽을게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 바코드 읽을게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n바코드 좀 확인할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "바코드 좀 확인할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n바코드 인식 켜줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "바코드 인식 켜줘 얼른",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 라벨 찍을게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "그 라벨 찍을게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n카메라 좀 열어 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "카메라 좀 열어 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n스캔할게 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "스캔할게 좀",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n검수 모드 켜줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "검수 모드 켜줘",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 스캔 좀 해볼게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 스캔 좀 해볼게",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 송장 찍을게 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 송장 찍을게 지금",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 상품 찍어볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 상품 찍어볼게요",
+  "label": "scan",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 확인 좀 해볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 확인 좀 해볼게요",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 이거 읽어봐 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "stop_items<|im_end|>",
+  "text": "잠깐 이거 읽어봐 좀",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 찍어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 찍어요",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 이거 맞는지 봐줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 이거 맞는지 봐줘 좀",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 찍어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "어 찍어",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이거 읽어봐<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 이거 읽어봐",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 이거 읽어봐 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "아 이거 읽어봐 좀",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n확인 좀 해볼게요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "확인 좀 해볼게요",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 확인 좀 해볼게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "음 확인 좀 해볼게",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 이거 읽어봐<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "자 이거 읽어봐",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 이거 맞는지 봐줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "이제 이거 맞는지 봐줘",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 확인 좀 해볼게<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "scan<|im_end|>",
+  "text": "저기 확인 좀 해볼게",
+  "label": "scan",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n내일 비 와 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "내일 비 와 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 라디오 켜줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 라디오 켜줘 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 오늘 힘들다 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 오늘 힘들다 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n커피 마시고 싶다 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "커피 마시고 싶다 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 볼륨 좀 키워주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 볼륨 좀 키워주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 배고프다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 배고프다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 에어컨 켜주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 에어컨 켜주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 음악 틀어줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 음악 틀어줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n퇴근하고 싶다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "퇴근하고 싶다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 라디오 켜줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 라디오 켜줘 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 점심 뭐 먹지 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "음 점심 뭐 먹지 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 농담 하나 해줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 농담 하나 해줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 배고프다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "음 배고프다",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 에어컨 켜줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 에어컨 켜줘 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 내일 비 와<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 내일 비 와",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 점심 뭐 먹지 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 점심 뭐 먹지 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아니야 됐어 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아니야 됐어 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 퇴근하고 싶다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 퇴근하고 싶다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 라디오 켜주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 라디오 켜주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 커피 마시고 싶다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 커피 마시고 싶다",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 배고프다 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 배고프다 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n졸리다 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "졸리다 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 농담 하나 해줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 농담 하나 해줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 라디오 켜줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 라디오 켜줘 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 내일 비 와 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 내일 비 와 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 점심 뭐 먹지 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 점심 뭐 먹지 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 볼륨 좀 키워줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 볼륨 좀 키워줘 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 배고프다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 배고프다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 내일 비 와 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 내일 비 와 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 뉴스 틀어줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 뉴스 틀어줘 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 내일 비 와 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 내일 비 와 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 점심 뭐 먹지 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 점심 뭐 먹지 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n노래 틀어줘 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "노래 틀어줘 얼른",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 차 막히네<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 차 막히네",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 오늘 몇 월 며칠이예요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 오늘 몇 월 며칠이예요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n내일 비 와 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "내일 비 와 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 에어컨 켜주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 에어컨 켜주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 오늘 몇 월 며칠이야 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 오늘 몇 월 며칠이야 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 볼륨 좀 키워줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 볼륨 좀 키워줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 오늘 몇 월 며칠이야<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 오늘 몇 월 며칠이야",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 오늘 몇 월 며칠이야 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 오늘 몇 월 며칠이야 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 점심 뭐 먹지 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 점심 뭐 먹지 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n오늘 힘들다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "오늘 힘들다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 내일 비 와 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 내일 비 와 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 농담 하나 해줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 농담 하나 해줘 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 노래 틀어주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 노래 틀어주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n그 음악 틀어줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "그 음악 틀어줘 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 차 막히네 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 차 막히네 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 뉴스 틀어줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 뉴스 틀어줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 에어컨 켜줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 에어컨 켜줘 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 내일 비 와<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 내일 비 와",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 에어컨 켜줘<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 에어컨 켜줘",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 퇴근하고 싶다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 퇴근하고 싶다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n농담 하나 해줘 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "농담 하나 해줘 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n저기 볼륨 좀 키워줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "저기 볼륨 좀 키워줘 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 음악 틀어주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "음 음악 틀어주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 볼륨 좀 키워주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 볼륨 좀 키워주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 에어컨 켜줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 에어컨 켜줘 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 오늘 몇 월 며칠이야 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 오늘 몇 월 며칠이야 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 점심 뭐 먹죠<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 점심 뭐 먹죠",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 음 저기 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "음 음 저기 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어 커피 마시고 싶다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어 커피 마시고 싶다",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 커피 마시고 싶다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 커피 마시고 싶다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n잠깐 뉴스 틀어줘 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "잠깐 뉴스 틀어줘 지금",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 라디오 켜주세요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 라디오 켜주세요",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 농담 하나 해줘 빨리<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 농담 하나 해줘 빨리",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 아니야 됐어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 아니야 됐어",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 배고프다 좀<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 배고프다 좀",
+  "label": "other",
+  "ambiguity": "clear"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 젤리 맛있겠다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 젤리 맛있겠다",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 스팸마요삼각김밥 맛있겠다 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 스팸마요삼각김밥 맛있겠다 얼른",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 물 맛있겠다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 물 맛있겠다",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n음 샌드위치 요즘 잘 팔리나 지금<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "음 샌드위치 요즘 잘 팔리나 지금",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n어제 도곡점 가는 길 막혔어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "어제 도곡점 가는 길 막혔어",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n참치산각김밥 맛있겠다 얼른<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "참치산각김밥 맛있겠다 얼른",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 매니저님 오늘 안 계시네<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 매니저님 오늘 안 계시네",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 젤리 요즘 잘 팔리나<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 젤리 요즘 잘 팔리나",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n이제 샌드위치 맛있겠다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "이제 샌드위치 맛있겠다",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n자 어제 서초점 가는 길 막혔어요<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "자 어제 서초점 가는 길 막혔어요",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n바나나우유 맛있겠다<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "바나나우유 맛있겠다",
+  "label": "other",
+  "ambiguity": "hard"
+ },
+ {
+  "input": "<|im_start|>system\n편의점 납품기사의 말이 어떤 기능인지 분류하라. next_stop, stop_items, complete, report_issue, scan, other 중 하나의 단어만 출력하라.<|im_end|>\n<|im_start|>user\n아 어제 역삼점 가는 길 막혔어<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "target": "other<|im_end|>",
+  "text": "아 어제 역삼점 가는 길 막혔어",
+  "label": "other",
+  "ambiguity": "hard"
+ }
+]
