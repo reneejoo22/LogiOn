@@ -2,7 +2,9 @@
 
 2026-10-24 / 브랜치 `ai-improve-1022` / **모든 수치는 실제 실행 결과**입니다. 돌리지 못한 것은 **미실행**으로 적었습니다.
 
-![구조](architecture.png)
+> 이 문서는 2026-10-24 시점(v2.1, 의도분류 포함) 기록입니다. 이후 의도분류를 뺀 단일 모델 구조(v3-single)로 단순화했습니다 — [`results/single_llm_report.md`](../results/single_llm_report.md).
+
+![구조 (v2.1)](architecture_v2_1.png)
 
 ---
 

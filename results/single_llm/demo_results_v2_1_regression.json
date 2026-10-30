@@ -1,0 +1,401 @@
+[
+  {
+    "text": "다음 배송지 어디야",
+    "fn": "next_stop",
+    "route": "llm",
+    "intent": {
+      "top3": [
+        {
+          "fn": "next_stop",
+          "p": 0.996967613697052
+        },
+        {
+          "fn": "complete",
+          "p": 0.0007620254182256758
+        },
+        {
+          "fn": "other",
+          "p": 0.0006627717521041632
+        }
+      ],
+      "margin": 0.9962055882788263,
+      "route": "llm",
+      "why": "next_stop 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"next_stop\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "(말하지 않음)",
+        "found": "GS25 성수연무장점",
+        "how": "다음 배송지로 채움",
+        "score": "—",
+        "cands": []
+      }
+    ],
+    "request": {
+      "method": "GET",
+      "path": "/api/routes/today",
+      "body": null
+    },
+    "reply": "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요.",
+    "timings_ms": {
+      "의도분류": 172.4,
+      "LLM": 503.5,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 676.0
+    }
+  },
+  {
+    "text": "CU 서울숲점에 내릴 물건 알려줘",
+    "fn": "stop_items",
+    "route": "llm",
+    "intent": {
+      "top3": [
+        {
+          "fn": "stop_items",
+          "p": 0.9964988231658936
+        },
+        {
+          "fn": "next_stop",
+          "p": 0.0008049550815485418
+        },
+        {
+          "fn": "report_issue",
+          "p": 0.0007499444182030857
+        }
+      ],
+      "margin": 0.995693868084345,
+      "route": "llm",
+      "why": "stop_items 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"stop_items\",\"store\":\"CU 서울숲점\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "CU 서울숲점",
+        "found": "CU 서울숲점",
+        "how": "정확",
+        "score": 1.0,
+        "cands": [
+          "CU 서울숲점"
+        ]
+      }
+    ],
+    "request": {
+      "method": "GET",
+      "path": "/api/stops/2",
+      "body": null
+    },
+    "reply": "CU 서울숲점 납품은 서울우유 6개, 참치삼각김밥 10개, 콜라 1박스예요.",
+    "timings_ms": {
+      "의도분류": 5.2,
+      "LLM": 631.8,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 637.0
+    }
+  },
+  {
+    "text": "GS25 성수연무장점 납품 끝났어",
+    "fn": "complete",
+    "route": "llm",
+    "intent": {
+      "top3": [
+        {
+          "fn": "complete",
+          "p": 0.9960344433784485
+        },
+        {
+          "fn": "report_issue",
+          "p": 0.0011532183270901442
+        },
+        {
+          "fn": "stop_items",
+          "p": 0.0009798584505915642
+        }
+      ],
+      "margin": 0.9948812250513583,
+      "route": "llm",
+      "why": "complete 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"complete\",\"store\":\"GS25\",\"store_name\":\"성수연무장점\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "GS25",
+        "found": "GS25 성수연무장점",
+        "how": "포함",
+        "score": 1.0,
+        "cands": [
+          "GS25 성수연무장점"
+        ]
+      }
+    ],
+    "request": {
+      "method": "POST",
+      "path": "/api/stops/1/complete",
+      "body": {
+        "receiver": null
+      }
+    },
+    "reply": "GS25 성수연무장점 납품 완료로 기록했어요.",
+    "timings_ms": {
+      "의도분류": 5.2,
+      "LLM": 989.5,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 994.8
+    }
+  },
+  {
+    "text": "서울우유 두 개 파손됐어",
+    "fn": "report_issue",
+    "route": "llm",
+    "intent": {
+      "top3": [
+        {
+          "fn": "report_issue",
+          "p": 0.9956461787223816
+        },
+        {
+          "fn": "stop_items",
+          "p": 0.0009807510068640113
+        },
+        {
+          "fn": "next_stop",
+          "p": 0.0009114322601817548
+        }
+      ],
+      "margin": 0.9946654277155176,
+      "route": "llm",
+      "why": "report_issue 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"report_issue\",\"item\":\"서울우유\",\"issue\":\"파손\",\"qty\":2,\"unit\":\"개\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "(말하지 않음)",
+        "found": "CU 서울숲점",
+        "how": "다음 배송지로 채움",
+        "score": "—",
+        "cands": []
+      },
+      {
+        "slot": "item",
+        "spoken": "서울우유",
+        "found": "서울우유",
+        "how": "정확",
+        "score": 1.0,
+        "cands": [
+          "서울우유"
+        ]
+      }
+    ],
+    "request": {
+      "method": "POST",
+      "path": "/api/stops/2/issues",
+      "body": {
+        "type": "파손",
+        "source": "voice",
+        "product_id": 1,
+        "qty": 2,
+        "unit": "개"
+      }
+    },
+    "reply": "CU 서울숲점 서울우유 2개 파손으로 기록했어요.",
+    "timings_ms": {
+      "의도분류": 5.2,
+      "LLM": 1196.6,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 1201.9
+    }
+  },
+  {
+    "text": "바코드 찍을게",
+    "fn": "scan",
+    "route": "skip",
+    "intent": {
+      "top3": [
+        {
+          "fn": "scan",
+          "p": 0.9969552755355835
+        },
+        {
+          "fn": "report_issue",
+          "p": 0.0006740042008459568
+        },
+        {
+          "fn": "complete",
+          "p": 0.0006582964560948312
+        }
+      ],
+      "margin": 0.9962812713347375,
+      "route": "skip",
+      "why": "scan 은 값이 필요 없고 확률 0.997 ≥ 0.9 이라 LLM 생략"
+    },
+    "llm_raw": null,
+    "resolve": [],
+    "request": {
+      "method": null,
+      "path": null,
+      "body": null
+    },
+    "reply": "스캔 화면을 열게요.",
+    "timings_ms": {
+      "의도분류": 5.3,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 5.3
+    }
+  },
+  {
+    "text": "오늘 날씨 어때",
+    "fn": "other",
+    "route": "skip",
+    "intent": {
+      "top3": [
+        {
+          "fn": "other",
+          "p": 0.9961392283439636
+        },
+        {
+          "fn": "next_stop",
+          "p": 0.0008499540272168815
+        },
+        {
+          "fn": "report_issue",
+          "p": 0.0008360847132280469
+        }
+      ],
+      "margin": 0.9952892743167467,
+      "route": "skip",
+      "why": "other 은 값이 필요 없고 확률 0.996 ≥ 0.9 이라 LLM 생략"
+    },
+    "llm_raw": null,
+    "resolve": [],
+    "request": {
+      "method": null,
+      "path": null,
+      "body": null
+    },
+    "reply": "죄송해요, 배송 업무만 도와드릴 수 있어요.",
+    "timings_ms": {
+      "의도분류": 5.2,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 5.2
+    }
+  },
+  {
+    "text": "세븐일레븐 뚝섬점 컵라면 3개 수량부족",
+    "fn": "report_issue",
+    "route": "llm",
+    "intent": {
+      "top3": [
+        {
+          "fn": "report_issue",
+          "p": 0.9945700764656067
+        },
+        {
+          "fn": "stop_items",
+          "p": 0.0023773356806486845
+        },
+        {
+          "fn": "other",
+          "p": 0.0011237194994464517
+        }
+      ],
+      "margin": 0.992192740784958,
+      "route": "llm",
+      "why": "report_issue 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"report_issue\",\"store\":\"세븐일레븐\",\"item\":\"컵라면\",\"issue\":\"수량부족\",\"qty\":3,\"unit\":\"개\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "세븐일레븐",
+        "found": "세븐일레븐 뚝섬점",
+        "how": "포함",
+        "score": 1.0,
+        "cands": [
+          "세븐일레븐 뚝섬점"
+        ]
+      },
+      {
+        "slot": "item",
+        "spoken": "컵라면",
+        "found": "컵라면",
+        "how": "정확",
+        "score": 1.0,
+        "cands": [
+          "컵라면"
+        ]
+      }
+    ],
+    "request": {
+      "method": "POST",
+      "path": "/api/stops/3/issues",
+      "body": {
+        "type": "수량부족",
+        "source": "voice",
+        "product_id": 11,
+        "qty": 3,
+        "unit": "개"
+      }
+    },
+    "reply": "세븐일레븐 뚝섬점 컵라면 3개 수량부족으로 기록했어요.",
+    "timings_ms": {
+      "의도분류": 5.1,
+      "LLM": 1567.5,
+      "값 보정": 0.0,
+      "실행": 0.0,
+      "전체": 1572.7
+    }
+  },
+  {
+    "text": "물건 문제 있어요",
+    "fn": "report_issue",
+    "route": "ask_slot",
+    "intent": {
+      "top3": [
+        {
+          "fn": "report_issue",
+          "p": 0.9954813718795776
+        },
+        {
+          "fn": "stop_items",
+          "p": 0.0011558897094801068
+        },
+        {
+          "fn": "scan",
+          "p": 0.0009586254018358886
+        }
+      ],
+      "margin": 0.9943254821700975,
+      "route": "llm",
+      "why": "report_issue 은 값을 뽑아야 하므로 LLM 으로"
+    },
+    "llm_raw": "{\"fn\":\"report_issue\"}",
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "(말하지 않음)",
+        "found": "CU 서울숲점",
+        "how": "다음 배송지로 채움",
+        "score": "—",
+        "cands": []
+      }
+    ],
+    "request": null,
+    "reply": "어떤 품목인가요?",
+    "timings_ms": {
+      "의도분류": 5.2,
+      "LLM": 313.7,
+      "값 보정": 0.0,
+      "전체": 319.0
+    }
+  }
+]

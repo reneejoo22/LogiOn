@@ -1,0 +1,24 @@
+The tokenizer you are loading from 'C:\Users\AMLPC03\Desktop\LogiOn\out\fc_merged' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+`torch_dtype` is deprecated! Use `dtype` instead!
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55417)
+Traceback (most recent call last):
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\http\server.py", line 424, in handle_one_request
+    method()
+  File "C:\Users\AMLPC03\Desktop\LogiOn\demo\chat_server.py", line 214, in do_POST
+    body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))) or b"{}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AMLPC03\anaconda3\envs\gvision_env\Lib\json\__init__.py", line 341, in loads
+    s = s.decode(detect_encoding(s), 'surrogatepass')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc4 in position 9: invalid continuation byte
+----------------------------------------

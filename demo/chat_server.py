@@ -101,7 +101,9 @@ fetch('/info').then(r => r.json()).then(d => {
   b.textContent = d.models ? ('실제 모델 · ' + d.device_name) : '모델 없음 · 화면만';
   if (!d.models) b.classList.add('off');
   document.getElementById('cfg').textContent =
-    'tau ' + d.cfg.ask_tau + ' · LLM 생략 ' + d.cfg.skip_llm_fns.join('/') + ' (확률 ≥ ' + d.cfg.skip_llm_conf + ')'
+    (d.cfg.use_intent
+      ? 'tau ' + d.cfg.ask_tau + ' · LLM 생략 ' + d.cfg.skip_llm_fns.join('/') + ' (확률 ≥ ' + d.cfg.skip_llm_conf + ')'
+      : '단일 모델 (의도분류 없음 · FC 모델이 기능+값 모두 추출)')
     + ' · 설정 ' + d.cfg.version;
 });
 function el(html) { const d = document.createElement('div'); d.innerHTML = html.trim(); return d.firstChild; }
@@ -112,7 +114,7 @@ function card(d) {
   let h = '<div class="card" id="card-' + n + '" data-q="' + esc(d.text) + '"><h4>' + n + '. "'
         + esc(d.text) + '"</h4><div class="body">';
   if (d.carry) h += '<div class="step"><b>이어받기</b><div class="why">' + esc(d.carry) + '</div></div>';
-  if (d.intent) {
+  if (d.intent && !d.intent.single) {
     let bars = d.intent.top3.map(x =>
       '<div class="bar"><i>' + x.fn + '</i><div class="t"><div style="width:' + (x.p * 100).toFixed(1)
       + '%"></div></div><i>' + x.p.toFixed(3) + '</i></div>').join('');
@@ -171,10 +173,12 @@ def main():
     ap.add_argument("--port", type=int, default=7860)
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--no-models", action="store_true", help="모델 없이 화면만 띄움 (응답은 안 나옴)")
+    ap.add_argument("--config", default=None,
+                    help="파이프라인 설정 (기본 config/pipeline_v3_single.json, 의도분류 포함은 config/pipeline_v2_1.json)")
     args = ap.parse_args()
 
     try:
-        bot = Assistant(load_models=not args.no_models)
+        bot = Assistant(config_path=args.config, load_models=not args.no_models)
     except ModelsMissing as e:
         sys.exit(str(e))
     lock = threading.Lock()
@@ -199,7 +203,8 @@ def main():
             if self.path.startswith("/info"):
                 return self._send(200, json.dumps({
                     "models": bot.models_loaded, "device": bot.device, "device_name": bot.device_name,
-                    "cfg": {k: bot.cfg[k] for k in ("version", "ask_tau", "skip_llm_conf", "skip_llm_fns")},
+                    "cfg": {**{k: bot.cfg.get(k) for k in ("version", "ask_tau", "skip_llm_conf", "skip_llm_fns")},
+                            "use_intent": bot.use_intent},
                 }, ensure_ascii=False), "application/json")
             if self.path.startswith("/health"):
                 return self._send(200, json.dumps({"status": "ok"}), "application/json")

@@ -1,0 +1,3 @@
+﻿id,text,gold_fn,target,v2_1_route,v2_1_intent,fc_pred_raw,fc_fn,v2_1_ok,fc_only_ok,ambiguity,source
+u00095,아 사이다 여기 들어가는 거 맞아 얼른,stop_items,"{""fn"":""stop_items"",""item"":""사이다""}",ask,report_issue,"{""fn"":""report_issue"",""item"":""사이다""}",report_issue,True,False,hard,template
+u01590,저기 물건 확인할게,scan,"{""fn"":""scan""}",ask,scan,"{""fn"":""stop_items""}",stop_items,True,False,clear,template

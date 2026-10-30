@@ -1,0 +1,27 @@
+# LogiOn 팀 설정 — 편의점 납품기사 음성 비서 (function calling JSON 한 줄 출력)
+# ▼▼▼ 팀별로 바꾸는 부분 ▼▼▼
+team: logion                        # 산출물 이름에 들어감 (영문)
+domain: delivery                    # 팀 주제 (영문)
+prompt_template: chat_template      # Qwen2.5 표준 chat template
+# 학습·평가·보드 서버가 쓰는 system 문장과 글자 하나까지 같아야 한다 (config/pipeline_v3_single.json 의 system_prompt)
+system_prompt: "편의점 납품기사의 말을 함수 호출 JSON 한 줄로 바꿔라. 말한 값만 그대로 쓰고 말하지 않은 값은 쓰지 마라.\n함수: next_stop(), stop_items(store?,item?), complete(store?,receiver?), report_issue(store?,item?,issue?,qty?,unit?), scan(), other()\nissue는 파손|수량부족|오배송|온도이상 중 하나, qty는 정수."
+
+# ▼▼▼ 캘리브레이션 (./run.sh calib) ▼▼▼
+queries: /work/data/queries.json    # 캘리브레이션 발화 450건 (JSON 문자열 배열)
+calib_out: /work/data/data_quant.json
+calib_max_new_tokens: 64            # 정답 JSON 최대 36토큰 (train/val/test 전체), 여유 포함 64
+calib_stop_at: "<|im_end|>"         # 종료 토큰 뒤 잡문 절단
+calib_dtype: auto
+
+# ▼▼▼ 프로젝트 중 실험하며 바꾸는 부분 (./run.sh convert) ▼▼▼
+quantized_dtype: w8a8
+optimization_level: 1               # 정확도 우선
+hybrid_rate: 0
+max_context: 256                    # 시스템+발화+출력 최대 179토큰 → 32 배수 192 → 여유 256
+
+# ▼▼▼ 전 팀 고정 ▼▼▼
+target_platform: RK3588
+num_npu_core: 3
+quantized_algorithm: normal
+device: cuda
+dtype: float32                      # VRAM 이 부족하면 float16 (모델 가중치가 원래 fp16 이라 로드 정밀도만 달라짐)

@@ -3,12 +3,16 @@
 이 문서만 보고 붙일 수 있게 쓴 문서입니다. **AI 쪽에서 백엔드 코드는 한 줄도 고치지 않았습니다.** 아래 내용은 전부 제안이고, 구현 여부와 방식은 백엔드 담당자가 정하시면 됩니다.
 
 - 이름·형식은 `backend/app/api/routes.py`, `backend/app/services/delivery.py`, `backend/app/db/schema.sql`, `backend/app/db/seed.py` 의 **실제 코드 그대로** 적었습니다.
-- AI 쪽 설정은 `config/pipeline_v2_1.json` 한 파일에 모여 있습니다.
+- AI 쪽 설정은 `config/pipeline_v3_single.json`(기본, 의도분류 없는 단일 모델) 한 파일에 모여 있습니다. 의도분류를 켠 예전 구조는 `config/pipeline_v2_1.json` (환경변수 `LOGION_PIPELINE_CONFIG` 또는 `Assistant(config_path)` 로 선택).
 - 전체 구조 그림: [architecture.png](architecture.png) · 동작 확인용 노트북: [`notebooks/LogiOn_demo_pipeline.ipynb`](../notebooks/LogiOn_demo_pipeline.ipynb)
 
 ---
 
 ## 1. 음성 한 마디가 처리되는 순서
+
+> **기본 구조는 단일 모델(v3-single)** 입니다: 기사 말 → LLM function calling (JSON 의 `fn` 이 기능 선택) → 값 보정 → 기존 API → 응답. 의도분류·margin 되묻기·LLM 생략은 없고, 값이 빠졌을 때의 슬롯 되묻기만 남습니다. 아래 그림은 의도분류를 켠 v2.1 구조입니다.
+>
+> **백엔드 영향 (코드는 고치지 않음)**: `DbAssistant` 는 그대로 동작합니다. 단일 모델에서는 `trace["intent"]` 를 `{"route":"llm","top3":[{"fn":...,"p":LLM 토큰 확률 평균}]}` 모양으로 채워 주므로 응답의 `conf` 는 분류 확률이 아니라 **LLM 이 JSON 을 뽑을 때의 평균 토큰 확률**입니다. `route` 는 `llm`/`ask`/`choice_answer` 이고, 단일 모델에서는 `skip`(LLM 생략)과 선택지 되묻기(`ask` + `options`)가 나오지 않습니다. `backend/tests/test_assistant.py` 는 분류기를 가짜로 끼워 margin 되묻기·LLM 생략을 검사하는 테스트 3개(`test_choice_question_then_answer`, `test_sessions_are_separate`, `test_scan_skips_llm`)가 있어 단일 모델 기본 설정에서는 실패합니다 (`LOGION_PIPELINE_CONFIG=config/pipeline_v2_1.json` 로 돌리면 20개 모두 통과). 백엔드 담당자가 단일 모델 기준으로 테스트를 고쳐 주세요.
 
 ```
 기사 말 (텍스트)

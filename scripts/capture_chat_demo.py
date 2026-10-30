@@ -37,7 +37,7 @@ with sync_playwright() as pw:
     print("배지:", badge)
     if "실제 모델" not in badge:
         browser.close()
-        sys.exit(f"실제 모델 모드가 아닙니다 (배지: {badge}). out/intent_model, out/fc_merged 를 확인하세요.")
+        sys.exit(f"실제 모델 모드가 아닙니다 (배지: {badge}). out/fc_merged (v2.1 설정이면 out/intent_model 도) 를 확인하세요.")
 
     def ask(text, idx, label=None):
         """문장 하나를 넣고 결과 카드가 생길 때까지 기다린 뒤, 카드만 캡처."""

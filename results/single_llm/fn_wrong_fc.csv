@@ -1,0 +1,50 @@
+﻿id,text,gold_fn,intent_pred,pred_raw,ambiguity,source
+u00060,물건 확인할게요,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u00095,아 사이다 여기 들어가는 거 맞아 얼른,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""사이다""}",hard,template
+u00108,물건 확인할게,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u00118,그 물건 확인할게요,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u00120,잠깐 이온 음료 상태 좀 봐야겠다 좀,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""이온 음료""}",hard,template
+u00134,어 몇 개 남았죠,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u00176,자 물건 확인할게,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u00295,음 캔커피 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""캔커피""}",hard,template
+u00310,저기 몇 개 남았죠,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u00340,몇 개 남았지 얼른,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u00372,그 물건 확인할게,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u00375,어 새우깡 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""새우깡""}",hard,template
+u00708,저기 바나나우유 여기 들어가는 거 맞아 얼른,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""바나나우유""}",hard,template
+u00947,아 참치김밥 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""참치김밥""}",hard,template
+u01046,몇 개 남았지 빨리,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u01052,그 몇 개 남았죠,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u01148,어 물건 확인할게 얼른,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u01167,이제 요거트 상태 좀 봐야겠다 얼른,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""요거트""}",hard,template
+u01260,어 요거트 상태 좀 봐야겠다 지금,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""요거트""}",hard,template
+u01314,자 몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u01432,저기 딸기우유 상태 좀 봐야겠다 지금,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""딸기우유""}",hard,template
+u01590,저기 물건 확인할게,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u01596,잠깐 초코파이 여기 들어가는 거 맞아 빨리,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""초코파이""}",hard,template
+u01770,요구르트 상태 좀 봐야겠다,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""요구르트""}",hard,template
+u01863,아 네비 다음에 어디 가래,next_stop,other,"{""fn"":""other""}",clear,gemini
+u01887,어 젤리 상태 좀 봐야겠다,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""젤리""}",hard,template
+u02023,그 몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02034,잠깐 몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02108,자 몇 개 남았지 지금,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02127,잠깐 물건 확인할게요,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u02139,음 몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02150,몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02162,아 몇 개 남았지 빨리,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02241,음 물건 확인할게요,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u02247,음 초코파이 상태 좀 봐야겠다,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""초코파이""}",hard,template
+u02351,이온 음료 상태 좀 봐야겠다,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""이온 음료""}",hard,template
+u02384,잠깐 몇 개 남았죠,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02396,이제 새우깡 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""새우깡""}",hard,template
+u02408,그 치킨마요도시락 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""치킨마요도시락""}",hard,template
+u02437,자 물건 확인할게요,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u02442,노래 다음 곡으로 넘겨,other,next_stop,"{""fn"":""next_stop""}",clear,gemini
+u02509,자 몇 개 남았지 빨리,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02557,아 몇 개 남았지,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02560,젤리 여기 들어가는 거 맞아,stop_items,report_issue,"{""fn"":""report_issue"",""item"":""젤리""}",hard,template
+u02621,자 삼각김밥 상태 좀 봐야겠다,report_issue,stop_items,"{""fn"":""stop_items"",""item"":""삼각김밥""}",hard,template
+u02659,아 몇 개 남았죠,next_stop,stop_items,"{""fn"":""stop_items""}",clear,template
+u02710,자 물건 확인할게 좀,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u02716,물건 확인할게 지금,scan,stop_items,"{""fn"":""stop_items""}",clear,template
+u02725,그 물건 확인할게 얼른,scan,stop_items,"{""fn"":""stop_items""}",clear,template

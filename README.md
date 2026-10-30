@@ -4,7 +4,7 @@
 
 편의점에 물건을 내리는 기사가 운전 중이거나 양손에 짐을 든 상태에서, 말 한마디로 다음 배송지 확인·납품 목록 조회·완료 처리·이상 보고·스캔을 할 수 있게 하는 시스템입니다. 인터넷 연결 없이 Orange Pi 5+ (RK3588) 보드 위에서 모든 추론이 돌아갑니다.
 
-이 저장소는 그중 **AI 파트**(데이터 설계 → 의도분류 학습 → function calling 학습 → 평가 → 파이프라인)를 담고 있습니다.
+이 저장소는 그중 **AI 파트**(데이터 설계 → function calling 학습 → 평가 → 파이프라인)를 담고 있습니다. 보드 버전은 **function calling 모델 하나(Qwen2.5-1.5B + LoRA)가 의도분류까지 맡는 단일 모델 구조(v3-single)** 이고, 의도분류 모듈(klue/roberta-small)은 기본 경로에서 빼고 코드·결과·모델만 남겨 두었습니다 ([왜 단일 모델인가](#단일-모델-구조-v3-single)).
 
 ![LogiOn 구조와 측정 결과](docs/architecture.png)
 
@@ -18,7 +18,9 @@
 | **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
 | **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
 | **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
-| **선택된 설정** | [`config/pipeline_v2_1.json`](config/pipeline_v2_1.json) — 모델 경로·기준값 한 파일 |
+| **선택된 설정** | [`config/pipeline_v3_single.json`](config/pipeline_v3_single.json) — 단일 모델 (기본). 의도분류를 다시 켠 [`config/pipeline_v2_1.json`](config/pipeline_v2_1.json) 도 그대로 동작 |
+| **단일 모델 평가·데모 결과** | [`results/single_llm_report.md`](results/single_llm_report.md) |
+| **RKLLM 변환 준비** | [`rkllm/`](rkllm/) (설정·캘리브레이션 질의), [`docs/rkllm_convert.md`](docs/rkllm_convert.md) |
 
 ---
 
@@ -29,39 +31,32 @@
   │
   ├─▶ ① STT (SenseVoice-Small int8, sherpa-onnx)          "우유 두 개 터졌어"
   │
-  ├─▶ ② 의도분류 (klue/roberta-small)                      report_issue (0.94)
-  │        └─ next_stop / scan / other 이고 확신 0.9 이상이면 ③~④ 건너뛰고 바로 ⑤ (빠른 길)
-  │
-  ├─▶ ③ LLM function calling (Qwen2.5-1.5B-Instruct + LoRA)
+  ├─▶ ② LLM function calling (Qwen2.5-1.5B-Instruct + LoRA)   ← 의도분류까지 이 모델이 함
   │        {"fn":"report_issue","item":"우유","issue":"파손","qty":2,"unit":"개"}
+  │        (fn 이 기능 선택, 나머지가 값. 의도분류 모듈은 기본 경로에서 제외 — 아래 참고)
   │
-  ├─▶ ④ 값 보정 (규칙 코드, 모델 아님)
+  ├─▶ ③ 값 보정 (규칙 코드, 모델 아님)
   │        DB 이름 맞추기 · 발음 유사도 비교 · 모호하면 되묻기
   │        "우유" → 서울우유 / 바나나우유 / 딸기우유 → 되묻기
   │
-  ├─▶ ⑤ 실행 (배송 DB 조회·기록)
+  ├─▶ ④ 실행 (배송 DB 조회·기록)
   │
-  ├─▶ ⑥ 응답 문장 생성 (템플릿)                            "역삼점 서울우유 2개 파손으로 기록했어요."
+  ├─▶ ⑤ 응답 문장 생성 (템플릿)                            "역삼점 서울우유 2개 파손으로 기록했어요."
   │
-  └─▶ ⑦ TTS (한국어 VITS) 🔊
+  └─▶ ⑥ TTS (한국어 VITS) 🔊
 ```
 
-**핵심 설계**: LLM은 "말한 값을 JSON으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기 판단은 규칙 코드(④)가 맡습니다. 모델이 없는 값을 지어내지 않게 하고, 보드에서 LLM 호출 횟수를 줄이기 위해서입니다.
+**핵심 설계**: LLM은 "기능을 고르고 말한 값을 JSON으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기 판단은 규칙 코드(③)가 맡습니다. 모델이 없는 값을 지어내지 않게 하기 위해서입니다. 모델이 하나라 보드에 올릴 모델·변환 작업이 하나로 줄어듭니다.
 
-> v2.1 부터 `next_stop` 은 빠른 길에서 빠졌습니다. 자세한 이유는 [개선 내역](#개선-내역v1--v2) 참고.
+> 의도분류를 포함한 이전 구조(v2.1)는 `config/pipeline_v2_1.json` 으로 그대로 돌릴 수 있습니다 (그림: [`docs/architecture_v2_1.png`](docs/architecture_v2_1.png)).
 
 ```mermaid
 flowchart TD
-    A["🎤 음성 → STT<br/>SenseVoice int8"] --> B["의도분류<br/>klue/roberta-small<br/>정확도 0.907"]
-    B --> C{"갈림길<br/>margin · 확신도"}
-    C -- "margin &lt; 0.05" --> ASK["선택지로 되묻기<br/>'남은 배송지? 내릴 물건?'<br/>실행 안 함 · 0.5%"]
-    C -- "scan/other 확신 ≥ 0.9" --> FAST["빠른 길<br/>LLM 생략 · 24.1%"]
-    C -- "그 외" --> SLOT["값이 있는 기능<br/>stop_items(store?, item?)<br/>complete(store?, receiver?)<br/>report_issue(store?, item?, issue, qty?, unit)"]
-    SLOT --> LLM["function calling<br/>Qwen2.5-1.5B + LoRA<br/>fn 0.886 · 완전일치 0.847"]
-    FAST --> RES["값 보정 resolve()<br/>DB 이름·단위 맞추기<br/>빈 값은 되묻기"]
-    LLM --> RES
+    A["🎤 음성 → STT<br/>SenseVoice int8"] --> LLM["function calling (의도분류 겸용)<br/>Qwen2.5-1.5B + LoRA<br/>fn 0.886 · 완전일치 0.847"]
+    LLM --> RES["값 보정 resolve()<br/>DB 이름·단위 맞추기<br/>빈 값은 그 값만 되묻기"]
     RES --> EXEC["실행 · 백엔드 API<br/>/api/routes/today · /api/stops/{id}<br/>/complete · /issues"]
     EXEC --> OUT["응답 문장 → 🔊 TTS VITS"]
+    RES -. 값 없음 .-> ASK["슬롯 되묻기<br/>'어떤 품목인가요?'"]
     ASK --> OUT
 ```
 
@@ -132,8 +127,8 @@ RKLLM 양자화 캘리브레이션용 발화 450건은 `data/calibration_utteran
 | 단계 | 모델 | 이유 |
 | --- | --- | --- |
 | STT | **SenseVoice-Small int8** (sherpa-onnx) | 비자동회귀라 보드 CPU에서 빠름, 한국어 지원, `use_itn`으로 "두 개"→"2개" 변환 |
-| 의도분류 | **klue/roberta-small** (약 6,800만 파라미터) | 한국어 사전학습, 문장당 수 ms, 값이 필요 없는 명령은 이 모델만으로 처리 |
-| function calling | **Qwen2.5-1.5B-Instruct + LoRA** (r=16, α=32) | RKLLM 지원 목록에 있고 텍스트 전용이라 NPU 변환이 단순 |
+| 의도분류 (기본 경로에서 제외) | klue/roberta-small (약 6,800만 파라미터) | v2.1 까지 사용. 단일 모델과 전체 결과 차이가 없어 보드 버전에서는 뺌 (코드·모델·결과는 보존, `config/pipeline_v2_1.json` 으로 재사용) |
+| function calling + 의도분류 | **Qwen2.5-1.5B-Instruct + LoRA** (r=16, α=32) | RKLLM 지원 목록에 있고 텍스트 전용이라 NPU 변환이 단순. JSON 의 `fn` 이 기능 선택을 겸함 |
 | TTS | **한국어 VITS** | 보드 CPU에서 실시간 합성 |
 
 LoRA는 `q/k/v/o/gate/up/down_proj`에 적용했고 학습 가능 파라미터는 18,464,768개 (전체의 1.18%)입니다. 학습 후 원본에 병합해 fp16으로 저장하며, 이 폴더가 RKLLM 변환(W8A8)의 입력이 됩니다.
@@ -194,13 +189,14 @@ jupyter notebook notebooks/LogiOn_AI_pipeline.ipynb
 python demo/chat_server.py            # http://localhost:7860
 python demo/chat_server.py --port 8080
 python demo/chat_server.py --no-models   # 모델 없이 화면만
+python demo/chat_server.py --config config/pipeline_v2_1.json   # 의도분류를 다시 켠 구조 (out/intent_model 필요)
 ```
 
 ![채팅 데모](docs/chat_demo/00_full.png)
 
-- 파이썬 표준 라이브러리만 씁니다(추가 설치 없음). `out/intent_model`, `out/fc_merged` 가 필요하고, 없으면 무엇이 없는지 알려 주고 멈춥니다.
+- 파이썬 표준 라이브러리만 씁니다(추가 설치 없음). `out/fc_merged` 가 필요하고 (v2.1 설정이면 `out/intent_model` 도), 없으면 무엇이 없는지 알려 주고 멈춥니다.
 - 화면 오른쪽 위 배지에 **`실제 모델 · <GPU 이름>`** 이 뜨면 모델이 올라간 것입니다.
-- 답변마다 **결과 카드**가 붙어 ② 의도분류 상위 3개와 margin, ③ LLM 출력과 확신도, ④ 값 보정 과정, ⑤ 백엔드에 보낼 요청, ⑥ 응답과 단계별 ms 를 보여 줍니다.
+- 답변마다 **결과 카드**가 붙어 LLM 출력(JSON)과 확신도, 값 보정 과정, 백엔드에 보낼 요청, 응답과 단계별 ms 를 보여 줍니다 (v2.1 설정이면 의도분류 상위 3개와 margin 도).
 - 되묻기가 걸리면 **선택지 버튼**이 나오고, 누르면 이어서 처리합니다.
 - 배송 데이터는 `backend/app/db/seed.py` 를 읽어 쓰고 **변경은 이 서버 메모리 안에서만** 일어납니다. 백엔드 서버나 코드는 건드리지 않습니다.
 - 캡처는 `python scripts/capture_chat_demo.py` 로 다시 만들 수 있습니다 (→ `docs/chat_demo/`). 문장별 수치는 [`docs/chat_demo/results.md`](docs/chat_demo/results.md) 에 있습니다.
@@ -211,7 +207,7 @@ python demo/chat_server.py --no-models   # 모델 없이 화면만
 채팅 데모와 달리 **실제 백엔드 DB** 에 붙습니다. 앱 AI 채팅 탭 → `POST /api/assistant/chat` → AI 파이프라인 → DB.
 "납품 완료", "우유 두 개 터졌어" 처럼 말하면 배송 기록에 실제로 반영되고, 홈·운행 목록이 바로 새로고침됩니다.
 
-1. 모델 준비 (`out/intent_model`, `out/fc_merged`). 없으면 2단계 노트북을 먼저 실행합니다.
+1. 모델 준비 (`out/fc_merged`; v2.1 설정으로 쓰려면 `out/intent_model` 도). 없으면 2단계 노트북을 먼저 실행합니다.
 2. 백엔드 켜기 — 1단계에서 만든 루트 `.venv` 를 씁니다 (torch·transformers 와 백엔드 패키지가 같이 필요).
    ```powershell
    cd LogiOn
@@ -459,6 +455,28 @@ v1 오답 57건을 원인별로 분류해 보니 **11건(19%)이 모델 잘못�
 
 ---
 
+## 단일 모델 구조 (v3-single)
+
+의도분류 분리 실험(klue/roberta-small 0.907, Qwen3-0.6B 0.856)을 했지만 **전체 결과 차이가 없어 보드 버전은 단일 모델로 단순화**했습니다. function calling 모델(`out/fc_merged`) 하나가 JSON 의 `fn` 으로 기능 선택까지 맡고, 의도분류 모듈은 기본 경로에서만 뺐습니다 (코드·결과·모델 보존, `config/pipeline_v2_1.json` 으로 되돌릴 수 있음). 재학습은 하지 않았고, 평가는 v2.1 과 **같은 test 431건·같은 기준**입니다. 이 PC(RTX 5050)에서 실제로 돌린 값이며 보드 측정값이 아닙니다.
+
+| 지표 (test 431) | v2.1 (의도분류 + FC) | v3 단일 (FC만) | 차이 |
+| --- | --- | --- | --- |
+| 기능(fn) 정확도 | 0.9072 (roberta) | 0.8863 (FC 의 fn) | −2.1pp |
+| 최종 정확도 (되묻기 포함) | 0.8515 | 0.8469 | −0.46pp |
+| 틀리게 실행한 비율 | 14.85% | 15.31% | +0.46pp |
+| 확률 기반 되묻기 비율 | 0.46% | 0% | — |
+| LLM 생략 비율 | 24.1% | 0% | — |
+| JSON 오류 | 0% | 0% | 같음 |
+
+- 문장 단위로 비교하면 **둘 다 정답 365, v2.1 만 정답 2, 단일만 정답 0, 둘 다 오답 64** 입니다. 차이는 margin 되묻기가 구한 2문장뿐입니다.
+- 기능별 fn 정확도(roberta → FC): next_stop 1.000 → 0.770, stop_items 0.933 → 0.880, complete 0.957 → 1.000, report_issue 0.971 → 0.870, scan 0.932 → 0.822, other 0.643 → 0.986. FC 는 `other` 를 훨씬 잘 가르고, `next_stop`·`scan` 을 `stop_items` 로 잘못 읽는 경우가 늘지만 최종 실행 결과는 거의 같습니다.
+- 값이 없는 명령(next_stop/scan/other)도 LLM 을 거치지만 생성 토큰이 평균 5.4개(최대 6)라 PC 에서 평균 292ms 입니다. v2.1 의 빠른 길(scan 57ms, other 107ms)보다는 느립니다. **보드(NPU) 지연은 아직 측정하지 못했습니다.**
+- PC 문장당 평균 지연: 단일 482ms, v2.1 419ms (배치 1, bf16).
+- 자세한 표·틀린 문장·데모 결과: [`results/single_llm_report.md`](results/single_llm_report.md). 구조 그림: [`docs/architecture.png`](docs/architecture.png).
+- 기능 선택에 쓰던 margin 되묻기와 빠른 길이 없어졌고, **값이 빠졌을 때의 되묻기(슬롯 되묻기)는 그대로**입니다.
+
+---
+
 ## 보드(Orange Pi 5+ / RK3588) 변환·측정
 
 ### 의도분류 ONNX — 실행 완료
@@ -547,7 +565,8 @@ LogiOn/
 │  ├─ chat_server.py                채팅 데모 서버 (표준 라이브러리만 사용)
 │  └─ pipeline.py                   추론 파이프라인 (서버가 import)
 ├─ config/
-│  └─ pipeline_v2_1.json            고른 설정 (모델 경로, tau, 건너뛰기 기준)
+│  ├─ pipeline_v3_single.json       단일 모델 설정 (기본, 의도분류 없음)
+│  └─ pipeline_v2_1.json            의도분류 포함 설정 (tau, 건너뛰기 기준) — `--config` 로 선택
 ├─ data/
 │  ├─ README.md                     데이터셋 설명
 │  ├─ intent_dataset.csv            의도분류 학습용 (id, text, label, split, source, ambiguity)
@@ -559,7 +578,10 @@ LogiOn/
 │  └─ v1/                           v1 때 쓴 데이터 (보존)
 ├─ scripts/
 │  ├─ select_pipeline_v2_1.py       기준값·모델 조합 고르기 (val) + test 1회 평가
-│  ├─ make_diagram.py               docs/architecture.png·svg 생성 (숫자는 결과 파일에서 읽음)
+│  ├─ eval_single_llm.py            단일 모델(FC 단독) 평가 vs v2.1 (같은 test 431건)
+│  ├─ demo_single_llm.py            단일 모델 채팅 서버에 문장을 보내 결과 기록
+│  ├─ make_diagram.py               docs/architecture.png·svg 생성 — 단일 모델 (숫자는 결과 파일에서 읽음)
+│  ├─ make_diagram_v2_1.py          의도분류 포함 구조 그림 (docs/architecture_v2_1.png)
 │  ├─ export_intent_onnx.py         의도분류 ONNX(fp32/int8) 변환·검증
 │  ├─ board_eval.py                 보드 LLM 정확도 평가 + PC 원본과 비교
 │  ├─ board_latency.py              STT/의도분류/LLM/규칙/TTS 단계별 지연 측정
@@ -572,14 +594,17 @@ LogiOn/
 │  ├─ 1st_report_summary.md         1차 보고 정리 (표 위주)
 │  ├─ midterm_ai_summary.md         중간 정리 (v1 → v2 비교, 원인 분석)
 │  ├─ backend_integration.md        백엔드 연결 가이드
-│  └─ architecture.png / .svg       구조 그림 (자동 생성)
+│  ├─ rkllm_convert.md              RKLLM 변환 절차 (단일 모델)
+│  └─ architecture.png / .svg       구조 그림 (자동 생성; 이전 구조는 architecture_v2_1.*)
 ├─ logs/
 │  └─ ai-improve-1022.md            단계별 작업 기록과 판단 근거
 └─ results/
    ├─ v1/                           v1 결과 (보존)
    ├─ v2/                           v2 결과 + v1 과의 비교 + ONNX 검증
    ├─ v2/board/                     보드 측정 결과 (미실행, 비어 있음)
-   └─ v2_1/                         v2.1 결과 (val 격자, test 1회 평가, v1/v2/v2.1 비교)
+   ├─ v2_1/                         v2.1 결과 (val 격자, test 1회 평가, v1/v2/v2.1 비교)
+   ├─ single_llm/                   단일 모델 평가·지연·데모 결과
+   └─ single_llm_report.md          단일 모델 보고서
 ```
 
 모델 가중치(`out/`), ONNX·RKLLM 파일은 용량 때문에 저장소에 포함하지 않습니다. 노트북과 위 스크립트를 실행하면 다시 만들어집니다.

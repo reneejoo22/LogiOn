@@ -1,10 +1,10 @@
-"""음성 한 번 처리에 단계마다 몇 ms 걸리는지 잰다: STT(SenseVoice) / 의도분류(ONNX) / LLM / 응답 만들기 / TTS(VITS).
+"""음성 한 번 처리에 단계마다 몇 ms 걸리는지 잰다: STT(SenseVoice) / LLM / 응답 만들기 / TTS(VITS)  (--with-intent 이면 의도분류 ONNX 단계 포함).
 
 보드(또는 모델이 설치된 PC)에서 실행한다. 필요한 것:
   pip install sherpa-onnx soundfile onnxruntime tokenizers numpy pandas requests
   - SenseVoice 폴더 (--sv-dir)   : model.int8.onnx, tokens.txt
   - VITS TTS 모델 (--tts-model, --tts-tokens, [--tts-lexicon], [--tts-data-dir])
-  - 의도분류 ONNX (--intent-dir, 기본 export/intent_onnx)
+  - (--with-intent 일 때만) 의도분류 ONNX (--intent-dir, 기본 export/intent_onnx)
   - 보드 LLM 서버 (--base-url), 없으면 LLM 단계는 "미측정" 으로 표시
 
 입력 음성:
@@ -31,6 +31,7 @@ ap.add_argument("--tts-model", default="")
 ap.add_argument("--tts-tokens", default="")
 ap.add_argument("--tts-lexicon", default="")
 ap.add_argument("--tts-data-dir", default="")
+ap.add_argument("--with-intent", action="store_true", help="의도분류(ONNX) 단계를 켠다 (v2.1 구조). 기본은 단일 모델: 모든 문장을 LLM 으로")
 ap.add_argument("--intent-dir", default=f"{ROOT}/export/intent_onnx")
 ap.add_argument("--base-url", default=os.environ.get("BOARD_LLM_URL", ""))
 ap.add_argument("--model", default=os.environ.get("BOARD_LLM_MODEL", "logion"))
@@ -46,14 +47,15 @@ if not args.sv_dir or not os.path.exists(f"{args.sv_dir}/model.int8.onnx"):
     missing.append("--sv-dir (SenseVoice 폴더: model.int8.onnx, tokens.txt)")
 if not args.tts_model or not os.path.exists(args.tts_model):
     missing.append("--tts-model / --tts-tokens (VITS TTS)")
-if not os.path.exists(f"{args.intent_dir}/model.int8.onnx"):
+if args.with_intent and not os.path.exists(f"{args.intent_dir}/model.int8.onnx"):
     missing.append(f"--intent-dir ({args.intent_dir}/model.int8.onnx; scripts/export_intent_onnx.py 로 만든 폴더)")
 if missing:
     sys.exit("필요한 파일이 없어 측정하지 못했습니다:\n  - " + "\n  - ".join(missing))
 
 import requests, soundfile as sf, sherpa_onnx
-sys.path.insert(0, args.intent_dir)
-from infer import IntentONNX
+if args.with_intent:
+    sys.path.insert(0, args.intent_dir)
+    from infer import IntentONNX
 
 R = load_rules(with_assistant=True)
 SYSTEM_PROMPT, parse_call, resolve, CURRENT_STORE = R["SYSTEM_PROMPT"], R["parse_call"], R["resolve"], R["CURRENT_STORE"]
@@ -65,7 +67,7 @@ tts = sherpa_onnx.OfflineTts(sherpa_onnx.OfflineTtsConfig(
     model=sherpa_onnx.OfflineTtsModelConfig(vits=sherpa_onnx.OfflineTtsVitsModelConfig(
         model=args.tts_model, lexicon=args.tts_lexicon, tokens=args.tts_tokens, data_dir=args.tts_data_dir),
         num_threads=args.threads), max_num_sentences=1))
-intent = IntentONNX(args.intent_dir, int8=True, threads=args.threads)
+intent = IntentONNX(args.intent_dir, int8=True, threads=args.threads) if args.with_intent else None
 bot = R["Assistant"](current_store=CURRENT_STORE)
 
 
@@ -120,10 +122,13 @@ run_stt(inputs[0][1], inputs[0][2])                       # 예열 (첫 호출�
 rows = []
 for ref, a, sr, _ in inputs:
     text, stt_ms = run_stt(a, sr)
-    t0 = time.perf_counter()
-    r = intent.predict(text)
-    intent_ms = (time.perf_counter() - t0) * 1000
-    use_llm = not (r["top1"] in SKIP_FNS and r["p1"] >= args.skip_conf)
+    if intent is not None:
+        t0 = time.perf_counter()
+        r = intent.predict(text)
+        intent_ms = (time.perf_counter() - t0) * 1000
+        use_llm = not (r["top1"] in SKIP_FNS and r["p1"] >= args.skip_conf)
+    else:                                                  # 단일 모델: 의도분류 없이 항상 LLM
+        r, intent_ms, use_llm = {"top1": None, "margin": None}, None, True
     raw, llm_ms = (run_llm(text) if use_llm else (None, 0.0))
     call = parse_call(raw) if raw else {"fn": r["top1"]}
     t0 = time.perf_counter()

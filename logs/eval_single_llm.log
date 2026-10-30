@@ -1,0 +1,82 @@
+The tokenizer you are loading from 'C:\Users\AMLPC03\Desktop\LogiOn/out/fc_merged' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+`torch_dtype` is deprecated! Use `dtype` instead!
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+FC 출력이 v2.1 저장 결과와 같은 비율: 1.0000
+
+=== test 431: v2.1 vs FC 단독 ===
+                       v2.1   FC 단독
+의도분류 정확도(fn)         0.9072  0.8863
+의도분류 macro-F1        0.9051  0.8931
+FC JSON 유효율          1.0000  1.0000
+FC 완전일치              0.8469  0.8469
+FC 값 F1              0.9684  0.9684
+전체 최종 정답(되묻기 없이)     0.8469  0.8469
+전체 최종 정답(되묻기 포함)     0.8515  0.8469
+틀리게 실행한 비율           0.1485  0.1531
+되묻기 비율(의도분류 margin)  0.0046  0.0000
+LLM 건너뛴 비율           0.2413  0.0000
+
+되묻기 아닌 슬롯 부족 질문 비율(FC 단독 예측 / 정답): 0.0603 0.058
+
+클래스별
+                n  roberta(의도분류)  FC fn  v2.1 최종 정답(되묻기 포함)  FC단독 최종 정답
+gold_fn                                                               
+next_stop     74          1.000  0.770               0.770       0.770
+stop_items    75          0.933  0.880               0.893       0.880
+complete      70          0.957  1.000               1.000       1.000
+report_issue  69          0.971  0.870               0.623       0.623
+scan          73          0.932  0.822               0.836       0.822
+other         70          0.643  0.986               0.986       0.986
+
+혼동행렬 FC (행 정답)
+               next_stop  stop_items  complete  report_issue  scan  other
+next_stop            57          16         0             0     0      1
+stop_items            0          66         0             9     0      0
+complete              0           0        70             0     0      0
+report_issue          0           9         0            60     0      0
+scan                  0          13         0             0    60      0
+other                 1           0         0             0     0     69
+
+짝 비교(최종 정답): {'both_ok': 365, 'only_v2_1_ok': 2, 'only_fc_only_ok': 0, 'both_wrong': 64}
+
+지연: {
+ "all": {
+  "fc_only_ms": {
+   "mean": 482.4943957988631,
+   "median": 316.9605005532503,
+   "p95": 1231.0753497295082
+  },
+  "v2_1_ms": {
+   "mean": 418.94638118293057,
+   "median": 321.53539918363094,
+   "p95": 1235.592299606651
+  },
+  "intent_ms": {
+   "mean": 4.7108749264803675,
+   "median": 4.608199931681156,
+   "p95": 5.2269501611590385
+  },
+  "gen_tokens_mean": 9.68677494199536,
+  "prompt_tokens_mean": 126.2691415313225
+ },
+ "no_value_fns(next_stop,scan,other)": {
+  "n": 217,
+  "fc_only_ms": {
+   "mean": 291.84413960521124,
+   "median": 277.5159999728203,
+   "p95": 321.6085398569703
+  },
+  "gen_tokens_mean": 5.400921658986175,
+  "gen_tokens_max": 6
+ },
+ "env": "NVIDIA GeForce RTX 5050, torch.bfloat16, 배치 1, torch 2.11.0+cu128"
+}
+                 n  FC단독 평균ms  v2.1 평균ms  생성토큰 평균    최대
+next_stop     74.0      317.6      322.2      6.0   6.0
+stop_items    75.0      501.1      498.5     10.1  20.0
+complete      70.0      474.4      479.1      9.5  17.0
+report_issue  69.0     1070.1     1074.9     22.9  36.0
+scan          73.0      282.6       57.1      5.2   6.0
+other         70.0      274.3      106.6      5.0   6.0
+
+토큰: {'gold_json_tokens_max_all_splits': 36, 'gold_json_tokens_mean': 9.658678286129266, 'pred_tokens_max_test': 36}

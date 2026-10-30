@@ -4,14 +4,19 @@
 노트북은 단계를 눈으로 보여 주려고 코드를 펼쳐 둔 것이고, 이 파일은 서버가 import 해서 쓰는 쪽입니다.
 
   from pipeline import Assistant
-  bot = Assistant()                 # config/pipeline_v2_1.json 을 읽어 모델을 올림
+  bot = Assistant()                 # config/pipeline_v3_single.json 을 읽어 모델을 올림 (기본: FC 모델 하나)
+  bot = Assistant("config/pipeline_v2_1.json")   # 의도분류(roberta)를 다시 켠 예전 구조
+  (경로를 안 주면 환경변수 LOGION_PIPELINE_CONFIG 를 보고, 그것도 없으면 v3 단일 모델)
   bot.run("다음 어디야")             # -> dict (응답 + 단계별 기록)
 
-모델(out/intent_model, out/fc_merged)이 없으면 ModelsMissing 을 냅니다.
+설정의 "intent_model" 이 null 이면 의도분류 없이 FC 모델 하나가 기능 선택과 값 추출을 모두 맡습니다 (v3 단일 모델).
+경로가 있으면 예전처럼 의도분류 -> 갈림길(되묻기·LLM 생략) -> FC 순서로 돌아갑니다 (v2.1).
+모델(FC 모델, 켰다면 의도분류 모델)이 없으면 ModelsMissing 을 냅니다.
 값 보정은 backend/app/db/seed.py 의 점포·품목을 읽어 씁니다 (백엔드 코드는 고치지 않음).
 """
 import difflib
 import json
+import os
 import re
 import sys
 import time
@@ -74,7 +79,9 @@ def load_seed():
 
 class Assistant:
     def __init__(self, config_path=None, load_models=True):
-        self.cfg = json.loads((Path(config_path or ROOT / "config/pipeline_v2_1.json")).read_text(encoding="utf-8"))
+        cp = Path(config_path or os.environ.get("LOGION_PIPELINE_CONFIG") or ROOT / "config/pipeline_v3_single.json")
+        self.cfg = json.loads((cp if cp.is_absolute() else ROOT / cp).read_text(encoding="utf-8"))
+        self.use_intent = bool(self.cfg.get("intent_model"))
         self.stores, self.products, self.stops = load_seed()
         self.pending = {}
         self.device = "cpu"
@@ -85,24 +92,27 @@ class Assistant:
 
     # ---------------- 모델 ----------------
     def _load_models(self):
-        intent_dir = ROOT / self.cfg["intent_model"]
         fc_dir = ROOT / self.cfg["fc_model"]
-        missing = [str(p.relative_to(ROOT)) for p in (intent_dir, fc_dir) if not (p / "config.json").exists()]
+        need = [fc_dir] + ([ROOT / self.cfg["intent_model"]] if self.use_intent else [])
+        missing = [str(p.relative_to(ROOT)) for p in need if not (p / "config.json").exists()]
         if missing:
             raise ModelsMissing(
                 "모델이 없습니다: " + ", ".join(missing)
                 + "\n먼저 notebooks/LogiOn_AI_pipeline.ipynb 를 실행해 모델을 만드세요 (GPU 필요, 약 40분).")
         import torch
-        from transformers import AutoModelForSequenceClassification, AutoModelForCausalLM, AutoTokenizer
+        from transformers import AutoModelForCausalLM, AutoTokenizer
 
         self.torch = torch
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device_name = torch.cuda.get_device_name(0) if self.device == "cuda" else "CPU"
         dtype = (torch.bfloat16 if self.device == "cuda" and torch.cuda.is_bf16_supported() else torch.float16)
 
-        self.intent_tok = AutoTokenizer.from_pretrained(intent_dir)
-        self.intent_model = AutoModelForSequenceClassification.from_pretrained(intent_dir).eval().to(self.device)
-        self.intent_model.config.torchscript = False
+        if self.use_intent:
+            from transformers import AutoModelForSequenceClassification
+            intent_dir = ROOT / self.cfg["intent_model"]
+            self.intent_tok = AutoTokenizer.from_pretrained(intent_dir)
+            self.intent_model = AutoModelForSequenceClassification.from_pretrained(intent_dir).eval().to(self.device)
+            self.intent_model.config.torchscript = False
         self.fc_tok = AutoTokenizer.from_pretrained(fc_dir)
         if self.fc_tok.pad_token is None:
             self.fc_tok.pad_token = self.fc_tok.eos_token
@@ -353,12 +363,16 @@ class Assistant:
             trace["llm"] = None
         else:
             src = self.pending["text"] if carry == "choice" else text
-            t = time.perf_counter()
-            ranked = self.classify(src)
-            T["의도분류"] = (time.perf_counter() - t) * 1000
-            d = self.decide(ranked)
-            trace["intent"] = {"top3": [{"fn": f, "p": p} for f, p in ranked[:3]], "margin": d["margin"],
-                               "route": d["route"], "why": d["why"]}
+            if self.use_intent:
+                t = time.perf_counter()
+                ranked = self.classify(src)
+                T["의도분류"] = (time.perf_counter() - t) * 1000
+                d = self.decide(ranked)
+                trace["intent"] = {"top3": [{"fn": f, "p": p} for f, p in ranked[:3]], "margin": d["margin"],
+                                   "route": d["route"], "why": d["why"]}
+            else:                                           # 단일 모델: 항상 FC 모델로. fn 은 FC 출력에서 읽는다
+                d = {"route": "llm", "fn": None, "margin": None, "why": "단일 모델 — FC 모델이 기능과 값을 함께 뽑음"}
+                trace["intent"] = None
 
             if d["route"] == "ask" and carry != "choice":
                 self.pending = {"kind": "choice", "opts": d["opts"], "text": text}
@@ -379,9 +393,20 @@ class Assistant:
                     fn = picked
                     call = {"fn": fn, **{k: v for k, v in call.items() if k in ALLOWED_BY_FN.get(fn, set())}}
                 else:
-                    fn = call.get("fn", d["fn"])
+                    fn = call.get("fn") or d["fn"]
+                    if not self.use_intent and fn in self.cfg["funcs"]:
+                        # 백엔드(DbAssistant)가 trace["intent"] 를 읽으므로 같은 모양으로 채운다.
+                        # 단일 모델에는 분류 확률이 없어서 p 는 LLM 이 JSON 을 뽑을 때의 토큰 확률 평균이다.
+                        trace["intent"] = {"single": True, "route": "llm", "margin": None, "why": d["why"],
+                                           "top3": [{"fn": fn, "p": float(cmean)}]}
                 trace["llm"] = {"skipped": False, "raw": raw, "parsed": call, "conf_mean": cmean, "conf_min": cmin}
         self.pending = {}
+
+        if fn not in self.cfg["funcs"]:
+            T["전체"] = (time.perf_counter() - t_all) * 1000
+            trace.update(request=None, reply=self.cfg["retry_message"], route="ask", options=[], resolve=[],
+                         timings=T, fn=None)
+            return trace
 
         t = time.perf_counter()
         steps = []
@@ -407,6 +432,6 @@ class Assistant:
         T["실행"] = (time.perf_counter() - t) * 1000
         reply = self.make_reply(fn, call2, result)
         T["전체"] = (time.perf_counter() - t_all) * 1000
-        trace.update(request=req, reply=reply, route=trace.get("intent", {}).get("route") if trace.get("intent") else "carry",
+        trace.update(request=req, reply=reply, route=(trace["intent"]["route"] if trace.get("intent") else ("llm" if not self.use_intent else "carry")),
                      options=[], timings=T, fn=fn)
         return trace

@@ -1,0 +1,35 @@
+[
+  {
+    "text": "컵라면",
+    "fn": "report_issue",
+    "route": "ask_slot",
+    "intent": null,
+    "llm_raw": null,
+    "resolve": [
+      {
+        "slot": "store",
+        "spoken": "(말하지 않음)",
+        "found": "CU 서울숲점",
+        "how": "다음 배송지로 채움",
+        "score": "—",
+        "cands": []
+      },
+      {
+        "slot": "item",
+        "spoken": "컵라면",
+        "found": "컵라면",
+        "how": "정확",
+        "score": 1.0,
+        "cands": [
+          "컵라면"
+        ]
+      }
+    ],
+    "request": null,
+    "reply": "어떤 문제인가요? 파손, 수량부족, 오배송, 온도이상 중에서 말씀해 주세요.",
+    "timings_ms": {
+      "값 보정": 0.0,
+      "전체": 0.1
+    }
+  }
+]
