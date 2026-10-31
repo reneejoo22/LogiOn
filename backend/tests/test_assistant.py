@@ -1,6 +1,16 @@
-"""음성 비서 API. 모델 대신 문장별로 정해 둔 의도분류·LLM 결과를 끼워 DB 연결 부분만 본다."""
+"""음성 비서 API. 모델 대신 문장별로 정해 둔 의도분류·LLM 결과를 끼워 DB 연결 부분만 본다.
+
+기본 fixture(client)는 단일 모델(config/pipeline_v3_single.json): 의도분류 없이 LLM 이 fn 까지 고른다.
+client_v21 은 의도분류가 있는 예전 구조(config/pipeline_v2_1.json) 검사용이다.
+"""
+from pathlib import Path
+
 import pytest
 from fastapi.testclient import TestClient
+
+CONFIG_DIR = Path(__file__).resolve().parents[2] / "config"
+V3_SINGLE = CONFIG_DIR / "pipeline_v3_single.json"
+V2_1 = CONFIG_DIR / "pipeline_v2_1.json"
 
 # 문장: (의도분류 순위, LLM 출력)
 SCRIPT = {
@@ -20,26 +30,43 @@ SCRIPT = {
     "참치삼각김밥": ([("other", 0.95), ("stop_items", 0.05)], None),
 }
 
+# 단일 모델에서는 의도분류가 LLM 을 건너뛰게 해 주지 않으므로, 위에서 None 인 문장에도 LLM 출력이 필요하다
+SINGLE_LLM = {
+    "바코드 찍을게": '{"fn":"scan"}',
+    "참치삼각김밥": '{"fn":"other"}',
+}
 
-@pytest.fixture
-def client(tmp_path, monkeypatch):
+
+def _make_client(config_path, tmp_path, monkeypatch, single):
     monkeypatch.setenv("LOGION_DB", str(tmp_path / "test.db"))
     from app.main import app
     from app.services.assistant import DbAssistant
 
     with TestClient(app) as c:
         assert app.state.assistant is None  # conftest 에서 꺼 둠
-        bot = DbAssistant(load_models=False)
+        bot = DbAssistant(config_path=config_path, load_models=False)
+        assert bot.use_intent is (not single)
         bot.llm_calls = []
         bot.classify = lambda text: SCRIPT[text][0]
 
         def call_llm(text):
             bot.llm_calls.append(text)
-            return SCRIPT[text][1], 0.99, 0.9
+            out = SINGLE_LLM.get(text) if single else None
+            return (out or SCRIPT[text][1]), 0.99, 0.9
 
         bot.call_llm = call_llm
         app.state.assistant = bot
         yield c
+
+
+@pytest.fixture
+def client(tmp_path, monkeypatch):
+    yield from _make_client(V3_SINGLE, tmp_path, monkeypatch, single=True)
+
+
+@pytest.fixture
+def client_v21(tmp_path, monkeypatch):
+    yield from _make_client(V2_1, tmp_path, monkeypatch, single=False)
 
 
 def say(client, text, session_id="d1"):
@@ -113,7 +140,8 @@ def test_issue_type_outside_db_is_asked(client):
     assert client.get("/api/stops/1").json()["issues"][0]["type"] == "온도이상"
 
 
-def test_choice_question_then_answer(client):
+def test_choice_question_then_answer(client_v21):
+    client = client_v21  # margin 되묻기는 의도분류가 있는 구조에만 있다
     r = say(client, "다음 거 알려줘")
     assert r["route"] == "ask" and r["options"] == ["남은 배송지", "내릴 물건"]
     r = say(client, "내릴 물건")
@@ -128,7 +156,27 @@ def test_sessions_are_separate(client):
     assert client.get("/api/stops/1").json()["issues"] == []
 
 
-def test_scan_skips_llm(client):
-    r = say(client, "바코드 찍을게")
+def test_scan_skips_llm(client_v21):
+    r = say(client_v21, "바코드 찍을게")
     assert (r["route"], r["action"]) == ("skip", "open_scanner")
-    assert client.app.state.assistant.llm_calls == []
+    assert client_v21.app.state.assistant.llm_calls == []
+
+
+def test_default_config_is_single_model(monkeypatch):
+    monkeypatch.delenv("LOGION_PIPELINE_CONFIG", raising=False)
+    from app.services.assistant import DbAssistant
+
+    assert DbAssistant(load_models=False).use_intent is False
+
+
+def test_single_scan_goes_through_llm(client):
+    r = say(client, "바코드 찍을게")
+    assert (r["fn"], r["route"], r["action"]) == ("scan", "llm", "open_scanner")
+    assert client.app.state.assistant.llm_calls == ["바코드 찍을게"]
+
+
+def test_single_valueless_command_goes_through_llm(client):
+    r = say(client, "다음 어디야")
+    assert (r["fn"], r["route"], r["action"]) == ("next_stop", "llm", "refresh_route")
+    assert client.app.state.assistant.llm_calls == ["다음 어디야"]
+    assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요."
