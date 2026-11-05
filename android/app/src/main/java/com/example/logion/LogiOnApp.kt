@@ -9,6 +9,11 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import com.example.logion.chat.ChatController
+import com.example.logion.chat.VoiceState
+import com.example.logion.speech.SpeechEngine
+import com.example.logion.speech.rememberMicAction
 import com.example.logion.data.remote.CompleteRequest
 import com.example.logion.data.remote.RetrofitClient
 import com.example.logion.data.remote.StopDetailResponse
@@ -38,7 +43,6 @@ fun LogiOnApp() {
     var departAt by remember { mutableStateOf<String?>(null) }
     var estEndAt by remember { mutableStateOf<String?>(null) }
 
-    var isListening by remember { mutableStateOf(false) }
     var processingStopIds by remember { mutableStateOf(setOf<Int>()) }
 
     val coroutineScope = rememberCoroutineScope()
@@ -131,6 +135,33 @@ fun LogiOnApp() {
         refreshTodayRoute()
     }
 
+    // ---------------- 음성 대화 (STT/TTS: sherpa-onnx 온디바이스) ----------------
+    val context = LocalContext.current
+    val speechStatus by SpeechEngine.status.collectAsState()
+    val speechReady = speechStatus == SpeechEngine.Status.Ready
+    val speechError = (speechStatus as? SpeechEngine.Status.Failed)?.message
+
+    // 앱 시작 시 VAD·STT·TTS 모델을 한 번 올림 (몇 초 걸림)
+    LaunchedEffect(Unit) {
+        SpeechEngine.init(context)
+    }
+
+    // AI 채팅 탭과 음성 버튼이 같이 쓰는 대화 상태
+    val chat = remember {
+        ChatController(
+            scope = coroutineScope,
+            onRouteChanged = { coroutineScope.launch { refreshTodayRoute() } },
+            onOpenScanner = {
+                selectedTab = "scan"
+                scanPage = "camera"
+            }
+        )
+    }
+    LaunchedEffect(Unit) { chat.keepStatusFresh() }
+
+    val onVoiceClick = rememberMicAction { chat.onMicPressed() }
+    val isListening = chat.voiceState == VoiceState.Listening
+
     Scaffold(
         snackbarHost = {
             SnackbarHost(hostState = snackbarHostState)
@@ -138,8 +169,13 @@ fun LogiOnApp() {
         bottomBar = {
             Column {
                 VoiceDock(
-                    isListening = isListening,
-                    onVoiceClick = { isListening = !isListening }
+                    voiceState = chat.voiceState,
+                    speechReady = speechReady,
+                    speechError = speechError,
+                    lastHeard = chat.lastHeard,
+                    lastReply = chat.lastReply,
+                    micLevel = chat.micLevel,
+                    onVoiceClick = onVoiceClick
                 )
 
                 LogiOnBottomNavigation(
@@ -252,15 +288,10 @@ fun LogiOnApp() {
                 }
 
                 // ai 채팅
+                // 음성/채팅으로 완료·이상 보고를 하면 운행 목록을 다시 불러옴 (ChatController)
                 "chat" -> ChatScreen(
-                    // 음성/채팅으로 완료·이상 보고를 하면 운행 목록을 다시 불러옴
-                    onRouteChanged = {
-                        coroutineScope.launch { refreshTodayRoute() }
-                    },
-                    onOpenScanner = {
-                        selectedTab = "scan"
-                        scanPage = "camera"
-                    }
+                    controller = chat,
+                    speechReady = speechReady
                 )
 
                 "more" -> MoreScreen()

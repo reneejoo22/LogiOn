@@ -1,6 +1,5 @@
 package com.example.logion.screens
 
-import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.LocalOverscrollFactory
 import androidx.compose.foundation.background
@@ -13,6 +12,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.filled.Mic
+import androidx.compose.material.icons.filled.Stop
+import androidx.compose.material.icons.automirrored.filled.VolumeOff
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.filled.SmartToy
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -20,134 +23,42 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.logion.data.remote.ChatRequest
-import com.example.logion.data.remote.RetrofitClient
+import com.example.logion.chat.ChatController
+import com.example.logion.chat.ChatMessage
+import com.example.logion.chat.VoiceState
+import com.example.logion.speech.SpeechEngine
+import com.example.logion.speech.rememberMicAction
 import com.example.logion.ui.theme.*
-import kotlinx.coroutines.launch
-import retrofit2.HttpException
-import java.io.IOException
-import java.util.UUID
 
 // ==============================
 // AI 채팅 화면
 // 백엔드 POST /api/assistant/chat 으로 AI 파이프라인과 대화
+// 🎤: 온디바이스 STT(sherpa-onnx) → 서버 → 답을 TTS 로 읽음 (ChatController)
 // ==============================
-
-private data class ChatMessage(
-    val text: String,
-    val isUser: Boolean,
-    // 되묻기 선택지 (누르면 그 글자를 그대로 다시 보냄)
-    val options: List<String> = emptyList()
-)
 
 @Composable
 fun ChatScreen(
-    onRouteChanged: () -> Unit = {},
-    onOpenScanner: () -> Unit = {}
+    controller: ChatController,
+    speechReady: Boolean,
 ) {
     var inputText by remember { mutableStateOf("") }
-    var isSending by remember { mutableStateOf(false) }
-
-    // null: 확인 중 / true: 모델 준비됨 / false: 모델 없음 또는 서버 연결 실패
-    var assistantReady by remember { mutableStateOf<Boolean?>(null) }
-    var statusText by remember { mutableStateOf("AI 모델 상태 확인 중") }
-
-    // 되묻기 상태는 서버가 session_id 별로 기억함
-    val sessionId = remember { "app-" + UUID.randomUUID().toString().take(8) }
-
-    val messages = remember {
-        mutableStateListOf(
-            ChatMessage(
-                text = "배송 업무를 텍스트로 입력할 수 있는 화면입니다.",
-                isUser = false
-            )
-        )
-    }
+    val messages = controller.messages
+    val isSending = controller.isSending
+    val assistantReady = controller.assistantReady
+    val statusText = controller.statusText
+    val voiceState = controller.voiceState
 
     val listState = rememberLazyListState()
-    val coroutineScope = rememberCoroutineScope()
+    val onMic = rememberMicAction { controller.onMicPressed() }
 
     // 화면을 열 때 AI 모델이 서버에 올라가 있는지 확인
     LaunchedEffect(Unit) {
-        try {
-            val status = RetrofitClient.api.getAssistantStatus()
-            assistantReady = status.ready
-            statusText = if (status.ready) {
-                "AI 연결됨 · ${status.device ?: "서버"}"
-            } else {
-                "AI 모델이 서버에 올라가 있지 않습니다"
-            }
-        } catch (e: Exception) {
-            assistantReady = false
-            statusText = "서버에 연결할 수 없습니다"
-            Log.e("API_CHAT", "AI 상태 조회 실패", e)
-        }
+        controller.refreshStatus()
     }
 
     fun sendMessage(text: String) {
-        val trimmed = text.trim()
-        if (trimmed.isBlank() || isSending) return
-
-        messages.add(
-            ChatMessage(
-                text = trimmed,
-                isUser = true
-            )
-        )
-
+        controller.send(text)
         inputText = ""
-        isSending = true
-
-        coroutineScope.launch {
-            try {
-                val response = RetrofitClient.api.chat(
-                    ChatRequest(
-                        text = trimmed,
-                        sessionId = sessionId
-                    )
-                )
-
-                messages.add(
-                    ChatMessage(
-                        text = response.reply,
-                        isUser = false,
-                        options = response.options.orEmpty()
-                    )
-                )
-
-                Log.d(
-                    "API_CHAT",
-                    "AI 응답: fn=${response.fn} action=${response.action} ${response.latencyMs}ms"
-                )
-
-                // 실행 결과에 따라 앱 화면 갱신
-                when (response.action) {
-                    "refresh_route", "refresh_stop" -> onRouteChanged()
-                    "open_scanner" -> onOpenScanner()
-                }
-            } catch (e: Exception) {
-                Log.e("API_CHAT", "AI 채팅 실패", e)
-
-                val errorText = when (e) {
-                    is IOException -> "서버에 연결할 수 없습니다."
-                    is HttpException -> when (e.code()) {
-                        503 -> "AI 모델이 서버에 올라가 있지 않습니다."
-                        422 -> "입력한 내용을 다시 확인해 주세요."
-                        else -> "서버에 문제가 발생했습니다."
-                    }
-                    else -> "응답을 받지 못했습니다."
-                }
-
-                messages.add(
-                    ChatMessage(
-                        text = errorText,
-                        isUser = false
-                    )
-                )
-            } finally {
-                isSending = false
-            }
-        }
     }
 
     LaunchedEffect(messages.size) {
@@ -203,9 +114,27 @@ fun ChatScreen(
                         )
 
                         Text(
-                            text = "배송 업무를 텍스트로 입력",
+                            text = "말하거나 입력하면 AI 가 처리해요",
                             style = MaterialTheme.typography.bodySmall,
                             color = LogiOnSubText
+                        )
+                    }
+
+                    Spacer(Modifier.weight(1f))
+
+                    // 답을 소리로 읽을지
+                    IconToggleButton(
+                        checked = controller.speakReplies,
+                        onCheckedChange = {
+                            controller.speakReplies = it
+                            if (!it) SpeechEngine.stopSpeaking()
+                        }
+                    ) {
+                        Icon(
+                            imageVector = if (controller.speakReplies) Icons.AutoMirrored.Filled.VolumeUp
+                            else Icons.AutoMirrored.Filled.VolumeOff,
+                            contentDescription = "답 읽어주기",
+                            tint = if (controller.speakReplies) LogiOnGreen2 else LogiOnSubText
                         )
                     }
                 }
@@ -264,13 +193,41 @@ fun ChatScreen(
                     modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
+                    val listening = voiceState == VoiceState.Listening
+                    FilledIconButton(
+                        onClick = onMic,
+                        enabled = speechReady && !isSending &&
+                            voiceState != VoiceState.Recognizing && voiceState != VoiceState.Thinking,
+                        modifier = Modifier.size(48.dp),
+                        colors = IconButtonDefaults.filledIconButtonColors(
+                            containerColor = if (listening) LogiOnOrange else LogiOnGreenLight,
+                            contentColor = if (listening) Color.White else LogiOnGreen2
+                        )
+                    ) {
+                        Icon(
+                            imageVector = when (voiceState) {
+                                VoiceState.Listening -> Icons.Default.Stop
+                                VoiceState.Speaking -> Icons.AutoMirrored.Filled.VolumeOff
+                                else -> Icons.Default.Mic
+                            },
+                            contentDescription = "음성으로 말하기",
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+
+                    Spacer(Modifier.width(8.dp))
+
                     OutlinedTextField(
                         value = inputText,
                         onValueChange = { inputText = it },
                         modifier = Modifier.weight(1f),
                         placeholder = {
                             Text(
-                                text = "예: 다음 배송 어디야?",
+                                text = when (voiceState) {
+                                    VoiceState.Listening -> "듣고 있어요…"
+                                    VoiceState.Recognizing -> "알아듣는 중…"
+                                    else -> "예: 다음 배송 어디야?"
+                                },
                                 style = MaterialTheme.typography.bodyMedium
                             )
                         },
@@ -346,7 +303,7 @@ private fun ChatBubble(
                 )
             ) {
                 Text(
-                    text = message.text,
+                    text = if (message.viaVoice) "🎤 ${message.text}" else message.text,
                     style = MaterialTheme.typography.bodyMedium,
                     color = if (message.isUser) Color.White else LogiOnText
                 )

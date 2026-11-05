@@ -17,6 +17,7 @@
 | **앱 + 백엔드 시연** | 백엔드를 켜고 앱의 **AI 채팅 탭**에서 말하면 실제 DB 에 기록됨 — [실행 방법 4](#4-앱--백엔드-시연-ai-채팅-탭) |
 | **데모 노트북** | [`notebooks/LogiOn_demo_pipeline.ipynb`](notebooks/LogiOn_demo_pipeline.ipynb) — 한 문장이 거치는 단계를 모두 펼쳐 보여 줌 (출력 포함, 학습 코드 없음) |
 | **구조 그림** | [`docs/architecture.png`](docs/architecture.png) — 숫자는 결과 파일에서 읽어 자동 생성 (`scripts/make_diagram.py`) |
+| **음성(STT·TTS)** | [`docs/speech_stt_tts.md`](docs/speech_stt_tts.md) — sherpa-onnx 로 앱에서 🎤 듣고 답을 읽어 줌. 처음 한 번 `python speech/download_models.py` |
 | **백엔드 연결 방법** | [`docs/backend_integration.md`](docs/backend_integration.md) — 음성 결과를 기존 API 에 붙이는 법 |
 | **선택된 설정** | [`config/pipeline_v2_1.json`](config/pipeline_v2_1.json) — 모델 경로·기준값 한 파일 |
 
@@ -229,6 +230,86 @@ python demo/chat_server.py --no-models   # 모델 없이 화면만
 
 - 시연 데이터를 처음 상태로 돌리려면 서버를 끄고 `backend/data/logion.db` 를 지운 뒤 다시 켭니다.
 - 백엔드 API·구조는 [`backend/README.md`](backend/README.md) 를 보세요.
+
+### 5. 음성 대화 시연 (GPU 서버 + 에뮬레이터 화면 + STT/TTS)
+
+4번(글자 채팅)에 **음성**을 더한 것입니다. 앱에서 🎤 누르고 말하면 → 폰 안에서 STT → PC GPU 서버의 AI 가 처리 → 답을 화면에 띄우고 TTS 로 읽어 줍니다. 자세한 설계·측정은 [`docs/speech_stt_tts.md`](docs/speech_stt_tts.md).
+
+```
+[PC]                                              [에뮬레이터 = PC 안의 가상 폰 화면]
+ GPU 서버 (uvicorn :8000)                           LogiOn 앱
+  의도분류 + Qwen(GPU) + DB   ◀── http://10.0.2.2:8000 ──  🎤 → VAD → STT (sherpa-onnx, 앱 안)
+                              ── reply ──────────────▶  화면 표시 + 🔊 TTS (앱 안)
+```
+
+`10.0.2.2` 는 에뮬레이터 안에서 **PC 자신(localhost)** 을 가리키는 특수 주소입니다. 그래서 PC 에서 서버만 켜 두면 에뮬레이터 앱이 그 GPU 서버에 바로 붙습니다 (`android/.../data/remote/RetrofitClient.kt` 의 `BASE_URL`).
+
+**0) 처음 한 번** — 1단계 환경 + 2단계 모델(`out/intent_model`, `out/fc_merged`)이 있어야 합니다.
+
+```powershell
+cd LogiOn
+.venv\Scripts\Activate.ps1
+pip install -r backend\requirements.txt
+pip install sherpa-onnx==1.13.8 soundfile     # 2.x 는 한국어 TTS 가 안 됨 (1.x 고정)
+python speech\download_models.py               # STT/TTS 모델 + 안드로이드 AAR (약 300MB)
+```
+
+**1) GPU 서버 켜기** — 터미널 ①, 켜 둔 채로 둡니다.
+
+```powershell
+cd LogiOn\backend
+..\.venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+브라우저로 http://localhost:8000/api/assistant/status → `"ready": true, "device": "NVIDIA ..."` 이면 AI 가 GPU 에 올라간 것입니다 (수십 초 걸림).
+
+**2) 에뮬레이터 화면 띄우기** — 둘 중 하나
+
+- Android Studio → 오른쪽 **Device Manager** → `Pixel_9` 의 ▶
+- 또는 터미널 ②:
+  ```powershell
+  & "$env:LOCALAPPDATA\Android\Sdk\emulator\emulator.exe" -avd Pixel_9
+  ```
+  (AVD 이름은 `emulator.exe -list-avds` 로 확인)
+
+**3) 앱 설치·실행** — 둘 중 하나
+
+- Android Studio 에서 `android/` 폴더 열기 → 위쪽 기기 `Pixel_9` 선택 → **▶ Run**
+- 또는 터미널 ③:
+  ```powershell
+  cd LogiOn\android
+  $env:JAVA_HOME = "C:\Program Files\Android\Android Studio\jbr"
+  .\gradlew.bat :app:installDebug
+  & "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" shell am start -n com.example.logion/.MainActivity
+  ```
+
+**4) 에뮬레이터 마이크 켜기** — 기본은 PC 마이크가 연결되어 있지 않습니다.
+
+- 에뮬레이터 옆 툴바 `⋯` (Extended controls) → **Microphone** → **Virtual microphone uses host audio input** 켜기
+- 또는 `adb emu avd hostmicon` (에뮬레이터를 다시 켜면 다시 해야 함)
+- 처음 🎤 누를 때 뜨는 마이크 권한 요청은 **허용**
+
+**5) 음성 확인**
+
+1. 아래 음성 바에 "무엇을 도와드릴까요?" 가 뜨면 음성 모델 준비 완료 (처음 몇 초는 "음성 모델 불러오는 중…")
+2. **채팅** 탭 상단 카드가 `AI 연결됨 · <GPU 이름>` 인지 확인 (빨간 "서버에 연결할 수 없습니다" 면 1단계 서버 확인. 서버가 켜지면 5초 안에 자동으로 바뀜)
+3. 🎤 누르고 말하기 → 말을 멈추면 자동 종료 → 채팅에 `🎤 말한 내용` → 답이 뜨고 소리로 읽음
+   - 시험 문장: `다음 어디야`, `서울숲점 콜라 몇 박스야`, `우유 두 개 터졌어`, `성수연무장점 납품 완료`
+4. 단계별 시간은 logcat 에서 확인:
+   ```powershell
+   & "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" logcat -s SPEECH API_CHAT
+   ```
+   `STT 58ms: …`, `AI 응답: fn=next_stop … 880ms`, `TTS 첫 문장 …ms` 가 찍힙니다.
+
+**실제 폰으로 할 때**: 폰과 PC 를 같은 Wi-Fi 에 두고 `RetrofitClient.kt` 의 `BASE_URL` 을 `http://<PC의 IP>:8000/` 로 바꾼 뒤 설치합니다 (PC IP 는 `ipconfig`, Windows 방화벽에서 8000 포트 허용 필요).
+
+| 증상 | 원인 / 해결 |
+| --- | --- |
+| 채팅 카드 "서버에 연결할 수 없습니다" | 1단계 서버가 꺼져 있음 → 켜면 5초 안에 "AI 연결됨" 으로 바뀜 |
+| "AI 모델이 서버에 올라가 있지 않습니다" (503) | 서버는 켜졌지만 모델 로딩 실패. `/api/assistant/status` 의 `error` 확인. `WinError 4551 ... caffe2_nvrtc.dll` 이면 Windows 스마트 앱 컨트롤이 torch DLL 을 막은 것 → 서버 재시작으로 풀리기도 하고, 계속되면 스마트 앱 컨트롤을 꺼야 함 |
+| 음성 바 "음성 모델을 불러오지 못했어요" | `python speech\download_models.py` 를 안 해서 assets 에 모델이 없음 → 받은 뒤 다시 빌드 |
+| 🎤 눌러도 엉뚱한 글자 (`へ he 해` 등) | 에뮬레이터 마이크가 꺼져 있거나 잡음만 들어감 → 4단계 |
+| 빌드 오류 `sherpa-onnx-1.13.8.aar` 없음 | `python speech\download_models.py` 실행 |
 
 ### GPU 요구사항 (중요)
 

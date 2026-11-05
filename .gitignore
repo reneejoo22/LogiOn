@@ -55,3 +55,10 @@ nohup.out
 
 # Claude Code 로컬 설정
 .claude/
+
+# STT/TTS 모델 · sherpa-onnx AAR (python speech/download_models.py 로 받음)
+speech/models/
+android/app/src/main/assets/silero_vad.onnx
+android/app/src/main/assets/sherpa-onnx-*/
+android/app/src/main/assets/vits-*/
+android/app/libs/*.aar
