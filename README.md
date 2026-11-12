@@ -50,6 +50,7 @@
 **핵심 설계**: LLM은 "기능을 고르고 말한 값을 JSON으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기 판단은 규칙 코드(③)가 맡습니다. 모델이 없는 값을 지어내지 않게 하기 위해서입니다. 모델이 하나라 보드에 올릴 모델·변환 작업이 하나로 줄어듭니다.
 
 > 의도분류를 포함한 이전 구조(v2.1)는 `config/pipeline_v2_1.json` 으로 그대로 돌릴 수 있습니다 (그림: [`docs/architecture_v2_1.png`](docs/architecture_v2_1.png)).
+> 의도분류 분리 실험(Qwen3-0.6B 대 roberta)은 main 에 합치지 않고 [`intent-qwen3` 브랜치](https://github.com/reneejoo22/LogiOn/tree/intent-qwen3)에 두었습니다 — 결과: [`results/intent_qwen3/`](https://github.com/reneejoo22/LogiOn/tree/intent-qwen3/results/intent_qwen3), 비교 요약은 [`results/single_llm_report.md`](results/single_llm_report.md).
 
 ```mermaid
 flowchart TD
@@ -234,13 +235,13 @@ python demo/chat_server.py --config config/pipeline_v2_1.json   # 의도분류�
 ```
 [PC]                                              [에뮬레이터 = PC 안의 가상 폰 화면]
  GPU 서버 (uvicorn :8000)                           LogiOn 앱
-  의도분류 + Qwen(GPU) + DB   ◀── http://10.0.2.2:8000 ──  🎤 → VAD → STT (sherpa-onnx, 앱 안)
+  Qwen(GPU, 단일 모델) + DB   ◀── http://10.0.2.2:8000 ──  🎤 → VAD → STT (sherpa-onnx, 앱 안)
                               ── reply ──────────────▶  화면 표시 + 🔊 TTS (앱 안)
 ```
 
 `10.0.2.2` 는 에뮬레이터 안에서 **PC 자신(localhost)** 을 가리키는 특수 주소입니다. 그래서 PC 에서 서버만 켜 두면 에뮬레이터 앱이 그 GPU 서버에 바로 붙습니다 (`android/.../data/remote/RetrofitClient.kt` 의 `BASE_URL`).
 
-**0) 처음 한 번** — 1단계 환경 + 2단계 모델(`out/intent_model`, `out/fc_merged`)이 있어야 합니다.
+**0) 처음 한 번** — 1단계 환경 + 2단계 모델(`out/fc_merged`)이 있어야 합니다 (`out/intent_model` 은 v2.1 설정으로 켤 때만 필요).
 
 ```powershell
 cd LogiOn
