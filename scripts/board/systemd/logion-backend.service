@@ -1,0 +1,19 @@
+[Unit]
+Description=LogiOn backend (FastAPI 0.0.0.0:8000, LLM=rkllm)
+After=network-online.target logion-llm.service
+Wants=network-online.target logion-llm.service
+
+[Service]
+Type=simple
+User=orangepi
+WorkingDirectory=/home/orangepi/LogiOn/backend
+Environment=LOGION_LLM_BACKEND=rkllm
+Environment=LOGION_LLM_URL=http://127.0.0.1:8090
+ExecStart=/home/orangepi/LogiOn/scripts/board/start_backend.sh
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/home/orangepi/LogiOn/logs/backend.log
+StandardError=append:/home/orangepi/LogiOn/logs/backend.log
+
+[Install]
+WantedBy=multi-user.target

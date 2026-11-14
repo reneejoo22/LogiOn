@@ -1,0 +1,10 @@
+# 보드(Orange Pi 5+, aarch64, Python 3.10)용: 백엔드 + 파이프라인(rkllm 모드)만. torch/transformers 없음.
+# PC(.venv) 에서 backend/tests 가 통과한 버전과 같게 고정.
+fastapi==0.162.0
+uvicorn==0.54.0
+pydantic==2.14.1
+starlette==1.10.0
+anyio==4.15.1
+# 테스트용
+pytest==9.1.1
+httpx==0.28.1
