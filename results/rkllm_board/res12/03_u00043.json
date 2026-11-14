@@ -1,0 +1,1 @@
+{"choices": [{"message": {"role": "assistant", "content": "{\"fn\":\"stop_items\",\"store\":\"반포점\"}"}}], "server_ms": 984.1, "perf": {"prefill_tokens": 12, "prefill_ms": 99.0, "generate_tokens": 12, "generate_ms": 879.1, "mem_mb": 1680.3}, "error": false}

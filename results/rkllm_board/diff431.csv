@@ -1,0 +1,10 @@
+﻿id,text,target,pc_out,board_out,pc_exact,board_exact,pc_fn,board_fn
+u00340,몇 개 남았지 얼른,"{""fn"":""next_stop""}","{""fn"":""stop_items""}","{""fn"":""next_stop""}",False,True,False,True
+u01286,요구르트 박스 하나 파손됐어,"{""fn"":""report_issue"",""item"":""요구르트"",""issue"":""파손"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""요구르트"",""issue"":""파손"",""qty"":1,""unit"":""개""}","{""fn"":""report_issue"",""item"":""요구르트"",""issue"":""파손"",""qty"":1}",False,False,True,True
+u01444,반포점 커피 얼마나 하차하지,"{""fn"":""stop_items"",""store"":""반포점"",""item"":""커피""}","{""fn"":""stop_items"",""store"":""반포점"",""item"":""커피""}","{""fn"":""stop_items"",""store"":""반포점""}",True,False,True,True
+u01590,저기 물건 확인할게,"{""fn"":""scan""}","{""fn"":""stop_items""}","{""fn"":""scan""}",False,True,False,True
+u01782,젤리 박스 하나 찌그러졌어,"{""fn"":""report_issue"",""item"":""젤리"",""issue"":""파손"",""qty"":1,""unit"":""박스""}","{""fn"":""report_issue"",""item"":""젤리"",""issue"":""파손"",""qty"":1,""unit"":""개""}","{""fn"":""report_issue"",""item"":""젤리"",""issue"":""파손"",""qty"":1,""unit"":""박스""}",False,True,True,True
+u01863,아 네비 다음에 어디 가래,"{""fn"":""next_stop""}","{""fn"":""other""}","{""fn"":""next_stop""}",False,True,False,True
+u02162,아 몇 개 남았지 빨리,"{""fn"":""next_stop""}","{""fn"":""stop_items""}","{""fn"":""next_stop""}",False,True,False,True
+u02240,이제 엄마한테 전화해주세요,"{""fn"":""other""}","{""fn"":""other""}","{""fn"":""complete"",""receiver"":""엄마""}",True,False,True,False
+u02509,자 몇 개 남았지 빨리,"{""fn"":""next_stop""}","{""fn"":""stop_items""}","{""fn"":""next_stop""}",False,True,False,True

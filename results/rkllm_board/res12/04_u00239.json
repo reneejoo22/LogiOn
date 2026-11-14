@@ -1,0 +1,1 @@
+{"choices": [{"message": {"role": "assistant", "content": "{\"fn\":\"complete\",\"receiver\":\"점장님\"}"}}], "server_ms": 878.0, "perf": {"prefill_tokens": 17, "prefill_ms": 121.3, "generate_tokens": 10, "generate_ms": 750.8, "mem_mb": 1680.3}, "error": false}
