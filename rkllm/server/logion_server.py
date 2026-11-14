@@ -108,7 +108,9 @@ print("rkllm init success", flush=True)
 cur_sys = [None]
 lock = threading.Lock()
 
-def infer(system, user, max_new):
+MODEL_NAME = os.path.basename(args.model).rsplit(".", 1)[0]
+
+def infer(system, user, max_new, top_k=1, repeat_penalty=1.1):
     if system != cur_sys[0]:
         # Qwen2.5 chat_template 과 동일 (PC: tokenizer.apply_chat_template(..., add_generation_prompt=True))
         r = lib.rkllm_set_chat_template(handle, f"<|im_start|>system\n{system}<|im_end|>\n".encode(),
@@ -118,7 +120,7 @@ def infer(system, user, max_new):
     state.update(buf=b"", perf=None, err=False)
     inp = Input(); inp.role = b"user"; inp.enable_thinking = False; inp.input_type = 0
     inp.prompt_input = user.encode()
-    sp = SamplingParam(top_k=1, top_p=0.9, temperature=0.8, repeat_penalty=1.1, frequency_penalty=0.0,
+    sp = SamplingParam(top_k=top_k, top_p=0.9, temperature=0.8, repeat_penalty=repeat_penalty, frequency_penalty=0.0,
                        presence_penalty=0.0, mirostat=0, mirostat_tau=5.0, mirostat_eta=0.1)
     ip = InferParam(); ip.mode = 0; ip.keep_history = 0; ip.max_new_tokens = max_new
     ip.sampling_params = ctypes.pointer(sp)
@@ -128,19 +130,31 @@ def infer(system, user, max_new):
     return state["buf"].decode("utf-8", "replace"), ms, state["perf"], state["err"]
 
 class Hd(BaseHTTPRequestHandler):
+    # 요청은 한 번에 하나씩 처리한다 (HTTPServer 는 단일 스레드). 동시에 온 요청은 소켓에서 차례를 기다린다.
+    def _json(self, code, obj):
+        data = json.dumps(obj, ensure_ascii=False).encode()
+        self.send_response(code); self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(data))); self.end_headers(); self.wfile.write(data)
+    def do_GET(self):
+        if self.path == "/health":
+            self._json(200, {"status": "ok", "model": MODEL_NAME, "max_context": args.max_context})
+        else:
+            self.send_error(404)
     def do_POST(self):
         if self.path != "/v1/chat/completions":
             self.send_error(404); return
-        body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
-        msgs = body["messages"]
-        system = next((m["content"] for m in msgs if m["role"] == "system"), "")
-        user = [m["content"] for m in msgs if m["role"] == "user"][-1]
+        try:
+            body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            msgs = body["messages"]
+            system = next((m["content"] for m in msgs if m["role"] == "system"), "")
+            user = [m["content"] for m in msgs if m["role"] == "user"][-1]
+        except Exception as e:
+            self._json(400, {"error": f"bad request: {e}"}); return
         with lock:
-            out, ms, perf, err = infer(system, user, int(body.get("max_tokens", 64)))
-        resp = {"choices": [{"message": {"role": "assistant", "content": out}}], "server_ms": round(ms, 1), "perf": perf, "error": err}
-        data = json.dumps(resp, ensure_ascii=False).encode()
-        self.send_response(200); self.send_header("Content-Type", "application/json; charset=utf-8")
-        self.send_header("Content-Length", str(len(data))); self.end_headers(); self.wfile.write(data)
+            out, ms, perf, err = infer(system, user, int(body.get("max_tokens", 64)),
+                                       int(body.get("top_k", 1)), float(body.get("repeat_penalty", 1.1)))
+        self._json(200, {"choices": [{"message": {"role": "assistant", "content": out}}], "server_ms": round(ms, 1),
+                         "perf": perf, "error": err})
     def log_message(self, *a):
         pass
 
