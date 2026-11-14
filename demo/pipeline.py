@@ -18,7 +18,7 @@ LLM 을 어디서 돌릴지 (환경변수, 없으면 설정의 "llm" 항목):
   LOGION_LLM_BACKEND=local  (기본) 이 프로세스에서 torch/transformers 로 FC 모델을 올림 (PC GPU)
   LOGION_LLM_BACKEND=rkllm  보드 LLM 서버(rkllm/server/logion_server.py)에 HTTP 로 물어봄. torch/transformers 를 import 하지 않음
   LOGION_LLM_URL      rkllm 서버 주소 (기본 http://127.0.0.1:8090)
-  LOGION_LLM_TIMEOUT  요청 제한 시간 초 (기본 20)
+  LOGION_LLM_TIMEOUT  요청 제한 시간 초 (기본: 설정 llm.timeout_s = 8. 앱 기본 읽기 제한 10초보다 짧게)
 system prompt 와 생성 설정(greedy, repetition_penalty, max_new_tokens)은 두 경우 모두 설정 파일 한 곳에서 읽는다.
 """
 import difflib
@@ -100,7 +100,7 @@ class Assistant:
         if self.llm_backend not in ("local", "rkllm"):
             raise ValueError(f"LOGION_LLM_BACKEND 는 local 또는 rkllm: {self.llm_backend}")
         self.llm_url = (os.environ.get("LOGION_LLM_URL") or llm.get("url") or "http://127.0.0.1:8090").rstrip("/")
-        self.llm_timeout = float(os.environ.get("LOGION_LLM_TIMEOUT") or llm.get("timeout_s") or 20)
+        self.llm_timeout = float(os.environ.get("LOGION_LLM_TIMEOUT") or llm.get("timeout_s") or 8)
         self.stores, self.products, self.stops = load_seed()
         self.pending = {}
         self.device = "cpu"

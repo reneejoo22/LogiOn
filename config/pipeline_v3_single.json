@@ -36,7 +36,7 @@
   "llm": {
     "backend": "local",
     "url": "http://127.0.0.1:8090",
-    "timeout_s": 20,
+    "timeout_s": 8,
     "note": "backend: local(PC, torch) | rkllm(보드 LLM 서버). 환경변수 LOGION_LLM_BACKEND / LOGION_LLM_URL / LOGION_LLM_TIMEOUT 가 우선. system_prompt·generation 은 두 경우 모두 이 파일 값을 씀"
   },
   "test_metrics": {
