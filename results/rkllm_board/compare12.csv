@@ -1,0 +1,13 @@
+﻿id,text,gold_fn,pc_out,board_out,fn_match,identical,pc_ms,board_curl_ms,board_prefill_tokens,board_generate_tokens
+u00000,지금 다음 남은 데가 어디지,next_stop,"{""fn"":""next_stop""}","{""fn"":""next_stop""}",True,True,321,965,126,6
+u00048,어디로 갈지 알려줘,next_stop,"{""fn"":""next_stop""}","{""fn"":""next_stop""}",True,True,319,556,13,6
+u00035,여기 내릴 거 읽어줘,stop_items,"{""fn"":""stop_items""}","{""fn"":""stop_items""}",True,True,317,568,14,6
+u00043,반포점 리스트 불러줘,stop_items,"{""fn"":""stop_items"",""store"":""반포점""}","{""fn"":""stop_items"",""store"":""반포점""}",True,True,578,985,12,12
+u00239,점장님 확인했어 완료 빨리,complete,"{""fn"":""complete"",""receiver"":""점장님""}","{""fn"":""complete"",""receiver"":""점장님""}",True,True,497,879,17,10
+u00242,어 점장님한테 인계했어 얼른,complete,"{""fn"":""complete"",""receiver"":""점장님""}","{""fn"":""complete"",""receiver"":""점장님""}",True,True,498,848,17,10
+u00005,제육도시락 박스 하나 다 녹았어,report_issue,"{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상"",""qty"":1}","{""fn"":""report_issue"",""item"":""제육도시락"",""issue"":""온도이상"",""qty"":1}",True,True,1217,2041,19,25
+u00007,자 서초점 커피 여덟판 터졌어 등록해줘,report_issue,"{""fn"":""report_issue"",""store"":""서초점"",""item"":""커피"",""issue"":""파손"",""qty"":8,""unit"":""판""}","{""fn"":""report_issue"",""store"":""서초점"",""item"":""커피"",""issue"":""파손"",""qty"":8,""unit"":""판""}",True,True,1479,2498,25,32
+u00011,스캐너 켜라고,scan,"{""fn"":""scan""}","{""fn"":""scan""}",True,True,284,474,12,5
+u00018,송장 스캔 켜라,scan,"{""fn"":""scan""}","{""fn"":""scan""}",True,True,275,487,13,5
+u00030,근처 화장실 어디야 얼른,other,"{""fn"":""other""}","{""fn"":""other""}",True,True,275,489,15,5
+u00054,저기 근처 화장실 어디야 지금,other,"{""fn"":""other""}","{""fn"":""other""}",True,True,272,500,17,5

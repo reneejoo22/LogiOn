@@ -65,3 +65,7 @@ android/app/libs/*.aar
 
 # Android Studio 개인 설정 (사람마다 다름)
 android/.idea/
+.venv-board/
+logs/llm_server.log
+logs/backend.log
+logs/*.pid

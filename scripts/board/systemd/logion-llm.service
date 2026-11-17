@@ -1,0 +1,17 @@
+[Unit]
+Description=LogiOn RKLLM server (127.0.0.1:8090)
+After=network.target
+
+[Service]
+Type=simple
+User=orangepi
+WorkingDirectory=/home/orangepi/LogiOn
+ExecStart=/home/orangepi/LogiOn/rkllm/server/start_llm.sh
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=102400
+StandardOutput=append:/home/orangepi/LogiOn/logs/llm_server.log
+StandardError=append:/home/orangepi/LogiOn/logs/llm_server.log
+
+[Install]
+WantedBy=multi-user.target

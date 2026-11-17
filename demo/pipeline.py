@@ -13,6 +13,13 @@
 경로가 있으면 예전처럼 의도분류 -> 갈림길(되묻기·LLM 생략) -> FC 순서로 돌아갑니다 (v2.1).
 모델(FC 모델, 켰다면 의도분류 모델)이 없으면 ModelsMissing 을 냅니다.
 값 보정은 backend/app/db/seed.py 의 점포·품목을 읽어 씁니다 (백엔드 코드는 고치지 않음).
+
+LLM 을 어디서 돌릴지 (환경변수, 없으면 설정의 "llm" 항목):
+  LOGION_LLM_BACKEND=local  (기본) 이 프로세스에서 torch/transformers 로 FC 모델을 올림 (PC GPU)
+  LOGION_LLM_BACKEND=rkllm  보드 LLM 서버(rkllm/server/logion_server.py)에 HTTP 로 물어봄. torch/transformers 를 import 하지 않음
+  LOGION_LLM_URL      rkllm 서버 주소 (기본 http://127.0.0.1:8090)
+  LOGION_LLM_TIMEOUT  요청 제한 시간 초 (기본: 설정 llm.timeout_s = 8. 앱 기본 읽기 제한 10초보다 짧게)
+system prompt 와 생성 설정(greedy, repetition_penalty, max_new_tokens)은 두 경우 모두 설정 파일 한 곳에서 읽는다.
 """
 import difflib
 import json
@@ -20,6 +27,8 @@ import os
 import re
 import sys
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,6 +50,10 @@ ALLOWED_BY_FN = {
 
 class ModelsMissing(RuntimeError):
     pass
+
+
+class LLMUnavailable(RuntimeError):
+    """LLM 서버가 꺼져 있거나, 시간 안에 답이 없거나, busy 일 때. run() 이 잡아서 '다시 말씀해 주세요' 로 답한다."""
 
 
 def _flat(s):
@@ -82,6 +95,12 @@ class Assistant:
         cp = Path(config_path or os.environ.get("LOGION_PIPELINE_CONFIG") or ROOT / "config/pipeline_v3_single.json")
         self.cfg = json.loads((cp if cp.is_absolute() else ROOT / cp).read_text(encoding="utf-8"))
         self.use_intent = bool(self.cfg.get("intent_model"))
+        llm = self.cfg.get("llm") or {}
+        self.llm_backend = (os.environ.get("LOGION_LLM_BACKEND") or llm.get("backend") or "local").lower()
+        if self.llm_backend not in ("local", "rkllm"):
+            raise ValueError(f"LOGION_LLM_BACKEND 는 local 또는 rkllm: {self.llm_backend}")
+        self.llm_url = (os.environ.get("LOGION_LLM_URL") or llm.get("url") or "http://127.0.0.1:8090").rstrip("/")
+        self.llm_timeout = float(os.environ.get("LOGION_LLM_TIMEOUT") or llm.get("timeout_s") or 8)
         self.stores, self.products, self.stops = load_seed()
         self.pending = {}
         self.device = "cpu"
@@ -92,6 +111,20 @@ class Assistant:
 
     # ---------------- 모델 ----------------
     def _load_models(self):
+        if self.llm_backend == "rkllm":
+            if self.use_intent:
+                raise ValueError("rkllm 모드는 단일 모델 설정(intent_model: null)만 지원합니다.")
+            # 모델은 LLM 서버가 들고 있다. 여기서는 torch/transformers 를 쓰지 않는다
+            self.device = "rkllm"
+            self.device_name = f"RK3588 NPU (rkllm, {self.llm_url})"
+            self.models_loaded = True
+            self.id2label = dict(enumerate(self.cfg["funcs"]))
+            try:
+                h = self.llm_health()
+                self.device_name += f" model={h.get('model')}"
+            except LLMUnavailable as e:   # 서버가 나중에 켜져도 되게, 시작은 막지 않는다
+                print(f"[pipeline] 경고: LLM 서버에 아직 연결되지 않음 ({e}). 요청 때 다시 시도합니다.", file=sys.stderr)
+            return
         fc_dir = ROOT / self.cfg["fc_model"]
         need = [fc_dir] + ([ROOT / self.cfg["intent_model"]] if self.use_intent else [])
         missing = [str(p.relative_to(ROOT)) for p in need if not (p / "config.json").exists()]
@@ -131,16 +164,49 @@ class Assistant:
         order = np.argsort(-p)
         return [(self.id2label[int(i)], float(p[i])) for i in order]
 
+    def messages(self, text):
+        """PC·보드 공통 입력. system prompt 는 설정 파일 한 곳에서만 온다."""
+        return [{"role": "system", "content": self.cfg["system_prompt"]}, {"role": "user", "content": text}]
+
+    def llm_health(self):
+        try:
+            with urllib.request.urlopen(self.llm_url + "/health", timeout=3) as r:
+                return json.loads(r.read())
+        except (urllib.error.URLError, OSError, ValueError) as e:
+            raise LLMUnavailable(f"{self.llm_url} 응답 없음: {e}") from e
+
+    def call_llm_rkllm(self, text):
+        """보드 LLM 서버에 묻는다. 토큰 확률은 받지 않으므로 conf 자리는 0.0 (의미 없음)."""
+        g = self.cfg["generation"]
+        body = json.dumps({"messages": self.messages(text), "max_tokens": g["max_new_tokens"],
+                           "top_k": g.get("top_k", 1), "repeat_penalty": g.get("repetition_penalty", 1.0)},
+                          ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request(self.llm_url + "/v1/chat/completions", data=body,
+                                     headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=self.llm_timeout) as r:
+                d = json.loads(r.read())
+        except urllib.error.HTTPError as e:
+            raise LLMUnavailable(f"LLM 서버 HTTP {e.code}") from e
+        except (urllib.error.URLError, OSError, ValueError) as e:   # 연결 거부, 타임아웃, 깨진 응답
+            raise LLMUnavailable(f"LLM 서버 응답 없음: {e}") from e
+        if d.get("error") or not d.get("choices"):
+            raise LLMUnavailable(f"LLM 서버 오류: {d.get('error')}")
+        return d["choices"][0]["message"]["content"].strip(), 0.0, 0.0
+
     def call_llm(self, text):
         """LLM 출력 문자열과 생성 토큰 확률의 평균·최솟값."""
+        if self.llm_backend == "rkllm":
+            return self.call_llm_rkllm(text)
         import numpy as np
+        g = self.cfg["generation"]
         prompt = self.fc_tok.apply_chat_template(
-            [{"role": "system", "content": self.cfg["system_prompt"]}, {"role": "user", "content": text}],
-            tokenize=False, add_generation_prompt=True, enable_thinking=False)
+            self.messages(text), tokenize=False, add_generation_prompt=True, enable_thinking=False)
         with self.torch.no_grad():
             enc = self.fc_tok([prompt], return_tensors="pt", add_special_tokens=False).to(self.fc_model.device)
             out = self.fc_model.generate(
-                **enc, max_new_tokens=self.cfg["generation"]["max_new_tokens"], do_sample=False,
+                **enc, max_new_tokens=g["max_new_tokens"], do_sample=False,
+                repetition_penalty=g.get("repetition_penalty", 1.0),
                 pad_token_id=self.fc_tok.pad_token_id, return_dict_in_generate=True, output_scores=True)
         new = out.sequences[0, enc["input_ids"].shape[1]:]
         probs = [float(self.torch.softmax(s[0].float(), -1)[t]) for s, t in zip(out.scores, new)]
@@ -386,7 +452,15 @@ class Assistant:
                 trace["llm"] = {"skipped": True, "why": d["why"]}
             else:
                 t = time.perf_counter()
-                raw, cmean, cmin = self.call_llm(src)
+                try:
+                    raw, cmean, cmin = self.call_llm(src)
+                except LLMUnavailable as e:
+                    # 크래시하지 않고 다시 말해 달라고 한다. 되묻기 상태는 그대로 둬서 다음 말에 이어지게
+                    T["LLM"] = T["전체"] = (time.perf_counter() - t_all) * 1000
+                    trace.update(llm={"skipped": False, "error": str(e)}, resolve=[], request=None,
+                                 reply=self.cfg.get("llm_busy_message", "잠시 후 다시 말씀해 주세요."),
+                                 route="ask", options=[], timings=T, fn=None)
+                    return trace
                 T["LLM"] = (time.perf_counter() - t) * 1000
                 call = self.parse_json(raw)
                 if carry == "choice":

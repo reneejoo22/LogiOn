@@ -1,0 +1,1 @@
+{"choices": [{"message": {"role": "assistant", "content": "{\"fn\":\"other\"}"}}], "server_ms": 487.4, "perf": {"prefill_tokens": 15, "prefill_ms": 98.8, "generate_tokens": 5, "generate_ms": 383.0, "mem_mb": 1680.3}, "error": false}

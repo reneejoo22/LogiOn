@@ -1,0 +1,1 @@
+{"choices": [{"message": {"role": "assistant", "content": "{\"fn\":\"report_issue\",\"store\":\"서초점\",\"item\":\"커피\",\"issue\":\"파손\",\"qty\":8,\"unit\":\"판\"}"}}], "server_ms": 2496.4, "perf": {"prefill_tokens": 25, "prefill_ms": 134.8, "generate_tokens": 32, "generate_ms": 2354.6, "mem_mb": 1680.3}, "error": false}

@@ -1,0 +1,1 @@
+{"choices": [{"message": {"role": "assistant", "content": "{\"fn\":\"report_issue\",\"item\":\"제육도시락\",\"issue\":\"온도이상\",\"qty\":1}"}}], "server_ms": 2039.5, "perf": {"prefill_tokens": 19, "prefill_ms": 121.9, "generate_tokens": 25, "generate_ms": 1910.9, "mem_mb": 1680.3}, "error": false}
