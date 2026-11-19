@@ -254,3 +254,27 @@ def test_stt_aliases_fix_text_before_llm(client):
     say(client, "성수연무 장점 정자님")
     assert seen[-1] == "성수연무장점 점장님"
     assert say(client, "다음 어디야")["text_fixed"] is None  # 안 바뀌면 None
+
+
+def test_unit_from_sentence_survives_item_question(client):
+    """품목을 되물어도 첫 문장의 단위(박스)가 남는다. 되묻기 답('참치삼각김밥')에는 단위가 없다."""
+    bot = client.app.state.assistant
+    bot.call_llm = lambda t: ('{"fn":"report_issue","item":"삼각김밥","issue":"파손","qty":2}', 0.99, 0.9)
+    r = say(client, "삼각김밥 두 박스 터졌어")
+    assert r["options"] == ["참치삼각김밥", "스팸마요삼각김밥"]
+    r = say(client, "참치삼각김밥")
+    assert r["reply"] == "GS25 성수연무장점 참치삼각김밥 2박스 파손으로 기록했어요."
+    assert client.get("/api/stops/1").json()["issues"][0]["unit"] == "박스"
+
+
+@pytest.mark.parametrize("junk", ["그.", "あ", "음"])
+def test_complete_confirm_short_junk_asks_again(client, junk):
+    """STT 가 '네' 를 '그.' 로 잘못 들어도 되묻기를 버리지 않고 다시 묻는다. 그다음 '네' 로 기록된다."""
+    say(client, "납품 완료 점장님이 받았어")
+    r = say(client, junk)
+    assert (r["route"], r["reply"], r["options"], r["action"]) == (
+        "confirm_ask", "네 또는 아니요로 말씀해 주세요.", ["네", "아니요"], None)
+    assert r["stop_id"] == 1 and client.get("/api/stops/1").json()["status"] == "pending"
+    assert client.app.state.assistant.llm_calls == ["납품 완료 점장님이 받았어"]
+    r = say(client, "네")
+    assert r["route"] == "confirm_yes" and client.get("/api/stops/1").json()["status"] == "done"
