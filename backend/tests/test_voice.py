@@ -252,3 +252,9 @@ def test_short_yes_that_vad_drops_is_still_heard(vclient):
     assert j["text"] == "네." and j["route"] != "not_heard"
     j = post_voice(vclient, wav_bytes(np.full(16000, 0.001, np.float32))).json()   # 소리가 거의 없으면 못 들음
     assert j["route"] == "not_heard"
+
+
+def test_punctuation_only_stt_is_not_heard(vclient):
+    vclient.engine.next_text = "."
+    j = post_voice(vclient, wav_bytes(tone())).json()
+    assert j["route"] == "not_heard" and j["text"] == "" and j["latency"]["llm"] == 0

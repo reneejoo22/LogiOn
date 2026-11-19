@@ -5,6 +5,7 @@ STT·TTS 는 CPU (강의 기준 스레드 STT 4, TTS 2), NPU 는 LLM 전용.
 응답 음성은 메모리에 잠깐 들고 있다가 GET /api/assistant/voice/audio/{id} 로 내려준다.
 """
 import io
+import re
 import logging
 import os
 import sys
@@ -102,6 +103,8 @@ class VoiceService:
 
         t0 = time.perf_counter()
         text = self.transcribe(samples)
+        if not re.sub(r"[\W_]+", "", text):   # "." 처럼 글자 없이 문장부호만 = 못 들음
+            text = ""
         stt_ms = (time.perf_counter() - t0) * 1000
 
         llm_ms = 0.0
