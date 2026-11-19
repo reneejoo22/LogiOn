@@ -79,8 +79,10 @@ class ChatController(
     private var voiceJob: Job? = null
 
     suspend fun refreshStatus() {
+        val url = RetrofitClient.baseUrl
         try {
             val status = RetrofitClient.api.getAssistantStatus()
+            if (url != RetrofitClient.baseUrl) return   // 묻는 사이 더보기에서 주소가 바뀜 → 이 결과는 버림
             assistantReady = status.ready
             voiceReady = status.ready && status.voiceReady == true
             statusText = when {
@@ -89,9 +91,10 @@ class ChatController(
                 else -> "AI 연결됨 · ${status.device ?: "보드"} · 음성 보드 처리"
             }
         } catch (e: Exception) {
+            if (url != RetrofitClient.baseUrl) return
             assistantReady = false
             voiceReady = false
-            statusText = "보드에 연결할 수 없습니다 (${RetrofitClient.baseUrl}) · 더보기에서 주소 확인"
+            statusText = "보드에 연결할 수 없습니다 ($url) · 더보기에서 주소 확인"
             Log.e(TAG, "AI 상태 조회 실패", e)
         }
     }
