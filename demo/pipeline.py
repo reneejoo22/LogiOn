@@ -315,6 +315,14 @@ class Assistant:
             # 그 기능에 없는 값은 버린다. 예: "성수연무 장점, 납품완 …" → complete 에 item="장점" 이 붙어
             # 품목을 되묻고, 그 되묻기가 다음 말("근처 화장실 어디야")까지 답으로 삼키던 문제
             out = {k: v for k, v in out.items() if k == "fn" or k in ALLOWED_BY_FN[fn]}
+        if fn == "report_issue" and not out.get("unit"):
+            # "우유 두 박스 터졌어" 인데 LLM 이 unit 을 비웠을 때. 품목·문제를 되묻기 전에 채워야
+            # 되묻기 상태(pending call)에 단위가 남는다 (되묻기 답 문장에는 단위가 없음)
+            u = unit_from_text(self.text)
+            if u:
+                steps.append({"slot": "unit", "spoken": "(말하지 않음)", "found": u,
+                              "how": "문장에서 단위 찾음", "score": "—", "cands": UNITS})
+                out["unit"] = u
         if out.get("store"):
             rows, how, score = self.match_name(out["store"], self.stores, ["name", "short_name"])
             cands = [r["name"] for r in rows]
@@ -350,13 +358,6 @@ class Assistant:
                 return out, ", ".join(cands) + " 중 어떤 건가요?", cands
             else:
                 return out, f"'{out['item']}'이라는 품목을 찾지 못했어요.", []
-
-        if fn == "report_issue" and not out.get("unit"):
-            u = unit_from_text(self.text)       # "우유 두 박스 터졌어" 인데 LLM 이 unit 을 비웠을 때
-            if u:
-                steps.append({"slot": "unit", "spoken": "(말하지 않음)", "found": u,
-                              "how": "문장에서 단위 찾음", "score": "—", "cands": UNITS})
-                out["unit"] = u
 
         if out.get("qty") is not None and out.get("unit") not in UNITS:
             u = out.get("unit")
@@ -513,6 +514,14 @@ class Assistant:
             answer = match_yes_no(text)
             if answer:
                 return self.run_confirm(answer, trace, T, t_all)
+            if len(_clean(text)) <= 2:
+                # "그." "あ" 처럼 짧은 말은 STT 가 '네'·'응' 을 잘못 들은 것일 수 있다 → 되묻기는 그대로 두고 다시 묻는다
+                stop = next((s for s in self.stops if s["id"] == self.pending["stop_id"]), None)
+                self.last_call = dict(self.pending["call"], _stop=stop)
+                T["전체"] = (time.perf_counter() - t_all) * 1000
+                trace.update(intent=None, llm=None, resolve=[], request=None, route="confirm_ask", fn="complete",
+                             reply="네 또는 아니요로 말씀해 주세요.", options=["네", "아니요"], timings=T)
+                return trace
             self.pending = {}                     # 예/아니요가 아닌 다른 말 → 되묻기는 버리고 새 말로 처리
         picked = self.match_choice(text)
         carry = None
