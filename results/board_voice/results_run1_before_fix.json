@@ -1,0 +1,155 @@
+[
+ {
+  "text": "다음 어디야?",
+  "reply": "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요.",
+  "fn": "next_stop",
+  "call": {},
+  "route": "llm",
+  "ask": null,
+  "options": null,
+  "action": "refresh_route",
+  "stop_id": 4,
+  "conf": 0.0,
+  "latency": {
+   "stt": 215,
+   "llm": 710,
+   "tts": 1160,
+   "total": 2092
+  },
+  "audio_url": "/api/assistant/voice/audio/b085b2cd43d249cfa509526c263ef866",
+  "input": {
+   "sample_rate": 16000,
+   "seconds": 2.09
+  },
+  "file": "다음어디야",
+  "client_ms": 2153,
+  "client_with_audio_ms": 2169,
+  "audio_bytes": 207638
+ },
+ {
+  "text": "서울 숲점 콜라 몇 박스야.",
+  "reply": "CU 서울숲점 콜라는 1박스예요.",
+  "fn": "stop_items",
+  "call": {
+   "store": "서울 숲점",
+   "item": "콜라",
+   "product_id": 17
+  },
+  "route": "llm",
+  "ask": null,
+  "options": null,
+  "action": null,
+  "stop_id": 5,
+  "conf": 0.0,
+  "latency": {
+   "stt": 222,
+   "llm": 1632,
+   "tts": 643,
+   "total": 2499
+  },
+  "audio_url": "/api/assistant/voice/audio/fb77ef3ac4514d70a55529508c17909a",
+  "input": {
+   "sample_rate": 16000,
+   "seconds": 3.67
+  },
+  "file": "서울숲점 콜라몇박스야",
+  "client_ms": 2528,
+  "client_with_audio_ms": 2542,
+  "audio_bytes": 128236
+ },
+ {
+  "text": "우유 두 개 터졌어.",
+  "reply": "GS25 성수연무장점 서울우유 2개 파손으로 기록했어요.",
+  "fn": "report_issue",
+  "call": {
+   "item": "서울우유",
+   "qty": 2,
+   "unit": "개",
+   "product_id": 1,
+   "type": "파손"
+  },
+  "route": "llm",
+  "ask": null,
+  "options": null,
+  "action": "refresh_stop",
+  "stop_id": 4,
+  "conf": 0.0,
+  "latency": {
+   "stt": 188,
+   "llm": 1896,
+   "tts": 940,
+   "total": 3028
+  },
+  "audio_url": "/api/assistant/voice/audio/434005919ee04e0ba7772514e0ae12cc",
+  "input": {
+   "sample_rate": 16000,
+   "seconds": 2.94
+  },
+  "file": "우유두개터졌어",
+  "client_ms": 3047,
+  "client_with_audio_ms": 3066,
+  "audio_bytes": 213390
+ },
+ {
+  "text": "성수연무 장점, 납품완 정자님한테 넘겼어.",
+  "reply": "'장점'이라는 품목을 찾지 못했어요.",
+  "fn": "complete",
+  "call": {
+   "store": "성수연무",
+   "item": "장점",
+   "receiver": "정자님"
+  },
+  "route": "llm",
+  "ask": "'장점'이라는 품목을 찾지 못했어요.",
+  "options": null,
+  "action": null,
+  "stop_id": 4,
+  "conf": 0.0,
+  "latency": {
+   "stt": 347,
+   "llm": 1947,
+   "tts": 583,
+   "total": 2881
+  },
+  "audio_url": "/api/assistant/voice/audio/22208c6757f848fa9d7f67828d899e6f",
+  "input": {
+   "sample_rate": 16000,
+   "seconds": 5.95
+  },
+  "file": "성수연장점납품완료,점장님한테넘겼어",
+  "client_ms": 2902,
+  "client_with_audio_ms": 2926,
+  "audio_bytes": 114172
+ },
+ {
+  "text": "근처 화장실 어디야?",
+  "reply": "'근처 화장실 어디야?'이라는 품목을 찾지 못했어요.",
+  "fn": "complete",
+  "call": {
+   "store": "성수연무",
+   "item": "근처 화장실 어디야?",
+   "receiver": "정자님"
+  },
+  "route": "choice_answer",
+  "ask": "'근처 화장실 어디야?'이라는 품목을 찾지 못했어요.",
+  "options": null,
+  "action": null,
+  "stop_id": 4,
+  "conf": 0.0,
+  "latency": {
+   "stt": 172,
+   "llm": 3,
+   "tts": 937,
+   "total": 1115
+  },
+  "audio_url": "/api/assistant/voice/audio/a07fc243b80a41098098ac8bf2576809",
+  "input": {
+   "sample_rate": 16000,
+   "seconds": 2.67
+  },
+  "file": "근처화장실어디야",
+  "client_ms": 1135,
+  "client_with_audio_ms": 1161,
+  "audio_bytes": 166858
+ }
+]

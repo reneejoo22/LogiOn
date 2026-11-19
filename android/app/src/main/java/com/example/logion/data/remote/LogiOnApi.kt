@@ -1,11 +1,15 @@
 package com.example.logion.data.remote
 
 import com.google.gson.annotations.SerializedName
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Multipart
 import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Path
 
 // ==============================
@@ -202,11 +206,49 @@ data class ChatResponse(
     val latencyMs: Int
 )
 
-// AI 모델 상태
+// AI 모델 상태 (voice_ready: 보드 STT·TTS 가 올라가 있는지 → 🎤 버튼을 켤지)
 data class AssistantStatusResponse(
     val ready: Boolean,
     val device: String?,
-    val error: String?
+    val error: String?,
+    @SerializedName("voice_ready")
+    val voiceReady: Boolean? = null,
+    @SerializedName("voice_error")
+    val voiceError: String? = null
+)
+
+// 음성 비서 응답 (POST /api/assistant/voice). docs/voice_api.md
+data class VoiceLatency(
+    val stt: Int,
+    val llm: Int,
+    val tts: Int,
+    val total: Int
+)
+
+data class VoiceResponse(
+    val text: String?,          // 보드가 알아들은 말 (STT 오인식 별칭으로 고친 뒤)
+    val reply: String,
+    val fn: String?,
+    val route: String?,
+    val ask: String?,
+    val options: List<String>?,
+    val action: String?,
+    @SerializedName("stop_id")
+    val stopId: Int?,
+    val latency: VoiceLatency?,
+    @SerializedName("audio_url")
+    val audioUrl: String?       // 응답 음성 wav. RetrofitClient.fullUrl() 로 재생
+)
+
+// 글자 답을 소리로 (POST /api/assistant/tts)
+data class TtsRequest(
+    val text: String
+)
+
+data class TtsResponse(
+    val text: String,
+    @SerializedName("audio_url")
+    val audioUrl: String
 )
 
 interface LogiOnApi {
@@ -265,4 +307,18 @@ interface LogiOnApi {
     // AI 모델이 올라갔는지 확인
     @GET("api/assistant/status")
     suspend fun getAssistantStatus(): AssistantStatusResponse
+
+    // 녹음(16kHz mono wav) → 보드 STT → AI → TTS
+    @Multipart
+    @POST("api/assistant/voice")
+    suspend fun voice(
+        @Part file: MultipartBody.Part,
+        @Part("session_id") sessionId: RequestBody
+    ): VoiceResponse
+
+    // 글자 → 보드 TTS (글자로 물은 답을 소리로 들을 때)
+    @POST("api/assistant/tts")
+    suspend fun tts(
+        @Body body: TtsRequest
+    ): TtsResponse
 }

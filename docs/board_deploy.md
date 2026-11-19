@@ -1,16 +1,20 @@
 # 보드 단독 실행 (PC 없이 Orange Pi 5+ 하나로)
 
-폰 앱(STT·TTS 는 폰 안에서) → **보드 백엔드 → 보드 파이프라인 → 보드 LLM 서버**. PC 와 인터넷 없이 돈다.
+폰 앱(녹음·재생만) → **보드 백엔드(STT·TTS) → 보드 파이프라인 → 보드 LLM 서버**. PC 와 인터넷 없이 돈다.
+(2026-11-20 부터 STT·TTS 도 보드. 앱 쪽 변경은 [voice_api.md](voice_api.md), 검증은 [results/board_voice/report.md](../results/board_voice/report.md))
 
 ```
  ┌───────────── 폰 (Android 앱) ─────────────┐
- │  마이크 → STT(sherpa-onnx) → 텍스트          │
- │  응답 텍스트 → TTS → 스피커                   │
+ │  마이크 → 녹음 16kHz wav                    │
+ │  답 글자 표시 · 응답 wav 재생 → 스피커        │
  └──────────────┬───────────────────────────┘
-                │ HTTP  POST /api/assistant/chat  {"text": "...", "session_id": "..."}
+                │ HTTP  POST /api/assistant/voice (multipart wav) → JSON + audio_url
+                │       (글자 입력은 POST /api/assistant/chat)
                 │ (USB 테더링 또는 공유기, 포트 8000)
  ┌──────────────▼──── Orange Pi 5+ (RK3588, 16GB) ─────────────────────────┐
  │  백엔드  FastAPI  0.0.0.0:8000   backend/app  (SQLite backend/data/logion.db) │
+ │     ├─ STT/TTS  speech/speech_engine.py (sherpa-onnx 1.13.8, CPU 4+2 스레드)  │
+ │     │    모델 ~/voice/models (LOGION_SPEECH_MODELS), 시작 때 한 번 로드      │
  │     └─ 파이프라인  demo/pipeline.py  (LOGION_LLM_BACKEND=rkllm, torch 없음)    │
  │          값 보정·되묻기·실행은 CPU, LLM 만 HTTP 로 ↓                           │
  │  LLM 서버  rkllm/server/logion_server.py  127.0.0.1:8090 (보드 안에서만)       │
@@ -28,13 +32,18 @@
 ssh orangepi@<보드 IP>
 cd ~/LogiOn
 git fetch origin && git checkout board-llm      # (아직 GitHub 에 안 올렸으면 git bundle 로 받음)
-bash scripts/board/setup_venv.sh                # ~/LogiOn/.venv-board 에 fastapi·uvicorn·pytest·httpx 만 (torch 없음)
+bash scripts/board/setup_venv.sh                # ~/LogiOn/.venv-board 에 fastapi·uvicorn·pytest·httpx + sherpa-onnx·soundfile·numpy (torch 없음)
+.venv-board/bin/python speech/download_models.py --no-android --models-dir ~/voice/models   # STT·TTS·VAD 모델 (약 310MB)
 ```
+
+- **sherpa-onnx:** 1.13.8 로 고정한다. 2.x 는 한국어 VITS 가 안 된다. PyPI 에 aarch64 cp310 휠이 있어서 빌드 없이 설치된다.
+- **모델:** 강의 모델이 이미 `~/voice/models` 에 있으면 그대로 쓴다. 다른 곳에 있으면 `LOGION_SPEECH_MODELS` 로 경로를 준다.
+- **모델이 없을 때:** 백엔드는 그대로 뜬다. `/api/assistant/voice` 만 503 이 되고, status 의 `voice_ready` 가 false 다.
 
 - 보드 Ubuntu 22.04 에는 `python3.10-venv`(ensurepip) 가 없어서, `setup_venv.sh` 는 `python3 -m venv --without-pip` 로 만든 뒤 `get-pip.py` 로 **venv 안에만** pip 를 넣는다. sudo 불필요, 시스템 파이썬은 그대로.
   (sudo 가 되면 `sudo apt install python3.10-venv` 후 일반 venv 로 만들어도 된다.)
 - 설치 때만 인터넷 필요. 실행 중에는 필요 없다.
-- 보드에 실제 설치된 버전: `scripts/board/requirements-board.lock.txt` (Python 3.10 이라 PC 보다 starlette 가 한 단계 낮음. backend/tests 23개 통과 확인)
+- 보드에 실제 설치된 버전: `scripts/board/requirements-board.lock.txt` (Python 3.10 이라 PC 보다 starlette 가 한 단계 낮음. backend/tests 32개 통과 확인, 2026-11-20)
 - 모델 파일은 레포에 없다. `~/rkllm/logion/` 에 아래 파일이 있어야 한다.
 
 | 파일 | 크기 | md5 |
@@ -66,6 +75,7 @@ bash scripts/board/stop_all.sh      # 둘 다 끄기 (pid 파일 기준)
 curl -s localhost:8090/health                     # LLM 서버
 curl -s localhost:8000/api/assistant/status       # 백엔드 + 파이프라인
 curl -s -H 'Content-Type: application/json' -d '{"text":"다음 어디야","session_id":"t"}' localhost:8000/api/assistant/chat
+curl -s -F file=@다음어디야.wav -F session_id=t localhost:8000/api/assistant/voice   # 음성 (wav 16kHz mono)
 ```
 
 ### 재부팅 후 자동 실행 (systemd, sudo 필요 — 아직 설치 안 함)
@@ -150,6 +160,7 @@ systemd 로 돌릴 때는 `start_all.sh` 를 같이 쓰지 않는다 (포트가 
 
 ### 앱 (android/)
 
+0. **STT·TTS 를 보드로 (2026-11-20)** — 녹음 업로드·응답 음성 재생으로 바꾸는 방법은 [voice_api.md](voice_api.md) 3절에 있다. 거기서는 Retrofit 읽기 시간 제한을 20초로 올리라고 권한다. 아래 3번(기본 10초로 충분)은 STT·TTS 가 폰에 있던 때 기준이다.
 1. **서버 주소** — `android/app/src/main/java/com/example/logion/data/remote/RetrofitClient.kt:14`
    `private const val BASE_URL = "http://10.0.2.2:8000/"` 는 에뮬레이터 → PC 주소다. 보드에 붙이려면 이 값을 보드 주소로 바꿔야 한다.
    - 공유기 방식: `http://<DHCP 예약한 보드 IP>:8000/`

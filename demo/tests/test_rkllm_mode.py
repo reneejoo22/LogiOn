@@ -154,6 +154,8 @@ def test_backend_chat_in_rkllm_mode(fake, monkeypatch, tmp_path):
         r = c.post("/api/assistant/chat", json={"text": "다음 어디야", "session_id": "t"}).json()
         assert r["fn"] == "next_stop" and r["action"] == "refresh_route"
         r = c.post("/api/assistant/chat", json={"text": "점장님한테 줬어", "session_id": "t"}).json()
+        assert r["fn"] == "complete" and r["route"] == "confirm_ask"   # 11/20: 납품 완료는 되묻고 기록
+        r = c.post("/api/assistant/chat", json={"text": "네", "session_id": "t"}).json()
         assert r["fn"] == "complete" and r["action"] == "refresh_stop"
         s.mode = "busy"
         r = c.post("/api/assistant/chat", json={"text": "다음 어디야", "session_id": "t"})

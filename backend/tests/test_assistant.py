@@ -34,6 +34,7 @@ SCRIPT = {
 SINGLE_LLM = {
     "바코드 찍을게": '{"fn":"scan"}',
     "참치삼각김밥": '{"fn":"other"}',
+    "네": '{"fn":"other"}',   # 되묻기 없이 '네' 만 말하면 업무 밖 말
 }
 
 
@@ -108,8 +109,14 @@ def test_unknown_store_is_not_made_up(client):
 
 def test_complete_writes_db(client):
     r = say(client, "납품 완료 점장님이 받았어")
+    assert r["reply"] == "GS25 성수연무장점 납품 완료할까요?"  # 바로 기록하지 않고 되묻는다
+    assert (r["route"], r["action"], r["ask"], r["options"]) == ("confirm_ask", None, r["reply"], ["네", "아니요"])
+    assert client.get("/api/stops/1").json()["status"] == "pending"
+
+    r = say(client, "네")
     assert r["reply"] == "GS25 성수연무장점 납품 완료로 기록했어요. 인수자는 점장님이에요."
-    assert (r["action"], r["stop_id"]) == ("refresh_stop", 1)
+    assert (r["route"], r["action"], r["stop_id"], r["ask"]) == ("confirm_yes", "refresh_stop", 1, None)
+    assert r["call"]["receiver"] == "점장님"
 
     stop = client.get("/api/stops/1").json()
     assert stop["status"] == "done" and stop["receiver"] == "점장님"
@@ -180,3 +187,70 @@ def test_single_valueless_command_goes_through_llm(client):
     assert (r["fn"], r["route"], r["action"]) == ("next_stop", "llm", "refresh_route")
     assert client.app.state.assistant.llm_calls == ["다음 어디야"]
     assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요."
+
+
+# ---------------- 11/20: 납품 완료 되묻기, 단위 규칙, STT 오인식 별칭 ----------------
+@pytest.mark.parametrize("answer", ["응", "네.", "어", "맞아", "어 맞아", "네 맞아요", "응 해줘"])
+def test_complete_confirm_yes_words(client, answer):
+    say(client, "납품 완료 점장님이 받았어")
+    r = say(client, answer)
+    assert r["route"] == "confirm_yes" and "기록했어요" in r["reply"]
+    assert client.get("/api/stops/1").json()["status"] == "done"
+    assert client.app.state.assistant.llm_calls == ["납품 완료 점장님이 받았어"]  # 답은 LLM 에 안 보냄
+
+
+@pytest.mark.parametrize("answer", ["아니", "아니요", "아니 잠깐만"])
+def test_complete_confirm_no_cancels(client, answer):
+    say(client, "납품 완료 점장님이 받았어")
+    r = say(client, answer)
+    assert r["route"] == "confirm_no" and r["reply"] == "알겠어요. 납품 완료는 기록하지 않았어요."
+    assert (r["action"], r["ask"]) == (None, None)
+    assert client.get("/api/stops/1").json()["status"] == "pending"
+    assert say(client, "네")["route"] != "confirm_yes"  # 취소한 뒤의 '네' 는 아무것도 완료하지 않음
+
+
+def test_complete_confirm_other_speech_drops_question(client):
+    """'어디야' 는 '어' 로 시작해도 '예' 가 아니다. 다른 말이면 되묻기는 버리고 그 말을 새로 처리한다."""
+    bot = client.app.state.assistant
+    say(client, "납품 완료 점장님이 받았어")
+    real = bot.call_llm
+    bot.call_llm = lambda text: ('{"fn":"next_stop"}', 0.99, 0.9) if text == "어디야" else real(text)
+    r = say(client, "어디야")
+    assert r["fn"] == "next_stop" and r["reply"].startswith("다음은 GS25 성수연무장점")
+    assert client.get("/api/stops/1").json()["status"] == "pending"
+    assert say(client, "네")["route"] != "confirm_yes"
+
+
+def test_yes_no_matcher():
+    from pipeline import match_yes_no
+    assert [match_yes_no(t) for t in ["응.", "넵", "예", "어 맞아요", "그래 해줘"]] == ["yes"] * 5
+    assert [match_yes_no(t) for t in ["아니", "아뇨", "취소해", "아니 다시"]] == ["no"] * 4
+    assert [match_yes_no(t) for t in ["어디야", "네 개 터졌어", "응급", "", "우유"]] == [None] * 5
+
+
+@pytest.mark.parametrize("text,unit", [("우유 두 박스 터졌어", "박스"), ("새우깡 세 봉지 모자라", "봉지"),
+                                       ("계란 한 판 깨졌어", "판"), ("우유 2개 터졌어", "개")])
+def test_issue_unit_from_sentence_when_llm_leaves_it_empty(client, text, unit):
+    bot = client.app.state.assistant
+    bot.call_llm = lambda t: ('{"fn":"report_issue","item":"우유","issue":"파손","qty":2}', 0.99, 0.9)
+    r = say(client, text)
+    assert r["call"]["unit"] == unit and r["call"]["qty"] == 2
+    assert client.get("/api/stops/1").json()["issues"][0]["unit"] == unit
+
+
+def test_issue_unit_kept_when_llm_gives_it(client):
+    bot = client.app.state.assistant
+    bot.call_llm = lambda t: ('{"fn":"report_issue","item":"우유","issue":"파손","qty":2,"unit":"개"}', 0.99, 0.9)
+    assert say(client, "우유 두 박스 터졌어")["call"]["unit"] == "개"  # LLM 이 채운 값은 그대로
+
+
+def test_stt_aliases_fix_text_before_llm(client):
+    bot = client.app.state.assistant
+    seen = []
+    bot.call_llm = lambda t: (seen.append(t) or '{"fn":"complete","store":"성수연무장점","receiver":"점장님"}', 0.99, 0.9)
+    r = say(client, "성수연 장점 납품 완료 정자님한테 넘겼어")
+    assert seen == ["성수연무장점 납품 완료 점장님한테 넘겼어"]
+    assert r["text_fixed"] == "성수연무장점 납품 완료 점장님한테 넘겼어"
+    say(client, "성수연무 장점 정자님")
+    assert seen[-1] == "성수연무장점 점장님"
+    assert say(client, "다음 어디야")["text_fixed"] is None  # 안 바뀌면 None

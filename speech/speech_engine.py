@@ -14,6 +14,7 @@
 """
 from __future__ import annotations
 
+import os
 import re
 import time
 from dataclasses import dataclass, field
@@ -23,7 +24,8 @@ import numpy as np
 import sherpa_onnx
 import soundfile as sf
 
-MODELS_DIR = Path(__file__).resolve().parent / "models"
+# 모델 폴더: 환경변수 LOGION_SPEECH_MODELS (보드: ~/voice/models) > speech/models
+MODELS_DIR = Path(os.environ.get("LOGION_SPEECH_MODELS") or Path(__file__).resolve().parent / "models")
 STT_DIR = "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17"
 TTS_DIR = "vits-mimic3-ko_KO-kss_low"
 VAD_FILE = "silero_vad.onnx"
@@ -114,6 +116,37 @@ class SpeechEngine:
         c.provider = "cpu"
         return sherpa_onnx.VoiceActivityDetector(c, buffer_size_in_seconds=buffer_seconds)
 
+    def speech_segments(self, samples: np.ndarray) -> list[tuple[int, np.ndarray]]:
+        """16kHz 음성에서 VAD 가 말이라고 본 구간들 [(시작 샘플, 샘플)]."""
+        vad = self.new_vad(buffer_seconds=len(samples) / SAMPLE_RATE + 5)
+        w = 512
+        for i in range(0, len(samples), w):
+            vad.accept_waveform(samples[i:i + w])
+        vad.flush()
+        out = []
+        while not vad.empty():
+            seg = vad.front
+            out.append((seg.start, np.array(seg.samples, dtype=np.float32)))
+            vad.pop()
+        return out
+
+    def trim_silence(self, samples: np.ndarray, pad: float = 0.15) -> np.ndarray:
+        """앞뒤 무음만 잘라 냄 (첫 말 시작 ~ 마지막 말 끝, 앞뒤 pad 초 여유). 말이 없으면 빈 배열.
+        중간 쉼은 그대로 둬서 "성수점 납품 완료, 점장님한테 넘겼어" 처럼 끊어 말해도 한 문장으로 인식한다."""
+        samples = np.asarray(samples, dtype=np.float32)
+        segs = self.speech_segments(samples)
+        if not segs:
+            return np.zeros(0, dtype=np.float32)
+        p = int(pad * SAMPLE_RATE)
+        start = max(0, segs[0][0] - p)
+        end = min(len(samples), segs[-1][0] + len(segs[-1][1]) + p)
+        return samples[start:end]
+
+    def load_all(self) -> None:
+        """STT·TTS·VAD 를 지금 올려 둠 (서버 시작 때 한 번, 첫 요청이 느려지지 않게)."""
+        _ = self.stt, self.tts
+        self.new_vad(1)
+
     def stt_long(self, path: str | Path) -> list[tuple[float, float, str]]:
         """긴 녹음: VAD 로 말한 구간을 자르고 구간마다 인식. [(시작초, 끝초, 글자)]"""
         samples, sr = read_mono(path)
@@ -182,8 +215,14 @@ def read_mono(path: str | Path) -> tuple[np.ndarray, int]:
 
 
 def resample(x: np.ndarray, sr_from: int, sr_to: int) -> np.ndarray:
-    """간단한 선형 보간 리샘플 (STT 입력용으로 충분)."""
-    if sr_from == sr_to:
+    """선형 보간 리샘플 (STT 입력용으로 충분). 줄일 때는 먼저 저역통과 필터로 겹침(aliasing)을 막는다."""
+    x = np.asarray(x, dtype=np.float32)
+    if sr_from == sr_to or len(x) == 0:
         return x
+    if sr_to < sr_from:
+        cutoff = 0.45 * sr_to / sr_from  # 새 나이퀴스트의 90%, 원래 샘플레이트 기준 비율
+        t = np.arange(-64, 65)
+        taps = 2 * cutoff * np.sinc(2 * cutoff * t) * np.hamming(len(t))
+        x = np.convolve(x, (taps / taps.sum()).astype(np.float32), mode="same")
     n = int(round(len(x) * sr_to / sr_from))
     return np.interp(np.linspace(0, len(x) - 1, n), np.arange(len(x)), x).astype(np.float32)

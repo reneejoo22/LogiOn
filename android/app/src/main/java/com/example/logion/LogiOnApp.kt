@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.example.logion.chat.ChatController
 import com.example.logion.chat.VoiceState
-import com.example.logion.speech.SpeechEngine
 import com.example.logion.speech.rememberMicAction
 import com.example.logion.data.remote.CompleteRequest
 import com.example.logion.data.remote.RetrofitClient
@@ -135,17 +134,7 @@ fun LogiOnApp() {
         refreshTodayRoute()
     }
 
-    // ---------------- 음성 대화 (STT/TTS: sherpa-onnx 온디바이스) ----------------
-    val context = LocalContext.current
-    val speechStatus by SpeechEngine.status.collectAsState()
-    val speechReady = speechStatus == SpeechEngine.Status.Ready
-    val speechError = (speechStatus as? SpeechEngine.Status.Failed)?.message
-
-    // 앱 시작 시 VAD·STT·TTS 모델을 한 번 올림 (몇 초 걸림)
-    LaunchedEffect(Unit) {
-        SpeechEngine.init(context)
-    }
-
+    // ---------------- 음성 대화 (STT·TTS 는 보드에서. 폰은 녹음·재생만) ----------------
     // AI 채팅 탭과 음성 버튼이 같이 쓰는 대화 상태
     val chat = remember {
         ChatController(
@@ -158,6 +147,10 @@ fun LogiOnApp() {
         )
     }
     LaunchedEffect(Unit) { chat.keepStatusFresh() }
+
+    // 🎤 는 보드 STT·TTS 가 준비됐을 때만 (GET /api/assistant/status 의 voice_ready)
+    val speechReady = chat.voiceReady == true
+    val speechError = if (chat.voiceReady == false) chat.statusText else null
 
     val onVoiceClick = rememberMicAction { chat.onMicPressed() }
     val isListening = chat.voiceState == VoiceState.Listening
@@ -294,7 +287,14 @@ fun LogiOnApp() {
                     speechReady = speechReady
                 )
 
-                "more" -> MoreScreen()
+                "more" -> MoreScreen(
+                    onServerChanged = {
+                        coroutineScope.launch {
+                            chat.refreshStatus()
+                            refreshTodayRoute()
+                        }
+                    }
+                )
             }
 
             val stop = selectedStop
