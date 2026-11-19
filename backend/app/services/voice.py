@@ -25,6 +25,7 @@ log = logging.getLogger(__name__)
 NOT_HEARD = "잘 못 들었어요. 다시 말씀해 주세요."
 AUDIO_KEEP = 32          # 최근 응답 음성 몇 개를 들고 있을지
 AUDIO_TTL = 600          # 초. 이보다 오래된 응답 음성은 버린다
+SHORT_REPLY_PEAK = 0.05  # 이보다 큰 소리가 있어야 VAD 없이 인식해 봄 (조용한 녹음은 그대로 '못 들음')
 MAX_SECONDS = 15         # 이보다 긴 녹음은 앞 15초만 (한 문장 명령용)
 
 
@@ -59,9 +60,13 @@ class VoiceService:
     def transcribe(self, samples: np.ndarray) -> str:
         with self.stt_lock:
             speech = self.engine.trim_silence(samples)
-            if len(speech) < 1600:  # 0.1초 미만 = 말 없음
-                return ""
-            return self.engine.stt_samples(speech)
+            if len(speech) >= 1600:  # 0.1초 이상 말이 있음
+                return self.engine.stt_samples(speech)
+            # VAD 는 0.25초보다 짧은 말을 버린다. "네"·"응" 같은 한 음절 대답(납품 완료 되묻기)이 여기 걸리므로,
+            # 짧은 녹음(4초 이하)에 소리가 분명히 있으면 통째로 한 번 인식해 본다
+            if len(samples) <= 4 * 16000 and float(np.abs(samples).max(initial=0)) >= SHORT_REPLY_PEAK:
+                return self.engine.stt_samples(samples)
+            return ""
 
     # ---------------- TTS ----------------
     def synthesize(self, text: str) -> tuple[str | None, float]:

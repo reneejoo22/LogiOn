@@ -241,3 +241,14 @@ def test_tts_503_without_engine(tmp_path, monkeypatch):
 
     with TestClient(app) as c:
         assert c.post("/api/assistant/tts", json={"text": "안녕"}).status_code == 503
+
+
+def test_short_yes_that_vad_drops_is_still_heard(vclient):
+    """VAD 가 0.25초보다 짧다고 버린 '네' 도, 짧은 녹음에 소리가 있으면 통째로 인식한다 (납품 완료 되묻기)."""
+    eng = vclient.engine
+    eng.trim_silence = lambda samples: np.zeros(0, np.float32)   # VAD 가 아무 말도 못 찾음
+    eng.next_text = "네."
+    j = post_voice(vclient, wav_bytes(tone(0.3))).json()
+    assert j["text"] == "네." and j["route"] != "not_heard"
+    j = post_voice(vclient, wav_bytes(np.full(16000, 0.001, np.float32))).json()   # 소리가 거의 없으면 못 들음
+    assert j["route"] == "not_heard"
