@@ -1,5 +1,11 @@
 fastapi>=0.115
 uvicorn>=0.30
+python-multipart>=0.0.9   # POST /api/assistant/voice (파일 업로드)
+
+# 보드 STT/TTS (/voice). 2.x 는 한국어 VITS(espeak-ng) 가 빠져서 1.13.8 고정
+sherpa-onnx==1.13.8
+soundfile>=0.12
+numpy>=1.24
 
 # tests
 pytest>=8.0

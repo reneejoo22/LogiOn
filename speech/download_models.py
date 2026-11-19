@@ -16,6 +16,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import shutil
 import tarfile
 import urllib.request
@@ -24,7 +25,8 @@ from pathlib import Path
 SHERPA_VERSION = "1.13.8"
 GH = "https://github.com/k2-fsa/sherpa-onnx/releases/download"
 ROOT = Path(__file__).resolve().parent.parent
-MODELS = ROOT / "speech" / "models"
+# 보드: LOGION_SPEECH_MODELS=~/voice/models (speech_engine.py 와 같은 환경변수) 또는 --models-dir
+MODELS = Path(os.environ.get("LOGION_SPEECH_MODELS") or ROOT / "speech" / "models")
 ANDROID_ASSETS = ROOT / "android" / "app" / "src" / "main" / "assets"
 ANDROID_LIBS = ROOT / "android" / "app" / "libs"
 
@@ -83,10 +85,14 @@ def copy_to_android() -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
+    global MODELS
     ap.add_argument("--no-android", action="store_true")
+    ap.add_argument("--models-dir", type=Path, help="모델 받을 폴더 (기본: LOGION_SPEECH_MODELS 또는 speech/models)")
     a = ap.parse_args()
+    if a.models_dir:
+        MODELS = a.models_dir.expanduser().resolve()
 
-    print("[1/3] 모델 (speech/models)")
+    print(f"[1/3] 모델 ({MODELS})")
     fetch(f"{GH}/asr-models/{VAD}", MODELS / VAD)
     fetch_tar(f"{GH}/asr-models/{STT}.tar.bz2", STT)
     fetch_tar(f"{GH}/tts-models/{TTS}.tar.bz2", TTS)

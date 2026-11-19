@@ -7,6 +7,8 @@ PORT="${LOGION_BACKEND_PORT:-8000}"
 
 export LOGION_LLM_BACKEND="${LOGION_LLM_BACKEND:-rkllm}"
 export LOGION_LLM_URL="${LOGION_LLM_URL:-http://127.0.0.1:8090}"
+# STT/TTS 모델 (보드 CPU). 없으면 /api/assistant/voice 만 503, 나머지는 그대로
+export LOGION_SPEECH_MODELS="${LOGION_SPEECH_MODELS:-$HOME/voice/models}"
 export PYTHONUNBUFFERED=1
 [ -x "$VENV/bin/python" ] || { echo "[start_backend] $VENV 없음. scripts/board/setup_venv.sh 먼저 실행" >&2; exit 1; }
 cd "$REPO/backend"

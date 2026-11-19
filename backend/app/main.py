@@ -26,6 +26,14 @@ async def lifespan(app: FastAPI):
         app.state.assistant, app.state.assistant_error = load_assistant()
     except ImportError as e:
         app.state.assistant, app.state.assistant_error = None, str(e)
+
+    # STT/TTS (보드 CPU) 도 여기서 한 번만 올린다. 못 올리면 /voice 만 503
+    try:
+        from app.services.voice import load_voice
+
+        app.state.voice, app.state.voice_error = load_voice()
+    except ImportError as e:
+        app.state.voice, app.state.voice_error = None, str(e)
     yield
 
 
