@@ -222,3 +222,22 @@ def test_real_models_tts_then_stt_round_trip(tmp_path, monkeypatch):
         a = c.get(j["audio_url"])
         with wave.open(io.BytesIO(a.content)) as w:
             assert w.getnframes() > w.getframerate() * 0.5  # 0.5초 넘는 실제 음성
+
+
+def test_tts_endpoint_returns_audio(vclient):
+    r = vclient.post("/api/assistant/tts", json={"text": "다음은 GS25 성수연무장점이에요."})
+    assert r.status_code == 200, r.text
+    j = r.json()
+    assert j["audio_url"].startswith("/api/assistant/voice/audio/") and "tts" in j["latency"]
+    a = vclient.get(j["audio_url"])
+    assert a.status_code == 200 and a.headers["content-type"] == "audio/wav"
+    assert vclient.post("/api/assistant/tts", json={"text": "  "}).status_code == 422
+    assert vclient.post("/api/assistant/tts", json={}).status_code == 422
+
+
+def test_tts_503_without_engine(tmp_path, monkeypatch):
+    monkeypatch.setenv("LOGION_DB", str(tmp_path / "test.db"))
+    from app.main import app
+
+    with TestClient(app) as c:
+        assert c.post("/api/assistant/tts", json={"text": "안녕"}).status_code == 503

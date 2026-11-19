@@ -19,7 +19,7 @@ import com.example.logion.ui.theme.*
 
 // ==============================
 // 공통 음성 입력 영역
-// 🎤 누르고 말하면 → 온디바이스 STT → AI 서버 → 답을 TTS 로 읽어 줌
+// 🎤 누르고 말하면 → 녹음을 보드로 → 보드가 STT·AI·TTS → 답을 읽어 줌
 // ==============================
 
 @Composable
@@ -33,23 +33,22 @@ fun VoiceDock(
     onVoiceClick: () -> Unit
 ) {
     val isListening = voiceState == VoiceState.Listening
-    val isBusy = voiceState == VoiceState.Recognizing || voiceState == VoiceState.Thinking
+    val isBusy = voiceState == VoiceState.Thinking
 
     val title = when {
-        speechError != null -> "음성 모델을 불러오지 못했어요"
-        !speechReady -> "음성 모델 불러오는 중…"
+        speechError != null -> "보드 음성을 쓸 수 없어요"
+        !speechReady -> "보드 연결 확인 중…"
         voiceState == VoiceState.Listening -> "듣고 있어요"
-        voiceState == VoiceState.Recognizing -> "알아듣는 중…"
-        voiceState == VoiceState.Thinking -> "“${lastHeard.orEmpty()}”"
+        voiceState == VoiceState.Thinking -> "보드가 알아듣는 중…"
         voiceState == VoiceState.Speaking -> lastReply ?: "말하는 중"
         lastHeard != null -> "“$lastHeard”"
         else -> "무엇을 도와드릴까요?"
     }
     val subtitle = when {
         speechError != null -> speechError
-        !speechReady -> "처음 한 번은 몇 초 걸립니다"
+        !speechReady -> "더보기에서 보드 주소를 확인하세요"
         voiceState == VoiceState.Listening -> "말을 멈추면 자동으로 끝나요 · 버튼을 누르면 바로 끝"
-        voiceState == VoiceState.Thinking -> "AI 가 처리하는 중…"
+        voiceState == VoiceState.Thinking -> "STT → AI → TTS (보드)"
         voiceState == VoiceState.Speaking -> "버튼을 누르면 읽기를 멈춰요"
         lastReply != null -> lastReply
         else -> "버튼을 누르고 말해 보세요 (배송 완료, 이상 보고 등)"

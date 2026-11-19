@@ -62,6 +62,23 @@ def voice(request: Request, file: UploadFile = File(...),
         raise HTTPException(status_code=415, detail=str(e))
 
 
+class TtsIn(BaseModel):
+    text: str = Field(min_length=1, max_length=300)
+
+
+@router.post("/tts")
+def tts(body: TtsIn, request: Request):
+    """글자로 받은 답을 소리로 (앱에서 글자로 물었을 때 답 읽어 주기용). 음성은 /voice 와 같이 audio_url 로 받는다."""
+    svc = getattr(request.app.state, "voice", None)
+    if svc is None:
+        raise HTTPException(status_code=503, detail=f"TTS 가 올라가 있지 않습니다: {request.app.state.voice_error}")
+    text = body.text.strip()
+    if not text:
+        raise HTTPException(status_code=422, detail="text 가 비어 있습니다.")
+    audio_id, ms = svc.synthesize(text)
+    return {"text": text, "audio_url": f"/api/assistant/voice/audio/{audio_id}", "latency": {"tts": round(ms)}}
+
+
 @router.get("/voice/audio/{audio_id}")
 def voice_audio(audio_id: str, request: Request):
     svc = getattr(request.app.state, "voice", None)

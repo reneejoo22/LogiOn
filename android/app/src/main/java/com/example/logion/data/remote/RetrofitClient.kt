@@ -1,22 +1,53 @@
 package com.example.logion.data.remote
 
+import com.example.logion.data.ServerSettings
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 // ==============================
 // Retrofit 설정
-// 백엔드 서버 주소와 API 통신 객체를 관리
+// 서버 = 오렌지파이 보드 (STT·LLM·TTS·백엔드·DB). 주소는 더보기 화면에서 바꿈 (ServerSettings)
 // ==============================
 
 object RetrofitClient {
 
-    // Android 에뮬레이터에서 PC의 localhost에 접속할 때 사용하는 주소
-    private const val BASE_URL = "http://10.0.2.2:8000/"
+    // 녹음 업로드 → STT → LLM → TTS 가 보드에서 최대 3.5초쯤, LLM 제한 시간 8초. 넉넉히 20초
+    const val TIMEOUT_SECONDS = 20L
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+    private val http: OkHttpClient = OkHttpClient.Builder()
+        .connectTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
+        .readTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
+        .writeTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
+        .callTimeout(TIMEOUT_SECONDS, TimeUnit.SECONDS)
         .build()
 
-    val api: LogiOnApi = retrofit.create(LogiOnApi::class.java)
+    @Volatile private var cachedUrl: String? = null
+    @Volatile private var cachedApi: LogiOnApi? = null
+
+    /** 지금 설정된 보드 주소 (끝이 '/') */
+    val baseUrl: String get() = ServerSettings.baseUrl
+
+    /** 주소가 바뀌면 새로 만든다 */
+    val api: LogiOnApi
+        get() {
+            val url = baseUrl
+            synchronized(this) {
+                val a = cachedApi
+                if (a != null && url == cachedUrl) return a
+                val made = Retrofit.Builder()
+                    .baseUrl(url)
+                    .client(http)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                    .create(LogiOnApi::class.java)
+                cachedApi = made
+                cachedUrl = url
+                return made
+            }
+        }
+
+    /** 서버가 준 "/api/assistant/voice/audio/…" 를 전체 주소로 */
+    fun fullUrl(path: String): String = baseUrl.trimEnd('/') + "/" + path.trimStart('/')
 }

@@ -26,14 +26,13 @@ import androidx.compose.ui.unit.dp
 import com.example.logion.chat.ChatController
 import com.example.logion.chat.ChatMessage
 import com.example.logion.chat.VoiceState
-import com.example.logion.speech.SpeechEngine
 import com.example.logion.speech.rememberMicAction
 import com.example.logion.ui.theme.*
 
 // ==============================
 // AI 채팅 화면
 // 백엔드 POST /api/assistant/chat 으로 AI 파이프라인과 대화
-// 🎤: 온디바이스 STT(sherpa-onnx) → 서버 → 답을 TTS 로 읽음 (ChatController)
+// 🎤: 녹음 → 보드(STT → AI → TTS) → 말풍선 + 응답 음성 재생 (ChatController)
 // ==============================
 
 @Composable
@@ -127,7 +126,7 @@ fun ChatScreen(
                         checked = controller.speakReplies,
                         onCheckedChange = {
                             controller.speakReplies = it
-                            if (!it) SpeechEngine.stopSpeaking()
+                            if (!it) controller.stopSpeaking()
                         }
                     ) {
                         Icon(
@@ -197,7 +196,7 @@ fun ChatScreen(
                     FilledIconButton(
                         onClick = onMic,
                         enabled = speechReady && !isSending &&
-                            voiceState != VoiceState.Recognizing && voiceState != VoiceState.Thinking,
+                            voiceState != VoiceState.Thinking,
                         modifier = Modifier.size(48.dp),
                         colors = IconButtonDefaults.filledIconButtonColors(
                             containerColor = if (listening) LogiOnOrange else LogiOnGreenLight,
@@ -225,7 +224,7 @@ fun ChatScreen(
                             Text(
                                 text = when (voiceState) {
                                     VoiceState.Listening -> "듣고 있어요…"
-                                    VoiceState.Recognizing -> "알아듣는 중…"
+                                    VoiceState.Thinking -> "보드가 알아듣는 중…"
                                     else -> "예: 다음 배송 어디야?"
                                 },
                                 style = MaterialTheme.typography.bodyMedium

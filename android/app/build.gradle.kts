@@ -17,11 +17,6 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // sherpa-onnx 네이티브 라이브러리: 실폰·보드(arm64) + 에뮬레이터(x86_64) 만 넣어 용량 절약
-        ndk {
-            abiFilters += listOf("arm64-v8a", "x86_64")
-        }
     }
 
     buildTypes {
@@ -38,10 +33,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    // onnx 모델은 압축하지 않음 (assets 에서 바로 읽기)
-    androidResources {
-        noCompress += listOf("onnx")
     }
 }
 
@@ -66,9 +57,8 @@ dependencies {
     implementation("androidx.camera:camera-lifecycle:1.6.2")
     implementation("androidx.camera:camera-view:1.6.2")
 
-    // sherpa-onnx (온디바이스 STT/TTS/VAD) — python speech/download_models.py 로 libs 에 받음
-    // 1.x 고정: 2.x 는 VITS 한국어 발음 변환(espeak-ng)이 빠져 있음
-    implementation(files("libs/sherpa-onnx-1.13.8.aar"))
+    // STT·TTS 는 보드에서 (POST /api/assistant/voice). 앱 안 sherpa-onnx AAR·모델(354MB)은 뺐음
+    // 예전 파일: android/unused_on_device_speech/ (git 에 안 올라감)
 
     // ML Kit
     implementation("com.google.mlkit:barcode-scanning:17.3.0")

@@ -19,7 +19,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
+import com.example.logion.data.DEFAULT_BASE_URL
+import com.example.logion.data.ServerSettings
 import com.example.logion.data.mockDriver
 import com.example.logion.data.remote.DriverResponse
 import com.example.logion.data.remote.RetrofitClient
@@ -32,7 +37,9 @@ import com.example.logion.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MoreScreen() {
+fun MoreScreen(
+    onServerChanged: () -> Unit = {}
+) {
 
     // 서버 응답 전에는 Mock 기사 정보를 사용
     var driver by remember { mutableStateOf<DriverResponse?>(null) }
@@ -196,6 +203,11 @@ fun MoreScreen() {
                         }
                     }
                 }
+
+                Spacer(Modifier.height(11.dp))
+
+                // 보드(서버) 주소: 폰 USB 테더링 등으로 보드에 붙을 때 입력
+                ServerSettingsCard(onServerChanged = onServerChanged)
 
                 Spacer(Modifier.height(11.dp))
 
@@ -366,6 +378,132 @@ private fun AdditionalMenuCard() {
                 contentDescription = null,
                 tint = LogiOnGreen,
                 modifier = Modifier.size(20.dp)
+            )
+        }
+    }
+}
+
+
+// 보드 주소 입력·저장 + 연결 확인
+@Composable
+private fun ServerSettingsCard(onServerChanged: () -> Unit) {
+    val scope = rememberCoroutineScope()
+    var input by remember { mutableStateOf(ServerSettings.baseUrl) }
+    var result by remember { mutableStateOf<String?>(null) }
+    var ok by remember { mutableStateOf<Boolean?>(null) }
+    var checking by remember { mutableStateOf(false) }
+
+    fun check() {
+        checking = true
+        result = "연결 확인 중…"
+        ok = null
+        scope.launch {
+            try {
+                val st = RetrofitClient.api.getAssistantStatus()
+                ok = st.ready && st.voiceReady == true
+                result = when {
+                    !st.ready -> "보드에 연결됨 · AI 모델 꺼짐 (${st.error ?: "확인 필요"})"
+                    st.voiceReady != true -> "보드에 연결됨 · 음성(STT·TTS) 꺼짐 (${st.voiceError ?: "확인 필요"})"
+                    else -> "연결됨 · ${st.device ?: "보드"} · 음성 준비됨"
+                }
+            } catch (e: Exception) {
+                Log.e("API_SERVER", "보드 연결 확인 실패", e)
+                ok = false
+                result = "연결 안 됨: ${e.javaClass.simpleName}. 주소와 테더링을 확인하세요."
+            } finally {
+                checking = false
+            }
+        }
+    }
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(15.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        border = BorderStroke(1.dp, LogiOnBorder)
+    ) {
+        Column(modifier = Modifier.padding(horizontal = 15.dp, vertical = 13.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Default.Router,
+                    contentDescription = null,
+                    tint = LogiOnGreen2,
+                    modifier = Modifier.size(21.dp)
+                )
+                Spacer(Modifier.width(11.dp))
+                Text(
+                    text = "보드 주소 (서버)",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = LogiOnText
+                )
+            }
+
+            Spacer(Modifier.height(4.dp))
+
+            Text(
+                text = "보드가 음성 인식·AI·음성 합성을 합니다. 보드에서 hostname -I 로 본 주소를 넣으세요.",
+                style = MaterialTheme.typography.bodySmall,
+                color = LogiOnSubText
+            )
+
+            Spacer(Modifier.height(8.dp))
+
+            OutlinedTextField(
+                value = input,
+                onValueChange = { input = it },
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true,
+                placeholder = { Text(DEFAULT_BASE_URL, style = MaterialTheme.typography.bodyMedium) },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Uri),
+                shape = RoundedCornerShape(12.dp),
+                textStyle = MaterialTheme.typography.bodyMedium
+            )
+
+            Spacer(Modifier.height(8.dp))
+
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(
+                    onClick = {
+                        val saved = ServerSettings.save(input)
+                        if (saved == null) {
+                            ok = false
+                            result = "주소 모양이 아니에요. 예: $DEFAULT_BASE_URL"
+                        } else {
+                            input = saved
+                            onServerChanged()
+                            check()
+                        }
+                    },
+                    enabled = !checking,
+                    colors = ButtonDefaults.buttonColors(containerColor = LogiOnGreen2),
+                    shape = RoundedCornerShape(10.dp)
+                ) { Text("저장") }
+
+                OutlinedButton(
+                    onClick = { check() },
+                    enabled = !checking,
+                    shape = RoundedCornerShape(10.dp)
+                ) { Text("연결 확인", color = LogiOnGreen2) }
+            }
+
+            result?.let {
+                Spacer(Modifier.height(6.dp))
+                Text(
+                    text = it,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = when (ok) {
+                        true -> LogiOnGreen
+                        false -> Color(0xFFB3261E)
+                        null -> LogiOnSubText
+                    }
+                )
+            }
+
+            Spacer(Modifier.height(2.dp))
+            Text(
+                text = "지금: ${ServerSettings.baseUrl} · 제한 시간 ${RetrofitClient.TIMEOUT_SECONDS}초",
+                style = MaterialTheme.typography.bodySmall,
+                color = LogiOnSubText
             )
         }
     }
