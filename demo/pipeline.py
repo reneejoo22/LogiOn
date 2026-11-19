@@ -261,6 +261,10 @@ class Assistant:
         out = dict(call)
         out.pop("_bad", None)
         fn = out.get("fn")
+        if fn in ALLOWED_BY_FN:
+            # 그 기능에 없는 값은 버린다. 예: "성수연무 장점, 납품완 …" → complete 에 item="장점" 이 붙어
+            # 품목을 되묻고, 그 되묻기가 다음 말("근처 화장실 어디야")까지 답으로 삼키던 문제
+            out = {k: v for k, v in out.items() if k == "fn" or k in ALLOWED_BY_FN[fn]}
         if out.get("store"):
             rows, how, score = self.match_name(out["store"], self.stores, ["name", "short_name"])
             cands = [r["name"] for r in rows]

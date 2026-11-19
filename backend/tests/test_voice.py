@@ -116,6 +116,23 @@ def test_voice_follow_up_question_uses_session(vclient):
     assert j["reply"] == "GS25 성수연무장점 참치삼각김밥 2개 파손으로 기록했어요."
 
 
+def test_value_outside_function_is_ignored(vclient):
+    """보드 실측: STT "성수연무 장점, 납품완 정자님한테 넘겼어." → LLM 이 complete 에 item="장점" 을 붙임.
+    complete 는 품목을 안 쓰므로 버리고 바로 완료 기록, 다음 말도 되묻기 답으로 삼키지 않는다."""
+    bot = vclient.app.state.assistant
+    llm = {"성수연무 장점, 납품완 정자님한테 넘겼어.":
+           '{"fn":"complete","store":"성수연무","item":"장점","receiver":"정자님"}',
+           "근처 화장실 어디야?": '{"fn":"other"}'}
+    bot.call_llm = lambda text: (llm[text], 0.99, 0.9)
+    vclient.engine.next_text = "성수연무 장점, 납품완 정자님한테 넘겼어."
+    j = post_voice(vclient, wav_bytes(tone())).json()
+    assert j["reply"] == "GS25 성수연무장점 납품 완료로 기록했어요. 인수자는 정자님이에요."
+    assert j["call"] == {"store": "성수연무", "receiver": "정자님"}
+    vclient.engine.next_text = "근처 화장실 어디야?"
+    j = post_voice(vclient, wav_bytes(tone())).json()
+    assert j["fn"] == "other" and j["route"] != "choice_answer"
+
+
 def test_silence_asks_again_without_llm(vclient):
     j = post_voice(vclient, wav_bytes(np.zeros(16000, np.float32))).json()
     assert j["text"] == "" and j["reply"] == "잘 못 들었어요. 다시 말씀해 주세요."
