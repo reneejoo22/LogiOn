@@ -29,6 +29,7 @@ PENDING_TTL = 180  # 초. 이보다 오래된 되묻기는 버린다
 # 실행한 뒤 앱이 할 일
 ACTIONS = {"next_stop": "refresh_route", "complete": "refresh_stop", "report_issue": "refresh_stop",
            "scan": "open_scanner"}
+CONFIRM_ROUTES = ("confirm_ask", "confirm_yes", "confirm_no")
 
 
 class DbAssistant(Assistant):
@@ -104,13 +105,15 @@ class DbAssistant(Assistant):
         return resp
 
     def _response(self, trace: dict, conf: float) -> dict:
-        asked = trace.get("request") is None  # 되물을 때만 실행 요청이 없다
+        asked = trace.get("request") is None and trace.get("route") != "confirm_no"  # 되물을 때만 실행 요청이 없다
         fn = trace.get("fn") or (trace["intent"]["top3"][0]["fn"] if trace.get("intent") else None)
         last = self.last_call or {}
         call = {k: v for k, v in last.items() if k != "fn" and not k.startswith("_")}
         if "issue" in call:
             call["type"] = call.pop("issue")  # IssueIn 과 같은 이름으로
-        if trace.get("carry"):
+        if trace.get("route") in CONFIRM_ROUTES:
+            route = trace["route"]  # 납품 완료 되묻기(confirm_ask) / 그 답(confirm_yes·confirm_no)
+        elif trace.get("carry"):
             route = "choice_answer"
         elif trace["route"] == "ask":
             route = "ask"
@@ -124,10 +127,11 @@ class DbAssistant(Assistant):
             "route": route,
             "ask": trace["reply"] if asked else None,
             "options": trace.get("options") or None,
-            "action": None if asked else ACTIONS.get(fn),
+            "action": None if asked or trace.get("request") is None else ACTIONS.get(fn),
             "stop_id": stop["id"] if stop else None,
             "conf": round(conf, 4),
             "latency_ms": int(round(trace["timings"]["전체"])),
+            "text_fixed": trace["text"] if trace.get("text") != trace.get("text_raw") else None,
         }
 
     @staticmethod

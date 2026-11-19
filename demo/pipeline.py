@@ -41,6 +41,12 @@ CHOICE_KW = {
     "complete": ["완료", "납품완료", "끝"],
     "scan": ["스캔", "바코드", "찍"],
 }
+# 납품 완료 되묻기("○○ 납품 완료할까요?")의 답. 띄어쓰기·문장부호를 지운 말이 이 낱말들로만 이루어져야 한다
+# ("어디야" 처럼 '어' 로 시작하는 다른 말을 '예' 로 잘못 받지 않게)
+YES_WORDS = ["맞습니다", "맞아요", "맞아", "그래요", "그래", "좋아요", "좋아", "해줘", "해주세요", "해요", "해",
+             "완료", "네네", "네", "넵", "넹", "예", "응", "웅", "어", "ㅇㅇ", "오케이", "부탁해", "요"]
+NO_WORDS = ["아니", "아뇨", "아냐", "취소", "하지마", "안해", "잠깐"]
+UNIT_RE = re.compile(r"(\d+|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열|몇)\s*(박스|봉지|판|개)")
 ALLOWED_BY_FN = {
     "stop_items": {"store", "item"},
     "complete": {"store", "receiver"},
@@ -67,6 +73,46 @@ def josa(word, with_batchim, without_batchim):
     if "가" <= ch <= "힣":
         return with_batchim if (ord(ch) - 0xAC00) % 28 else without_batchim
     return without_batchim
+
+
+def _clean(s):
+    return re.sub(r"[\s.,?!~…·'\"]+", "", str(s))
+
+
+def match_yes_no(text):
+    """'yes' / 'no' / None. 예: "응." "네 맞아요" → yes, "아니 잠깐" → no, "어디야" → None."""
+    t = _clean(text)
+    if not t:
+        return None
+    if any(w in t for w in NO_WORDS):
+        return "no"
+    rest = t
+    while rest:
+        w = next((w for w in YES_WORDS if rest.startswith(w)), None)
+        if w is None:
+            return None
+        rest = rest[len(w):]
+    return "yes"
+
+
+def unit_from_text(text):
+    """문장에 단위(박스·개·판·봉지)가 있으면 그 단위. 수량 말 바로 뒤의 단위를 먼저 본다."""
+    m = UNIT_RE.search(str(text))
+    if m:
+        return m.group(2)
+    hits = [(str(text).find(u), u) for u in UNITS if u in str(text)]
+    return min(hits)[1] if hits else None
+
+
+def load_stt_aliases(path=None):
+    """config/stt_aliases.json → [(정규식, 바른 말)]. 긴 오인식부터 바꾼다."""
+    p = Path(path or ROOT / "config/stt_aliases.json")
+    if not p.exists():
+        return []
+    table = json.loads(p.read_text(encoding="utf-8")).get("aliases", {})
+    pairs = [(wrong, right) for right, wrongs in table.items() for wrong in wrongs]
+    pairs.sort(key=lambda x: -len(_flat(x[0])))
+    return [(re.compile(r"\s*".join(map(re.escape, _flat(w)))), r) for w, r in pairs]
 
 
 def load_seed():
@@ -102,6 +148,10 @@ class Assistant:
         self.llm_url = (os.environ.get("LOGION_LLM_URL") or llm.get("url") or "http://127.0.0.1:8090").rstrip("/")
         self.llm_timeout = float(os.environ.get("LOGION_LLM_TIMEOUT") or llm.get("timeout_s") or 8)
         self.stores, self.products, self.stops = load_seed()
+        self.stt_aliases = load_stt_aliases(self.cfg.get("stt_aliases"))
+        self.confirm_complete = bool(self.cfg.get("confirm_complete", True))
+        self.text = ""
+        self.last_call = None
         self.pending = {}
         self.device = "cpu"
         self.device_name = ""
@@ -301,6 +351,13 @@ class Assistant:
             else:
                 return out, f"'{out['item']}'이라는 품목을 찾지 못했어요.", []
 
+        if fn == "report_issue" and not out.get("unit"):
+            u = unit_from_text(self.text)       # "우유 두 박스 터졌어" 인데 LLM 이 unit 을 비웠을 때
+            if u:
+                steps.append({"slot": "unit", "spoken": "(말하지 않음)", "found": u,
+                              "how": "문장에서 단위 찾음", "score": "—", "cands": UNITS})
+                out["unit"] = u
+
         if out.get("qty") is not None and out.get("unit") not in UNITS:
             u = out.get("unit")
             new = "개" if not u else min(UNITS, key=lambda x: -difflib.SequenceMatcher(None, u, x).ratio())
@@ -409,9 +466,54 @@ class Assistant:
             return {"_bad": True}
 
     # ---------------- 전체 ----------------
+    def fix_text(self, text):
+        """STT 오인식 별칭 표(config/stt_aliases.json)로 바꾼다. 예: "정자님한테" → "점장님한테"."""
+        for pat, right in self.stt_aliases:
+            text = pat.sub(right, text)
+        return text
+
+    def ask_confirm(self, call2, trace, T, t_all):
+        """complete 는 바로 기록하지 않고 "○○ 납품 완료할까요?" 로 되묻는다. 답은 run() 첫머리의 run_confirm()."""
+        stop = call2["_stop"]
+        self.pending = {"kind": "confirm", "fn": "complete", "stop_id": stop["id"],
+                        "call": {k: v for k, v in call2.items() if not k.startswith("_")}}
+        self.last_call = call2
+        T["전체"] = (time.perf_counter() - t_all) * 1000
+        trace.update(request=None, reply=f"{stop['store']['name']} 납품 완료할까요?", route="confirm_ask",
+                     options=["네", "아니요"], timings=T, fn="complete")
+        return trace
+
+    def run_confirm(self, answer, trace, T, t_all):
+        pend, self.pending = self.pending, {}
+        call = dict(pend["call"])
+        stop = next((s for s in self.stops if s["id"] == pend["stop_id"]), None)
+        call["_stop"] = stop
+        self.last_call = call
+        trace.update(intent=None, llm=None, resolve=[], fn="complete", options=[],
+                     carry=f"납품 완료 되묻기의 답 → {answer}")
+        if answer == "no" or stop is None:
+            T["전체"] = (time.perf_counter() - t_all) * 1000
+            trace.update(request=None, route="confirm_no", timings=T,
+                         reply="알겠어요. 납품 완료는 기록하지 않았어요." if stop else "배송지를 찾지 못했어요.")
+            return trace
+        req = self.build_request("complete", call)
+        t = time.perf_counter()
+        result = self.run_virtual("complete", call, req)
+        T["실행"] = (time.perf_counter() - t) * 1000
+        T["전체"] = (time.perf_counter() - t_all) * 1000
+        trace.update(request=req, route="confirm_yes", timings=T, reply=self.make_reply("complete", call, result))
+        return trace
+
     def run(self, text):
         t_all = time.perf_counter()
-        T, trace = {}, {"text": text, "carry": None}
+        raw_text, text = text, self.fix_text(text)
+        self.text = text
+        T, trace = {}, {"text": text, "text_raw": raw_text, "carry": None}
+        if self.pending.get("kind") == "confirm":
+            answer = match_yes_no(text)
+            if answer:
+                return self.run_confirm(answer, trace, T, t_all)
+            self.pending = {}                     # 예/아니요가 아닌 다른 말 → 되묻기는 버리고 새 말로 처리
         picked = self.match_choice(text)
         carry = None
 
@@ -503,6 +605,9 @@ class Assistant:
             T["전체"] = (time.perf_counter() - t_all) * 1000
             trace.update(request=None, reply=ask, route="ask_slot", options=opts, timings=T, fn=fn)
             return trace
+
+        if fn == "complete" and self.confirm_complete:
+            return self.ask_confirm(call2, trace, T, t_all)
 
         req = self.build_request(fn, call2)
         t = time.perf_counter()

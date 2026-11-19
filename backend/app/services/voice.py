@@ -108,11 +108,13 @@ class VoiceService:
             resp = {"reply": NOT_HEARD, "fn": None, "call": {}, "route": "not_heard", "ask": None,
                     "options": None, "action": None, "stop_id": None, "conf": 0.0}
         resp.pop("latency_ms", None)
+        fixed = resp.pop("text_fixed", None)    # STT 오인식 별칭으로 고친 말 ("정자님" → "점장님")
 
         audio_id, tts_ms = self.synthesize(resp["reply"])
         total_ms = (time.perf_counter() - t_all) * 1000
         return {
-            "text": text,
+            "text": fixed or text,
+            "stt_text": text,
             **resp,
             "latency": {"stt": round(stt_ms), "llm": round(llm_ms), "tts": round(tts_ms), "total": round(total_ms)},
             "audio_url": f"/api/assistant/voice/audio/{audio_id}" if audio_id else None,
