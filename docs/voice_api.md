@@ -56,7 +56,8 @@ curl -s -o reply.wav http://<보드 IP>:8000/api/assistant/voice/audio/<id>     
 
 | 필드 | 뜻 / 앱이 할 일 |
 |---|---|
-| `text` | 보드가 알아들은 말. 사용자 말풍선에 표시한다. 끝의 `.`·`?` 는 지워도 된다 |
+| `text` | 보드가 알아들은 말 (STT 오인식 별칭 `config/stt_aliases.json` 으로 고친 뒤. 예: "정자님" → "점장님"). 사용자 말풍선에 표시한다. 끝의 `.`·`?` 는 지워도 된다 |
+| `stt_text` | STT 가 낸 그대로의 글자 (확인용) |
 | `reply` | 답 문장. AI 말풍선에 표시한다 |
 | `fn`, `call`, `route`, `ask`, `options`, `action`, `stop_id`, `conf` | `/api/assistant/chat` 응답과 같다. `options` 가 있으면 선택지 버튼을 만들고, `action` 이 `refresh_route`·`refresh_stop` 이면 목록을 새로 고친다. `open_scanner` 면 스캔 화면을 연다 (지금 코드 그대로) |
 | `latency` | ms. `llm` 은 파이프라인 전체(LLM + 값 보정 + DB)다. 로그용 |
@@ -85,6 +86,13 @@ curl -s -o reply.wav http://<보드 IP>:8000/api/assistant/voice/audio/<id>     
 - **글자를 먼저 띄울 수 있다.** JSON 을 받자마자 말풍선을 띄우고, 소리는 이어서 받는다.
 - **비용:** 요청이 하나 늘지만 같은 망에서 10~25ms 였다 (실측).
 
+**납품 완료는 한 번 되묻는다 (2026-11-20):** `complete` 는 바로 기록하지 않고 `route: "confirm_ask"`, `reply: "GS25 성수연무장점 납품 완료할까요?"`, `options: ["네", "아니요"]` 로 돌려준다.
+같은 `session_id` 로 다음 말이 "응/네/어/맞아 …" 면 `route: "confirm_yes"` 로 기록하고 `action: "refresh_stop"`, "아니 …" 면 `route: "confirm_no"` (기록 안 함). 다른 말이면 되묻기를 버리고 그 말을 새로 처리한다. 한 음절 "네" 는 짧아 놓칠 수 있어 "네 맞아요" 처럼 말하는 것이 안전하다.
+
+### `POST /api/assistant/tts` (글자 답을 소리로)
+
+글자로 물었을 때(`/chat`) 답을 읽어 주려고 쓴다. `{"text": "다음은 GS25 성수연무장점이에요."}` → `{"text": …, "audio_url": "/api/assistant/voice/audio/…", "latency": {"tts": 650}}`. 음성은 `/voice` 와 같이 `audio_url` 로 받는다. TTS 가 없으면 503.
+
 ## 2. `GET /api/assistant/status` (필드 추가)
 
 ```json
@@ -93,7 +101,9 @@ curl -s -o reply.wav http://<보드 IP>:8000/api/assistant/voice/audio/<id>     
 
 `voice_ready` 가 true 일 때만 🎤 버튼을 켠다. 지금은 앱의 `SpeechEngine.isReady` 를 보고 켠다.
 
-## 3. 앱에서 바꿀 것 (android/ 는 이 문서만 쓰고 직접 고치지 않았음)
+## 3. 앱에서 바꿀 것 — 2026-11-20 모두 반영함
+
+아래 7가지를 그대로 반영했다: `RetrofitClient.kt`(주소는 더보기 화면에서 저장, 제한 시간 20초), `LogiOnApi.kt`(`voice()`·`tts()`), `speech/VoiceRecorder.kt`·`Wav.kt`(녹음, 말 끝 1초 자동 종료), `speech/AudioPlayer.kt`(재생), `chat/ChatController.kt`, `LogiOnApp.kt`, sherpa AAR·모델 제거(debug APK 430MB → 58MB). 5번은 바꿔서, 글자 입력의 답도 소리 켜짐이면 `POST /api/assistant/tts` 로 읽는다. 아래 표는 처음 쓴 요청 그대로 둔다.
 
 | # | 파일 | 바꿀 내용 | 이유 |
 |---|---|---|---|

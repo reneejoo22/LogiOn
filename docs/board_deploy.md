@@ -66,6 +66,7 @@ bash scripts/board/stop_all.sh      # 둘 다 끄기 (pid 파일 기준)
 | `rkllm/server/start_llm.sh` | LLM 서버를 127.0.0.1:8090 으로 (포그라운드). 모델 경로는 `LOGION_RKLLM_MODEL`, 런타임은 `LOGION_RKLLM_LIB` 로 바꿀 수 있음 |
 | `scripts/board/start_backend.sh` | 백엔드를 0.0.0.0:8000 으로 (포그라운드, `LOGION_LLM_BACKEND=rkllm`) |
 | `scripts/board/start_all.sh` / `stop_all.sh` | 위 둘을 백그라운드로 켜고 끔 |
+| `scripts/board/reset_demo_db.sh` | 시연 DB 를 새 하루 상태로 (지금 DB 는 `logs/db_backup_<시각>/` 로 옮김, 백엔드만 다시 켬) |
 | `scripts/board/verify_board.py` | 함수 6개 요청 + 동시 요청 2개 확인 (표준 라이브러리만) |
 
 로그: `~/LogiOn/logs/llm_server.log`, `~/LogiOn/logs/backend.log` (pid: `logs/llm.pid`, `logs/backend.pid`)
@@ -78,19 +79,37 @@ curl -s -H 'Content-Type: application/json' -d '{"text":"다음 어디야","sess
 curl -s -F file=@다음어디야.wav -F session_id=t localhost:8000/api/assistant/voice   # 음성 (wav 16kHz mono)
 ```
 
-### 재부팅 후 자동 실행 (systemd, sudo 필요 — 아직 설치 안 함)
+### 재부팅 후 자동 실행 (systemd) — 보드에서 붙여 넣기만 하면 됨
 
-서비스 파일만 레포에 있다: `scripts/board/systemd/logion-llm.service`, `logion-backend.service` (User=orangepi, 로그는 위와 같은 파일).
-설치하려면 보드에서 (sudo 가능한 사람이):
+서비스 파일: `scripts/board/systemd/logion-llm.service`(LLM 서버), `logion-backend.service`(백엔드 + STT·TTS). User=orangepi, 로그는 위와 같은 파일.
+보드에 `orangepi` 로 로그인해서 아래 블록을 **통째로** 붙여 넣는다. `sudo` 비밀번호를 한 번 묻는다.
 
 ```bash
+# 1) start_all.sh 로 켜 둔 서버를 끈다 (systemd 와 포트 8000·8090 이 겹치지 않게)
+bash ~/LogiOn/scripts/board/stop_all.sh
+# 2) 서비스 설치 → 부팅 때 자동 실행 + 지금 바로 켜기
 sudo cp ~/LogiOn/scripts/board/systemd/logion-llm.service ~/LogiOn/scripts/board/systemd/logion-backend.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now logion-llm.service logion-backend.service
-systemctl status logion-llm logion-backend
+# 3) 확인: 30초 뒤 "ready":true, "voice_ready":true 이면 끝
+sleep 30; curl -s localhost:8000/api/assistant/status; echo
+systemctl --no-pager --lines=0 status logion-llm logion-backend
 ```
 
-systemd 로 돌릴 때는 `start_all.sh` 를 같이 쓰지 않는다 (포트가 겹침). 끄기: `sudo systemctl stop logion-backend logion-llm`.
+설치한 뒤에는:
+
+| 하려는 것 | 명령 |
+|---|---|
+| 상태 | `systemctl status logion-llm logion-backend` |
+| 다시 켜기 (코드 `git pull` 뒤) | `sudo systemctl restart logion-llm logion-backend` |
+| 끄기 | `sudo systemctl stop logion-backend logion-llm` |
+| 시연 DB 새 하루로 | `bash ~/LogiOn/scripts/board/reset_demo_db.sh` (systemd 면 알아서 sudo systemctl 로 껐다 켬) |
+| 자동 실행 빼기 | `sudo systemctl disable --now logion-backend logion-llm` |
+| 로그 | `tail -f ~/LogiOn/logs/backend.log` (`llm_server.log`) |
+
+- systemd 로 돌릴 때는 `start_all.sh` 를 같이 쓰지 않는다 (포트가 겹침).
+- 백엔드는 켜질 때마다 오늘 날짜 운행이 없으면 새로 만든다. 그래서 시연 날 보드를 켜면 그날 운행(완료 0/3)으로 시작한다. 같은 날 연습한 기록을 지우려면 `reset_demo_db.sh`.
+- 백엔드는 0.0.0.0:8000 에 열리므로 부팅 뒤에 USB 테더링을 켜도 그 주소로 바로 붙는다.
 
 ## 3. 측정값 (2026-11-14, CPU/NPU 클럭 고정 없음)
 
@@ -125,11 +144,11 @@ systemd 로 돌릴 때는 `start_all.sh` 를 같이 쓰지 않는다 (포트가 
    ip route                    # 그 장치의 기본 게이트웨이 = 폰 주소
    nmcli device status         # 장치가 connected 인지
    ```
-4. 앱의 서버 주소를 `http://<위에서 본 보드 IP>:8000/` 로 한다.
+4. 앱 **더보기 → 보드 주소(서버)** 에 `<위에서 본 보드 IP>` 를 넣고 저장 → "연결 확인" 이 초록색이면 된다.
 
-- 테더링을 다시 켤 때마다 보드 IP 가 바뀔 수 있다 → 앱에서 주소를 바꿀 수 있게 해 두는 것이 좋다 (아래 앱 팀 요청 1).
+- 테더링을 다시 켤 때마다 보드 IP 가 바뀔 수 있다 → 앱 더보기 → 보드 주소에서 바꾼다.
 - 장치가 안 보이면 `dmesg | tail` 로 rndis/cdc 장치 인식 여부 확인. 자동으로 IP 를 못 받으면 `nmcli` 로 연결을 올리는 작업에 sudo 가 필요할 수 있다.
-- 이 방식은 2026-11-14 기준 **아직 실기기로 시험하지 않았다**.
+- 이 방식은 2026-11-20 기준 **아직 실기기로 시험하지 않았다** (앱은 에뮬레이터 → Tailscale 주소로 확인).
 
 ### (b) 소형 공유기 + 유선 (시연에 가장 안정적)
 
@@ -154,34 +173,31 @@ systemd 로 돌릴 때는 `start_all.sh` 를 같이 쓰지 않는다 (포트가 
 | `/api/assistant/status` 의 ready 가 false | `logs/backend.log` 의 "음성 비서 모델을 올리지 못했습니다" 다음 줄 |
 | 앱에서 연결 안 됨 | 폰과 보드가 같은 네트워크인지, 보드에서 `ss -ltnp | grep 8000` 이 `0.0.0.0:8000` 인지, 앱 주소의 IP·포트 |
 | 포트 사용 중 | 이전 프로세스: `bash scripts/board/stop_all.sh`, systemd 로도 켜 두었는지 `systemctl status logion-backend` |
-| 시연 데이터 초기화 | 백엔드를 끄고 `backend/data/logion.db` 를 백업한 뒤 새 파일로 시작 (backend/README) |
+| 시연 데이터 초기화 | `bash scripts/board/reset_demo_db.sh` (지금 DB 는 `logs/db_backup_<시각>/` 로 옮기고 새 하루로 시작) |
+| 앱에서 "보드에 연결할 수 없습니다" | 앱 더보기 → 보드 주소에 `hostname -I` 로 본 주소를 넣고 저장 → "연결 확인". 테더링을 다시 켜면 주소가 바뀔 수 있다 |
+| 확인 질문("납품 완료할까요?")에 "네" 가 '못 들음' | 한 음절은 짧아서 놓칠 수 있다. "네 맞아요", "응 완료해 줘" 처럼 두 마디로 |
 
-## 6. 팀원에게 필요한 변경 (직접 고치지 않음)
+## 6. 팀원별 변경 사항
 
-### 앱 (android/)
+### 앱 (android/) — 2026-11-20 반영 끝
 
-0. **STT·TTS 를 보드로 (2026-11-20)** — 녹음 업로드·응답 음성 재생으로 바꾸는 방법은 [voice_api.md](voice_api.md) 3절에 있다. 거기서는 Retrofit 읽기 시간 제한을 20초로 올리라고 권한다. 아래 3번(기본 10초로 충분)은 STT·TTS 가 폰에 있던 때 기준이다.
-1. **서버 주소** — `android/app/src/main/java/com/example/logion/data/remote/RetrofitClient.kt:14`
-   `private const val BASE_URL = "http://10.0.2.2:8000/"` 는 에뮬레이터 → PC 주소다. 보드에 붙이려면 이 값을 보드 주소로 바꿔야 한다.
-   - 공유기 방식: `http://<DHCP 예약한 보드 IP>:8000/`
-   - USB 테더링: 연결할 때마다 바뀔 수 있음
-   - 개발(Tailscale): `http://100.82.118.121:8000/` (폰에도 Tailscale 필요)
-   → 상수 대신 **설정 화면이나 디버그 메뉴에서 주소를 입력해 SharedPreferences 에 저장**하고 Retrofit 을 그 값으로 만드는 방식을 권장 (빌드 변종 `BuildConfig` 필드로 나누는 것도 가능). 마지막 `/` 는 꼭 필요하다.
-2. **평문 HTTP** — `AndroidManifest.xml` 에 `usesCleartextTraffic="true"` 가 이미 있어 그대로 된다.
-3. **시간 제한** — 지금 Retrofit 은 OkHttp 기본값(읽기 10초)을 쓴다. 보드 응답은 최대 약 3초, LLM 이 막히면 백엔드가 8초 뒤 "잠시 후 다시 말씀해 주세요." 를 돌려주므로 기본값으로 충분하다. 바꿀 경우 10초 이상 유지.
-4. **conf 값** — 보드(rkllm) 모드에서는 LLM 토큰 확률을 받지 않아 `conf` 가 항상 0.0 이다. 지금 앱은 `conf` 를 받기만 하고 쓰지 않으므로 문제 없음. 화면에 표시하거나 판단에 쓰지 말 것.
+- 🎤 → 16kHz mono wav 녹음 (말이 끝나고 1초 조용하면 자동 종료, 버튼을 다시 누르면 종료, 최대 10초) → `POST /api/assistant/voice` → 인식 글자·답 말풍선 → `audio_url` 재생.
+- 글자 입력은 `/api/assistant/chat`, 소리 켜짐이면 `POST /api/assistant/tts` 로 답을 읽는다.
+- 보드 주소는 **더보기 → 보드 주소(서버)** 에서 입력·저장 (기본 예 `http://192.168.42.129:8000/`, 포트를 안 쓰면 8000). 읽기·연결 제한 시간 20초.
+- 앱 안 sherpa-onnx STT·TTS 와 모델(354MB)은 뺐다. debug APK 430MB → 58MB. 옛 파일은 `android/unused_on_device_speech/` (git 밖).
+- `conf` 는 보드(rkllm) 모드에서 항상 0.0 이다. 화면에 표시하거나 판단에 쓰지 말 것.
 
 ### 백엔드 (backend/) — 보드에서 돌리는 데 꼭 필요한 변경은 없음
 
 backend/tests 23개가 보드(rkllm 모드)에서 그대로 통과한다. 아래는 권장 사항:
 
 1. **`/api/assistant/status`** (`backend/app/api/assistant.py`) — 지금은 파이프라인 객체가 있으면 `ready: true` 라서 LLM 서버가 꺼져 있어도 true 다. `bot.llm_health()` (rkllm 모드일 때만 존재)를 불러 `llm_ok` 같은 값을 추가하면 앱이 음성 버튼 상태를 정확히 보여 줄 수 있다.
-2. **위험한 납품 완료 오류** — 보드 test 431건 중 "이제 엄마한테 전화해주세요" 가 `complete(receiver=엄마)` 로 나온 1건이 있다 (PC 모델은 other). 음성 `complete` 는 실행 전 한 번 확인하거나, receiver 를 아는 값(점장님·직원·알바생·매니저 등)일 때만 바로 실행하는 규칙을 `DbAssistant.resolve()` 에 두는 것을 권장.
+2. **위험한 납품 완료 오류** — 보드 test 431건 중 "이제 엄마한테 전화해주세요" 가 `complete(receiver=엄마)` 로 나온 1건이 있다 (PC 모델은 other). → **2026-11-20 반영:** `complete` 는 바로 기록하지 않고 "○○ 납품 완료할까요?" 로 되묻는다 (응/네/어/맞아 → 기록, 아니 → 취소, 다른 말 → 되묻기 버리고 새로 처리).
 3. **README** — "음성 비서까지 켜기" 에 보드 방식(이 문서) 링크 추가.
 
 ### 보드 관리자 (sudo 필요, 선택)
 
-- 자동 실행: 위 systemd 설치 명령
+- 자동 실행: 위 2절 systemd 블록 붙여 넣기
 - `sudo apt install python3.10-venv` (없어도 setup_venv.sh 로 됨)
 - `.local` 이름으로 찾고 싶으면 avahi-daemon 활성화 (지금 inactive). 그러면 앱 주소를 `http://orangepi5plus.local:8000/` 로 쓸 수 있으나 Android 의 mDNS 지원이 기종마다 달라 IP 방식이 더 확실하다.
 - 정확한 속도 측정이 필요하면 rknn-llm 의 `fix_freq_rk3588.sh` 로 클럭 고정 (sudo)
