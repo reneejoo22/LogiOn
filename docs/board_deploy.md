@@ -185,19 +185,23 @@ systemctl --no-pager --lines=0 status logion-llm logion-backend
 - 글자 입력은 `/api/assistant/chat`, 소리 켜짐이면 `POST /api/assistant/tts` 로 답을 읽는다.
 - 보드 주소는 **더보기 → 보드 주소(서버)** 에서 입력·저장 (기본 예 `http://192.168.42.129:8000/`, 포트를 안 쓰면 8000). 읽기·연결 제한 시간 20초.
 - 앱 안 sherpa-onnx STT·TTS 와 모델(354MB)은 뺐다. debug APK 430MB → 58MB. 옛 파일은 `android/unused_on_device_speech/` (git 밖).
-- `conf` 는 보드(rkllm) 모드에서 항상 0.0 이다. 화면에 표시하거나 판단에 쓰지 말 것.
+- `conf` 는 보드(rkllm) 모드에서 항상 0.0 이다. 앱은 `conf` 를 화면 표시나 판단에 쓰지 않는다 (2026-11-23 코드 확인).
 
-### 백엔드 (backend/) — 보드에서 돌리는 데 꼭 필요한 변경은 없음
+### 백엔드 (backend/) — 2026-11-23 확인
 
-backend/tests 23개가 보드(rkllm 모드)에서 그대로 통과한다. 아래는 권장 사항:
+backend/tests **58개**가 보드(rkllm 모드, 커밋 5930ac7)와 PC 에서 모두 통과한다.
 
-1. **`/api/assistant/status`** (`backend/app/api/assistant.py`) — 지금은 파이프라인 객체가 있으면 `ready: true` 라서 LLM 서버가 꺼져 있어도 true 다. `bot.llm_health()` (rkllm 모드일 때만 존재)를 불러 `llm_ok` 같은 값을 추가하면 앱이 음성 버튼 상태를 정확히 보여 줄 수 있다.
-2. **위험한 납품 완료 오류** — 보드 test 431건 중 "이제 엄마한테 전화해주세요" 가 `complete(receiver=엄마)` 로 나온 1건이 있다 (PC 모델은 other). → **2026-11-20 반영:** `complete` 는 바로 기록하지 않고 "○○ 납품 완료할까요?" 로 되묻는다 (응/네/어/맞아 → 기록, 아니 → 취소, 다른 말 → 되묻기 버리고 새로 처리).
-3. **README** — "음성 비서까지 켜기" 에 보드 방식(이 문서) 링크 추가.
+| 항목 | 상태 |
+|---|---|
+| 위험한 납품 완료 오류: 보드 test 431건 중 "이제 엄마한테 전화해주세요" 가 `complete(receiver=엄마)` 로 나온 1건 (PC 모델은 other) | **반영 완료 (2026-11-20).** `complete` 는 바로 기록하지 않고 "○○ 납품 완료할까요?" 로 되묻는다. 응/네/어/맞아 → 기록, 아니 → 취소, 다른 말 → 되묻기 버리고 새로 처리 |
+| README 에 보드 방식 링크 | **반영 완료.** README 실행 방법에 이 문서 1·2·4절 링크 |
+| `/api/assistant/status` 에 LLM 서버 살아 있는지(`llm_ok`) | **미반영 (선택 개선).** 지금은 파이프라인 객체가 있으면 `ready: true` 라, LLM 서버가 꺼져 있어도 true 다. 시연 중 LLM 이 멈추면 백엔드가 8초 뒤 "잠시 후 다시 말씀해 주세요." 를 돌려주므로 시연에는 지장이 없다 |
 
-### 보드 관리자 (sudo 필요, 선택)
+### 보드 관리자 (sudo 필요, 선택) — 2026-11-23 보드 상태
 
-- 자동 실행: 위 2절 systemd 블록 붙여 넣기
-- `sudo apt install python3.10-venv` (없어도 setup_venv.sh 로 됨)
-- `.local` 이름으로 찾고 싶으면 avahi-daemon 활성화 (지금 inactive). 그러면 앱 주소를 `http://orangepi5plus.local:8000/` 로 쓸 수 있으나 Android 의 mDNS 지원이 기종마다 달라 IP 방식이 더 확실하다.
-- 정확한 속도 측정이 필요하면 rknn-llm 의 `fix_freq_rk3588.sh` 로 클럭 고정 (sudo)
+| 항목 | 상태 |
+|---|---|
+| 자동 실행 (2절 systemd 블록) | **미설치.** `logion-backend`·`logion-llm` 서비스가 없다. 지금은 `start_all.sh` 로 켠다 |
+| `python3.10-venv` | **미설치.** 없어도 `setup_venv.sh` 로 된다 |
+| avahi-daemon (`orangepi5plus.local` 이름) | **꺼져 있음 (inactive).** Android 의 mDNS 지원이 기종마다 달라서 IP 방식으로 쓴다 |
+| 클럭 고정 (`fix_freq_rk3588.sh`) | **안 함.** 측정값은 모두 클럭 고정 없이 잰 것이다 |
