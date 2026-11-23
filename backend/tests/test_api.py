@@ -19,10 +19,11 @@ def test_driver(client):
 
 def test_today_route(client):
     r = client.get("/api/routes/today").json()
-    assert r["summary"] == {"total": 3, "done": 0, "remaining": 3, "progress": 0.0}
-    assert [s["store"]["name"] for s in r["stops"]] == ["GS25 성수연무장점", "CU 서울숲점", "세븐일레븐 뚝섬점"]
-    assert [s["boxes"] for s in r["stops"]] == [12, 8, 15]
-    assert [s["is_next"] for s in r["stops"]] == [True, False, False]
+    assert r["summary"] == {"total": 6, "done": 0, "remaining": 6, "progress": 0.0}
+    assert [s["store"]["name"] for s in r["stops"]] == ["GS25 성수연무장점", "CU 서울숲점", "세븐일레븐 뚝섬점",
+                                                        "CU 성수역점", "GS25 응봉점", "세븐일레븐 성수이로점"]
+    assert [s["boxes"] for s in r["stops"]] == [12, 8, 15, 11, 10, 9]
+    assert [s["is_next"] for s in r["stops"]] == [True, False, False, False, False, False]
     assert r["next_stop_id"] == r["stops"][0]["id"]
 
 
@@ -40,7 +41,7 @@ def test_complete_moves_next_and_cancel_restores(client):
     assert all(z["checked"] for z in done["zones"])
 
     r = client.get("/api/routes/today").json()
-    assert r["summary"]["done"] == 1 and r["summary"]["progress"] == 0.33
+    assert r["summary"]["done"] == 1 and r["summary"]["progress"] == 0.17
     assert r["next_stop_id"] == 2
 
     back = client.delete("/api/stops/1/complete").json()
@@ -54,7 +55,7 @@ def test_complete_without_body(client):
 
 
 def test_all_done_has_no_next(client):
-    for stop_id in (1, 2, 3):
+    for stop_id in range(1, 7):
         client.post(f"/api/stops/{stop_id}/complete")
     r = client.get("/api/routes/today").json()
     assert r["next_stop_id"] is None and r["summary"]["progress"] == 1.0
@@ -82,7 +83,7 @@ def test_issue(client):
 def test_barcode(client):
     p = client.get("/api/products/barcode/8800000000001").json()
     assert p["name"] == "서울우유" and p["category_label"] == "냉장 상품"
-    assert [(d["stop_id"], d["qty"]) for d in p["deliveries"]] == [(1, 12), (2, 6)]
+    assert [(d["stop_id"], d["qty"]) for d in p["deliveries"]] == [(1, 12), (2, 6), (4, 8)]
 
 
 def test_not_found(client):

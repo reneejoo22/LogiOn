@@ -21,6 +21,8 @@ SCRIPT = {
     "서울숲점 콜라 몇 박스야": ([("stop_items", 0.97), ("next_stop", 0.03)],
                         '{"fn":"stop_items","store":"서울숲점","item":"콜라"}'),
     "역삼점 뭐 내려": ([("stop_items", 0.97), ("next_stop", 0.03)], '{"fn":"stop_items","store":"역삼점"}'),
+    # "웅봉점 뭐 내려" 를 STT 별칭이 고친 말
+    "응봉점 뭐 내려": ([("stop_items", 0.97), ("next_stop", 0.03)], '{"fn":"stop_items","store":"응봉점"}'),
     "삼각김밥 두 개 터졌어": ([("report_issue", 0.99), ("complete", 0.01)],
                       '{"fn":"report_issue","item":"삼각김밥","issue":"파손","qty":"2","unit":"개"}'),
     "우유가 이상해": ([("report_issue", 0.99), ("complete", 0.01)],
@@ -88,17 +90,25 @@ def test_no_models_gives_503_and_screens_still_work(tmp_path, monkeypatch):
 
 def test_next_stop_reads_db(client):
     r = say(client, "다음 어디야")
-    assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요."
+    assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 6곳이에요."
     assert (r["fn"], r["route"], r["action"], r["ask"], r["options"]) == ("next_stop", "llm", "refresh_route", None, None)
 
     client.post("/api/stops/1/complete")  # 화면에서 완료하면 음성 답도 바로 바뀐다
-    assert say(client, "다음 어디야")["reply"] == "다음은 CU 서울숲점이에요. 남은 곳은 2곳이에요."
+    assert say(client, "다음 어디야")["reply"] == "다음은 CU 서울숲점이에요. 남은 곳은 5곳이에요."
 
 
 def test_stop_items_with_store_and_item(client):
     r = say(client, "서울숲점 콜라 몇 박스야")
     assert r["reply"] == "CU 서울숲점 콜라는 1박스예요."
     assert r["stop_id"] == 2 and r["action"] is None
+
+
+def test_added_stop_and_stt_alias(client):
+    """늘린 배송지(5번 GS25 응봉점). STT 가 "웅봉점" 으로 들어도 별칭으로 고쳐 LLM 에 넣는다."""
+    bot = client.app.state.assistant
+    r = say(client, "웅봉점 뭐 내려")
+    assert bot.llm_calls[-1] == "응봉점 뭐 내려"
+    assert r["stop_id"] == 5 and r["reply"].startswith("GS25 응봉점 납품은 바나나우유 6개")
 
 
 def test_unknown_store_is_not_made_up(client):
@@ -186,7 +196,7 @@ def test_single_valueless_command_goes_through_llm(client):
     r = say(client, "다음 어디야")
     assert (r["fn"], r["route"], r["action"]) == ("next_stop", "llm", "refresh_route")
     assert client.app.state.assistant.llm_calls == ["다음 어디야"]
-    assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요."
+    assert r["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 6곳이에요."
 
 
 # ---------------- 11/20: 납품 완료 되묻기, 단위 규칙, STT 오인식 별칭 ----------------

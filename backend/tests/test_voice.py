@@ -89,7 +89,7 @@ def test_voice_runs_pipeline_and_returns_audio(vclient):
     assert r.status_code == 200, r.text
     j = r.json()
     assert j["text"] == "다음 어디야"
-    assert j["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 3곳이에요."
+    assert j["reply"] == "다음은 GS25 성수연무장점이에요. 남은 곳은 6곳이에요."
     assert (j["fn"], j["action"], j["options"]) == ("next_stop", "refresh_route", None)
     assert set(j["latency"]) == {"stt", "llm", "tts", "total"}
     assert "call" in j and "stop_id" in j

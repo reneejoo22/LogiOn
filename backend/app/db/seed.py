@@ -13,6 +13,10 @@ STORES = [
     (1, "GS25 성수연무장점", "성수연무장점", "서울 성동구 연무장길 21", "02-0000-0001", 37.5428, 127.0563),
     (2, "CU 서울숲점", "서울숲점", "서울 성동구 서울숲2길 32", "02-0000-0002", 37.5466, 127.0432),
     (3, "세븐일레븐 뚝섬점", "뚝섬점", "서울 광진구 능동로 10", "02-0000-0003", 37.5316, 127.0667),
+    # 시연용으로 늘린 배송지 (2026-11-23). 짧은 이름이 위 셋과 겹치지 않게 골라 "서울숲점"·"성수연무" 같은 말이 그대로 한 곳만 가리킨다
+    (4, "CU 성수역점", "성수역점", "서울 성동구 아차산로 100", "02-0000-0004", 37.5446, 127.0557),
+    (5, "GS25 응봉점", "응봉점", "서울 성동구 응봉로 50", "02-0000-0005", 37.5503, 127.0349),
+    (6, "세븐일레븐 성수이로점", "성수이로점", "서울 성동구 성수이로 88", "02-0000-0006", 37.5398, 127.0574),
 ]
 
 # 이름: (구역, 부르는 이름들)
@@ -50,19 +54,29 @@ ROUTE_STOPS = [
     (3, "11:16", 5.7, None,
      {"tobacco": 3, "ambient_drink": 5, "chilled": 4, "ready_meal": 3},
      [("샌드위치", 8, "개"), ("캔커피", 2, "박스"), ("초코파이", 3, "박스")]),
+    (4, "11:40", 6.4, None,
+     {"tobacco": 2, "ambient_drink": 4, "chilled": 3, "ready_meal": 2},
+     [("서울우유", 8, "개"), ("콜라", 2, "박스"), ("참치삼각김밥", 12, "개"), ("캔커피", 1, "박스")]),
+    (5, "12:05", 7.9, "건물 뒤편 하역장으로 들어가세요.",
+     {"tobacco": 1, "ambient_drink": 2, "chilled": 3, "ready_meal": 4},
+     [("바나나우유", 6, "개"), ("치킨마요도시락", 5, "개"), ("스팸마요삼각김밥", 8, "개"), ("생수", 2, "박스")]),
+    (6, "12:30", 9.1, None,
+     {"tobacco": 2, "ambient_drink": 3, "chilled": 2, "ready_meal": 2},
+     [("딸기우유", 6, "개"), ("제육도시락", 3, "개"), ("콜라", 1, "박스"), ("캔커피", 2, "박스")]),
 ]
-DEPART, EST_END, SYNCED = "09:40", "12:05", "09:38"
+DEPART, EST_END, SYNCED = "09:40", "12:55", "09:38"
 
 
 def seed_master(conn: sqlite3.Connection) -> None:
-    """기준 정보(기사·점포·품목·별칭). 이미 있으면 건너뛴다."""
+    """기준 정보(기사·점포·품목·별칭). 이미 있으면 건너뛴다.
+    점포는 이미 있는 DB 에도 빠진 것만 넣는다 (배송지를 늘린 뒤 예전 DB 로 켜도 오늘 운행을 만들 때 점포가 없어 깨지지 않게)."""
+    conn.executemany(
+        "INSERT OR IGNORE INTO stores (id, name, short_name, address, phone, lat, lng) VALUES (?, ?, ?, ?, ?, ?, ?)",
+        STORES,
+    )
     if conn.execute("SELECT 1 FROM drivers LIMIT 1").fetchone():
         return
     conn.execute("INSERT INTO drivers (id, name, area, vehicle_number) VALUES (?, ?, ?, ?)", DRIVER)
-    conn.executemany(
-        "INSERT INTO stores (id, name, short_name, address, phone, lat, lng) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        STORES,
-    )
     for i, (name, (category, forms)) in enumerate(PRODUCTS.items(), start=1):
         conn.execute(
             "INSERT INTO products (id, name, category, barcode) VALUES (?, ?, ?, ?)",
