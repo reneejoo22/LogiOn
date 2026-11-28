@@ -18,6 +18,16 @@
 | 앱(프론트) | | yeeun0912 | Android 앱 프론트, STT·TTS 연동 |
 | 보드·통합 | | | 미팅 준비 |
 
+## 바로가기
+
+| 항목 | 위치 |
+| --- | --- |
+| 저장소 / 기준 브랜치 | `https://github.com/reneejoo22/LogiOn` · **`main`** (최종 제출 태그 **`v1.0-final`**) |
+| 학습된 모델 다운로드 | [Google Drive · LogiOn_models.zip (2.6GB)](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) → [모델 다운로드](#모델-다운로드) |
+| 개발문서 6종 | [`docs/dev_docs/`](docs/dev_docs/) → [목록](#개발문서-6종) |
+| 시연 방법 | [실행 방법 (시연)](#실행-방법-시연) |
+| 핵심 결과 | [핵심 결과](#핵심-결과) |
+
 ### 구조: 폰 = 화면·마이크·스피커, 보드 = STT·Qwen·TTS·백엔드·DB
 
 | 기기 | 맡는 일 |
@@ -78,6 +88,19 @@ test 431건(학습에 쓰지 않은 문장)을 PC 원본 모델과 보드 변환
 
 LLM 은 "기능을 고르고 말한 값을 JSON 으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기는 규칙 코드가 맡아 없는 값을 지어내지 않습니다.
 
+## 프로젝트 진행 과정
+
+| 시기 | 단계 | 내용 |
+| --- | --- | --- |
+| 10.05 | 데이터 · 학습 v1 | 납품 발화 템플릿 + 생성 문장 2,754건, 틀(템플릿) 단위 train/val/test 분리 |
+| 10.10 ~ 10.15 | 앱 · 백엔드 시작 | Kotlin Compose 화면, FastAPI · SQLite 배송 DB 설계 |
+| 10.23 ~ 10.24 | v2 · v2.1 개선 | 오답 원인 분석으로 데이터 수정, AI ↔ 백엔드 연결 (`/api/assistant/chat`) |
+| 10.30 | 단일 모델 v3 | 의도분류 모델(roberta) 제거, LLM 하나가 기능 선택 + 값 추출 ([근거](results/single_llm_report.md)) |
+| 11.05 | 음성 연결 | sherpa-onnx STT·TTS 로 말로 AI 와 대화 |
+| 11.14 ~ 11.17 | 보드 NPU 배포 | RKLLM W8A8 변환, test 431건 PC 대비 검증, 보드 단독 백엔드 동작, 기말 발표 |
+| 11.20 | 음성까지 보드로 | `/api/assistant/voice`: 녹음 → STT → LLM → TTS, 앱은 녹음·재생만 (430MB → 58MB) |
+| 11.23 ~ 11.26 | 최종 정리 · 시연 | 납품 완료 확인 질문, 시연 6곳 운행, 실폰 연결, 시연 평가 |
+
 ## 기술 스택
 
 | 영역 | 사용 기술 |
@@ -90,21 +113,36 @@ LLM 은 "기능을 고르고 말한 값을 JSON 으로 옮기는 일"만 하고,
 
 ## 폴더 구조
 
-```
-LogiOn/
-├─ android/        Android 앱 (화면, 녹음·재생, AI 채팅 탭, 더보기의 보드 주소 설정)
-├─ backend/        FastAPI 백엔드 + SQLite 배송 DB (/api/assistant/voice, /chat)
-├─ demo/           AI 파이프라인 (pipeline.py: LLM 호출 → 값 보정 → 실행 → 응답), 채팅 데모
-├─ rkllm/          RKLLM 변환 설정, 보드 LLM 서버 (server/)
-├─ scripts/board/  보드 설치·시작/종료 스크립트, systemd, 검증 스크립트
-├─ speech/         STT/TTS 엔진 (보드 백엔드가 사용), 모델 받기·시험
-├─ config/         파이프라인 설정 (system prompt, 생성 설정, LLM 백엔드)
-├─ data/  notebooks/  export/   학습 데이터, 학습·평가 노트북, 변환
-├─ results/        평가 결과 (rkllm_board/ = 보드 실측)
-└─ docs/           문서 (개발문서 6종: dev_docs/)
-```
+| 폴더 | 내용 | 주요 파일 |
+| --- | --- | --- |
+| `android/` | Android 앱 (Kotlin · Jetpack Compose). 홈·배송지·스캔·AI 채팅·더보기 화면, 녹음 업로드·응답 음성 재생, 더보기의 보드 주소 설정 | `app/src/main/java/com/example/logion/` |
+| `backend/` | FastAPI 백엔드 + SQLite 배송 DB. 배송 API, 음성 비서 API(`/voice`, `/chat`, `/tts`), 테스트 58개 | `app/main.py`, `app/api/`, `app/services/voice.py`, `tests/`, [`README.md`](backend/README.md), [`DB_DESIGN.md`](backend/DB_DESIGN.md) |
+| `demo/` | AI 파이프라인: 프롬프트 구성 → LLM 호출(PC GPU 또는 보드) → JSON 파싱 → 값 보정·되묻기·확인 질문 → 실행 → 응답 문장 | `pipeline.py`, `chat_server.py` |
+| `speech/` | 음성 엔진 (silero VAD · SenseVoice STT · VITS TTS, sherpa-onnx). 보드 백엔드가 사용 | `speech_engine.py`, `download_models.py` |
+| `rkllm/` | RKLLM 변환 설정과 보드 NPU LLM 추론 서버 | `config.yaml`, `run.sh`, `server/logion_server.py` |
+| `scripts/` | 보드 설치·시작/종료·자동 실행(systemd)·시연 DB 초기화, 평가·측정 스크립트 | `board/start_all.sh`, `board/reset_demo_db.sh`, `board/systemd/`, `eval_single_llm.py` |
+| `config/` | 파이프라인 설정 (system prompt, 생성 설정), STT 오인식 별칭 표 | `pipeline_v3_single.json`, `stt_aliases.json` |
+| `data/` | 학습 데이터 (FC 데이터셋 2,754건, 틀 단위 분할, 캘리브레이션 문장) | `fc_dataset.csv`, `template_split_v1.json`, [`README.md`](data/README.md) |
+| `notebooks/` | 데이터 생성 · LoRA 학습 · 평가 노트북 (Colab/로컬 GPU) | `LogiOn_AI_pipeline.ipynb` |
+| `export/` | 모델 변환 보조 (RKLLM 캘리브레이션, 의도분류 ONNX 실험) | `convert_rkllm.py` |
+| `results/` | 평가 결과: 단일 모델 비교, 보드 LLM 431건, 보드 음성 5문장 | `rkllm_board/report.md`, `board_voice/report.md`, `single_llm_report.md` |
+| `docs/` | 설계·배포·API 문서와 개발문서 6종 | `dev_docs/`, `board_deploy.md`, `voice_api.md`, `ai_details.md` |
+| `logs/` | 실험 기록 (평가·데모 로그) | — |
 
-모델 가중치(`out/`)와 `.rkllm` 파일은 용량 때문에 저장소에 넣지 않습니다.
+모델 가중치(`out/`)와 `.rkllm` 파일은 용량 때문에 저장소에 넣지 않고, 아래 Google Drive 로 배포합니다.
+
+## 모델 다운로드
+
+| 파일 | 크기 | 내용 | 받는 곳 |
+| --- | --- | --- | --- |
+| `LogiOn_models.zip` | 약 2.6GB | 학습된 모델 가중치 (`out/` 폴더: LoRA 학습 후 병합한 Qwen2.5-1.5B FC 모델 등) | [Google Drive](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) |
+| 음성 모델 (VAD · STT · TTS) | 약 310MB | silero VAD, SenseVoice-Small int8, VITS 한국어 | `python speech/download_models.py --no-android` |
+
+사용 순서:
+
+1. `LogiOn_models.zip` 을 받아 저장소 루트에 풀면 `out/` 폴더가 생깁니다.
+2. **PC GPU 로 실행**할 때는 `out/` 의 모델을 그대로 씁니다 ([`docs/ai_details.md`](docs/ai_details.md#실행-방법)).
+3. **보드(NPU)용 `.rkllm`** 은 `out/` 의 병합 모델을 RKLLM 툴킷으로 W8A8 변환해서 만듭니다 ([`docs/rkllm_convert.md`](docs/rkllm_convert.md)). 변환 결과 `logion-delivery_w8a8_opt1_cal450.rkllm`(2.04GB)과 같은 이름의 `.rkllm.json` 을 보드 `~/rkllm/logion/` 에 둡니다.
 
 ## 실행 방법 (시연)
 
@@ -119,7 +157,7 @@ Orange Pi 5 Plus 에 전원을 넣습니다.
 
 부팅하면 systemd 가 LLM 서버(:8090, NPU) → 백엔드(:8000, STT·TTS 포함)를 켭니다. 1분쯤 기다립니다.
 
-- 백엔드는 켜질 때 그날 운행이 없으면 새로 만듭니다. 시연 날 켜면 완료 0/3 으로 시작합니다.
+- 백엔드는 켜질 때 그날 운행이 없으면 새로 만듭니다. 시연 날 켜면 완료 0/6 으로 시작합니다.
 - 확인 (보드에서): `curl -s localhost:8000/api/assistant/status` → `"ready":true`, `"voice_ready":true`.
 - systemd 를 아직 설치하지 않았다면 직접 켭니다: `cd ~/LogiOn && bash scripts/board/start_all.sh` (끄기 `stop_all.sh`).
 
