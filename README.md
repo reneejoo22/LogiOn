@@ -6,25 +6,26 @@
 
 | 항목 | 내용 |
 | --- | --- |
-| 과목 | 2026학년도 모바일시스템응용프로젝트 (C분반) |
+| 과목 | 2026학년도 모바일시스템응용프로젝트 (8분반) |
 | 팀 | [8] 2팀 LogiOn |
 | 산학 멘토 | 마음AI |
 
 | 역할 | 이름 | GitHub | 담당 |
 | --- | --- | --- | --- |
-| 팀장 | | | 앱 디자인, 발표 자료 준비 및 발표 |
-| AI | | reneejoo22 | 데이터·모델 학습, RKLLM 변환, 보드 배포, 오렌지파이 설정 |
-| 백엔드 | | KIMJAESUN | FastAPI·SQLite, 배송 API |
-| 앱(프론트) | | yeeun0912 | Android 앱 프론트, STT·TTS 연동 |
-| 보드·통합 | | | 미팅 준비 |
+| 팀장 | 한재민 | | 앱 디자인, 발표 자료 준비 및 발표 |
+| AI | 주희연 | reneejoo22 | 데이터·모델 학습, RKLLM 변환, 보드 배포, 오렌지파이 설정 |
+| 백엔드 | 김재선 | KIMJAESUN | FastAPI·SQLite, 배송 API |
+| 앱(프론트) | 임예은 | yeeun0912 | Android 앱 프론트, STT·TTS 연동 |
+| 보드·통합 | 이재영 | | 미팅 준비 |
 
 ## 바로가기
 
 | 항목 | 위치 |
 | --- | --- |
 | 저장소 / 기준 브랜치 | `https://github.com/reneejoo22/LogiOn` · **`main`** (최종 제출 태그 **`v1.0-final`**) |
-| 학습된 모델 다운로드 | [Google Drive · LogiOn_models.zip (2.6GB)](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) → [모델 다운로드](#모델-다운로드) |
+| 학습된 모델 다운로드 | 보드용 [LogiOn_rkllm_board.zip](https://drive.google.com/drive/folders/1gJzPlnhA140p6BLubZCrmW8su9cyE0L2?usp=sharing) · 원본 [LogiOn_models.zip (2.6GB)](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) → [모델 다운로드](#모델-다운로드) |
 | 개발문서 6종 | [`docs/dev_docs/`](docs/dev_docs/) → [목록](#개발문서-6종) |
+| 시연 영상 | [YouTube](https://www.youtube.com/watch?v=nk8oCJRY3iY) → [시연 영상](#시연-영상) |
 | 시연 방법 | [실행 방법 (시연)](#실행-방법-시연) |
 | 핵심 결과 | [핵심 결과](#핵심-결과) |
 
@@ -88,6 +89,12 @@ test 431건(학습에 쓰지 않은 문장)을 PC 원본 모델과 보드 변환
 
 LLM 은 "기능을 고르고 말한 값을 JSON 으로 옮기는 일"만 하고, DB 이름 맞추기·되묻기는 규칙 코드가 맡아 없는 값을 지어내지 않습니다.
 
+## 시연 영상
+
+[![LogiOn 시연 영상](https://img.youtube.com/vi/nk8oCJRY3iY/hqdefault.jpg)](https://www.youtube.com/watch?v=nk8oCJRY3iY)
+
+폰 앱에서 말로 묻고 보드가 답하는 실제 시연입니다: [YouTube 에서 보기](https://www.youtube.com/watch?v=nk8oCJRY3iY)
+
 ## 프로젝트 진행 과정
 
 | 시기 | 단계 | 내용 |
@@ -136,13 +143,14 @@ LLM 은 "기능을 고르고 말한 값을 JSON 으로 옮기는 일"만 하고,
 | 파일 | 크기 | 내용 | 받는 곳 |
 | --- | --- | --- | --- |
 | `LogiOn_models.zip` | 약 2.6GB | 학습된 모델 가중치 (`out/` 폴더: LoRA 학습 후 병합한 Qwen2.5-1.5B FC 모델 등) | [Google Drive](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) |
+| `LogiOn_rkllm_board.zip` | 약 2GB | **보드(NPU)용 변환 모델**: `logion-delivery_w8a8_opt1_cal450.rkllm` + `.rkllm.json`. 변환 없이 보드에 바로 사용 | [Google Drive](https://drive.google.com/drive/folders/1gJzPlnhA140p6BLubZCrmW8su9cyE0L2?usp=sharing) |
 | 음성 모델 (VAD · STT · TTS) | 약 310MB | silero VAD, SenseVoice-Small int8, VITS 한국어 | `python speech/download_models.py --no-android` |
 
 사용 순서:
 
 1. `LogiOn_models.zip` 을 받아 저장소 루트에 풀면 `out/` 폴더가 생깁니다.
 2. **PC GPU 로 실행**할 때는 `out/` 의 모델을 그대로 씁니다 ([`docs/ai_details.md`](docs/ai_details.md#실행-방법)).
-3. **보드(NPU)용 `.rkllm`** 은 `out/` 의 병합 모델을 RKLLM 툴킷으로 W8A8 변환해서 만듭니다 ([`docs/rkllm_convert.md`](docs/rkllm_convert.md)). 변환 결과 `logion-delivery_w8a8_opt1_cal450.rkllm`(2.04GB)과 같은 이름의 `.rkllm.json` 을 보드 `~/rkllm/logion/` 에 둡니다.
+3. **보드(NPU)에서 실행**할 때는 `LogiOn_rkllm_board.zip` 을 받아 `.rkllm` 과 `.rkllm.json` 을 보드 `~/rkllm/logion/` 에 둡니다 (두 파일은 반드시 함께). 직접 변환하려면 `out/` 의 병합 모델을 RKLLM 툴킷으로 W8A8 변환합니다 ([`docs/rkllm_convert.md`](docs/rkllm_convert.md)).
 
 ## 실행 방법 (시연)
 
