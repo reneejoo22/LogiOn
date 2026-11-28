@@ -14,8 +14,8 @@
 | --- | --- | --- | --- |
 | 팀장 | 한재민 | | 앱 디자인, 발표 자료 준비 및 발표 |
 | AI | 주희연 | reneejoo22 | 데이터·모델 학습, RKLLM 변환, 보드 배포, 오렌지파이 설정 |
-| 백엔드 | 김재선 | KIMJAESUN | FastAPI·SQLite, 배송 API |
-| 앱(프론트) | 임예은 | yeeun0912 | Android 앱 프론트, STT·TTS 연동 |
+| 백엔드 | 김재선 | KIMJAESUN | FastAPI·SQLite, 배송 API、STT·TTS 연동 |
+| 앱(프론트) | 임예은 | yeeun0912 | Android 앱 프론트|
 | 보드·통합 | 이재영 | | 미팅 준비 |
 
 ## 바로가기
