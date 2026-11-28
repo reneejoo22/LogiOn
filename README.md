@@ -23,7 +23,7 @@
 | 항목 | 위치 |
 | --- | --- |
 | 저장소 / 기준 브랜치 | `https://github.com/reneejoo22/LogiOn` · **`main`** (최종 제출 태그 **`v1.0-final`**) |
-| 학습된 모델 다운로드 | 보드용 [LogiOn_rkllm_board.zip](https://drive.google.com/drive/folders/1gJzPlnhA140p6BLubZCrmW8su9cyE0L2?usp=sharing) · 원본 [LogiOn_models.zip (2.6GB)](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) → [모델 다운로드](#모델-다운로드) |
+| 학습된 모델 다운로드 | 보드용 [LogiOn_rkllm_board.zip](https://drive.google.com/drive/folders/1gJzPlnhA140p6BLubZCrmW8su9cyE0L2?usp=sharing) · 원본 [LogiOn_models.zip (2.6GB)](https://drive.google.com/file/d/1kSg8fOza_1HP442s4086KdfKW8mqNGWF/view?usp=sharing) → [모델 다운로드（변환을 안 한 원본 모델은 너무 무거워서  드라이브에 더 넣을 공간이 없어서 제외함）](#모델-다운로드) |
 | 개발문서 6종 | [`docs/dev_docs/`](docs/dev_docs/) → [목록](#개발문서-6종) |
 | 시연 영상 | [YouTube](https://www.youtube.com/watch?v=nk8oCJRY3iY) → [시연 영상](#시연-영상) |
 | 시연 방법 | [실행 방법 (시연)](#실행-방법-시연) |
